@@ -1818,70 +1818,70 @@ window.CIER_DATA = {
   "dictionary": [
     {
       "variable": "P001",
-      "dimension": "1 Identificacion y Muestáááreo",
+      "dimension": "1 Identificación y Muestreo",
       "nombre": "País",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "10 opciones codificadas (ARGENTINA (AR), BOLIVIA (BO), COSTA RICA (CR)...)"
     },
     {
       "variable": "P002",
-      "dimension": "1 Identificacion y Muestáááreo",
+      "dimension": "1 Identificación y Muestreo",
       "nombre": "Distribuidora",
       "tipo": "Presente en ambos años",
       "escala": "1: distribuidora"
     },
     {
       "variable": "P003",
-      "dimension": "1 Identificacion y Muestáááreo",
-      "nombre": "Tipo de muestááára",
+      "dimension": "1 Identificación y Muestreo",
+      "nombre": "Tipo de muestra",
       "tipo": "Presente en ambos años",
-      "escala": "1: Muestááára, 2: Expansión"
+      "escala": "1: Muestra, 2: Expansión"
     },
     {
       "variable": "P004",
-      "dimension": "1 Identificacion y Muestáááreo",
+      "dimension": "1 Identificación y Muestreo",
       "nombre": "Prepago",
       "tipo": "Presente en ambos años",
       "escala": "1: Sí, 2: No"
     },
     {
       "variable": "P005",
-      "dimension": "1 Identificacion y Muestáááreo",
+      "dimension": "1 Identificación y Muestreo",
       "nombre": "Municipio",
       "tipo": "Presente en ambos años",
       "escala": "1: NOMBRE DEL MUNICIPIO"
     },
     {
       "variable": "P015",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Medio de recibimiento de la factura",
       "tipo": "Solo 2025",
       "escala": "Escala CIER (0-100)"
     },
     {
       "variable": "P016",
-      "dimension": "3 Facturacion Medicion y Tarifa",
-      "nombre": "Para continuar, necesito que me diga algunos díatos que aparecen en su @FACTURA@. ¿Podría buscar @UNA@ reciente? No necesita ser @LA ÚLTIMA@, puede ser @CUALQUIERA@ de estáááe año. Encuestáááador: Prepararse para ayudíar al encuestáááado a encontrar los díatos solicitados.",
+      "dimension": "3 Facturación, Medición y Tarifa",
+      "nombre": "Para continuar, necesito que me diga algunos datos que aparecen en su @FACTURA@. ¿Podría buscar @UNA@ reciente? No necesita ser @LA ÚLTIMA@, puede ser @CUALQUIERA@ de este año. Encuestador: Prepararse para ayudar al encuestado a encontrar los datos solicitados.",
       "tipo": "Solo 2025",
       "escala": "Escala CIER (0-100)"
     },
     {
       "variable": "P017",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Medio de recibimiento de la factura",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "7 opciones codificadas (Impresa en su casa, Correo electróúúúnico o en el sitio web, Correo electróúúúnico e impresa...)"
+      "escala": "7 opciones codificadas (Impresa en su casa, Correo electrónico o en el sitio web, Correo electrónico e impresa...)"
     },
     {
       "variable": "P018",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Presentó la factura",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Presentó, 2: No presentó"
     },
     {
       "variable": "P021",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Valor de la factura de energía",
       "tipo": "Presente en ambos años",
       "escala": "Escala CIER (0-100)"
@@ -1891,32 +1891,32 @@ window.CIER_DATA = {
       "dimension": "8 Otras Preguntas Generales",
       "nombre": "Consumo (en kWh/ mes)",
       "tipo": "Presente en ambos años",
-      "escala": "-77: Díato no disponible en la factura"
+      "escala": "-77: Dato no disponible en la factura"
     },
     {
       "variable": "P024",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Solicitud de informaciones de la factura",
       "tipo": "Solo 2025",
       "escala": "Escala CIER (0-100)"
     },
     {
       "variable": "P025",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Solicitud de informaciones de la factura",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
     },
     {
       "variable": "P027",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Valor de la factura de energía",
       "tipo": "Solo 2025",
       "escala": "Escala CIER (0-100)"
     },
     {
       "variable": "P028",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Valor de la factura de energía",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "-99: No respondió, -88: No Sabe"
@@ -1937,15 +1937,15 @@ window.CIER_DATA = {
     },
     {
       "variable": "P031",
-      "dimension": "3 Facturacion Medicion y Tarifa",
-      "nombre": "Valor de la recarga en el úúúúltimo mes",
+      "dimension": "3 Facturación, Medición y Tarifa",
+      "nombre": "Valor de la recarga en el último mes",
       "tipo": "Solo 2025",
       "escala": "Escala CIER (0-100)"
     },
     {
       "variable": "P032",
-      "dimension": "3 Facturacion Medicion y Tarifa",
-      "nombre": "Valor de la recarga en el úúúúltimo mes",
+      "dimension": "3 Facturación, Medición y Tarifa",
+      "nombre": "Valor de la recarga en el último mes",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "-99: No respondió, -88: No Sabe"
     },
@@ -1965,43 +1965,43 @@ window.CIER_DATA = {
     },
     {
       "variable": "P035",
-      "dimension": "7 Perfil Sociodemografico",
-      "nombre": "Edíad",
+      "dimension": "7 Perfil Sociodemográfico",
+      "nombre": "Edad",
       "tipo": "Solo 2025",
       "escala": "Escala CIER (0-100)"
     },
     {
       "variable": "P036",
-      "dimension": "7 Perfil Sociodemografico",
-      "nombre": "Edíad",
+      "dimension": "7 Perfil Sociodemográfico",
+      "nombre": "Edad",
       "tipo": "Presente en ambos años",
       "escala": "-99: No respondió"
     },
     {
       "variable": "P037",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Escolaridíad",
+      "nombre": "Escolaridad",
       "tipo": "Presente en ambos años",
-      "escala": "11 opciones codificadas (Primaria incompleta, Primaria completa, Secundíaria incompleta...)"
+      "escala": "11 opciones codificadas (Primaria incompleta, Primaria completa, Secundaria incompleta...)"
     },
     {
       "variable": "P038",
-      "dimension": "7 Perfil Sociodemografico",
+      "dimension": "7 Perfil Sociodemográfico",
       "nombre": "Rango del ingreso familiar",
       "tipo": "Presente en ambos años",
       "escala": "22 opciones codificadas (@FRANJA_INGRESO_1@, @FRANJA_INGRESO_2@, @FRANJA_INGRESO_3@...)"
     },
     {
       "variable": "P039",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Evaluación de la calidíad de los servicios",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Evaluación de la calidad de los servicios",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy mala, Muy mala, Mala...)"
     },
     {
       "variable": "P046",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Satisfacción con la calidíad de los servicios prestáááados",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Satisfacción con la calidad de los servicios prestados",
       "tipo": "Solo 2025",
       "escala": "Escala CIER (0-100)"
     },
@@ -2015,7 +2015,7 @@ window.CIER_DATA = {
     {
       "variable": "P048",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Tipo de cuestáááionario",
+      "nombre": "Tipo de cuestionario",
       "tipo": "Presente en ambos años",
       "escala": "1: Importancia, 2: Satisfacción"
     },
@@ -2029,34 +2029,34 @@ window.CIER_DATA = {
     {
       "variable": "P050",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "1º puestáááo",
+      "nombre": "1º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "1: Sin interrupción, 2: Sin variación de voltaje, 3: Rapidez en la ÁÁÁreanudíación de la energía cuando falta"
+      "escala": "1: Sin interrupción, 2: Sin variación de voltaje, 3: Rapidez en la reanudación de la energía cuando falta"
     },
     {
       "variable": "P051",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "2º puestáááo",
+      "nombre": "2º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "1: Sin interrupción, 2: Sin variación de voltaje, 3: Rapidez en la ÁÁÁreanudíación de la energía cuando falta"
+      "escala": "1: Sin interrupción, 2: Sin variación de voltaje, 3: Rapidez en la reanudación de la energía cuando falta"
     },
     {
       "variable": "P052",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "3º puestáááo",
+      "nombre": "3º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "1: Sin interrupción, 2: Sin variación de voltaje, 3: Rapidez en la ÁÁÁreanudíación de la energía cuando falta"
+      "escala": "1: Sin interrupción, 2: Sin variación de voltaje, 3: Rapidez en la reanudación de la energía cuando falta"
     },
     {
       "variable": "P053",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Sin interrupción",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P054",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Sin variación de voltaje",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
@@ -2064,48 +2064,48 @@ window.CIER_DATA = {
     {
       "variable": "P055",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Rapidez en la ÁÁÁreanudíación de la energía cuando falta",
+      "nombre": "Rapidez en la reanudación de la energía cuando falta",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P056",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "1º puestáááo",
+      "nombre": "1º puesto",
       "tipo": "Presente en ambos años",
       "escala": "1: Notificación de interrupción, 2: Uso eficiente, 3: Riesgos y peligros, 4: Derechos y deberes, 5: Medición del consumo de energía"
     },
     {
       "variable": "P057",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "2º puestáááo",
+      "nombre": "2º puesto",
       "tipo": "Presente en ambos años",
       "escala": "1: Notificación de interrupción, 2: Uso eficiente, 3: Riesgos y peligros, 4: Derechos y deberes, 5: Medición del consumo de energía"
     },
     {
       "variable": "P058",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "3º puestáááo",
+      "nombre": "3º puesto",
       "tipo": "Presente en ambos años",
       "escala": "1: Notificación de interrupción, 2: Uso eficiente, 3: Riesgos y peligros, 4: Derechos y deberes, 5: Medición del consumo de energía"
     },
     {
       "variable": "P059",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "4º puestáááo",
+      "nombre": "4º puesto",
       "tipo": "Presente en ambos años",
       "escala": "1: Notificación de interrupción, 2: Uso eficiente, 3: Riesgos y peligros, 4: Derechos y deberes, 5: Medición del consumo de energía"
     },
     {
       "variable": "P060",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "5º puestáááo",
+      "nombre": "5º puesto",
       "tipo": "Presente en ambos años",
       "escala": "1: Notificación de interrupción, 2: Uso eficiente, 3: Riesgos y peligros, 4: Derechos y deberes, 5: Medición del consumo de energía"
     },
     {
       "variable": "P061",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Notificación de interrupción",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
@@ -2141,44 +2141,44 @@ window.CIER_DATA = {
     {
       "variable": "P066",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "1º puestáááo",
+      "nombre": "1º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidíad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidíad de canales de pago digitales"
+      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidad de canales de pago digitales"
     },
     {
       "variable": "P067",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "2º puestáááo",
+      "nombre": "2º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidíad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidíad de canales de pago digitales"
+      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidad de canales de pago digitales"
     },
     {
       "variable": "P068",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "3º puestáááo",
+      "nombre": "3º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidíad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidíad de canales de pago digitales"
+      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidad de canales de pago digitales"
     },
     {
       "variable": "P069",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "4º puestáááo",
+      "nombre": "4º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidíad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidíad de canales de pago digitales"
+      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidad de canales de pago digitales"
     },
     {
       "variable": "P070",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "5º puestáááo",
+      "nombre": "5º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidíad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidíad de canales de pago digitales"
+      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidad de canales de pago digitales"
     },
     {
       "variable": "P071",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "6º puestáááo",
+      "nombre": "6º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidíad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidíad de canales de pago digitales"
+      "escala": "1: Plazo entre la recepción y el vencimiento, 2: Factura sin errores, 3: Facilidad de comprensión, 4: Locales para el pago, 5: Fechas para el vencimiento, 6: Disponibilidad de canales de pago digitales"
     },
     {
       "variable": "P072",
@@ -2189,7 +2189,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "P073",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Factura sin errores",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
@@ -2197,13 +2197,13 @@ window.CIER_DATA = {
     {
       "variable": "P074",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Facilidíad de comprensión",
+      "nombre": "Facilidad de comprensión",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P075",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Locales para el pago",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
@@ -2217,85 +2217,85 @@ window.CIER_DATA = {
     },
     {
       "variable": "P077",
-      "dimension": "3 Facturacion Medicion y Tarifa",
-      "nombre": "Disponibilidíad de canales de pago digitales",
+      "dimension": "3 Facturación, Medición y Tarifa",
+      "nombre": "Disponibilidad de canales de pago digitales",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P078",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "1º puestáááo",
+      "nombre": "1º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "10 opciones codificadas (Facilidíad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
+      "escala": "10 opciones codificadas (Facilidad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
     },
     {
       "variable": "P079",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "2º puestáááo",
+      "nombre": "2º puesto",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "10 opciones codificadas (Facilidíad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
+      "escala": "10 opciones codificadas (Facilidad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
     },
     {
       "variable": "P080",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "3º puestáááo",
+      "nombre": "3º puesto",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "10 opciones codificadas (Facilidíad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
+      "escala": "10 opciones codificadas (Facilidad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
     },
     {
       "variable": "P081",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "4º puestáááo",
+      "nombre": "4º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "10 opciones codificadas (Facilidíad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
+      "escala": "10 opciones codificadas (Facilidad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
     },
     {
       "variable": "P082",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "5º puestáááo",
+      "nombre": "5º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "10 opciones codificadas (Facilidíad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
+      "escala": "10 opciones codificadas (Facilidad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
     },
     {
       "variable": "P083",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "6º puestáááo",
+      "nombre": "6º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "10 opciones codificadas (Facilidíad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
+      "escala": "10 opciones codificadas (Facilidad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
     },
     {
       "variable": "P084",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "7º puestáááo",
+      "nombre": "7º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "10 opciones codificadas (Facilidíad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
+      "escala": "10 opciones codificadas (Facilidad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
     },
     {
       "variable": "P085",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "8º puestáááo",
+      "nombre": "8º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "10 opciones codificadas (Facilidíad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
+      "escala": "10 opciones codificadas (Facilidad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
     },
     {
       "variable": "P086",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "9º puestáááo",
+      "nombre": "9º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "10 opciones codificadas (Facilidíad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
+      "escala": "10 opciones codificadas (Facilidad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
     },
     {
       "variable": "P087",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "10º puestáááo",
+      "nombre": "10º puesto",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "10 opciones codificadas (Facilidíad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
+      "escala": "10 opciones codificadas (Facilidad para contactarse, Tiempo de espera hasta ser atendido, Duración de la atención...)"
     },
     {
       "variable": "P088",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Facilidíad para contactarse",
+      "nombre": "Facilidad para contactarse",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
@@ -2308,7 +2308,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "P090",
-      "dimension": "4 Atencion al Cliente y Canales",
+      "dimension": "4 Atención al Cliente y Canales",
       "nombre": "Duración del tiempo de la atención",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
@@ -2322,21 +2322,21 @@ window.CIER_DATA = {
     },
     {
       "variable": "P092",
-      "dimension": "5 Informacion y Comuúnicacion",
-      "nombre": "Claridíad en la información",
+      "dimension": "5 Información y Comunicación",
+      "nombre": "Claridad en la información",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P093",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Calidíad de la atención",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Calidad de la atención",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P094",
-      "dimension": "5 Informacion y Comuúnicacion",
+      "dimension": "5 Información y Comunicación",
       "nombre": "Plazo informado",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
@@ -2358,72 +2358,72 @@ window.CIER_DATA = {
     {
       "variable": "P097",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Autonomía/ flexibilidíad del empleado",
+      "nombre": "Autonomía/ flexibilidad del empleado",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P098",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "1º puestáááo",
+      "nombre": "1º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidíad...)"
+      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidad...)"
     },
     {
       "variable": "P099",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "2º puestáááo",
+      "nombre": "2º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidíad...)"
+      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidad...)"
     },
     {
       "variable": "P100",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "3º puestáááo",
+      "nombre": "3º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidíad...)"
+      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidad...)"
     },
     {
       "variable": "P101",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "4º puestáááo",
+      "nombre": "4º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidíad...)"
+      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidad...)"
     },
     {
       "variable": "P102",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "5º puestáááo",
+      "nombre": "5º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidíad...)"
+      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidad...)"
     },
     {
       "variable": "P103",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "6º puestáááo",
+      "nombre": "6º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidíad...)"
+      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidad...)"
     },
     {
       "variable": "P104",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "7º puestáááo",
+      "nombre": "7º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidíad...)"
+      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidad...)"
     },
     {
       "variable": "P105",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "8º puestáááo",
+      "nombre": "8º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidíad...)"
+      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidad...)"
     },
     {
       "variable": "P106",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "9º puestáááo",
+      "nombre": "9º puesto",
       "tipo": "Presente en ambos años",
-      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidíad...)"
+      "escala": "9 opciones codificadas (Respeta los derechos de los clientes, Correcta con los clientes, Invierte para proveer energía con calidad...)"
     },
     {
       "variable": "P107",
@@ -2441,14 +2441,14 @@ window.CIER_DATA = {
     },
     {
       "variable": "P109",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Invierte para proveer energía con calidíad",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Invierte para proveer energía con calidad",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P110",
-      "dimension": "5 Informacion y Comuúnicacion",
+      "dimension": "5 Información y Comunicación",
       "nombre": "Informa a sus clientes con respecto a su actuación",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
@@ -2462,7 +2462,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "P112",
-      "dimension": "4 Atencion al Cliente y Canales",
+      "dimension": "4 Atención al Cliente y Canales",
       "nombre": "Ofrece atención sin discriminación",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
@@ -2470,13 +2470,13 @@ window.CIER_DATA = {
     {
       "variable": "P113",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Dispuestáááa a negociar con sus clientes (flexible)",
+      "nombre": "Dispuesta a negociar con sus clientes (flexible)",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P114",
-      "dimension": "6 Imagen y Responsabilidíad Social",
+      "dimension": "6 Imagen y Responsabilidad Social",
       "nombre": "Se ocupa del medio ambiente",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
@@ -2484,90 +2484,90 @@ window.CIER_DATA = {
     {
       "variable": "P115",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Preparadía para situaciones de emergencia",
+      "nombre": "Preparada para situaciones de emergencia",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P116",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "1º puestáááo",
+      "nombre": "1º puesto",
       "tipo": "Presente en ambos años",
       "escala": "1: Suministro de energía, 2: Información y comuúnicación, 3: Factura de energía, 4: Atención al cliente, 5: Imagen"
     },
     {
       "variable": "P117",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "2º puestáááo",
+      "nombre": "2º puesto",
       "tipo": "Presente en ambos años",
       "escala": "1: Suministro de energía, 2: Información y comuúnicación, 3: Factura de energía, 4: Atención al cliente, 5: Imagen"
     },
     {
       "variable": "P118",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "3º puestáááo",
+      "nombre": "3º puesto",
       "tipo": "Presente en ambos años",
       "escala": "1: Suministro de energía, 2: Información y comuúnicación, 3: Factura de energía, 4: Atención al cliente, 5: Imagen"
     },
     {
       "variable": "P119",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "4º puestáááo",
+      "nombre": "4º puesto",
       "tipo": "Presente en ambos años",
       "escala": "1: Suministro de energía, 2: Información y comuúnicación, 3: Factura de energía, 4: Atención al cliente, 5: Imagen"
     },
     {
       "variable": "P120",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "5º puestáááo",
+      "nombre": "5º puesto",
       "tipo": "Presente en ambos años",
       "escala": "1: Suministro de energía, 2: Información y comuúnicación, 3: Factura de energía, 4: Atención al cliente, 5: Imagen"
     },
     {
       "variable": "P121",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Suministro de energía",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P122",
-      "dimension": "5 Informacion y Comuúnicacion",
-      "nombre": "Información y comuúnicación con el cliente",
+      "dimension": "5 Información y Comunicación",
+      "nombre": "Información y comunicación con el cliente",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P123",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Factura de energía",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P124",
-      "dimension": "4 Atencion al Cliente y Canales",
+      "dimension": "4 Atención al Cliente y Canales",
       "nombre": "Atención al cliente",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P125",
-      "dimension": "6 Imagen y Responsabilidíad Social",
+      "dimension": "6 Imagen y Responsabilidad Social",
       "nombre": "Imagen de la empresa",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P126",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Calidíad percibidía",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Calidad percibida",
       "tipo": "Presente en ambos años",
       "escala": "Escala CIER (0-100)"
     },
     {
       "variable": "P127",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Precio",
       "tipo": "Presente en ambos años",
       "escala": "Escala CIER (0-100)"
@@ -2581,14 +2581,14 @@ window.CIER_DATA = {
     },
     {
       "variable": "P129",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Sin interrupción",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P130",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Sin variación de voltaje",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
@@ -2596,13 +2596,13 @@ window.CIER_DATA = {
     {
       "variable": "P131",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Rapidez en la ÁÁÁreanudíación de la energía cuando falta",
+      "nombre": "Rapidez en la reanudación de la energía cuando falta",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P132",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Percepción sobre la frecuencia de los cortes",
       "tipo": "Presente en ambos años",
       "escala": "1: Extremamente frecuentes, 2: Muy frecuentes, 3: Frecuentes, 4: Poco frecuente, 5: Muy poco frecuentes, 6: No sabe"
@@ -2616,24 +2616,24 @@ window.CIER_DATA = {
     },
     {
       "variable": "P134",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Percepción sobre la rapidez de la reposición del servicio",
       "tipo": "Presente en ambos años",
       "escala": "1: Muy lento, 2: Lento, 3: Aceptable, 4: Rápido, 5: Muy rápido, 6: No sabe"
     },
     {
       "variable": "P135",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "¿Hubo interrupción en el suministro de energía en el úúúúltimo mes?",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "¿Hubo interrupción en el suministro de energía en el último mes?",
       "tipo": "Presente en ambos años",
       "escala": "1: Sí, hubo interrupción, 2: No hubo interrupción, 3: No sabe"
     },
     {
       "variable": "P136",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Número de interrupciones en el domicilio en el úúúúltimo mes",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Número de interrupciones en el domicilio en el último mes",
       "tipo": "Presente en ambos años",
-      "escala": "-99: No se recuerdía, -88: No sabe"
+      "escala": "-99: No se recuerda, -88: No sabe"
     },
     {
       "variable": "P137",
@@ -2666,20 +2666,20 @@ window.CIER_DATA = {
     {
       "variable": "P141",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "No se recuerdía",
+      "nombre": "No se recuerda",
       "tipo": "Presente en ambos años",
       "escala": "1: Mencionó, 2: No mencionó"
     },
     {
       "variable": "P142",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Confirmación de la duración de las interrupciones",
       "tipo": "Presente en ambos años",
       "escala": "1: Correcto, 2: No, corregir"
     },
     {
       "variable": "P143",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Notificación de interrupción",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
@@ -2714,21 +2714,21 @@ window.CIER_DATA = {
     },
     {
       "variable": "P148",
-      "dimension": "5 Informacion y Comuúnicacion",
-      "nombre": "Comuúnicación por diferentes medios",
+      "dimension": "5 Información y Comunicación",
+      "nombre": "Comunicación por diferentes medios",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P149",
-      "dimension": "5 Informacion y Comuúnicacion",
-      "nombre": "Facilidíad de comprensión de la información díadía",
+      "dimension": "5 Información y Comunicación",
+      "nombre": "Facilidad de comprensión de la información dada",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P150",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Conocimiento previo del corte programado",
       "tipo": "Presente en ambos años",
       "escala": "1: Nunca, 2: Casi nunca, 3: A veces, 4: Casi siempre, 5: Siempre, 6: No sabe"
@@ -2784,7 +2784,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "P155",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Factura sin errores",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
@@ -2792,7 +2792,7 @@ window.CIER_DATA = {
     {
       "variable": "P156",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Facilidíad de comprensión",
+      "nombre": "Facilidad de comprensión",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
@@ -2819,7 +2819,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "P157",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Locales para el pago",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
@@ -2854,8 +2854,8 @@ window.CIER_DATA = {
     },
     {
       "variable": "P159",
-      "dimension": "3 Facturacion Medicion y Tarifa",
-      "nombre": "Disponibilidíad de canales de pago digitales",
+      "dimension": "3 Facturación, Medición y Tarifa",
+      "nombre": "Disponibilidad de canales de pago digitales",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
@@ -2882,14 +2882,14 @@ window.CIER_DATA = {
     },
     {
       "variable": "P160",
-      "dimension": "3 Facturacion Medicion y Tarifa",
-      "nombre": "Aviso de facturas atrasadías o deudías",
+      "dimension": "3 Facturación, Medición y Tarifa",
+      "nombre": "Aviso de facturas atrasadas o deudas",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P161",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Aviso de corte por falta de pago",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
@@ -2917,7 +2917,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "P162",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Entrega oportuna de la factura",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Nunca, 2: Casi nunca, 3: A veces, 4: Casi siempre, 5: Siempre, 6: No sabe"
@@ -2945,21 +2945,21 @@ window.CIER_DATA = {
     },
     {
       "variable": "P163",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Frecuencia con que la factura tiene errores",
       "tipo": "Presente en ambos años",
       "escala": "1: Siempre, 2: Casi siempre, 3: A veces, 4: Casi nunca, 5: Nunca, 6: No sabe"
     },
     {
       "variable": "P164",
-      "dimension": "3 Facturacion Medicion y Tarifa",
-      "nombre": "Cantidíad de locales y medios para el pago",
+      "dimension": "3 Facturación, Medición y Tarifa",
+      "nombre": "Cantidad de locales y medios para el pago",
       "tipo": "Presente en ambos años",
       "escala": "1: Muy escasos, 2: Escasos, 3: Aceptables, 4: Satisfactorios, 5: Muy satisfactorios, 6: No sabe"
     },
     {
       "variable": "P165",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Plazo para cancelar la factura",
       "tipo": "Presente en ambos años",
       "escala": "1: Muy escaso, 2: Escaso, 3: Aceptable, 4: Satisfactorio, 5: Muy satisfactorio, 6: No sabe"
@@ -2973,57 +2973,57 @@ window.CIER_DATA = {
     },
     {
       "variable": "P167",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Cómo recibe la factura",
       "tipo": "Presente en ambos años",
-      "escala": "-99: No respondió, -88: No Sabe, 1: Correo electróúúúnico, 2: Factura impresa, 3: Ambos medios"
+      "escala": "-99: No respondió, -88: No Sabe, 1: Correo electrónico, 2: Factura impresa, 3: Ambos medios"
     },
     {
       "variable": "P168",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Para pagar la factura de energía",
       "tipo": "Solo 2025",
       "escala": "Escala CIER (0-100)"
     },
     {
       "variable": "P169",
-      "dimension": "3 Facturacion Medicion y Tarifa",
-      "nombre": "Disposición para recibir la factura úúnicamente de forma electróúnica",
+      "dimension": "3 Facturación, Medición y Tarifa",
+      "nombre": "Disposición para recibir la factura únicamente de forma electrónica",
       "tipo": "Presente en ambos años",
-      "escala": "-99: No respondió, -88: No Sabe, 1: Sí, cambiaría, 2: Sí, pero necesitaría ayudía, 3: Tal vez/ necesita más información, 4: No, prefiere la impresa"
+      "escala": "-99: No respondió, -88: No Sabe, 1: Sí, cambiaría, 2: Sí, pero necesitaría ayuda, 3: Tal vez/ necesita más información, 4: No, prefiere la impresa"
     },
     {
       "variable": "P170",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Tiempo de anticipación entre e SMS y el corte de la luz",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Tiempo de anticipación entre el SMS y el corte de la luz",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P171",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Disponibilidíad de puntos de recarga",
+      "nombre": "Disponibilidad de puntos de recarga",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P172",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Rapidez de la llegadía del SMS",
+      "nombre": "Rapidez de la llegada del SMS",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P173",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Claridíad del SMS con su consumo en kWh",
+      "nombre": "Claridad del SMS con su consumo en kWh",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P174",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Disponibilidíad del sistema",
+      "nombre": "Disponibilidad del sistema",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
@@ -3044,7 +3044,7 @@ window.CIER_DATA = {
     {
       "variable": "P177",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Facilidíad para contactarse",
+      "nombre": "Facilidad para contactarse",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
@@ -3057,7 +3057,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "P179",
-      "dimension": "4 Atencion al Cliente y Canales",
+      "dimension": "4 Atención al Cliente y Canales",
       "nombre": "Duración del tiempo de la atención",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
@@ -3071,21 +3071,21 @@ window.CIER_DATA = {
     },
     {
       "variable": "P181",
-      "dimension": "5 Informacion y Comuúnicacion",
-      "nombre": "Claridíad en la información",
+      "dimension": "5 Información y Comunicación",
+      "nombre": "Claridad en la información",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P182",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Calidíad de la atención",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Calidad de la atención",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P183",
-      "dimension": "5 Informacion y Comuúnicacion",
+      "dimension": "5 Información y Comunicación",
       "nombre": "Plazo informado",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
@@ -3107,14 +3107,14 @@ window.CIER_DATA = {
     {
       "variable": "P186",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Autonomía/ flexibilidíad del empleado",
+      "nombre": "Autonomía/ flexibilidad del empleado",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P187",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Facilidíad de contacto con la empresa",
+      "nombre": "Facilidad de contacto con la empresa",
       "tipo": "Presente en ambos años",
       "escala": "1: Muy mala, 2: Mala, 3: Regular, 4: Buena, 5: Muy buena, 6: No sabe"
     },
@@ -3127,7 +3127,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "P189",
-      "dimension": "4 Atencion al Cliente y Canales",
+      "dimension": "4 Atención al Cliente y Canales",
       "nombre": "Tiempo dedicado para atender su reclamo",
       "tipo": "Presente en ambos años",
       "escala": "1: Muy largo, 2: Largo, 3: Aceptable, 4: Satisfactorio, 5: Muy satisfactorio, 6: No sabe"
@@ -3141,15 +3141,15 @@ window.CIER_DATA = {
     },
     {
       "variable": "P191",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Calidíad de la información/ acciones proporcionadías",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Calidad de la información/ acciones proporcionadas",
       "tipo": "Presente en ambos años",
       "escala": "1: Muy malas, 2: Malas, 3: Regulares, 4: Buenas, 5: Muy buenas, 6: No sabe"
     },
     {
       "variable": "P192",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Trato, respeto y cordialidíad prestáááadía por el personal",
+      "nombre": "Trato, respeto y cordialidad prestada por el personal",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Muy malas, 2: Malas, 3: Regulares, 4: Buenas, 5: Muy buenas, 6: No sabe"
     },
@@ -3232,14 +3232,14 @@ window.CIER_DATA = {
     },
     {
       "variable": "P198",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Invierte para proveer energía con calidíad",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Invierte para proveer energía con calidad",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P199",
-      "dimension": "5 Informacion y Comuúnicacion",
+      "dimension": "5 Información y Comunicación",
       "nombre": "Informa a sus clientes con respecto a su actuación",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
@@ -3253,7 +3253,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "P201",
-      "dimension": "4 Atencion al Cliente y Canales",
+      "dimension": "4 Atención al Cliente y Canales",
       "nombre": "Ofrece atención sin discriminación",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
@@ -3261,13 +3261,13 @@ window.CIER_DATA = {
     {
       "variable": "P202",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Dispuestáááa a negociar con sus clientes (flexible)",
+      "nombre": "Dispuesta a negociar con sus clientes (flexible)",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P203",
-      "dimension": "6 Imagen y Responsabilidíad Social",
+      "dimension": "6 Imagen y Responsabilidad Social",
       "nombre": "Se ocupa del medio ambiente",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
@@ -3275,14 +3275,14 @@ window.CIER_DATA = {
     {
       "variable": "P204",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Preparadía para situaciones de emergencia",
+      "nombre": "Preparada para situaciones de emergencia",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P205",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Enfoca en las necesidíades de sus clientes",
+      "nombre": "Enfoca en las necesidades de sus clientes",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
@@ -3317,28 +3317,28 @@ window.CIER_DATA = {
     {
       "variable": "P210",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Lleva energía a regiones no atendidías",
+      "nombre": "Lleva energía a regiones no atendidas",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P211",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Contribuye para el desarrollo econ. de la ciudíad",
+      "nombre": "Contribuye para el desarrollo econ. de la ciudad",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P212",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Facilita el acceso de ciudíadíanos con neces. espec.",
+      "nombre": "Facilita el acceso de ciudadanos con neces. espec.",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P213",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Honestáááa/ cumple con sus obligaciones",
+      "nombre": "Honesta/ cumple con sus obligaciones",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
@@ -3352,7 +3352,7 @@ window.CIER_DATA = {
     {
       "variable": "P215",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Garantiza igualdíad de oportunidíades y trato entre mujeres y hombres",
+      "nombre": "Garantiza igualdad de oportunidades y trato entre mujeres y hombres",
       "tipo": "Presente en ambos años",
       "escala": "1: Sí, 2: No, 3: NS, 4: NR"
     },
@@ -3415,7 +3415,7 @@ window.CIER_DATA = {
     {
       "variable": "P224",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Recorre muchos km y teme quedíarse sin carga",
+      "nombre": "Recorre muchos km y teme quedarse sin carga",
       "tipo": "Presente en ambos años",
       "escala": "1: Mencionó, 2: No mencionó"
     },
@@ -3450,7 +3450,7 @@ window.CIER_DATA = {
     {
       "variable": "P229",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Úúltima vez que faltó energía en su casa debido a eventos climáticos graves c",
+      "nombre": "Última vez que faltó energía en su casa debido a eventos climáticos graves c",
       "tipo": "Solo 2025",
       "escala": "Escala CIER (0-100)"
     },
@@ -3470,29 +3470,29 @@ window.CIER_DATA = {
     },
     {
       "variable": "P234",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Precio de la factura",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy caro/ muy costoso, Muy caro/ muy costoso, Caro/ costoso...)"
     },
     {
       "variable": "P235",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Percepción de justicia del precio de la energía",
       "tipo": "Presente en ambos años",
       "escala": "-99: NR, -88: NS, 1: Es justo, 2: No es justo"
     },
     {
       "variable": "P236",
-      "dimension": "7 Perfil Sociodemografico",
+      "dimension": "7 Perfil Sociodemográfico",
       "nombre": "Número de personas que viven en el domicilio",
       "tipo": "Solo 2025",
       "escala": "Escala CIER (0-100)"
     },
     {
       "variable": "P237",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Precio comparado a la calidíad del suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Precio comparado a la calidad del suministro",
       "tipo": "Presente en ambos años",
       "escala": "12 opciones codificadas (Muy caro, Muy caro, Caro...)"
     },
@@ -3508,7 +3508,7 @@ window.CIER_DATA = {
       "dimension": "8 Otras Preguntas Generales",
       "nombre": "NPS - Net Promoter Score",
       "tipo": "Presente en ambos años",
-      "escala": "13 opciones codificadas (Nadía probable, 1, 2...)"
+      "escala": "13 opciones codificadas (Nada probable, 1, 2...)"
     },
     {
       "variable": "P240",
@@ -3519,14 +3519,14 @@ window.CIER_DATA = {
     },
     {
       "variable": "P241",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Otros contactos además de pago de la factura",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, tuvo otros contactos, 2: No tuvo otros contactos"
     },
     {
       "variable": "P242",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Para pagar la factura de energía",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
@@ -3540,7 +3540,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "P244",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Copia de la factura",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
@@ -3554,7 +3554,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "P246",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Negociar facturas en retraso",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
@@ -3568,56 +3568,56 @@ window.CIER_DATA = {
     },
     {
       "variable": "P248",
-      "dimension": "4 Atencion al Cliente y Canales",
+      "dimension": "4 Atención al Cliente y Canales",
       "nombre": "Reclamo (Alumbrado Público)",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
     },
     {
       "variable": "P249",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Información sobre puntos de pago",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
     },
     {
       "variable": "P250",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Problema con la factura",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
     },
     {
       "variable": "P251",
-      "dimension": "3 Facturacion Medicion y Tarifa",
+      "dimension": "3 Facturación, Medición y Tarifa",
       "nombre": "Cobro indebido",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
     },
     {
       "variable": "P252",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
+      "dimension": "2 Calidad y Continuidad del Suministro",
       "nombre": "Corte de energía",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
     },
     {
       "variable": "P253",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Díaño en aparato electróúúúnico",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Daño en aparato electrónico",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
     },
     {
       "variable": "P254",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Consultar interrupciones programadías",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Consultar interrupciones programadas",
       "tipo": "Presente en ambos años",
       "escala": "1: Sí, 2: No"
     },
     {
       "variable": "P255",
-      "dimension": "5 Informacion y Comuúnicacion",
+      "dimension": "5 Información y Comunicación",
       "nombre": "Solicitar información",
       "tipo": "Presente en ambos años",
       "escala": "1: Sí, 2: No"
@@ -3638,15 +3638,15 @@ window.CIER_DATA = {
     },
     {
       "variable": "P258",
-      "dimension": "4 Atencion al Cliente y Canales",
+      "dimension": "4 Atención al Cliente y Canales",
       "nombre": "Reclamo (retraso en el servicio)",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
     },
     {
       "variable": "P259",
-      "dimension": "4 Atencion al Cliente y Canales",
-      "nombre": "Reclamo (servicio mal ÁÁÁrealizado)",
+      "dimension": "4 Atención al Cliente y Canales",
+      "nombre": "Reclamo (servicio mal realizado)",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
     },
@@ -3674,20 +3674,20 @@ window.CIER_DATA = {
     {
       "variable": "P264",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Facilidíad para relacionarse",
+      "nombre": "Facilidad para relacionarse",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Muy difícil, 2: Difícil, 3: Ni fácil ni difícil, 4: Fácil, 5: Muy fácil, 6: NS/ NR"
     },
     {
       "variable": "P267",
-      "dimension": "4 Atencion al Cliente y Canales",
+      "dimension": "4 Atención al Cliente y Canales",
       "nombre": "Satisfacción con canales digitales",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P272",
-      "dimension": "4 Atencion al Cliente y Canales",
+      "dimension": "4 Atención al Cliente y Canales",
       "nombre": "Mencionó canal digital",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Sí, 2: No"
@@ -3701,15 +3701,15 @@ window.CIER_DATA = {
     },
     {
       "variable": "P275",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Calidíad del alumbrado público",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Calidad del alumbrado público",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
     {
       "variable": "P276",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Mantenimiento del alumbrado público en calles, avenidías",
+      "nombre": "Mantenimiento del alumbrado público en calles, avenidas",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy insatisfecho, Muy insatisfecho, Insatisfecho...)"
     },
@@ -3743,35 +3743,35 @@ window.CIER_DATA = {
     },
     {
       "variable": "P281",
-      "dimension": "6 Imagen y Responsabilidíad Social",
+      "dimension": "6 Imagen y Responsabilidad Social",
       "nombre": "Responsable por el alumbrado público",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "1: La municipalidíad, 2: La distribuidora, 3: Otro, 4: No respondió/ No sabe"
+      "escala": "1: La municipalidad, 2: La distribuidora, 3: Otro, 4: No respondió/ No sabe"
     },
     {
       "variable": "P282",
-      "dimension": "7 Perfil Sociodemografico",
+      "dimension": "7 Perfil Sociodemográfico",
       "nombre": "Número de personas que viven en el domicilio",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "-99: No respondió"
     },
     {
       "variable": "P283",
-      "dimension": "7 Perfil Sociodemografico",
+      "dimension": "7 Perfil Sociodemográfico",
       "nombre": "Ingreso familiar",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "-99: No respondió, -88: No Sabe"
     },
     {
       "variable": "P284",
-      "dimension": "7 Perfil Sociodemografico",
+      "dimension": "7 Perfil Sociodemográfico",
       "nombre": "Confirmación del ingreso familiar",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "22 opciones codificadas (@FRANJA_INGRESO_1@, @FRANJA_INGRESO_2@, @FRANJA_INGRESO_3@...)"
     },
     {
       "variable": "P285",
-      "dimension": "7 Perfil Sociodemografico",
+      "dimension": "7 Perfil Sociodemográfico",
       "nombre": "Género",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "1: Masculino, 2: Femenino"
@@ -3786,84 +3786,84 @@ window.CIER_DATA = {
     {
       "variable": "P303",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "1º puestáááo",
+      "nombre": "1º puesto",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "7 opciones codificadas (Tiempo de anticipación entre e SMS y el corte de la luz, Disponibilidíad de puntos de recarga, Rapidez de la llegadía del SMS...)"
+      "escala": "7 opciones codificadas (Tiempo de anticipación entre el SMS y el corte de la luz, Disponibilidad de puntos de recarga, Rapidez de la llegada del SMS...)"
     },
     {
       "variable": "P304",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "2º puestáááo",
+      "nombre": "2º puesto",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "7 opciones codificadas (Tiempo de anticipación entre e SMS y el corte de la luz, Disponibilidíad de puntos de recarga, Rapidez de la llegadía del SMS...)"
+      "escala": "7 opciones codificadas (Tiempo de anticipación entre el SMS y el corte de la luz, Disponibilidad de puntos de recarga, Rapidez de la llegada del SMS...)"
     },
     {
       "variable": "P305",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "3º puestáááo",
+      "nombre": "3º puesto",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "7 opciones codificadas (Tiempo de anticipación entre e SMS y el corte de la luz, Disponibilidíad de puntos de recarga, Rapidez de la llegadía del SMS...)"
+      "escala": "7 opciones codificadas (Tiempo de anticipación entre el SMS y el corte de la luz, Disponibilidad de puntos de recarga, Rapidez de la llegada del SMS...)"
     },
     {
       "variable": "P306",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "4º puestáááo",
+      "nombre": "4º puesto",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "7 opciones codificadas (Tiempo de anticipación entre e SMS y el corte de la luz, Disponibilidíad de puntos de recarga, Rapidez de la llegadía del SMS...)"
+      "escala": "7 opciones codificadas (Tiempo de anticipación entre el SMS y el corte de la luz, Disponibilidad de puntos de recarga, Rapidez de la llegada del SMS...)"
     },
     {
       "variable": "P307",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "5º puestáááo",
+      "nombre": "5º puesto",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "7 opciones codificadas (Tiempo de anticipación entre e SMS y el corte de la luz, Disponibilidíad de puntos de recarga, Rapidez de la llegadía del SMS...)"
+      "escala": "7 opciones codificadas (Tiempo de anticipación entre el SMS y el corte de la luz, Disponibilidad de puntos de recarga, Rapidez de la llegada del SMS...)"
     },
     {
       "variable": "P308",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "6º puestáááo",
+      "nombre": "6º puesto",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "7 opciones codificadas (Tiempo de anticipación entre e SMS y el corte de la luz, Disponibilidíad de puntos de recarga, Rapidez de la llegadía del SMS...)"
+      "escala": "7 opciones codificadas (Tiempo de anticipación entre el SMS y el corte de la luz, Disponibilidad de puntos de recarga, Rapidez de la llegada del SMS...)"
     },
     {
       "variable": "P309",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "7º puestáááo",
+      "nombre": "7º puesto",
       "tipo": "Solo 2026 (Nueva)",
-      "escala": "7 opciones codificadas (Tiempo de anticipación entre e SMS y el corte de la luz, Disponibilidíad de puntos de recarga, Rapidez de la llegadía del SMS...)"
+      "escala": "7 opciones codificadas (Tiempo de anticipación entre el SMS y el corte de la luz, Disponibilidad de puntos de recarga, Rapidez de la llegada del SMS...)"
     },
     {
       "variable": "P310",
-      "dimension": "2 Calidíad y Continuidíad Suministro",
-      "nombre": "Tiempo de anticipación entre e SMS y el corte de la luz",
+      "dimension": "2 Calidad y Continuidad del Suministro",
+      "nombre": "Tiempo de anticipación entre el SMS y el corte de la luz",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P311",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Disponibilidíad de puntos de recarga",
+      "nombre": "Disponibilidad de puntos de recarga",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P312",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Rapidez de la llegadía del SMS",
+      "nombre": "Rapidez de la llegada del SMS",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P313",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Claridíad del SMS con su consumo en kWh",
+      "nombre": "Claridad del SMS con su consumo en kWh",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
     {
       "variable": "P314",
       "dimension": "8 Otras Preguntas Generales",
-      "nombre": "Disponibilidíad del sistema",
+      "nombre": "Disponibilidad del sistema",
       "tipo": "Solo 2026 (Nueva)",
       "escala": "12 opciones codificadas (Muy baja importancia, Muy baja importancia, Baja importancia...)"
     },
@@ -3883,7 +3883,7 @@ window.CIER_DATA = {
     },
     {
       "variable": "id",
-      "dimension": "1 Identificacion y Muestáááreo",
+      "dimension": "1 Identificación y Muestreo",
       "nombre": "ID",
       "tipo": "Solo 2025",
       "escala": "Escala CIER (0-100)"
@@ -3892,323 +3892,547 @@ window.CIER_DATA = {
   "filesCatalog": [
     {
       "year": 2025,
-      "zip_source": "Banco de Díatos_KpRCy.zip",
-      "file_name": "Banco de Díatos.xlsx",
+      "zip_source": "Banco de Datos_KpRCy.zip",
+      "file_name": "Banco de Datos.xlsx",
       "file_extension": ".xlsx",
-      "catalogo_archivos": "4_Microdíatos_Frecuencias",
+      "category": "4_Microdatos_Frecuencias",
+      "catalogo_archivos": "4_Microdatos_Frecuencias",
       "size_kb": 527.77,
-      "modified_diate": "2025-11-14",
-      "local_path": "díata\\classified\\2025\\4_Microdíatos_Frecuencias\\Banco de Díatos.xlsx"
+      "modified_date": "2025-11-14",
+      "local_path": "data\\classified\\2025\\4_Microdatos_Frecuencias\\Banco de Datos.xlsx",
+      "archivo": "Banco de Datos.xlsx",
+      "anio": 2025,
+      "tamano_mb": 0.52,
+      "extension": "XLSX",
+      "tipo": "4_Microdatos_Frecuencias",
+      "descripcion": "Documento oficial de relevamiento (4_Microdatos_Frecuencias)."
     },
     {
       "year": 2025,
       "zip_source": "Carta  - AR_zrWHZ.zip",
       "file_name": "Carta  - AR.pdf",
       "file_extension": ".pdf",
+      "category": "1_Metodologia_Instrumentos",
       "catalogo_archivos": "1_Metodologia_Instrumentos",
       "size_kb": 417.16,
-      "modified_diate": "2025-08-15",
-      "local_path": "díata\\classified\\2025\\1_Metodologia_Instrumentos\\Carta  - AR.pdf"
+      "modified_date": "2025-08-15",
+      "local_path": "data\\classified\\2025\\1_Metodologia_Instrumentos\\Carta  - AR.pdf",
+      "archivo": "Carta  - AR.pdf",
+      "anio": 2025,
+      "tamano_mb": 0.41,
+      "extension": "PDF",
+      "tipo": "1_Metodologia_Instrumentos",
+      "descripcion": "Documento oficial de relevamiento (1_Metodologia_Instrumentos)."
     },
     {
       "year": 2025,
       "zip_source": "Cronograma de campo EPEC-AR_g7VmD.zip",
       "file_name": "Cronograma de campo EPEC-AR.xls",
       "file_extension": ".xls",
-      "catalogo_archivos": "2_Operacion_Campo_Muestááreo",
+      "category": "2_Operacion_Campo_Muestreo",
+      "catalogo_archivos": "2_Operacion_Campo_Muestreo",
       "size_kb": 47.5,
-      "modified_diate": "2025-08-08",
-      "local_path": "díata\\classified\\2025\\2_Operacion_Campo_Muestááreo\\Cronograma de campo EPEC-AR.xls"
+      "modified_date": "2025-08-08",
+      "local_path": "data\\classified\\2025\\2_Operacion_Campo_Muestreo\\Cronograma de campo EPEC-AR.xls",
+      "archivo": "Cronograma de campo EPEC-AR.xls",
+      "anio": 2025,
+      "tamano_mb": 0.05,
+      "extension": "XLS",
+      "tipo": "2_Operacion_Campo_Muestreo",
+      "descripcion": "Documento oficial de relevamiento (2_Operacion_Campo_Muestreo)."
     },
     {
       "year": 2025,
-      "zip_source": "Cuestááionario CIER_2025_ARGENTINA_CzIR8.zip",
-      "file_name": "Cuestááionario CIER_2025_ARGENTINA.pdf",
+      "zip_source": "Cuestionario CIER_2025_ARGENTINA_CzIR8.zip",
+      "file_name": "Cuestionario CIER_2025_ARGENTINA.pdf",
       "file_extension": ".pdf",
+      "category": "1_Metodologia_Instrumentos",
       "catalogo_archivos": "1_Metodologia_Instrumentos",
       "size_kb": 655.91,
-      "modified_diate": "2025-08-14",
-      "local_path": "díata\\classified\\2025\\1_Metodologia_Instrumentos\\Cuestááionario CIER_2025_ARGENTINA.pdf"
+      "modified_date": "2025-08-14",
+      "local_path": "data\\classified\\2025\\1_Metodologia_Instrumentos\\Cuestionario CIER_2025_ARGENTINA.pdf",
+      "archivo": "Cuestionario CIER_2025_ARGENTINA.pdf",
+      "anio": 2025,
+      "tamano_mb": 0.64,
+      "extension": "PDF",
+      "tipo": "1_Metodologia_Instrumentos",
+      "descripcion": "Documento oficial de relevamiento (1_Metodologia_Instrumentos)."
     },
     {
       "year": 2025,
-      "zip_source": "Cuestááionario CIER_2025_ARGENTINA_uMBx9.zip",
-      "file_name": "Cuestááionario CIER_2025_ARGENTINA.pdf",
+      "zip_source": "Cuestionario CIER_2025_ARGENTINA_uMBx9.zip",
+      "file_name": "Cuestionario CIER_2025_ARGENTINA.pdf",
       "file_extension": ".pdf",
+      "category": "1_Metodologia_Instrumentos",
       "catalogo_archivos": "1_Metodologia_Instrumentos",
       "size_kb": 655.91,
-      "modified_diate": "2025-08-14",
-      "local_path": "díata\\classified\\2025\\1_Metodologia_Instrumentos\\Cuestááionario CIER_2025_ARGENTINA.pdf"
+      "modified_date": "2025-08-14",
+      "local_path": "data\\classified\\2025\\1_Metodologia_Instrumentos\\Cuestionario CIER_2025_ARGENTINA.pdf",
+      "archivo": "Cuestionario CIER_2025_ARGENTINA.pdf",
+      "anio": 2025,
+      "tamano_mb": 0.64,
+      "extension": "PDF",
+      "tipo": "1_Metodologia_Instrumentos",
+      "descripcion": "Documento oficial de relevamiento (1_Metodologia_Instrumentos)."
     },
     {
       "year": 2025,
-      "zip_source": "Dicionario de Díatos_CuyPI.zip",
-      "file_name": "Dicion rio de Díatos.xlsx",
+      "zip_source": "Dicionario de Datos_CuyPI.zip",
+      "file_name": "Dicion rio de Datos.xlsx",
       "file_extension": ".xlsx",
-      "catalogo_archivos": "3_Diccionarios_Metadíatos",
+      "category": "3_Diccionarios_Metadatos",
+      "catalogo_archivos": "3_Diccionarios_Metadatos",
       "size_kb": 64.38,
-      "modified_diate": "2025-11-14",
-      "local_path": "díata\\classified\\2025\\3_Diccionarios_Metadíatos\\Dicion rio de Díatos.xlsx"
+      "modified_date": "2025-11-14",
+      "local_path": "data\\classified\\2025\\3_Diccionarios_Metadatos\\Dicion rio de Datos.xlsx",
+      "archivo": "Dicion rio de Datos.xlsx",
+      "anio": 2025,
+      "tamano_mb": 0.06,
+      "extension": "XLSX",
+      "tipo": "3_Diccionarios_Metadatos",
+      "descripcion": "Documento oficial de relevamiento (3_Diccionarios_Metadatos)."
     },
     {
       "year": 2025,
-      "zip_source": "EPEC-AR - 20% Catastro de encuestááados_j2cqm.zip",
-      "file_name": "EPEC-AR - 20% Catastro de encuestááados.xls",
+      "zip_source": "EPEC-AR - 20% Catastro de encuestados_j2cqm.zip",
+      "file_name": "EPEC-AR - 20% Catastro de encuestados.xls",
       "file_extension": ".xls",
-      "catalogo_archivos": "2_Operacion_Campo_Muestááreo",
+      "category": "2_Operacion_Campo_Muestreo",
+      "catalogo_archivos": "2_Operacion_Campo_Muestreo",
       "size_kb": 72.0,
-      "modified_diate": "2025-10-13",
-      "local_path": "díata\\classified\\2025\\2_Operacion_Campo_Muestááreo\\EPEC-AR - 20% Catastro de encuestááados.xls"
+      "modified_date": "2025-10-13",
+      "local_path": "data\\classified\\2025\\2_Operacion_Campo_Muestreo\\EPEC-AR - 20% Catastro de encuestados.xls",
+      "archivo": "EPEC-AR - 20% Catastro de encuestados.xls",
+      "anio": 2025,
+      "tamano_mb": 0.07,
+      "extension": "XLS",
+      "tipo": "2_Operacion_Campo_Muestreo",
+      "descripcion": "Documento oficial de relevamiento (2_Operacion_Campo_Muestreo)."
     },
     {
       "year": 2025,
-      "zip_source": "Entrenamiento EPEC-AR_segundía capacitacion_G2mv3.zip",
-      "file_name": "Entrenamiento EPEC-AR_segundía capacitaci¢n.xls",
+      "zip_source": "Entrenamiento EPEC-AR_segunda capacitacion_G2mv3.zip",
+      "file_name": "Entrenamiento EPEC-AR_segunda capacitaci¢n.xls",
       "file_extension": ".xls",
-      "catalogo_archivos": "2_Operacion_Campo_Muestááreo",
+      "category": "2_Operacion_Campo_Muestreo",
+      "catalogo_archivos": "2_Operacion_Campo_Muestreo",
       "size_kb": 47.0,
-      "modified_diate": "2025-09-03",
-      "local_path": "díata\\classified\\2025\\2_Operacion_Campo_Muestááreo\\Entrenamiento EPEC-AR_segundía capacitaci¢n.xls"
+      "modified_date": "2025-09-03",
+      "local_path": "data\\classified\\2025\\2_Operacion_Campo_Muestreo\\Entrenamiento EPEC-AR_segunda capacitaci¢n.xls",
+      "archivo": "Entrenamiento EPEC-AR_segunda capacitaci¢n.xls",
+      "anio": 2025,
+      "tamano_mb": 0.05,
+      "extension": "XLS",
+      "tipo": "2_Operacion_Campo_Muestreo",
+      "descripcion": "Documento oficial de relevamiento (2_Operacion_Campo_Muestreo)."
     },
     {
       "year": 2025,
       "zip_source": "Entrevistador EPEC-AR_H5pxN.zip",
       "file_name": "Entrevistador EPEC-AR.xls",
       "file_extension": ".xls",
-      "catalogo_archivos": "2_Operacion_Campo_Muestááreo",
+      "category": "2_Operacion_Campo_Muestreo",
+      "catalogo_archivos": "2_Operacion_Campo_Muestreo",
       "size_kb": 54.0,
-      "modified_diate": "2025-09-09",
-      "local_path": "díata\\classified\\2025\\2_Operacion_Campo_Muestááreo\\Entrevistador EPEC-AR.xls"
+      "modified_date": "2025-09-09",
+      "local_path": "data\\classified\\2025\\2_Operacion_Campo_Muestreo\\Entrevistador EPEC-AR.xls",
+      "archivo": "Entrevistador EPEC-AR.xls",
+      "anio": 2025,
+      "tamano_mb": 0.05,
+      "extension": "XLS",
+      "tipo": "2_Operacion_Campo_Muestreo",
+      "descripcion": "Documento oficial de relevamiento (2_Operacion_Campo_Muestreo)."
     },
     {
       "year": 2025,
       "zip_source": "Inf Comp Paises 2025 - EPEC-AR_cP8Er.zip",
       "file_name": "Inf Comp Paises 2025 - EPEC-AR.pdf",
       "file_extension": ".pdf",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 8487.88,
-      "modified_diate": "2025-11-14",
-      "local_path": "díata\\classified\\2025\\5_Informes_Presentaciones\\Inf Comp Paises 2025 - EPEC-AR.pdf"
+      "modified_date": "2025-11-14",
+      "local_path": "data\\classified\\2025\\5_Informes_Presentaciones\\Inf Comp Paises 2025 - EPEC-AR.pdf",
+      "archivo": "Inf Comp Paises 2025 - EPEC-AR.pdf",
+      "anio": 2025,
+      "tamano_mb": 8.29,
+      "extension": "PDF",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2025,
       "zip_source": "Informe Comp entre Distrib 2025 - EPEC-AR_sL5xe.zip",
       "file_name": "Informe Comp entre Distrib 2025 - EPEC-AR.pdf",
       "file_extension": ".pdf",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 8829.39,
-      "modified_diate": "2025-11-14",
-      "local_path": "díata\\classified\\2025\\5_Informes_Presentaciones\\Informe Comp entre Distrib 2025 - EPEC-AR.pdf"
+      "modified_date": "2025-11-14",
+      "local_path": "data\\classified\\2025\\5_Informes_Presentaciones\\Informe Comp entre Distrib 2025 - EPEC-AR.pdf",
+      "archivo": "Informe Comp entre Distrib 2025 - EPEC-AR.pdf",
+      "anio": 2025,
+      "tamano_mb": 8.62,
+      "extension": "PDF",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2025,
       "zip_source": "Informe Individual 2025 - EPEC-AR_d2XYh.zip",
       "file_name": "Informe Individual 2025 - EPEC-AR.pdf",
       "file_extension": ".pdf",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 12518.85,
-      "modified_diate": "2025-11-14",
-      "local_path": "díata\\classified\\2025\\5_Informes_Presentaciones\\Informe Individual 2025 - EPEC-AR.pdf"
+      "modified_date": "2025-11-14",
+      "local_path": "data\\classified\\2025\\5_Informes_Presentaciones\\Informe Individual 2025 - EPEC-AR.pdf",
+      "archivo": "Informe Individual 2025 - EPEC-AR.pdf",
+      "anio": 2025,
+      "tamano_mb": 12.23,
+      "extension": "PDF",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2025,
       "zip_source": "Informe Individual 2025 - EPEC-AR_tTjF3.zip",
       "file_name": "Informe Individual 2025 - EPEC-AR.pdf",
       "file_extension": ".pdf",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 12518.85,
-      "modified_diate": "2025-11-17",
-      "local_path": "díata\\classified\\2025\\5_Informes_Presentaciones\\Informe Individual 2025 - EPEC-AR.pdf"
+      "modified_date": "2025-11-17",
+      "local_path": "data\\classified\\2025\\5_Informes_Presentaciones\\Informe Individual 2025 - EPEC-AR.pdf",
+      "archivo": "Informe Individual 2025 - EPEC-AR.pdf",
+      "anio": 2025,
+      "tamano_mb": 12.23,
+      "extension": "PDF",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2025,
       "zip_source": "Informe Regiones 2025 - EPEC-AR_7lGkC.zip",
       "file_name": "Informe Regiones 2025 - EPEC-AR.pdf",
       "file_extension": ".pdf",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 11654.95,
-      "modified_diate": "2025-11-14",
-      "local_path": "díata\\classified\\2025\\5_Informes_Presentaciones\\Informe Regiones 2025 - EPEC-AR.pdf"
+      "modified_date": "2025-11-14",
+      "local_path": "data\\classified\\2025\\5_Informes_Presentaciones\\Informe Regiones 2025 - EPEC-AR.pdf",
+      "archivo": "Informe Regiones 2025 - EPEC-AR.pdf",
+      "anio": 2025,
+      "tamano_mb": 11.38,
+      "extension": "PDF",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2025,
       "zip_source": "Piloto EPEC-AR_xjriX.zip",
       "file_name": "Piloto EPEC-AR.xls",
       "file_extension": ".xls",
-      "catalogo_archivos": "2_Operacion_Campo_Muestááreo",
+      "category": "2_Operacion_Campo_Muestreo",
+      "catalogo_archivos": "2_Operacion_Campo_Muestreo",
       "size_kb": 45.5,
-      "modified_diate": "2025-08-08",
-      "local_path": "díata\\classified\\2025\\2_Operacion_Campo_Muestááreo\\Piloto EPEC-AR.xls"
+      "modified_date": "2025-08-08",
+      "local_path": "data\\classified\\2025\\2_Operacion_Campo_Muestreo\\Piloto EPEC-AR.xls",
+      "archivo": "Piloto EPEC-AR.xls",
+      "anio": 2025,
+      "tamano_mb": 0.04,
+      "extension": "XLS",
+      "tipo": "2_Operacion_Campo_Muestreo",
+      "descripcion": "Documento oficial de relevamiento (2_Operacion_Campo_Muestreo)."
     },
     {
       "year": 2025,
       "zip_source": "Presentacion Individual 2025 - EPEC-AR_S8OUi.zip",
       "file_name": "Presentacion Individual 2025 - EPEC-AR.pptx",
       "file_extension": ".pptx",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 55522.16,
-      "modified_diate": "2025-11-14",
-      "local_path": "díata\\classified\\2025\\5_Informes_Presentaciones\\Presentacion Individual 2025 - EPEC-AR.pptx"
+      "modified_date": "2025-11-14",
+      "local_path": "data\\classified\\2025\\5_Informes_Presentaciones\\Presentacion Individual 2025 - EPEC-AR.pptx",
+      "archivo": "Presentacion Individual 2025 - EPEC-AR.pptx",
+      "anio": 2025,
+      "tamano_mb": 54.22,
+      "extension": "PPTX",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2025,
       "zip_source": "[xlsx] BD EPEC-AR_gul67.zip",
       "file_name": "[xlsx] BD EPEC-AR.xlsx",
       "file_extension": ".xlsx",
-      "catalogo_archivos": "4_Microdíatos_Frecuencias",
+      "category": "4_Microdatos_Frecuencias",
+      "catalogo_archivos": "4_Microdatos_Frecuencias",
       "size_kb": 643.19,
-      "modified_diate": "2025-11-14",
-      "local_path": "díata\\classified\\2025\\4_Microdíatos_Frecuencias\\[xlsx] BD EPEC-AR.xlsx"
+      "modified_date": "2025-11-14",
+      "local_path": "data\\classified\\2025\\4_Microdatos_Frecuencias\\[xlsx] BD EPEC-AR.xlsx",
+      "archivo": "[xlsx] BD EPEC-AR.xlsx",
+      "anio": 2025,
+      "tamano_mb": 0.63,
+      "extension": "XLSX",
+      "tipo": "4_Microdatos_Frecuencias",
+      "descripcion": "Documento oficial de relevamiento (4_Microdatos_Frecuencias)."
     },
     {
       "year": 2025,
       "zip_source": "[xlsx] Frec EPEC-AR 2024_Op2Hx.zip",
       "file_name": "[xlsx] Frec EPEC-AR 2024.xlsx",
       "file_extension": ".xlsx",
-      "catalogo_archivos": "4_Microdíatos_Frecuencias",
+      "category": "4_Microdatos_Frecuencias",
+      "catalogo_archivos": "4_Microdatos_Frecuencias",
       "size_kb": 147.83,
-      "modified_diate": "2025-11-14",
-      "local_path": "díata\\classified\\2025\\4_Microdíatos_Frecuencias\\[xlsx] Frec EPEC-AR 2024.xlsx"
+      "modified_date": "2025-11-14",
+      "local_path": "data\\classified\\2025\\4_Microdatos_Frecuencias\\[xlsx] Frec EPEC-AR 2024.xlsx",
+      "archivo": "[xlsx] Frec EPEC-AR 2024.xlsx",
+      "anio": 2025,
+      "tamano_mb": 0.14,
+      "extension": "XLSX",
+      "tipo": "4_Microdatos_Frecuencias",
+      "descripcion": "Documento oficial de relevamiento (4_Microdatos_Frecuencias)."
     },
     {
       "year": 2026,
       "zip_source": "Analisis de Conglomerados 2026 - EPEC-AR_nm1Hn.zip",
       "file_name": "An lisis de Conglomerados 2026 - EPEC-AR.pdf",
       "file_extension": ".pdf",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 840.35,
-      "modified_diate": "2026-09-10",
-      "local_path": "díata\\classified\\2026\\5_Informes_Presentaciones\\An lisis de Conglomerados 2026 - EPEC-AR.pdf"
+      "modified_date": "2026-09-10",
+      "local_path": "data\\classified\\2026\\5_Informes_Presentaciones\\An lisis de Conglomerados 2026 - EPEC-AR.pdf",
+      "archivo": "An lisis de Conglomerados 2026 - EPEC-AR.pdf",
+      "anio": 2026,
+      "tamano_mb": 0.82,
+      "extension": "PDF",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2026,
       "zip_source": "Clientes Residenciales _ Domiciliares - V4 AR_inGN5.zip",
       "file_name": "Clientes Residenciales _ Domiciliares - V4 AR.pdf",
       "file_extension": ".pdf",
+      "category": "1_Metodologia_Instrumentos",
       "catalogo_archivos": "1_Metodologia_Instrumentos",
       "size_kb": 673.87,
-      "modified_diate": "2026-04-20",
-      "local_path": "díata\\classified\\2026\\1_Metodologia_Instrumentos\\Clientes Residenciales _ Domiciliares - V4 AR.pdf"
+      "modified_date": "2026-04-20",
+      "local_path": "data\\classified\\2026\\1_Metodologia_Instrumentos\\Clientes Residenciales _ Domiciliares - V4 AR.pdf",
+      "archivo": "Clientes Residenciales _ Domiciliares - V4 AR.pdf",
+      "anio": 2026,
+      "tamano_mb": 0.66,
+      "extension": "PDF",
+      "tipo": "1_Metodologia_Instrumentos",
+      "descripcion": "Documento oficial de relevamiento (1_Metodologia_Instrumentos)."
     },
     {
       "year": 2026,
-      "zip_source": "EPEC-AR - Plano de muestáára 2026 - calculo_WOgNh.zip",
-      "file_name": "EPEC-AR - Plano de muestáára 2026 - c lculo.xls",
+      "zip_source": "EPEC-AR - Plano de muestra 2026 - calculo_WOgNh.zip",
+      "file_name": "EPEC-AR - Plano de muestra 2026 - c lculo.xls",
       "file_extension": ".xls",
-      "catalogo_archivos": "2_Operacion_Campo_Muestááreo",
+      "category": "2_Operacion_Campo_Muestreo",
+      "catalogo_archivos": "2_Operacion_Campo_Muestreo",
       "size_kb": 55.5,
-      "modified_diate": "2026-09-10",
-      "local_path": "díata\\classified\\2026\\2_Operacion_Campo_Muestááreo\\EPEC-AR - Plano de muestáára 2026 - c lculo.xls"
+      "modified_date": "2026-09-10",
+      "local_path": "data\\classified\\2026\\2_Operacion_Campo_Muestreo\\EPEC-AR - Plano de muestra 2026 - c lculo.xls",
+      "archivo": "EPEC-AR - Plano de muestra 2026 - c lculo.xls",
+      "anio": 2026,
+      "tamano_mb": 0.05,
+      "extension": "XLS",
+      "tipo": "2_Operacion_Campo_Muestreo",
+      "descripcion": "Documento oficial de relevamiento (2_Operacion_Campo_Muestreo)."
     },
     {
       "year": 2026,
-      "zip_source": "EPEC-AR - Plano de muestáára 2026 - sorteo_NNUhW.zip",
-      "file_name": "EPEC-AR - Plano de muestáára 2026 - sorteo.xls",
+      "zip_source": "EPEC-AR - Plano de muestra 2026 - sorteo_NNUhW.zip",
+      "file_name": "EPEC-AR - Plano de muestra 2026 - sorteo.xls",
       "file_extension": ".xls",
-      "catalogo_archivos": "2_Operacion_Campo_Muestááreo",
+      "category": "2_Operacion_Campo_Muestreo",
+      "catalogo_archivos": "2_Operacion_Campo_Muestreo",
       "size_kb": 53.0,
-      "modified_diate": "2026-09-10",
-      "local_path": "díata\\classified\\2026\\2_Operacion_Campo_Muestááreo\\EPEC-AR - Plano de muestáára 2026 - sorteo.xls"
+      "modified_date": "2026-09-10",
+      "local_path": "data\\classified\\2026\\2_Operacion_Campo_Muestreo\\EPEC-AR - Plano de muestra 2026 - sorteo.xls",
+      "archivo": "EPEC-AR - Plano de muestra 2026 - sorteo.xls",
+      "anio": 2026,
+      "tamano_mb": 0.05,
+      "extension": "XLS",
+      "tipo": "2_Operacion_Campo_Muestreo",
+      "descripcion": "Documento oficial de relevamiento (2_Operacion_Campo_Muestreo)."
     },
     {
       "year": 2026,
       "zip_source": "Inf Comp Paises 2026 - EPEC-AR_yANpd.zip",
       "file_name": "Inf Comp Paises 2026 - EPEC-AR.pdf",
       "file_extension": ".pdf",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 9166.74,
-      "modified_diate": "2026-09-11",
-      "local_path": "díata\\classified\\2026\\5_Informes_Presentaciones\\Inf Comp Paises 2026 - EPEC-AR.pdf"
+      "modified_date": "2026-09-11",
+      "local_path": "data\\classified\\2026\\5_Informes_Presentaciones\\Inf Comp Paises 2026 - EPEC-AR.pdf",
+      "archivo": "Inf Comp Paises 2026 - EPEC-AR.pdf",
+      "anio": 2026,
+      "tamano_mb": 8.95,
+      "extension": "PDF",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2026,
-      "zip_source": "Informe Com entre Rondías 2026 - EPEC-AR_OSeqD.zip",
-      "file_name": "Informe Com entre Rondías 2026 - EPEC-AR.pdf",
+      "zip_source": "Informe Com entre Rondas 2026 - EPEC-AR_OSeqD.zip",
+      "file_name": "Informe Com entre Rondas 2026 - EPEC-AR.pdf",
       "file_extension": ".pdf",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 37064.97,
-      "modified_diate": "2026-09-11",
-      "local_path": "díata\\classified\\2026\\5_Informes_Presentaciones\\Informe Com entre Rondías 2026 - EPEC-AR.pdf"
+      "modified_date": "2026-09-11",
+      "local_path": "data\\classified\\2026\\5_Informes_Presentaciones\\Informe Com entre Rondas 2026 - EPEC-AR.pdf",
+      "archivo": "Informe Com entre Rondas 2026 - EPEC-AR.pdf",
+      "anio": 2026,
+      "tamano_mb": 36.2,
+      "extension": "PDF",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2026,
       "zip_source": "Informe Comp entre Distrib 2026 - EPEC-AR_3veKZ.zip",
       "file_name": "Informe Comp entre Distrib 2026 - EPEC-AR.pdf",
       "file_extension": ".pdf",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 9082.01,
-      "modified_diate": "2026-09-10",
-      "local_path": "díata\\classified\\2026\\5_Informes_Presentaciones\\Informe Comp entre Distrib 2026 - EPEC-AR.pdf"
+      "modified_date": "2026-09-10",
+      "local_path": "data\\classified\\2026\\5_Informes_Presentaciones\\Informe Comp entre Distrib 2026 - EPEC-AR.pdf",
+      "archivo": "Informe Comp entre Distrib 2026 - EPEC-AR.pdf",
+      "anio": 2026,
+      "tamano_mb": 8.87,
+      "extension": "PDF",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2026,
       "zip_source": "Informe Individual 2026 - EPEC-AR_JRy1I.zip",
       "file_name": "Informe Individual 2026 - EPEC-AR.pdf",
       "file_extension": ".pdf",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 14371.61,
-      "modified_diate": "2026-09-10",
-      "local_path": "díata\\classified\\2026\\5_Informes_Presentaciones\\Informe Individual 2026 - EPEC-AR.pdf"
+      "modified_date": "2026-09-10",
+      "local_path": "data\\classified\\2026\\5_Informes_Presentaciones\\Informe Individual 2026 - EPEC-AR.pdf",
+      "archivo": "Informe Individual 2026 - EPEC-AR.pdf",
+      "anio": 2026,
+      "tamano_mb": 14.03,
+      "extension": "PDF",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2026,
       "zip_source": "Informe Regiones 2026 - EPEC-AR_TllgK.zip",
       "file_name": "Informe Regiones 2026 - EPEC-AR.pdf",
       "file_extension": ".pdf",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 12589.31,
-      "modified_diate": "2026-09-11",
-      "local_path": "díata\\classified\\2026\\5_Informes_Presentaciones\\Informe Regiones 2026 - EPEC-AR.pdf"
+      "modified_date": "2026-09-11",
+      "local_path": "data\\classified\\2026\\5_Informes_Presentaciones\\Informe Regiones 2026 - EPEC-AR.pdf",
+      "archivo": "Informe Regiones 2026 - EPEC-AR.pdf",
+      "anio": 2026,
+      "tamano_mb": 12.29,
+      "extension": "PDF",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2026,
-      "zip_source": "Planilla de IÍÍÍÍÍÍndices CIER 2026 - EPEC-AR_reNg1.zip",
-      "file_name": "Planilla de ÍÍÍÍÍÍÍndices CIER 2026 - EPEC-AR.xlsx",
+      "zip_source": "Planilla de Indices CIER 2026 - EPEC-AR_reNg1.zip",
+      "file_name": "Planilla de Índices CIER 2026 - EPEC-AR.xlsx",
       "file_extension": ".xlsx",
-      "catalogo_archivos": "4_Microdíatos_Frecuencias",
+      "category": "4_Microdatos_Frecuencias",
+      "catalogo_archivos": "4_Microdatos_Frecuencias",
       "size_kb": 617.43,
-      "modified_diate": "2026-09-10",
-      "local_path": "díata\\classified\\2026\\4_Microdíatos_Frecuencias\\Planilla de ÍÍÍÍÍÍÍndices CIER 2026 - EPEC-AR.xlsx"
+      "modified_date": "2026-09-10",
+      "local_path": "data\\classified\\2026\\4_Microdatos_Frecuencias\\Planilla de Índices CIER 2026 - EPEC-AR.xlsx",
+      "archivo": "Planilla de Índices CIER 2026 - EPEC-AR.xlsx",
+      "anio": 2026,
+      "tamano_mb": 0.6,
+      "extension": "XLSX",
+      "tipo": "4_Microdatos_Frecuencias",
+      "descripcion": "Documento oficial de relevamiento (4_Microdatos_Frecuencias)."
     },
     {
       "year": 2026,
       "zip_source": "Presentacion analitica 2026_v12.09_2jWtO.zip",
       "file_name": "Presentacion analitica 2026_v12.09.pptx",
       "file_extension": ".pptx",
+      "category": "5_Informes_Presentaciones",
       "catalogo_archivos": "5_Informes_Presentaciones",
       "size_kb": 63677.66,
-      "modified_diate": "2026-09-12",
-      "local_path": "díata\\classified\\2026\\5_Informes_Presentaciones\\Presentacion analitica 2026_v12.09.pptx"
+      "modified_date": "2026-09-12",
+      "local_path": "data\\classified\\2026\\5_Informes_Presentaciones\\Presentacion analitica 2026_v12.09.pptx",
+      "archivo": "Presentacion analitica 2026_v12.09.pptx",
+      "anio": 2026,
+      "tamano_mb": 62.19,
+      "extension": "PPTX",
+      "tipo": "5_Informes_Presentaciones",
+      "descripcion": "Documento oficial de relevamiento (5_Informes_Presentaciones)."
     },
     {
       "year": 2026,
       "zip_source": "[xlsx] BD EPEC-AR_Km1qi.zip",
       "file_name": "[xlsx] BD EPEC-AR.xlsx",
       "file_extension": ".xlsx",
-      "catalogo_archivos": "4_Microdíatos_Frecuencias",
+      "category": "4_Microdatos_Frecuencias",
+      "catalogo_archivos": "4_Microdatos_Frecuencias",
       "size_kb": 244.01,
-      "modified_diate": "2026-09-10",
-      "local_path": "díata\\classified\\2026\\4_Microdíatos_Frecuencias\\[xlsx] BD EPEC-AR.xlsx"
+      "modified_date": "2026-09-10",
+      "local_path": "data\\classified\\2026\\4_Microdatos_Frecuencias\\[xlsx] BD EPEC-AR.xlsx",
+      "archivo": "[xlsx] BD EPEC-AR.xlsx",
+      "anio": 2026,
+      "tamano_mb": 0.24,
+      "extension": "XLSX",
+      "tipo": "4_Microdatos_Frecuencias",
+      "descripcion": "Documento oficial de relevamiento (4_Microdatos_Frecuencias)."
     },
     {
       "year": 2026,
-      "zip_source": "[xlsx] Diccionario de díatos 2026_dpbTn.zip",
-      "file_name": "[xlsx] Diccion rio de díatos 2026.xlsx",
+      "zip_source": "[xlsx] Diccionario de datos 2026_dpbTn.zip",
+      "file_name": "[xlsx] Diccion rio de datos 2026.xlsx",
       "file_extension": ".xlsx",
-      "catalogo_archivos": "3_Diccionarios_Metadíatos",
+      "category": "3_Diccionarios_Metadatos",
+      "catalogo_archivos": "3_Diccionarios_Metadatos",
       "size_kb": 57.17,
-      "modified_diate": "2026-09-10",
-      "local_path": "díata\\classified\\2026\\3_Diccionarios_Metadíatos\\[xlsx] Diccion rio de díatos 2026.xlsx"
+      "modified_date": "2026-09-10",
+      "local_path": "data\\classified\\2026\\3_Diccionarios_Metadatos\\[xlsx] Diccion rio de datos 2026.xlsx",
+      "archivo": "[xlsx] Diccion rio de datos 2026.xlsx",
+      "anio": 2026,
+      "tamano_mb": 0.06,
+      "extension": "XLSX",
+      "tipo": "3_Diccionarios_Metadatos",
+      "descripcion": "Documento oficial de relevamiento (3_Diccionarios_Metadatos)."
     },
     {
       "year": 2026,
       "zip_source": "[xlsx] Frec EPEC-AR 2026_KwkYH.zip",
       "file_name": "[xlsx] Frec EPEC-AR 2026.xlsx",
       "file_extension": ".xlsx",
-      "catalogo_archivos": "4_Microdíatos_Frecuencias",
+      "category": "4_Microdatos_Frecuencias",
+      "catalogo_archivos": "4_Microdatos_Frecuencias",
       "size_kb": 299.35,
-      "modified_diate": "2026-09-10",
-      "local_path": "díata\\classified\\2026\\4_Microdíatos_Frecuencias\\[xlsx] Frec EPEC-AR 2026.xlsx"
+      "modified_date": "2026-09-10",
+      "local_path": "data\\classified\\2026\\4_Microdatos_Frecuencias\\[xlsx] Frec EPEC-AR 2026.xlsx",
+      "archivo": "[xlsx] Frec EPEC-AR 2026.xlsx",
+      "anio": 2026,
+      "tamano_mb": 0.29,
+      "extension": "XLSX",
+      "tipo": "4_Microdatos_Frecuencias",
+      "descripcion": "Documento oficial de relevamiento (4_Microdatos_Frecuencias)."
     }
   ],
   "ssotChecklist": [
