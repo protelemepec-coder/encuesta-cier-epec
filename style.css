@@ -1076,6 +1076,97 @@ body {
   font-size: 0.78rem;
   color: var(--text-sub);
   margin-top: 0.2rem;
+  line-height: 1.4;
+}
+
+/* File Actions & Download/View Buttons */
+.file-actions {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.file-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.65rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  border-radius: var(--radius-sm, 6px);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-align: center;
+}
+
+.file-btn-view {
+  background: rgba(6, 182, 212, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(6, 182, 212, 0.35);
+  flex: 1;
+}
+
+.file-btn-view:hover {
+  background: rgba(6, 182, 212, 0.3);
+  color: #fff;
+  border-color: #38bdf8;
+  box-shadow: 0 0 10px rgba(56, 189, 248, 0.25);
+}
+
+.file-btn-download {
+  background: rgba(16, 185, 129, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  flex: 1;
+}
+
+.file-btn-download:hover {
+  background: rgba(16, 185, 129, 0.3);
+  color: #fff;
+  border-color: #34d399;
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.25);
+}
+
+.file-btn-excel {
+  background: rgba(16, 185, 129, 0.12);
+  color: #6ee7b7;
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  flex: 1;
+}
+
+.file-btn-excel:hover {
+  background: rgba(16, 185, 129, 0.25);
+  color: #fff;
+  border-color: #34d399;
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.25);
+}
+
+.file-btn-pptx {
+  background: rgba(249, 115, 22, 0.12);
+  color: #fb923c;
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  flex: 1;
+}
+
+.file-btn-pptx:hover {
+  background: rgba(249, 115, 22, 0.25);
+  color: #fff;
+  border-color: #fb923c;
+  box-shadow: 0 0 10px rgba(251, 146, 60, 0.25);
+}
+
+.badge-tag-blue {
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.3);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
 }
 
 .badge-tag-green {

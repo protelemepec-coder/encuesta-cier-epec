@@ -634,34 +634,165 @@ function renderSSOTChecklist() {
   if (!tbody) return;
 
   const list = cierData.ssotChecklist || [];
-  tbody.innerHTML = list.map(item => `
-    <tr>
-      <td class="font-semibold text-slate-100">${item.area}</td>
-      <td><code class="text-cyan-400">${item.archivo}</code></td>
-      <td class="text-slate-300 text-sm">${item.fuente}</td>
-      <td><span class="badge-pill-green">✔ ${item.estado}</span></td>
-      <td class="font-medium text-green-400">${item.coincidencia}</td>
-    </tr>
-  `).join('');
+  
+  // Mapping for known primary source files to their data/raw link
+  const rawLinks = [
+    { match: 'Planilla de Índices CIER 2026', url: 'data/raw/2026/Planilla%20de%20%C3%8Dndices%20CIER%202026%20-%20EPEC-AR.xlsx', label: 'Planilla 2026 (.xlsx)' },
+    { match: 'Informe Regiones 2026', url: 'data/raw/2026/Informe%20Regiones%202026%20-%20EPEC-AR.pdf', label: 'Informe Regiones (.pdf)' },
+    { match: 'Inf Comp Paises 2026', url: 'data/raw/2026/Inf%20Comp%20Paises%202026%20-%20EPEC-AR.pdf', label: 'Comp. Países (.pdf)' },
+    { match: 'Análisis de Conglomerados 2026', url: 'data/raw/2026/An%C3%A1lisis%20de%20Conglomerados%202026%20-%20EPEC-AR.pdf', label: 'Conglomerados (.pdf)' },
+    { match: 'Informe Com entre Rondas 2026', url: 'data/raw/2026/Informe%20Com%20entre%20Rondas%202026%20-%20EPEC-AR.pdf', label: 'Comp. Rondas (.pdf)' },
+    { match: 'Informe Comp entre Distrib 2026', url: 'data/raw/2026/Informe%20Comp%20entre%20Distrib%202026%20-%20EPEC-AR.pdf', label: 'Comp. Distribuidoras (.pdf)' },
+    { match: 'BD EPEC-AR.xlsx', url: 'data/raw/2026/%5Bxlsx%5D%20BD%20EPEC-AR.xlsx', label: 'Microdatos BD (.xlsx)' },
+    { match: 'Diccionário de datos 2026', url: 'data/raw/2026/%5Bxlsx%5D%20Diccion%C3%A1rio%20de%20datos%202026.xlsx', label: 'Diccionario (.xlsx)' },
+    { match: 'data/raw/', url: '#files-grid-container', label: 'Ver Catálogo data/raw/ (30 archivos)', isAnchor: true }
+  ];
+
+  tbody.innerHTML = list.map(item => {
+    // Check if item.archivo points to a docs file
+    const docLink = item.archivo ? `<a href="${item.archivo}" target="_blank" rel="noopener noreferrer" class="text-cyan-400 hover:underline inline-flex items-center gap-1 font-mono text-xs"><code>${item.archivo}</code> <span style="font-size: 0.75rem;">↗</span></a>` : '-';
+    
+    // Find matching raw link
+    let fuenteHtml = item.fuente || '';
+    for (const r of rawLinks) {
+      if (item.fuente && item.fuente.includes(r.match)) {
+        const linkAttrs = r.isAnchor ? `href="${r.url}"` : `href="${r.url}" target="_blank" rel="noopener noreferrer" download`;
+        fuenteHtml += ` <br><a ${linkAttrs} class="text-emerald-400 text-xs hover:underline inline-flex items-center gap-1 font-medium mt-1"><span>📥</span> ${r.label}</a>`;
+        break;
+      }
+    }
+
+    return `
+      <tr>
+        <td class="font-semibold text-slate-100">${item.area}</td>
+        <td>${docLink}</td>
+        <td class="text-slate-300 text-sm">${fuenteHtml}</td>
+        <td><span class="badge-pill-green">✔ ${item.estado}</span></td>
+        <td class="font-medium text-green-400">${item.coincidencia}</td>
+      </tr>
+    `;
+  }).join('');
 }
 
 function renderFilesGrid() {
   const container = document.getElementById('files-grid-container');
   if (!container) return;
 
-  const files = cierData.filesCatalog || [];
-  const searchVal = (document.getElementById('files-search-input')?.value || '').toLowerCase().trim();
+  const rawList = cierData.filesCatalog || [];
+  
+  // Deduplicate by year and filename
+  const seen = new Set();
+  const files = [];
+  for (const f of rawList) {
+    const anio = f.anio || f.year || 2026;
+    const archivo = f.archivo || f.file_name || '';
+    const key = `${anio}_${archivo}`;
+    if (!seen.has(key)) {
+      seen.add(key);
+      files.push(f);
+    }
+  }
 
-  const filtered = files.filter(f => {
-    if (!searchVal) return true;
-    return (f.archivo && f.archivo.toLowerCase().includes(searchVal)) ||
-           (f.tipo && f.tipo.toLowerCase().includes(searchVal)) ||
-           (f.descripcion && f.descripcion.toLowerCase().includes(searchVal));
+  // Sort files: 2026 first, then 2025; inside year sort alphabetically
+  files.sort((a, b) => {
+    const yA = a.anio || a.year || 2026;
+    const yB = b.anio || b.year || 2026;
+    if (yA !== yB) return yB - yA;
+    return (a.archivo || '').localeCompare(b.archivo || '');
   });
 
+  const searchVal = (document.getElementById('files-search-input')?.value || '').toLowerCase().trim();
+  const yearFilter = document.getElementById('files-filter-year')?.value || 'all';
+  const typeFilter = document.getElementById('files-filter-type')?.value || 'all';
+
+  const filtered = files.filter(f => {
+    const anio = String(f.anio || f.year || '2026');
+    const ext = (f.extension || f.file_extension || '').toUpperCase().replace('.', '');
+    
+    // Year filter
+    if (yearFilter !== 'all' && anio !== yearFilter) return false;
+
+    // Type filter
+    if (typeFilter !== 'all') {
+      if (typeFilter === 'PDF' && ext !== 'PDF') return false;
+      if (typeFilter === 'XLS' && !ext.includes('XLS')) return false;
+      if (typeFilter === 'PPT' && !ext.includes('PPT')) return false;
+    }
+
+    // Search filter
+    if (searchVal) {
+      const matchName = (f.archivo && f.archivo.toLowerCase().includes(searchVal));
+      const matchType = (f.tipo && f.tipo.toLowerCase().includes(searchVal));
+      const matchDesc = (f.descripcion && f.descripcion.toLowerCase().includes(searchVal));
+      const matchExt = ext.toLowerCase().includes(searchVal);
+      if (!matchName && !matchType && !matchDesc && !matchExt) return false;
+    }
+
+    return true;
+  });
+
+  // Update badge counter
+  const counterBadge = document.getElementById('files-counter-badge');
+  if (counterBadge) {
+    counterBadge.textContent = `${filtered.length} de ${files.length} Archivos`;
+  }
+
+  if (filtered.length === 0) {
+    container.innerHTML = `
+      <div class="glass-card" style="grid-column: 1/-1; text-align: center; padding: 2.5rem;">
+        <p class="text-slate-300 font-medium">No se encontraron archivos con los criterios seleccionados.</p>
+        <button onclick="resetFilesFilters()" class="btn-primary mt-3" style="font-size: 0.8rem; padding: 0.4rem 1rem;">Restablecer Filtros</button>
+      </div>
+    `;
+    return;
+  }
+
   container.innerHTML = filtered.map(f => {
-    const ext = f.extension ? f.extension.toUpperCase() : 'DOC';
+    const ext = (f.extension || f.file_extension || 'DOC').toUpperCase().replace('.', '');
     const icon = ext === 'PDF' ? '📄' : (ext.includes('XLS') ? '📊' : (ext.includes('PPT') ? '📽️' : '📁'));
+    const anio = f.anio || f.year || '2026';
+    const archivo = f.archivo || f.file_name;
+    const rawUrl = encodeURI(`data/raw/${anio}/${archivo}`);
+    const sizeStr = f.tamano_mb ? `${f.tamano_mb.toFixed(2)} MB` : (f.size_kb ? `${(f.size_kb / 1024).toFixed(2)} MB` : '-');
+
+    // Build action buttons
+    let actionButtons = '';
+    if (ext === 'PDF') {
+      actionButtons = `
+        <div class="file-actions">
+          <a href="${rawUrl}" target="_blank" rel="noopener noreferrer" class="file-btn file-btn-view" title="Abrir informe PDF en visor web">
+            <span>👁️</span> Abrir PDF
+          </a>
+          <a href="${rawUrl}" download="${archivo}" class="file-btn file-btn-download" title="Descargar copia del informe original">
+            <span>⬇️</span> Descargar
+          </a>
+        </div>
+      `;
+    } else if (ext.includes('XLS')) {
+      actionButtons = `
+        <div class="file-actions">
+          <a href="${rawUrl}" download="${archivo}" class="file-btn file-btn-excel" title="Descargar planilla de cálculo oficial">
+            <span>📊</span> Descargar Planilla
+          </a>
+        </div>
+      `;
+    } else if (ext.includes('PPT')) {
+      actionButtons = `
+        <div class="file-actions">
+          <a href="${rawUrl}" download="${archivo}" class="file-btn file-btn-pptx" title="Descargar diapositivas de presentación oficial">
+            <span>📽️</span> Descargar Presentación
+          </a>
+        </div>
+      `;
+    } else {
+      actionButtons = `
+        <div class="file-actions">
+          <a href="${rawUrl}" download="${archivo}" class="file-btn file-btn-download" title="Descargar archivo">
+            <span>⬇️</span> Descargar
+          </a>
+        </div>
+      `;
+    }
 
     return `
       <div class="file-card">
@@ -669,16 +800,27 @@ function renderFilesGrid() {
           <span class="file-icon">${icon}</span>
           <span class="file-ext">${ext}</span>
         </div>
-        <h4 class="file-name" title="${f.archivo}">${f.archivo}</h4>
+        <h4 class="file-name" title="${archivo}">${archivo}</h4>
         <div class="file-meta-row">
-          <span>Año: <strong>${f.anio || '2026'}</strong></span>
-          <span>Tamaño: <strong>${f.tamano_mb ? f.tamano_mb.toFixed(2) + ' MB' : '-'}</strong></span>
+          <span>Ronda: <strong>${anio}</strong></span>
+          <span>Tamaño: <strong>${sizeStr}</strong></span>
         </div>
-        <p class="file-desc">${f.descripcion || 'Documento oficial del relevamiento CIER.'}</p>
+        <p class="file-desc">${f.descripcion || 'Documento fuente oficial del relevamiento CIER EPEC-AR.'}</p>
+        ${actionButtons}
       </div>
     `;
   }).join('');
 }
+
+window.resetFilesFilters = function() {
+  const searchInput = document.getElementById('files-search-input');
+  const yearSelect = document.getElementById('files-filter-year');
+  const typeSelect = document.getElementById('files-filter-type');
+  if (searchInput) searchInput.value = '';
+  if (yearSelect) yearSelect.value = 'all';
+  if (typeSelect) typeSelect.value = 'all';
+  renderFilesGrid();
+};
 
 /* ==========================================================================
    CHARTS GUIDE (ORIGINAL CROPS MODAL VIEWER)
@@ -855,6 +997,16 @@ function initFiltersAndSearch() {
   const filesSearch = document.getElementById('files-search-input');
   if (filesSearch) {
     filesSearch.addEventListener('input', () => renderFilesGrid());
+  }
+
+  const filesYearFilter = document.getElementById('files-filter-year');
+  if (filesYearFilter) {
+    filesYearFilter.addEventListener('change', () => renderFilesGrid());
+  }
+
+  const filesTypeFilter = document.getElementById('files-filter-type');
+  if (filesTypeFilter) {
+    filesTypeFilter.addEventListener('change', () => renderFilesGrid());
   }
 
   const prioSearch = document.getElementById('priorities-search-input');
