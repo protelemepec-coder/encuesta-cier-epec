@@ -945,13 +945,13 @@ function initMatrizScatterChart() {
     return `rgba(${(num >> 16) & 255}, ${(num >> 8) & 255}, ${num & 255}, ${alpha})`;
   };
 
-  // Helper point stylers (50% attenuation on non-selected points)
+  // Helper point stylers (large enough to fit priority numbers legibly)
   const getPointRadius = (defaultSize) => (ctx) => {
     const raw = ctx.raw?.raw;
     if (!raw) return defaultSize;
     const isSel = selectedAttributes.has(raw.sigla);
     if (selectedAttributes.size > 0) {
-      return isSel ? 13 : Math.max(defaultSize * 0.9, 5.5);
+      return isSel ? 14 : Math.max(defaultSize * 0.9, 8.5);
     }
     return defaultSize;
   };
@@ -984,6 +984,60 @@ function initMatrizScatterChart() {
     return defaultColor;
   };
 
+  // Custom Chart.js Plugin: Dibuja el número de ranking de prioridad en cada punto
+  const priorityNumbersPlugin = {
+    id: 'priorityNumbersPlugin',
+    afterDatasetsDraw(chart) {
+      const { ctx } = chart;
+      chart.data.datasets.forEach((dataset, datasetIndex) => {
+        const meta = chart.getDatasetMeta(datasetIndex);
+        if (!meta || meta.hidden) return;
+
+        meta.data.forEach((element, index) => {
+          const pt = dataset.data[index];
+          const raw = pt?.raw;
+          if (!raw || raw.prio == null) return;
+
+          const { x, y } = element.getProps(['x', 'y'], true);
+          if (x == null || y == null || isNaN(x) || isNaN(y)) return;
+
+          const isSel = selectedAttributes.has(raw.sigla);
+          const hasSelection = selectedAttributes.size > 0;
+          const text = String(raw.prio);
+
+          ctx.save();
+          ctx.textAlign = 'center';
+          ctx.textBaseline = 'middle';
+
+          // Tipografía optimizada y legible
+          const isTwoDigit = text.length > 1;
+          const fontSize = isSel ? 11 : (isTwoDigit ? 9.5 : 10.5);
+          ctx.font = `700 ${fontSize}px "JetBrains Mono", "Inter", -apple-system, sans-serif`;
+
+          if (hasSelection && !isSel) {
+            ctx.globalAlpha = 0.65;
+          }
+
+          if (isSel) {
+            // Texto oscuro de alto contraste sobre cian brillante
+            ctx.fillStyle = '#082f49';
+            ctx.shadowColor = 'transparent';
+          } else {
+            // Blanco con sutil sombra de contraste para garantizar legibilidad total
+            ctx.fillStyle = '#ffffff';
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.85)';
+            ctx.shadowBlur = 3;
+            ctx.shadowOffsetX = 0;
+            ctx.shadowOffsetY = 1;
+          }
+
+          ctx.fillText(text, x, y + 0.5);
+          ctx.restore();
+        });
+      });
+    }
+  };
+
   chartsInstances.matriz = new Chart(ctx, {
     type: 'scatter',
     data: {
@@ -994,35 +1048,35 @@ function initMatrizScatterChart() {
           backgroundColor: getPointBgColor('#ef4444'),
           borderColor: getPointBorderColor('#fca5a5'),
           borderWidth: getPointBorderWidth(2),
-          pointRadius: getPointRadius(8),
-          pointHoverRadius: 13
+          pointRadius: getPointRadius(11),
+          pointHoverRadius: 14
         },
         {
-          label: '🌟 Fortalezas Claves (Mantener)',
+          label: '🌟 Fortalezas Claves (Mantener - Prio 17ª-20ª)',
           data: fortalezaData,
           backgroundColor: getPointBgColor('#3b82f6'),
           borderColor: getPointBorderColor('#93c5fd'),
           borderWidth: getPointBorderWidth(1.5),
-          pointRadius: getPointRadius(6),
-          pointHoverRadius: 10
+          pointRadius: getPointRadius(10),
+          pointHoverRadius: 13.5
         },
         {
-          label: '⚡ Ventajas Secundarias (Eficiencia)',
+          label: '⚡ Ventajas Secundarias (Eficiencia - Prio 21ª-29ª)',
           data: ventajaData,
           backgroundColor: getPointBgColor('#f59e0b'),
           borderColor: getPointBorderColor('#fde68a'),
           borderWidth: getPointBorderWidth(1.5),
-          pointRadius: getPointRadius(5.5),
-          pointHoverRadius: 9
+          pointRadius: getPointRadius(9.5),
+          pointHoverRadius: 13
         },
         {
-          label: '⚪ Baja Prioridad (Monitoreo)',
+          label: '⚪ Baja Prioridad (Monitoreo - Prio 8ª-16ª, 30ª)',
           data: bajaData,
           backgroundColor: getPointBgColor('#64748b'),
           borderColor: getPointBorderColor('#cbd5e1'),
           borderWidth: getPointBorderWidth(1),
-          pointRadius: getPointRadius(5),
-          pointHoverRadius: 8
+          pointRadius: getPointRadius(9.5),
+          pointHoverRadius: 13
         }
       ]
     },
@@ -1098,7 +1152,7 @@ function initMatrizScatterChart() {
           callbacks: {
             title: (items) => {
               const raw = items[0]?.raw?.raw;
-              return raw ? `[${raw.sigla}] ${raw.nombre} (N° ${raw.num}) ➔ Clic para ver microdatos` : '';
+              return raw ? `[${raw.sigla}] ${raw.nombre} (Prio ${raw.prio}ª · N° ${raw.num}) ➔ Clic para ver microdatos` : '';
             },
             label: (context) => {
               const raw = context.raw?.raw;
@@ -1117,7 +1171,8 @@ function initMatrizScatterChart() {
           }
         }
       }
-    }
+    },
+    plugins: [priorityNumbersPlugin]
   });
 }
 
