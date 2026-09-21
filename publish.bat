@@ -1,18 +1,8 @@
 @echo off
-setlocal
+chcp 65001 >nul
 echo ==============================================================================
-echo        DESPLIEGUE Y SINCRONIZACION: ENCUESTA CIER EPEC (2025-2026)
+echo        PUBLICACION Y DESPLIEGUE: ENCUESTA CIER EPEC (2025-2026)
 echo ==============================================================================
-powershell -ExecutionPolicy Bypass -File "%~dp0scripts\vault_manager.ps1" -Action unlock
-if %ERRORLEVEL% NEQ 0 (
-    echo Despliegue cancelado.
-    pause
-    exit /b %ERRORLEVEL%
-)
-
-echo Sincronizando con GitHub...
+echo.
 git add .
-git commit -m "update: actualizacion de analisis y dashboard CIER"
-git push origin main
-echo Despliegue completado exitosamente.
-pause
+git commit -m " update: mejoras y publicaciones en dashboard CIER\n

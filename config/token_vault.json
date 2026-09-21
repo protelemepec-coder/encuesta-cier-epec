@@ -1,8 +1,8 @@
-﻿{
-    "github_user":  "inventarioenergycpy",
-    "auth_type":  "encrypted_pat_aes256",
-    "created_at":  "2026-08-27 13:02",
-    "max_attempts":  5,
-    "vault_data":  "UfqcvOZTFqGCLMuMKJudsQvd9YVdmgH9CMNl5XfVasdpRH3i+AuxaPf00LtbHcQleYWK5C1WnRDb4iOX0xKXTw==",
-    "recovery_url":  "https://github.com/settings/tokens/new?description=Antigravity+Deploy\u0026scopes=repo,workflow"
+{
+    "github_user": "protelemepec-coder",
+    "auth_type": "encrypted_pat_aes256",
+    "created_at": "2026-09-21 10:45",
+    "max_attempts": 5,
+    "vault_data": "+4YqydB4xnrjA76waafHvydpYb3u4wSdI1hl7aNWqWZvsMjWj8Pw7Cyj+53LwvDW190qL4GVE2GBl851a3DOFA==",
+    "recovery_url": "https://github.com/settings/tokens/new?description=Antigravity+PROTELEM+Deploy&scopes=repo,workflow"
 }
