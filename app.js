@@ -93,6 +93,15 @@ function initTabs() {
       }, 80);
     });
   });
+
+  // Handle URL hash on initial load (e.g. #tab-dictionary)
+  const currentHash = (window.location.hash || '').replace('#', '');
+  if (currentHash) {
+    const matchingBtn = document.querySelector(`[data-tab="${currentHash}"]`);
+    if (matchingBtn) {
+      setTimeout(() => matchingBtn.click(), 50);
+    }
+  }
 }
 
 function initSubTabs() {
@@ -594,40 +603,430 @@ function renderDetractorSection() {
 /* ==========================================================================
    RENDER DICTIONARY, SSOT CHECKLIST, AND RAW FILES GRID
    ========================================================================== */
+let activeDictVarCode = null;
+let currentDictFilteredList = [];
+
 function renderDictTable() {
   const tbody = document.getElementById('dict-table-body');
   if (!tbody) return;
 
   const dict = cierData.dictionary || [];
   const searchVal = (document.getElementById('dict-search-input')?.value || '').toLowerCase().trim();
+  const dimFilter = document.getElementById('dict-dim-filter')?.value || 'all';
+  const scaleFilter = document.getElementById('dict-scale-filter')?.value || 'all';
+  const yearFilter = document.getElementById('dict-year-filter')?.value || 'all';
 
   const filtered = dict.filter(d => {
-    if (!searchVal) return true;
-    const v = (d.variable || d.Variable || d.codigo || '').toLowerCase();
-    const dim = (d.dimension || d.Dimension_Tematica || '').toLowerCase();
-    const n = (d.nombre || d.Atributo || d.definicion || '').toLowerCase();
-    const e = (d.escala || d.calculo || d.Escala || d.Descripcion || '').toLowerCase();
-    return v.includes(searchVal) || dim.includes(searchVal) || n.includes(searchVal) || e.includes(searchVal);
+    // 1. Dimension filter
+    if (dimFilter !== 'all') {
+      const dDimId = (d.dimension_id || '').toLowerCase();
+      const dDim = (d.dimension || d.Dimension_Tematica || '').toLowerCase();
+      if (!dDimId.includes(dimFilter.toLowerCase()) && !dDim.includes(dimFilter.toLowerCase())) {
+        return false;
+      }
+    }
+
+    // 2. Scale Type Filter
+    if (scaleFilter !== 'all') {
+      const cat = d.categoria_escala || '';
+      if (cat !== scaleFilter) return false;
+    }
+
+    // 3. Year / Comparative Status filter
+    if (yearFilter !== 'all') {
+      if (yearFilter === 'ambos' && (!d.en_2025 || !d.en_2026)) return false;
+      if (yearFilter === '2026' && !d.en_2026) return false;
+      if (yearFilter === '2025' && !d.en_2025) return false;
+    }
+
+    // 4. Text Search filter (Searches code, name/question, dimension, and response options text!)
+    if (searchVal) {
+      const v = (d.variable || d.Variable || d.codigo || '').toLowerCase();
+      const dim = (d.dimension || d.Dimension_Tematica || '').toLowerCase();
+      const n = (d.nombre || d.Atributo || d.definicion || '').toLowerCase();
+      const e = (d.tipo_escala || d.escala || '').toLowerCase();
+      
+      // Search inside options
+      let optsText = '';
+      if (d.opciones) {
+        optsText = Object.entries(d.opciones).map(([k, val]) => `${k} ${val}`).join(' ').toLowerCase();
+      }
+
+      if (!v.includes(searchVal) && !dim.includes(searchVal) && !n.includes(searchVal) && !e.includes(searchVal) && !optsText.includes(searchVal)) {
+        return false;
+      }
+    }
+
+    return true;
   });
+
+  currentDictFilteredList = filtered;
+
+  // Update counter badge
+  const counterBadge = document.getElementById('dict-counter-badge');
+  if (counterBadge) {
+    counterBadge.textContent = `${filtered.length} de ${dict.length} Variables`;
+  }
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="5" style="text-align: center; padding: 2.5rem; color: var(--text-muted);">
+          <p style="font-size: 1rem; margin-bottom: 0.5rem;">🔍 No se encontraron variables con los filtros aplicados.</p>
+          <button onclick="resetDictFilters()" class="btn-primary mt-2" style="font-size: 0.8rem; padding: 0.35rem 0.9rem;">Restablecer Filtros</button>
+        </td>
+      </tr>
+    `;
+    return;
+  }
 
   tbody.innerHTML = filtered.map(d => {
     const v = d.variable || d.Variable || d.codigo || '-';
     const dim = d.dimension || d.Dimension_Tematica || '-';
     const n = d.nombre || d.Atributo || d.definicion || '-';
     const t = d.tipo || d.Estado_Comparativo || 'Estándar CIER';
-    const e = d.escala || d.calculo || d.Escala || d.Descripcion || '-';
+    const scaleType = d.tipo_escala || 'Escala CIER';
+    const scaleCat = d.categoria_escala || 'likert';
+    const totalOpts = d.total_opciones || (d.opciones ? Object.keys(d.opciones).length : 0);
+
+    const safeVar = v.replace(/"/g, '&quot;');
+    const isNew2026 = t.includes('2026 (Nueva)');
+    const isOnly2025 = t.includes('Solo 2025');
+
+    let statusPill = '';
+    if (isNew2026) {
+      statusPill = `<span class="badge-tag-blue" style="font-size: 0.68rem; margin-left: 0.35rem;">✨ Nueva 2026</span>`;
+    } else if (isOnly2025) {
+      statusPill = `<span class="badge-tag-slate" style="font-size: 0.68rem; margin-left: 0.35rem;">⏳ Solo 2025</span>`;
+    }
 
     return `
-      <tr>
-        <td><code class="code-badge font-bold">${v}</code></td>
+      <tr id="dict-row-${v}">
+        <td>
+          <code class="code-badge font-bold" onclick="openDictOptionsModal('${safeVar}')" title="Clic para ver respuestas y detalles" style="cursor: pointer;">${v}</code>
+        </td>
         <td><span class="dim-tag">${dim}</span></td>
-        <td class="font-semibold text-slate-100">${n}</td>
-        <td><span class="type-tag">${t}</span></td>
-        <td class="text-slate-300 text-sm">${e}</td>
+        <td>
+          <span class="font-semibold text-slate-100">${n}</span>
+          ${statusPill}
+        </td>
+        <td>
+          <span class="dict-scale-badge scale-${scaleCat}">${scaleType}</span>
+        </td>
+        <td style="text-align: center; white-space: nowrap;">
+          <button class="dict-btn-options" onclick="openDictOptionsModal('${safeVar}')" title="Ver opciones de respuesta para el encuestado">
+            <span>📋</span> Ver Respuestas <span class="options-count-badge">${totalOpts}</span>
+          </button>
+          <button class="dict-btn-quick-view" onclick="toggleDictRowDrawer('${safeVar}', this)" title="Vista rápida en tabla" id="btn-quick-${v}">
+            ▼
+          </button>
+        </td>
+      </tr>
+      <tr class="dict-drawer-row" id="dict-drawer-${v}" style="display: none;">
+        <td colspan="5">
+          <div class="dict-inline-drawer">
+            <div class="dict-drawer-header">
+              <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan);">
+                📋 Opciones que el encuestado puede elegir (${totalOpts} alternativas codificadas):
+              </span>
+              <button onclick="openDictOptionsModal('${safeVar}')" class="btn-secondary" style="padding: 0.2rem 0.6rem; font-size: 0.72rem;">
+                🔍 Abrir en Visor Completo
+              </button>
+            </div>
+            <div class="dict-drawer-chips-grid">
+              ${renderInlineOptionChips(d)}
+            </div>
+          </div>
+        </td>
       </tr>
     `;
   }).join('');
 }
+
+function renderInlineOptionChips(d) {
+  const opts = d.opciones || d.opciones_2026 || d.opciones_2025 || {};
+  const entries = Object.entries(opts);
+  if (entries.length === 0) {
+    return `<span class="text-slate-400" style="font-size: 0.78rem;">Pregunta de valor numérico continuo o respuesta abierta (sin opciones prefijadas).</span>`;
+  }
+
+  // Show up to 16 chips in inline drawer
+  const maxChips = 16;
+  const visible = entries.slice(0, maxChips);
+  const remaining = entries.length - maxChips;
+
+  let html = visible.map(([code, label]) => {
+    return `
+      <div class="dict-option-chip">
+        <span class="dict-chip-code">${code}</span>
+        <span class="dict-chip-text">${label}</span>
+      </div>
+    `;
+  }).join('');
+
+  if (remaining > 0) {
+    html += `
+      <button onclick="openDictOptionsModal('${d.variable}')" class="dict-option-chip" style="background: rgba(6, 182, 212, 0.15); border-color: var(--accent-cyan); color: #38bdf8; cursor: pointer;">
+        + ${remaining} opciones más... (Ver todas)
+      </button>
+    `;
+  }
+
+  return html;
+}
+
+function toggleDictRowDrawer(varCode, btnEl) {
+  const drawerRow = document.getElementById(`dict-drawer-${varCode}`);
+  if (!drawerRow) return;
+
+  const isHidden = drawerRow.style.display === 'none';
+  drawerRow.style.display = isHidden ? 'table-row' : 'none';
+
+  if (btnEl) {
+    btnEl.textContent = isHidden ? '▲' : '▼';
+    btnEl.style.background = isHidden ? 'var(--accent-cyan)' : '';
+    btnEl.style.color = isHidden ? '#04101e' : '';
+  }
+}
+
+function resetDictFilters() {
+  const searchInput = document.getElementById('dict-search-input');
+  const dimFilter = document.getElementById('dict-dim-filter');
+  const scaleFilter = document.getElementById('dict-scale-filter');
+  const yearFilter = document.getElementById('dict-year-filter');
+
+  if (searchInput) searchInput.value = '';
+  if (dimFilter) dimFilter.value = 'all';
+  if (scaleFilter) scaleFilter.value = 'all';
+  if (yearFilter) yearFilter.value = 'all';
+
+  renderDictTable();
+}
+
+/* ==========================================================================
+   MODAL CONTROLLER FOR QUESTION & RESPONSE OPTIONS
+   ========================================================================== */
+function openDictOptionsModal(varCode) {
+  const dict = cierData.dictionary || [];
+  const item = dict.find(d => (d.variable || d.Variable || d.codigo) === varCode);
+  if (!item) return;
+
+  activeDictVarCode = varCode;
+
+  const modal = document.getElementById('dict-options-modal');
+  if (!modal) return;
+
+  // Header Elements
+  document.getElementById('dict-modal-var-code').textContent = item.variable || varCode;
+  document.getElementById('dict-modal-dim-tag').textContent = item.dimension || 'General';
+  document.getElementById('dict-modal-type-tag').textContent = item.tipo_escala || 'Escala CIER';
+  document.getElementById('dict-modal-question-title').textContent = item.nombre || 'Pregunta del Cuestionario';
+
+  // Scale Info Explanation
+  const scaleHeading = document.getElementById('dict-scale-heading');
+  const scaleExp = document.getElementById('dict-scale-explanation');
+  const scaleIcon = document.getElementById('dict-scale-icon');
+
+  if (item.categoria_escala === 'likert') {
+    if (scaleIcon) scaleIcon.textContent = '⭐';
+    if (scaleHeading) scaleHeading.textContent = 'Escala Likert de Satisfacción (1 a 10):';
+    if (scaleExp) scaleExp.textContent = 'El encuestado evalúa del 1 (Totalmente Insatisfecho / Pésimo) al 10 (Totalmente Satisfecho / Excelente). Se complementa con códigos especiales (-77 No Sabe, -88 No Aplica, -99 Sin Respuesta).';
+  } else if (item.categoria_escala === 'binaria') {
+    if (scaleIcon) scaleIcon.textContent = '✔';
+    if (scaleHeading) scaleHeading.textContent = 'Pregunta Binaria Dicotómica:';
+    if (scaleExp) scaleExp.textContent = 'Opciones cerradas de afirmación o negación (1 = Sí, 2 = No).';
+  } else if (item.categoria_escala === 'categorica') {
+    if (scaleIcon) scaleIcon.textContent = '📋';
+    if (scaleHeading) scaleHeading.textContent = 'Pregunta de Selección Categórica / Múltiple:';
+    if (scaleExp) scaleExp.textContent = 'El encuestado elige entre una lista cerrada y estandarizada de opciones codificadas por la metodología CIER.';
+  } else {
+    if (scaleIcon) scaleIcon.textContent = '🔢';
+    if (scaleHeading) scaleHeading.textContent = 'Dato Numérico / Relevamiento Directo:';
+    if (scaleExp) scaleExp.textContent = 'Registro de valor continuo (ej. consumo en kWh, importe en pesos, antigüedad en años).';
+  }
+
+  // Year Tab Setup
+  const tab2026 = document.getElementById('dict-tab-year-2026');
+  const tab2025 = document.getElementById('dict-tab-year-2025');
+  const tabAll = document.getElementById('dict-tab-year-all');
+
+  const count2026 = item.opciones_2026 ? Object.keys(item.opciones_2026).length : 0;
+  const count2025 = item.opciones_2025 ? Object.keys(item.opciones_2025).length : 0;
+
+  if (tab2026) tab2026.textContent = `Ronda 2026 (${count2026} opts)`;
+  if (tab2025) tab2025.textContent = `Ronda 2025 (${count2025} opts)`;
+
+  // Default active tab
+  document.querySelectorAll('.dict-year-tab').forEach(t => t.classList.remove('active'));
+  let defaultYear = '2026';
+  if (count2026 > 0 && tab2026) {
+    tab2026.classList.add('active');
+    defaultYear = '2026';
+  } else if (tab2025) {
+    tab2025.classList.add('active');
+    defaultYear = '2025';
+  }
+
+  // Clear modal search
+  const modalSearch = document.getElementById('dict-modal-search-input');
+  if (modalSearch) modalSearch.value = '';
+
+  // Render options inside modal
+  renderModalOptions(item, defaultYear);
+
+  // Show modal
+  modal.classList.add('active');
+}
+
+function renderModalOptions(item, selectedYear) {
+  const container = document.getElementById('dict-modal-options-grid');
+  const countTag = document.getElementById('dict-modal-count-tag');
+  if (!container) return;
+
+  const searchVal = (document.getElementById('dict-modal-search-input')?.value || '').toLowerCase().trim();
+
+  let optionsToRender = {};
+  if (selectedYear === '2026') {
+    optionsToRender = item.opciones_2026 || item.opciones || {};
+  } else if (selectedYear === '2025') {
+    optionsToRender = item.opciones_2025 || item.opciones || {};
+  } else {
+    // Merged/Comparative
+    const merged = {};
+    if (item.opciones_2026) {
+      Object.entries(item.opciones_2026).forEach(([k, v]) => { merged[k] = `[2026] ${v}`; });
+    }
+    if (item.opciones_2025) {
+      Object.entries(item.opciones_2025).forEach(([k, v]) => {
+        if (merged[k]) {
+          merged[k] = `${merged[k]} | [2025] ${v}`;
+        } else {
+          merged[k] = `[2025] ${v}`;
+        }
+      });
+    }
+    optionsToRender = merged;
+  }
+
+  let entries = Object.entries(optionsToRender);
+
+  // Filter if modal search active
+  if (searchVal) {
+    entries = entries.filter(([code, label]) => {
+      return code.toLowerCase().includes(searchVal) || label.toLowerCase().includes(searchVal);
+    });
+  }
+
+  if (countTag) {
+    countTag.textContent = `${entries.length} Opciones`;
+  }
+
+  if (entries.length === 0) {
+    container.innerHTML = `
+      <div class="glass-card" style="grid-column: 1/-1; text-align: center; padding: 2rem;">
+        <p class="text-slate-300">No se encontraron opciones para el criterio seleccionado.</p>
+      </div>
+    `;
+    return;
+  }
+
+  container.innerHTML = entries.map(([code, label]) => {
+    let categoryClass = 'opt-neutral';
+    let categoryTag = 'Opción Categórica';
+
+    const numCode = parseInt(code, 10);
+    if (code === '-77' || code === '-88' || code === '-99' || code.startsWith('-')) {
+      categoryClass = 'opt-special';
+      categoryTag = 'Código Especial / No Aplica';
+    } else if (item.categoria_escala === 'likert') {
+      if (!isNaN(numCode)) {
+        if (numCode >= 8) {
+          categoryClass = 'opt-positive';
+          categoryTag = '⭐ Calificación Positiva (Promotor / Excelencia)';
+        } else if (numCode >= 5) {
+          categoryClass = 'opt-neutral';
+          categoryTag = '🟡 Calificación Neutra (Pasivo / Aceptable)';
+        } else {
+          categoryClass = 'opt-negative';
+          categoryTag = '🔴 Calificación Negativa (Detractor / Oportunidad)';
+        }
+      }
+    } else if (item.categoria_escala === 'binaria') {
+      if (code === '1') {
+        categoryClass = 'opt-positive';
+        categoryTag = '✔ Afirmativo (Sí)';
+      } else {
+        categoryClass = 'opt-negative';
+        categoryTag = '✖ Negativo (No)';
+      }
+    }
+
+    return `
+      <div class="dict-option-card ${categoryClass}">
+        <div class="dict-code-bubble">${code}</div>
+        <div class="dict-option-content">
+          <div class="dict-option-text">${label}</div>
+          <div class="dict-option-tag">${categoryTag}</div>
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
+function closeDictModal() {
+  const modal = document.getElementById('dict-options-modal');
+  if (modal) modal.classList.remove('active');
+}
+
+function navigateDictVar(delta) {
+  if (!activeDictVarCode || currentDictFilteredList.length === 0) return;
+  const currentIdx = currentDictFilteredList.findIndex(d => (d.variable || d.Variable || d.codigo) === activeDictVarCode);
+  if (currentIdx === -1) return;
+
+  let nextIdx = currentIdx + delta;
+  if (nextIdx < 0) nextIdx = currentDictFilteredList.length - 1;
+  if (nextIdx >= currentDictFilteredList.length) nextIdx = 0;
+
+  const nextVar = currentDictFilteredList[nextIdx];
+  if (nextVar) {
+    openDictOptionsModal(nextVar.variable || nextVar.Variable || nextVar.codigo);
+  }
+}
+
+function copyDictOptions() {
+  const dict = cierData.dictionary || [];
+  const item = dict.find(d => (d.variable || d.Variable || d.codigo) === activeDictVarCode);
+  if (!item) return;
+
+  const opts = item.opciones_2026 || item.opciones || {};
+  let text = `Variable: ${item.variable} - ${item.nombre}\nDimensión: ${item.dimension}\nEscala: ${item.tipo_escala}\n\nOpciones de Respuesta que el encuestado puede elegir:\n`;
+  Object.entries(opts).forEach(([code, label]) => {
+    text += `[${code}] ${label}\n`;
+  });
+
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.getElementById('dict-btn-copy-options');
+    if (btn) {
+      const original = btn.textContent;
+      btn.textContent = '✔ ¡Copiado!';
+      btn.style.background = 'var(--accent-emerald)';
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.style.background = '';
+      }, 2000);
+    }
+  }).catch(() => {
+    alert('No se pudo copiar automáticamente al portapapeles.');
+  });
+}
+
+// Global window mappings
+window.openDictOptionsModal = openDictOptionsModal;
+window.closeDictModal = closeDictModal;
+window.navigateDictVar = navigateDictVar;
+window.copyDictOptions = copyDictOptions;
+window.toggleDictRowDrawer = toggleDictRowDrawer;
+window.resetDictFilters = resetDictFilters;
 
 function renderSSOTChecklist() {
   const tbody = document.getElementById('ssot-checklist-tbody');
@@ -918,26 +1317,82 @@ window.openModal = openModal;
 window.openImageModal = openModal;
 
 function initModalEvents() {
-  const modal = document.getElementById('chart-image-modal');
-  const closeBtn = document.getElementById('modal-close-btn');
+  const chartModal = document.getElementById('chart-image-modal');
+  const chartCloseBtn = document.getElementById('modal-close-btn');
 
-  if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-      if (modal) modal.classList.remove('active');
+  if (chartCloseBtn) {
+    chartCloseBtn.addEventListener('click', () => {
+      if (chartModal) chartModal.classList.remove('active');
     });
   }
 
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        modal.classList.remove('active');
+  if (chartModal) {
+    chartModal.addEventListener('click', (e) => {
+      if (e.target === chartModal) {
+        chartModal.classList.remove('active');
       }
     });
   }
 
+  // Dictionary Options Modal Events
+  const dictModal = document.getElementById('dict-options-modal');
+  const dictCloseBtn = document.getElementById('dict-modal-close-btn');
+
+  if (dictCloseBtn) {
+    dictCloseBtn.addEventListener('click', closeDictModal);
+  }
+
+  if (dictModal) {
+    dictModal.addEventListener('click', (e) => {
+      if (e.target === dictModal) {
+        closeDictModal();
+      }
+    });
+  }
+
+  // Modal Year Tabs Event
+  document.querySelectorAll('.dict-year-tab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.dict-year-tab').forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      const year = tab.getAttribute('data-year') || '2026';
+      const dict = cierData.dictionary || [];
+      const item = dict.find(d => (d.variable || d.Variable || d.codigo) === activeDictVarCode);
+      if (item) {
+        renderModalOptions(item, year);
+      }
+    });
+  });
+
+  // Modal Search Filter Event
+  const modalSearch = document.getElementById('dict-modal-search-input');
+  if (modalSearch) {
+    modalSearch.addEventListener('input', () => {
+      const activeTab = document.querySelector('.dict-year-tab.active');
+      const year = activeTab ? activeTab.getAttribute('data-year') : '2026';
+      const dict = cierData.dictionary || [];
+      const item = dict.find(d => (d.variable || d.Variable || d.codigo) === activeDictVarCode);
+      if (item) {
+        renderModalOptions(item, year);
+      }
+    });
+  }
+
+  // Keyboard Navigation & Shortcuts
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-      modal.classList.remove('active');
+    if (e.key === 'Escape') {
+      if (chartModal && chartModal.classList.contains('active')) {
+        chartModal.classList.remove('active');
+      }
+      if (dictModal && dictModal.classList.contains('active')) {
+        closeDictModal();
+      }
+    } else if (dictModal && dictModal.classList.contains('active')) {
+      if (e.key === 'ArrowLeft') {
+        navigateDictVar(-1);
+      } else if (e.key === 'ArrowRight') {
+        navigateDictVar(1);
+      }
     }
   });
 }
@@ -989,11 +1444,28 @@ function initFiltersAndSearch() {
     idxSearch.addEventListener('input', () => renderIndicesTable());
   }
 
+  // Dictionary Search & Filters
   const dictSearch = document.getElementById('dict-search-input');
   if (dictSearch) {
     dictSearch.addEventListener('input', () => renderDictTable());
   }
 
+  const dictDimFilter = document.getElementById('dict-dim-filter');
+  if (dictDimFilter) {
+    dictDimFilter.addEventListener('change', () => renderDictTable());
+  }
+
+  const dictScaleFilter = document.getElementById('dict-scale-filter');
+  if (dictScaleFilter) {
+    dictScaleFilter.addEventListener('change', () => renderDictTable());
+  }
+
+  const dictYearFilter = document.getElementById('dict-year-filter');
+  if (dictYearFilter) {
+    dictYearFilter.addEventListener('change', () => renderDictTable());
+  }
+
+  // Files Catalog Filters
   const filesSearch = document.getElementById('files-search-input');
   if (filesSearch) {
     filesSearch.addEventListener('input', () => renderFilesGrid());

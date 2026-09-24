@@ -766,23 +766,65 @@
       <div class="glass-card">
         <div class="card-header flex-wrap">
           <div>
-            <h2 class="card-title">Diccionario Unificado de Variables CIER (2025 - 2026)</h2>
-            <p class="card-desc">Catálogo exhaustivo de preguntas, opciones de respuesta y homologación de variables</p>
+            <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+              <h2 class="card-title">Diccionario Unificado de Variables CIER (2025 - 2026)</h2>
+              <span id="dict-counter-badge" class="badge-tag-blue">296 Variables Homologadas</span>
+            </div>
+            <p class="card-desc">Catálogo exhaustivo de preguntas, enunciados del cuestionario y opciones de respuesta que el encuestado puede elegir</p>
           </div>
-          <div class="search-box-wrapper">
-            <input type="text" id="dict-search-input" class="search-input" placeholder="Buscar variable por código o término (ej. P036, edad, tarifa, corte)...">
+          <div class="dict-quick-stats" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="badge-pill-cyan">📊 157 Escalas 1 a 10</span>
+            <span class="badge-pill-purple">🏷️ 91 Categóricas</span>
+            <span class="badge-pill-green">✔ 47 Binarias (Sí/No)</span>
+            <span class="badge-pill-amber">🔢 2.140+ Opciones Codificadas</span>
           </div>
         </div>
 
+        <!-- Filter and Search Toolbar -->
+        <div class="dict-toolbar mt-3">
+          <div class="dict-toolbar-filters">
+            <div class="search-box-wrapper" style="flex: 1; min-width: 260px;">
+              <input type="text" id="dict-search-input" class="search-input" placeholder="🔍 Buscar por código (ej. P036), texto de pregunta u opción de respuesta...">
+            </div>
+            <select id="dict-dim-filter" class="guide-select" title="Filtrar por Dimensión Temática">
+              <option value="all">Todas las Dimensiones (7 Áreas)</option>
+              <option value="1_Identificacion_y_Muestreo">1. Identificación y Muestreo</option>
+              <option value="2_Suministro_de_Energia">2. Suministro de Energía (SE)</option>
+              <option value="3_Facturacion_Medicion_y_Tarifa">3. Facturación y Tarifa (FE)</option>
+              <option value="4_Atencion_al_Cliente">4. Atención al Cliente (AT)</option>
+              <option value="5_Imagen_Institucional">5. Imagen Institucional (IM)</option>
+              <option value="6_Informacion_y_Comunicacion">6. Información y Comunicación (IC)</option>
+              <option value="7_Caracteristicas_del_Hogar">7. Características del Hogar / Sociodemográficas</option>
+            </select>
+            <select id="dict-scale-filter" class="guide-select" title="Filtrar por Tipo de Escala / Respuesta">
+              <option value="all">Todas las Escalas de Respuesta</option>
+              <option value="likert">⭐ Escala Likert (1 a 10 / Satisfacción)</option>
+              <option value="categorica">📋 Selección Categórica / Múltiples Opciones</option>
+              <option value="binaria">✔ Binaria (Sí / No)</option>
+              <option value="numerica">🔢 Dato Numérico / Abierto</option>
+            </select>
+            <select id="dict-year-filter" class="guide-select" title="Filtrar por Año / Ronda">
+              <option value="all">Todas las Rondas (2025 y 2026)</option>
+              <option value="ambos">Presente en Ambos Años (2025 y 2026)</option>
+              <option value="2026">Solo Ronda 2026 (Nuevas)</option>
+              <option value="2025">Solo Ronda 2025</option>
+            </select>
+            <button id="dict-reset-filters-btn" class="btn-secondary" onclick="resetDictFilters()" title="Restablecer todos los filtros" style="padding: 0.5rem 0.9rem; font-size: 0.8rem; white-space: nowrap;">
+              🔄 Restablecer
+            </button>
+          </div>
+        </div>
+
+        <!-- Table with Interactive Options -->
         <div class="table-responsive mt-3">
           <table class="data-table" id="dict-table">
             <thead>
               <tr>
-                <th>Variable</th>
-                <th>Dimensión / Área</th>
-                <th>Nombre / Atributo</th>
-                <th>Tipo / Estado</th>
-                <th>Escala / Valores / Descripción</th>
+                <th style="width: 100px;">Variable</th>
+                <th style="width: 190px;">Dimensión Temática</th>
+                <th>Pregunta / Enunciado del Relevamiento</th>
+                <th style="width: 170px;">Tipo de Escala</th>
+                <th style="width: 220px; text-align: center;">Opciones para el Encuestado</th>
               </tr>
             </thead>
             <tbody id="dict-table-body">
@@ -905,6 +947,63 @@
       <div class="modal-body">
         <img src="" alt="Gráfico Ampliado" id="modal-chart-img" class="modal-img">
         <div class="modal-caption" id="modal-chart-desc"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Dictionary Question & Options Modal Viewer -->
+  <div class="modal-overlay" id="dict-options-modal">
+    <div class="modal-content dict-modal-content">
+      <div class="modal-header dict-modal-header">
+        <div class="dict-modal-title-group">
+          <div class="dict-modal-badges">
+            <code class="code-badge font-bold" id="dict-modal-var-code">P036</code>
+            <span class="dim-tag" id="dict-modal-dim-tag">Suministro de Energía</span>
+            <span class="type-tag" id="dict-modal-type-tag">Escala Likert 1-10</span>
+            <span class="badge-tag-blue" id="dict-modal-count-tag">10 Opciones</span>
+          </div>
+          <h3 class="modal-title dict-question-title" id="dict-modal-question-title">¿Cómo califica la continuidad del suministro?</h3>
+        </div>
+        <button class="modal-close-btn" id="dict-modal-close-btn">&times;</button>
+      </div>
+      
+      <div class="modal-body dict-modal-body">
+        <!-- Ronda / Version Tabs & Search inside options -->
+        <div class="dict-modal-controls-bar">
+          <div class="dict-year-tabs" id="dict-modal-year-tabs">
+            <button class="dict-year-tab active" data-year="2026" id="dict-tab-year-2026">Ronda 2026</button>
+            <button class="dict-year-tab" data-year="2025" id="dict-tab-year-2025">Ronda 2025</button>
+            <button class="dict-year-tab" data-year="all" id="dict-tab-year-all">Comparativa Ambas Rondas</button>
+          </div>
+          <div class="dict-modal-search-box">
+            <input type="text" id="dict-modal-search-input" class="search-input" placeholder="🔍 Filtrar opciones de esta pregunta...">
+          </div>
+        </div>
+
+        <!-- Scale Explanation Banner -->
+        <div class="dict-scale-info-box" id="dict-scale-info-box">
+          <span class="dict-scale-icon" id="dict-scale-icon">⭐</span>
+          <div class="dict-scale-info-text">
+            <strong id="dict-scale-heading">Escala de Calificación del 1 al 10:</strong>
+            <span id="dict-scale-explanation">Donde 1 representa la máxima insatisfacción y 10 representa la máxima excelencia.</span>
+          </div>
+        </div>
+
+        <!-- Options Container Grid -->
+        <div class="dict-options-grid" id="dict-modal-options-grid">
+          <!-- Options rendered dynamically -->
+        </div>
+      </div>
+
+      <div class="modal-footer dict-modal-footer">
+        <div class="dict-nav-btn-group">
+          <button class="btn-secondary" id="dict-btn-prev-var" onclick="navigateDictVar(-1)">◀ Pregunta Anterior</button>
+          <button class="btn-secondary" id="dict-btn-next-var" onclick="navigateDictVar(1)">Pregunta Siguiente ▶</button>
+        </div>
+        <div class="dict-action-btn-group">
+          <button class="btn-primary" id="dict-btn-copy-options" onclick="copyDictOptions()">📋 Copiar Opciones</button>
+          <button class="btn-secondary" onclick="closeDictModal()">Cerrar</button>
+        </div>
       </div>
     </div>
   </div>
