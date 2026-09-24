@@ -767,10 +767,10 @@
         <div class="card-header flex-wrap">
           <div>
             <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
-              <h2 class="card-title">Diccionario Unificado de Variables CIER (2025 - 2026)</h2>
+              <h2 class="card-title">Diccionario Unificado y Auditoría Metodológica CAPI (2025 - 2026)</h2>
               <span id="dict-counter-badge" class="badge-tag-blue">296 Variables Homologadas</span>
             </div>
-            <p class="card-desc">Catálogo exhaustivo de preguntas, enunciados del cuestionario y opciones de respuesta que el encuestado puede elegir</p>
+            <p class="card-desc">Catálogo exhaustivo de preguntas, fuentes de captura (Encuestador vs. Cliente), tasas de utilización de la muestra (N=625) y lógica de saltos (Skip Logic)</p>
           </div>
           <div class="dict-quick-stats" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
             <span class="badge-pill-cyan">📊 157 Escalas 1 a 10</span>
@@ -780,57 +780,282 @@
           </div>
         </div>
 
-        <!-- Filter and Search Toolbar -->
-        <div class="dict-toolbar mt-3">
-          <div class="dict-toolbar-filters">
-            <div class="search-box-wrapper" style="flex: 1; min-width: 260px;">
-              <input type="text" id="dict-search-input" class="search-input" placeholder="🔍 Buscar por código (ej. P036), texto de pregunta u opción de respuesta...">
+        <!-- Sub-navigation Tabs: Catálogo vs Auditoría Metodológica -->
+        <div class="dict-subtabs-nav mt-3">
+          <button class="dict-subtab-btn active" id="btn-dict-subtab-catalog" onclick="switchDictSubTab('catalog')">
+            <span>📚</span> Catálogo de Variables y Respuestas
+          </button>
+          <button class="dict-subtab-btn" id="btn-dict-subtab-audit" onclick="switchDictSubTab('audit')">
+            <span>🔬</span> Auditoría Metodológica y Lógica de Saltos (Muestra 2026)
+          </button>
+        </div>
+
+        <!-- =========================================================================
+             SUBTAB 1: CATALOGO DE VARIABLES Y RESPUESTAS
+             ========================================================================= -->
+        <div id="dict-subtab-catalog-content" class="dict-subtab-panel active">
+          <!-- Filter and Search Toolbar -->
+          <div class="dict-toolbar mt-3">
+            <div class="dict-toolbar-filters">
+              <div class="search-box-wrapper" style="flex: 1; min-width: 240px;">
+                <input type="text" id="dict-search-input" class="search-input" placeholder="🔍 Buscar por código (ej. P036, G129_1), pregunta, opción o lógica de salto...">
+              </div>
+              <select id="dict-dim-filter" class="guide-select" title="Filtrar por Dimensión Temática">
+                <option value="all">Todas las Dimensiones (7 Áreas)</option>
+                <option value="1_Identificacion_y_Muestreo">1. Identificación y Muestreo</option>
+                <option value="2_Suministro_de_Energia">2. Suministro de Energía (SE)</option>
+                <option value="3_Facturacion_Medicion_y_Tarifa">3. Facturación y Tarifa (FE)</option>
+                <option value="4_Atencion_al_Cliente">4. Atención al Cliente (AT)</option>
+                <option value="5_Imagen_Institucional">5. Imagen Institucional (IM)</option>
+                <option value="6_Informacion_y_Comunicacion">6. Información y Comunicación (IC)</option>
+                <option value="7_Caracteristicas_del_Hogar">7. Características del Hogar / Sociodemográficas</option>
+              </select>
+              <select id="dict-fuente-filter" class="guide-select" title="Filtrar por Fuente de Captura">
+                <option value="all">Todas las Fuentes de Captura</option>
+                <option value="cliente">👤 Cliente (Tarjeta Visual / Declaración)</option>
+                <option value="encuestador">📱 Encuestador (CAPI / Sensor GPS / Factura)</option>
+              </select>
+              <select id="dict-utilizacion-filter" class="guide-select" title="Filtrar por Tasa de Aplicación">
+                <option value="all">Todas las Tasas de Muestra</option>
+                <option value="100">⭐ 100.0% Universal (Sin saltos)</option>
+                <option value="condicional">⚡ Condicionales / Saltos (&lt;100%)</option>
+              </select>
+              <select id="dict-scale-filter" class="guide-select" title="Filtrar por Tipo de Escala / Respuesta">
+                <option value="all">Todas las Escalas de Respuesta</option>
+                <option value="likert">⭐ Escala Likert (1 a 10 / Satisfacción)</option>
+                <option value="categorica">📋 Selección Categórica / Múltiples Opciones</option>
+                <option value="binaria">✔ Binaria (Sí / No)</option>
+                <option value="numerica">🔢 Dato Numérico / Abierto</option>
+              </select>
+              <select id="dict-year-filter" class="guide-select" title="Filtrar por Año / Ronda">
+                <option value="all">Todas las Rondas (2025 y 2026)</option>
+                <option value="ambos">Presente en Ambos Años (2025 y 2026)</option>
+                <option value="2026">Solo Ronda 2026 (Nuevas)</option>
+                <option value="2025">Solo Ronda 2025</option>
+              </select>
+              <button id="dict-reset-filters-btn" class="btn-secondary" onclick="resetDictFilters()" title="Restablecer todos los filtros" style="padding: 0.5rem 0.9rem; font-size: 0.8rem; white-space: nowrap;">
+                🔄 Restablecer
+              </button>
             </div>
-            <select id="dict-dim-filter" class="guide-select" title="Filtrar por Dimensión Temática">
-              <option value="all">Todas las Dimensiones (7 Áreas)</option>
-              <option value="1_Identificacion_y_Muestreo">1. Identificación y Muestreo</option>
-              <option value="2_Suministro_de_Energia">2. Suministro de Energía (SE)</option>
-              <option value="3_Facturacion_Medicion_y_Tarifa">3. Facturación y Tarifa (FE)</option>
-              <option value="4_Atencion_al_Cliente">4. Atención al Cliente (AT)</option>
-              <option value="5_Imagen_Institucional">5. Imagen Institucional (IM)</option>
-              <option value="6_Informacion_y_Comunicacion">6. Información y Comunicación (IC)</option>
-              <option value="7_Caracteristicas_del_Hogar">7. Características del Hogar / Sociodemográficas</option>
-            </select>
-            <select id="dict-scale-filter" class="guide-select" title="Filtrar por Tipo de Escala / Respuesta">
-              <option value="all">Todas las Escalas de Respuesta</option>
-              <option value="likert">⭐ Escala Likert (1 a 10 / Satisfacción)</option>
-              <option value="categorica">📋 Selección Categórica / Múltiples Opciones</option>
-              <option value="binaria">✔ Binaria (Sí / No)</option>
-              <option value="numerica">🔢 Dato Numérico / Abierto</option>
-            </select>
-            <select id="dict-year-filter" class="guide-select" title="Filtrar por Año / Ronda">
-              <option value="all">Todas las Rondas (2025 y 2026)</option>
-              <option value="ambos">Presente en Ambos Años (2025 y 2026)</option>
-              <option value="2026">Solo Ronda 2026 (Nuevas)</option>
-              <option value="2025">Solo Ronda 2025</option>
-            </select>
-            <button id="dict-reset-filters-btn" class="btn-secondary" onclick="resetDictFilters()" title="Restablecer todos los filtros" style="padding: 0.5rem 0.9rem; font-size: 0.8rem; white-space: nowrap;">
-              🔄 Restablecer
-            </button>
+          </div>
+
+          <!-- Table with Interactive Options and Audit Badges -->
+          <div class="table-responsive mt-3">
+            <table class="data-table" id="dict-table">
+              <thead>
+                <tr>
+                  <th style="width: 90px;">Variable</th>
+                  <th style="width: 170px;">Dimensión</th>
+                  <th>Pregunta / Enunciado del Relevamiento</th>
+                  <th style="width: 170px;">Fuente & % Muestra 2026</th>
+                  <th style="width: 140px;">Tipo Escala</th>
+                  <th style="width: 200px; text-align: center;">Respuestas & Salto</th>
+                </tr>
+              </thead>
+              <tbody id="dict-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
           </div>
         </div>
 
-        <!-- Table with Interactive Options -->
-        <div class="table-responsive mt-3">
-          <table class="data-table" id="dict-table">
-            <thead>
-              <tr>
-                <th style="width: 100px;">Variable</th>
-                <th style="width: 190px;">Dimensión Temática</th>
-                <th>Pregunta / Enunciado del Relevamiento</th>
-                <th style="width: 170px;">Tipo de Escala</th>
-                <th style="width: 220px; text-align: center;">Opciones para el Encuestado</th>
-              </tr>
-            </thead>
-            <tbody id="dict-table-body">
-              <!-- Rendered dynamically -->
-            </tbody>
-          </table>
+        <!-- =========================================================================
+             SUBTAB 2: AUDITORÍA METODOLÓGICA Y LÓGICA DE SALTOS (MUESTRA 2026)
+             ========================================================================= -->
+        <div id="dict-subtab-audit-content" class="dict-subtab-panel" style="display: none;">
+          
+          <!-- Macro-Modules Utilization Grid -->
+          <div class="mt-4">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span>📊</span> Porcentaje de Utilización de Preguntas en la Muestra 2026 (N = 625)
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1.25rem;">
+              Desglose de los 5 macro-módulos del cuestionario según su obligatoriedad universal o activación por lógica de saltos (*Skip Logic*).
+            </p>
+
+            <div class="macro-modules-grid">
+              <!-- Module 1: Núcleo Universal -->
+              <div class="macro-mod-card" style="border-top-color: #10b981;">
+                <div class="macro-mod-header">
+                  <span class="macro-mod-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: rgba(16, 185, 129, 0.4);">
+                    ⭐ Núcleo Universal (Obligatorio)
+                  </span>
+                  <span class="macro-mod-pct" style="color: #10b981;">100.0% <small style="font-size: 0.75rem; color: var(--text-muted);">(N = 625)</small></span>
+                </div>
+                <h4 class="macro-mod-title">30 Atributos del ISCAL + ISG + IAC + NPS + Sociodemográfico</h4>
+                <p class="macro-mod-desc">
+                  <strong>Comportamiento / Lógica de Salto:</strong> Sin saltos. Lo responde la totalidad de la muestra para calcular los índices oficiales de la CIER y los 5 IDAR.
+                </p>
+                <div class="macro-mod-footer">
+                  <span>Aplicación: <strong>625 de 625 encuestados</strong></span>
+                  <span class="badge-pill-green">✔ Base Ponderación ISCAL</span>
+                </div>
+              </div>
+
+              <!-- Module 2: Cortes en Último Mes -->
+              <div class="macro-mod-card" style="border-top-color: #38bdf8;">
+                <div class="macro-mod-header">
+                  <span class="macro-mod-badge" style="background: rgba(56, 189, 248, 0.2); color: #38bdf8; border-color: rgba(56, 189, 248, 0.4);">
+                    ⚡ Módulo de Cortes en el Último Mes
+                  </span>
+                  <span class="macro-mod-pct" style="color: #38bdf8;">51.2% <small style="font-size: 0.75rem; color: var(--text-muted);">(N = 320)</small></span>
+                </div>
+                <h4 class="macro-mod-title">P135 (Filtro de corte) ➔ P136 (Cantidad) y G137/P142 (Duración)</h4>
+                <p class="macro-mod-desc">
+                  <strong>Comportamiento / Lógica de Salto:</strong> Condicional: El 51.2% de los clientes experimentó al menos un corte en el último mes y detalló cantidad de horas/eventos. El <strong>48.8% restante saltó</strong> esta sección auxiliar directo a Facturación.
+                </p>
+                <div class="macro-mod-footer">
+                  <span>Aplicación: <strong>320 de 625 encuestados</strong></span>
+                  <span class="badge-pill-cyan">⚡ Filtro P135</span>
+                </div>
+              </div>
+
+              <!-- Module 3: Reclamos y Contacto -->
+              <div class="macro-mod-card" style="border-top-color: #f59e0b;">
+                <div class="macro-mod-header">
+                  <span class="macro-mod-badge" style="background: rgba(245, 158, 11, 0.2); color: #fbbf24; border-color: rgba(245, 158, 11, 0.4);">
+                    👤 Módulo de Reclamos y Contacto
+                  </span>
+                  <span class="macro-mod-pct" style="color: #f59e0b;">42.1% <small style="font-size: 0.75rem; color: var(--text-muted);">(N = 263)</small></span>
+                </div>
+                <h4 class="macro-mod-title">P240 (Contacto previo) ➔ P263 (Resolución en 1º contacto FCR)</h4>
+                <p class="macro-mod-desc">
+                  <strong>Comportamiento / Lógica de Salto:</strong> Condicional: Solo el 42.1% que realizó trámites o reclamos en el último año evaluó tiempos de espera y FCR (P263). El <strong>57.9% restante saltó</strong> directo a Imagen Institucional.
+                </p>
+                <div class="macro-mod-footer">
+                  <span>Aplicación: <strong>263 de 625 encuestados</strong></span>
+                  <span class="badge-pill-amber">📞 Filtro P240</span>
+                </div>
+              </div>
+
+              <!-- Module 4: App Móvil y Canales Web -->
+              <div class="macro-mod-card" style="border-top-color: #a855f7;">
+                <div class="macro-mod-header">
+                  <span class="macro-mod-badge" style="background: rgba(168, 85, 247, 0.2); color: #c084fc; border-color: rgba(168, 85, 247, 0.4);">
+                    📱 Módulo de App Móvil y Canales Web
+                  </span>
+                  <span class="macro-mod-pct" style="color: #c084fc;">8.2% <small style="font-size: 0.75rem; color: var(--text-muted);">(N = 51)</small></span>
+                </div>
+                <h4 class="macro-mod-title">P267 (Satisfacción puntual con la App EPEC)</h4>
+                <p class="macro-mod-desc">
+                  <strong>Comportamiento / Lógica de Salto:</strong> Condicional específico: Solo los usuarios que utilizaron activamente la aplicación móvil para gestiones avanzadas respondieron este bloque de evaluación de interfaz.
+                </p>
+                <div class="macro-mod-footer">
+                  <span>Aplicación: <strong>51 de 625 encuestados</strong></span>
+                  <span class="badge-pill-purple">📱 Filtro P267</span>
+                </div>
+              </div>
+
+              <!-- Module 5: Verificación de Factura -->
+              <div class="macro-mod-card" style="border-top-color: #10b981;">
+                <div class="macro-mod-header">
+                  <span class="macro-mod-badge" style="background: rgba(16, 185, 129, 0.2); color: #34d399; border-color: rgba(16, 185, 129, 0.4);">
+                    📄 Verificación de Factura en Domicilio
+                  </span>
+                  <span class="macro-mod-pct" style="color: #10b981;">100.0% <small style="font-size: 0.75rem; color: var(--text-muted);">(N = 625)</small></span>
+                </div>
+                <h4 class="macro-mod-title">P018 ➔ P021 (Monto $) y P023 (Consumo kWh)</h4>
+                <p class="macro-mod-desc">
+                  <strong>Comportamiento / Lógica de Salto:</strong> Universal auditada: El 100% de las entrevistas contó con comprobación directa y transcripción de la factura física o digital en el domicilio del encuestado.
+                </p>
+                <div class="macro-mod-footer">
+                  <span>Aplicación: <strong>625 de 625 encuestados</strong></span>
+                  <span class="badge-pill-green">✔ Comprobación 100%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fuentes de Captura Protocol CAPI -->
+          <div class="mt-4 glass-card" style="background: rgba(15, 23, 42, 0.7);">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span>🧭</span> Metodología de Clasificación de Fuentes de Captura (Protocolo CAPI)
+            </h3>
+            <p style="font-size: 0.88rem; color: var(--text-muted); margin-bottom: 1rem;">
+              En el protocolo <strong>CAPI (*Computer-Assisted Personal Interviewing*)</strong> presencial, cada variable posee un origen de captura estandarizado y auditable:
+            </p>
+            
+            <div class="grid-2">
+              <div class="p-3" style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <span style="font-size: 1.3rem;">📱</span>
+                  <h4 style="font-size: 0.95rem; font-weight: 700; color: #38bdf8; margin: 0;">1. Encuestador (Registro / Observación CAPI Directa)</h4>
+                </div>
+                <p style="font-size: 0.83rem; color: #cbd5e1; line-height: 1.5; margin: 0;">
+                  Datos técnicos y de control auditables registrados directamente por el encuestador: coordenadas y sensores automáticos del dispositivo (GPS), tiempo cronometrado de entrevista, tipo de vivienda y transcripción literal de los datos de la factura física o digital en mano del cliente.
+                </p>
+              </div>
+
+              <div class="p-3" style="background: rgba(30, 41, 59, 0.6); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 8px;">
+                <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                  <span style="font-size: 1.3rem;">👤</span>
+                  <h4 style="font-size: 0.95rem; font-weight: 700; color: #10b981; margin: 0;">2. Cliente (Declaración Asistida con Tarjeta Visual)</h4>
+                </div>
+                <p style="font-size: 0.83rem; color: #cbd5e1; line-height: 1.5; margin: 0;">
+                  Respuestas verbales del titular o responsable del servicio en el hogar, guiadas mediante la exhibición física de la <strong>Tarjeta Visual de Escala Graduada (1 = Pésimo a 10 = Excelente)</strong> o tarjetas de opciones múltiples para garantizar objetividad sin sesgos.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Matriz Resumen de Cobertura y Fuentes -->
+          <div class="mt-4">
+            <h3 style="font-size: 1.15rem; font-weight: 700; color: #fff; margin-bottom: 0.75rem; display: flex; align-items: center; gap: 0.5rem;">
+              <span>📊</span> Matriz Resumen de Cobertura, Grupos Metodológicos y Fuentes
+            </h3>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Grupo Metodológico</th>
+                    <th style="width: 140px; text-align: center;">Total Preguntas</th>
+                    <th>Fuente Principal de Captura</th>
+                    <th>Tasa de Aplicación en Muestra 2026 (N=625)</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>1. Filtros, Titularidad y Control Muestral (GPS)</strong></td>
+                    <td style="text-align: center;"><span class="badge-tag-blue">7 Preguntas</span></td>
+                    <td><span class="fuente-badge-encuestador">📱 Encuestador (Registro / GPS)</span></td>
+                    <td><strong style="color: #10b981;">100.0% Universal</strong> (Parámetros CAPI auditables)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>2. Preguntas Evaluativas ISCAL (30 Atributos + 6 Directas)</strong></td>
+                    <td style="text-align: center;"><span class="badge-tag-blue">36 Preguntas</span></td>
+                    <td><span class="fuente-badge-cliente">👤 Cliente (Tarjeta Visual 1-10)</span></td>
+                    <td><strong style="color: #10b981;">100.0% Universal</strong> (Rankings importancia: submuestra rotativa 20%)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>3. Comportamiento, Canales, Pagos y Reclamos</strong></td>
+                    <td style="text-align: center;"><span class="badge-tag-blue">11 Preguntas</span></td>
+                    <td><span class="fuente-badge-cliente">👤 Cliente</span> / <span class="fuente-badge-encuestador">📱 Encuestador</span></td>
+                    <td><strong style="color: #f59e0b;">100.0% Filtro Inicial</strong> ➔ <strong>42.1% Reclamos</strong> (FCR: 42.7% · App: 8.2%)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>4. Frecuencia de Cortes, Voltaje y Tiempos Técnicos</strong></td>
+                    <td style="text-align: center;"><span class="badge-tag-blue">17 Preguntas</span></td>
+                    <td><span class="fuente-badge-cliente">👤 Cliente</span> / <span class="fuente-badge-encuestador">📱 Factura</span></td>
+                    <td><strong style="color: #38bdf8;">100.0% Factura Directa</strong> ➔ <strong>51.2% Detalle de Cortes</strong></td>
+                  </tr>
+                  <tr>
+                    <td><strong>5. Perfil Sociodemográfico y Económico</strong></td>
+                    <td style="text-align: center;"><span class="badge-tag-blue">14 Preguntas</span></td>
+                    <td><span class="fuente-badge-cliente">👤 Cliente (Declaración)</span></td>
+                    <td><strong style="color: #10b981;">100.0% Universal</strong> (Edad, Escolaridad, Ingresos, Empleo)</td>
+                  </tr>
+                  <tr>
+                    <td><strong>6. Frecuencias de Orientación y Plazos Auxiliares</strong></td>
+                    <td style="text-align: center;"><span class="badge-tag-blue">12 Preguntas</span></td>
+                    <td><span class="fuente-badge-cliente">👤 Cliente (Consolidadas)</span></td>
+                    <td><strong style="color: #cbd5e1;">100.0% en Bloques Centrales</strong> (RSA, Cobertura Municipal)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -960,7 +1185,10 @@
             <code class="code-badge font-bold" id="dict-modal-var-code">P036</code>
             <span class="dim-tag" id="dict-modal-dim-tag">Suministro de Energía</span>
             <span class="type-tag" id="dict-modal-type-tag">Escala Likert 1-10</span>
+            <span class="fuente-badge-cliente" id="dict-modal-fuente-tag">👤 Cliente (Tarjeta Visual)</span>
+            <span class="macro-mod-pct" id="dict-modal-sample-tag" style="font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 20px; background: rgba(16, 185, 129, 0.15); color: #34d399; border: 1px solid rgba(16, 185, 129, 0.3);">100.0% (N=625)</span>
             <span class="badge-tag-blue" id="dict-modal-count-tag">10 Opciones</span>
+            <span id="dict-modal-idat-tag" style="display: none; font-size: 0.75rem; font-weight: 700; padding: 0.2rem 0.55rem; border-radius: 20px; background: rgba(56, 189, 248, 0.15); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.3);"></span>
           </div>
           <h3 class="modal-title dict-question-title" id="dict-modal-question-title">¿Cómo califica la continuidad del suministro?</h3>
         </div>
@@ -968,8 +1196,34 @@
       </div>
       
       <div class="modal-body dict-modal-body">
+        <!-- CAPI Methodological Audit & Skip Logic Card -->
+        <div class="dict-modal-audit-box" id="dict-modal-audit-box">
+          <div class="audit-box-header">
+            <span style="font-size: 0.95rem; font-weight: 700; color: #fff; display: flex; align-items: center; gap: 0.4rem;">
+              <span>🔬</span> Auditoría Metodológica CAPI (Muestra 2026 · N = 625)
+            </span>
+            <span class="badge-tag-slate" id="dict-modal-audit-group" style="font-size: 0.7rem;">Grupo Metodológico</span>
+          </div>
+          
+          <div class="audit-box-grid">
+            <div class="audit-box-item">
+              <span class="audit-item-lbl">📱 Fuente de Captura CAPI:</span>
+              <strong class="audit-item-val text-slate-100" id="dict-modal-audit-fuente">👤 Cliente (Declaración Asistida con Tarjeta Visual)</strong>
+            </div>
+            <div class="audit-box-item">
+              <span class="audit-item-lbl">📊 % Utilización en Muestra:</span>
+              <strong class="audit-item-val" id="dict-modal-audit-pct" style="color: #10b981;">100.0% (625 de 625 encuestados)</strong>
+            </div>
+          </div>
+
+          <div class="audit-skip-logic-row mt-2" id="dict-modal-skip-row">
+            <span class="audit-item-lbl">⚡ Comportamiento / Lógica de Salto (Skip Logic):</span>
+            <div class="audit-skip-text" id="dict-modal-audit-skip">Sin saltos. Lo responde la totalidad de la muestra para calcular los índices oficiales de la CIER.</div>
+          </div>
+        </div>
+
         <!-- Ronda / Version Tabs & Search inside options -->
-        <div class="dict-modal-controls-bar">
+        <div class="dict-modal-controls-bar mt-3">
           <div class="dict-year-tabs" id="dict-modal-year-tabs">
             <button class="dict-year-tab active" data-year="2026" id="dict-tab-year-2026">Ronda 2026</button>
             <button class="dict-year-tab" data-year="2025" id="dict-tab-year-2025">Ronda 2025</button>

@@ -1853,7 +1853,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "📱 Encuestador (CAPI)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal fija: Parámetro de cabecera regional CIER.",
+      "grupo_metodologico": "1. Filtros y Control Muestral",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P002",
@@ -1905,7 +1912,14 @@ window.CIER_DATA = {
         "97": "COPEL-BR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "📱 Encuestador (CAPI)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal fija: Identificador de la empresa auditada (EPEC-AR).",
+      "grupo_metodologico": "1. Filtros y Control Muestral",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P003",
@@ -1931,7 +1945,14 @@ window.CIER_DATA = {
         "2": "Expansión"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "📱 Encuestador (CAPI)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal fija: 100% clasificada como muestra probabilística oficial.",
+      "grupo_metodologico": "1. Filtros y Control Muestral",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P004",
@@ -1957,7 +1978,14 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "📱 Encuestador (CAPI)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal de filtro: 100% corresponde a clientes residenciales postpago habituales.",
+      "grupo_metodologico": "1. Filtros y Control Muestral",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P005",
@@ -2423,7 +2451,14 @@ window.CIER_DATA = {
         "650028": "SARAPIQUI"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "📱 Encuestador (Sensor GPS)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal auditada: Captura automática de latitud/longitud y municipio en la puerta del hogar.",
+      "grupo_metodologico": "1. Filtros y Control Muestral",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P015",
@@ -2456,7 +2491,12 @@ window.CIER_DATA = {
         "7": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P016",
@@ -2479,7 +2519,12 @@ window.CIER_DATA = {
         "2": "No presentó la factura"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P017",
@@ -2512,7 +2557,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente / 📱 Encuestador",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Papel domicilio (68.2%), Email/Web (26.4%), Mixto (5.4%).",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P018",
@@ -2535,7 +2587,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "📱 Encuestador (Observación)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal auditada: El encuestador constató la factura física o digital en el 100% de las visitas.",
+      "grupo_metodologico": "1. Filtros y Control Muestral",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P021",
@@ -2556,7 +2615,14 @@ window.CIER_DATA = {
         "-77": "Dato no disponible en la factura"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "📱 Encuestador (Factura)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal auditada: Transcrito directamente del comprobante en mano del cliente.",
+      "grupo_metodologico": "4. Cortes, Voltaje y Tiempos Técnicos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P023",
@@ -2582,7 +2648,14 @@ window.CIER_DATA = {
         "4": "Residencial Triple"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "📱 Encuestador (Factura)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal auditada: Transcrito directamente del comprobante en mano del cliente.",
+      "grupo_metodologico": "4. Cortes, Voltaje y Tiempos Técnicos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P024",
@@ -2605,7 +2678,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P025",
@@ -2628,7 +2706,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P027",
@@ -2651,7 +2734,12 @@ window.CIER_DATA = {
         "-99": "No respondió"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P028",
@@ -2674,7 +2762,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P029",
@@ -2697,7 +2790,12 @@ window.CIER_DATA = {
         "-99": "No respondió"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P030",
@@ -2720,7 +2818,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P031",
@@ -2743,7 +2846,12 @@ window.CIER_DATA = {
         "-99": "No respondió"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P032",
@@ -2766,7 +2874,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P033",
@@ -2789,7 +2902,12 @@ window.CIER_DATA = {
         "-99": "No respondió"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P034",
@@ -2812,7 +2930,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P035",
@@ -2833,7 +2956,12 @@ window.CIER_DATA = {
         "-99": "No respondió"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P036",
@@ -2866,7 +2994,14 @@ window.CIER_DATA = {
         "11": "Analfabeto"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Edad cronológica del informante (Promedio: 47.8 años grupo exigente vs 52.2 promotores).",
+      "grupo_metodologico": "5. Perfil Sociodemográfico",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P037",
@@ -2930,7 +3065,14 @@ window.CIER_DATA = {
         "22": "No Respondió"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Máximo Nivel de Escolaridad (77.2% secundario o superior).",
+      "grupo_metodologico": "5. Perfil Sociodemográfico",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P038",
@@ -3006,7 +3148,14 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Rango de Ingreso Familiar Mensual (Franjas y deciles CIER).",
+      "grupo_metodologico": "5. Perfil Sociodemográfico",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P039",
@@ -3049,7 +3198,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Escala Ordinal)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Calidad Percibida Global (Muy mala a Muy buena).",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P046",
@@ -3082,7 +3238,12 @@ window.CIER_DATA = {
         "-99": "NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P047",
@@ -3105,7 +3266,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P048",
@@ -3131,7 +3297,14 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "📱 Encuestador (CAPI)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal de control: 100% asignado a la medición anual de satisfacción.",
+      "grupo_metodologico": "1. Filtros y Control Muestral",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P049",
@@ -3154,7 +3327,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P050",
@@ -3182,7 +3360,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P051",
@@ -3210,7 +3393,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P052",
@@ -3238,7 +3426,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P053",
@@ -3284,7 +3477,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P054",
@@ -3330,7 +3528,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P055",
@@ -3376,7 +3579,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P056",
@@ -3422,7 +3630,12 @@ window.CIER_DATA = {
         "-777": "Ninguna"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P057",
@@ -3454,7 +3667,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P058",
@@ -3486,7 +3704,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P059",
@@ -3526,7 +3749,12 @@ window.CIER_DATA = {
         "10": "Otro"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P060",
@@ -3558,7 +3786,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P061",
@@ -3604,7 +3837,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P062",
@@ -3650,7 +3888,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P063",
@@ -3696,7 +3939,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P064",
@@ -3742,7 +3990,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P065",
@@ -3802,7 +4055,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P066",
@@ -3836,7 +4094,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P067",
@@ -3870,7 +4133,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P068",
@@ -3904,7 +4172,12 @@ window.CIER_DATA = {
         "2": "Satisfacción"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P069",
@@ -3941,7 +4214,12 @@ window.CIER_DATA = {
         "5": "Imagen"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P070",
@@ -3978,7 +4256,12 @@ window.CIER_DATA = {
         "5": "Imagen"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P071",
@@ -4015,7 +4298,12 @@ window.CIER_DATA = {
         "5": "Imagen"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P072",
@@ -4064,7 +4352,12 @@ window.CIER_DATA = {
         "5": "Imagen"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P073",
@@ -4113,7 +4406,12 @@ window.CIER_DATA = {
         "5": "Imagen"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P074",
@@ -4169,7 +4467,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P075",
@@ -4225,7 +4528,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P076",
@@ -4281,7 +4589,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P077",
@@ -4337,7 +4650,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P078",
@@ -4389,7 +4707,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P079",
@@ -4428,7 +4751,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P080",
@@ -4467,7 +4795,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P081",
@@ -4519,7 +4852,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P082",
@@ -4571,7 +4909,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P083",
@@ -4623,7 +4966,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P084",
@@ -4666,7 +5014,12 @@ window.CIER_DATA = {
         "3": "No sabe"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P085",
@@ -4708,7 +5061,12 @@ window.CIER_DATA = {
         "-99": "No se recuerda"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P086",
@@ -4750,7 +5108,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P087",
@@ -4789,7 +5152,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P088",
@@ -4832,7 +5200,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P089",
@@ -4878,7 +5251,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P090",
@@ -4924,7 +5302,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P091",
@@ -4970,7 +5353,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P092",
@@ -5016,7 +5404,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P093",
@@ -5062,7 +5455,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P094",
@@ -5108,7 +5506,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P095",
@@ -5154,7 +5557,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P096",
@@ -5200,7 +5608,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P097",
@@ -5246,7 +5659,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P098",
@@ -5286,7 +5704,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P099",
@@ -5326,7 +5749,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P100",
@@ -5366,7 +5794,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P101",
@@ -5406,7 +5839,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P102",
@@ -5446,7 +5884,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P103",
@@ -5486,7 +5929,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P104",
@@ -5526,7 +5974,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P105",
@@ -5576,7 +6029,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P106",
@@ -5626,7 +6084,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P107",
@@ -5682,7 +6145,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P108",
@@ -5738,7 +6206,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P109",
@@ -5794,7 +6267,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P110",
@@ -5850,7 +6328,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P111",
@@ -5906,7 +6389,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P112",
@@ -5962,7 +6450,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P113",
@@ -6018,7 +6511,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P114",
@@ -6074,7 +6572,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P115",
@@ -6130,7 +6633,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P116",
@@ -6167,7 +6675,12 @@ window.CIER_DATA = {
         "7": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P117",
@@ -6201,7 +6714,12 @@ window.CIER_DATA = {
         "4": "No lo recuerda"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P118",
@@ -6244,7 +6762,12 @@ window.CIER_DATA = {
         "-777": "Ninguna"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P119",
@@ -6286,7 +6809,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P120",
@@ -6328,7 +6856,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P121",
@@ -6384,7 +6917,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P122",
@@ -6440,7 +6978,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P123",
@@ -6496,7 +7039,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P124",
@@ -6552,7 +7100,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P125",
@@ -6608,7 +7161,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P126",
@@ -6651,7 +7209,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P127",
@@ -6694,7 +7257,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P128",
@@ -6737,7 +7305,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P129",
@@ -6793,7 +7366,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P130",
@@ -6849,7 +7427,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P131",
@@ -6905,7 +7488,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P132",
@@ -6949,7 +7537,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P133",
@@ -6993,7 +7586,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P134",
@@ -7037,7 +7635,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P135",
@@ -7075,7 +7678,14 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Pregunta Filtro: El 51.2% respondió SÍ y activa detalle técnico; el 48.8% salta directo a Facturación.",
+      "grupo_metodologico": "4. Cortes, Voltaje y Tiempos Técnicos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P136",
@@ -7111,7 +7721,14 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "51.2%",
+      "n_muestra_2026": "N = 320",
+      "skip_logic": "Condicional: Solo se activa para el 51.2% que sufrió interrupciones en los últimos 30 días.",
+      "grupo_metodologico": "4. Cortes, Voltaje y Tiempos Técnicos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P137",
@@ -7154,7 +7771,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P138",
@@ -7197,7 +7819,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P139",
@@ -7240,7 +7867,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P140",
@@ -7276,7 +7908,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P141",
@@ -7312,7 +7949,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P142",
@@ -7348,7 +7990,14 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "📱 Encuestador / 👤 Cliente",
+      "pct_muestra_2026": "1.0%",
+      "n_muestra_2026": "N = 6",
+      "skip_logic": "Salto de verificación: Repregunta cruzada ante respuestas atípicas (>24 horas).",
+      "grupo_metodologico": "4. Cortes, Voltaje y Tiempos Técnicos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P143",
@@ -7404,7 +8053,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P144",
@@ -7460,7 +8114,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P145",
@@ -7516,7 +8175,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P146",
@@ -7572,7 +8236,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P147",
@@ -7628,7 +8297,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P148",
@@ -7684,7 +8358,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P149",
@@ -7740,7 +8419,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P150",
@@ -7784,7 +8468,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P151",
@@ -7828,7 +8517,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P152",
@@ -7872,7 +8566,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P153",
@@ -7903,7 +8602,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P153_1",
@@ -7944,7 +8648,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P153_2",
@@ -7985,7 +8694,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P153_3",
@@ -8026,7 +8740,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P154",
@@ -8074,7 +8793,12 @@ window.CIER_DATA = {
         "4": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P155",
@@ -8122,7 +8846,12 @@ window.CIER_DATA = {
         "4": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P156",
@@ -8165,7 +8894,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P156_1",
@@ -8202,7 +8936,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P156_2",
@@ -8239,7 +8978,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P156_3",
@@ -8276,7 +9020,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P157",
@@ -8319,7 +9068,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P157_1",
@@ -8352,7 +9106,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P157_2",
@@ -8385,7 +9144,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P157_3",
@@ -8418,7 +9182,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P158",
@@ -8474,7 +9243,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P159",
@@ -8517,7 +9291,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P159_1",
@@ -8562,7 +9341,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P159_2",
@@ -8607,7 +9391,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P159_3",
@@ -8652,7 +9441,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P160",
@@ -8708,7 +9502,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P161",
@@ -8751,7 +9550,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P161_1",
@@ -8794,7 +9598,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P161_2",
@@ -8837,7 +9646,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P161_3",
@@ -8880,7 +9694,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P162",
@@ -8911,7 +9730,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P162_1",
@@ -8964,7 +9788,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P162_2",
@@ -9017,7 +9846,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P162_3",
@@ -9070,7 +9904,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P163",
@@ -9114,7 +9953,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P164",
@@ -9158,7 +10002,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P165",
@@ -9203,7 +10052,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P166",
@@ -9226,7 +10080,12 @@ window.CIER_DATA = {
         "2": "No hizo contacto"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P167",
@@ -9258,7 +10117,12 @@ window.CIER_DATA = {
         "2": "No tuvo otros contactos"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P168",
@@ -9281,7 +10145,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P169",
@@ -9315,7 +10184,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P170",
@@ -9361,7 +10235,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P171",
@@ -9407,7 +10286,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P172",
@@ -9453,7 +10337,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P173",
@@ -9499,7 +10388,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P174",
@@ -9545,7 +10439,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P175",
@@ -9591,7 +10490,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P176",
@@ -9637,7 +10541,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P177",
@@ -9683,7 +10592,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P178",
@@ -9729,7 +10643,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P179",
@@ -9775,7 +10694,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P180",
@@ -9821,7 +10745,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P181",
@@ -9867,7 +10796,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P182",
@@ -9913,7 +10847,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P183",
@@ -9959,7 +10898,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P184",
@@ -10005,7 +10949,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P185",
@@ -10051,7 +11000,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P186",
@@ -10118,7 +11072,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P187",
@@ -10152,7 +11111,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P188",
@@ -10186,7 +11150,12 @@ window.CIER_DATA = {
         "2": "No"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P189",
@@ -10225,7 +11194,12 @@ window.CIER_DATA = {
         "7": "No respondió"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P190",
@@ -10261,7 +11235,12 @@ window.CIER_DATA = {
         "4": "NS"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P191",
@@ -10299,7 +11278,12 @@ window.CIER_DATA = {
         "6": "NS/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P192",
@@ -10330,7 +11314,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P192_1",
@@ -10371,7 +11360,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P192_2",
@@ -10412,7 +11406,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P192_3",
@@ -10453,7 +11452,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P193",
@@ -10501,7 +11505,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P194",
@@ -10545,7 +11554,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P195",
@@ -10576,7 +11590,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P195_1",
@@ -10611,7 +11630,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P195_2",
@@ -10646,7 +11670,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P195_3",
@@ -10681,7 +11710,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P196",
@@ -10729,7 +11763,12 @@ window.CIER_DATA = {
         "4": "No respondió"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P197",
@@ -10785,7 +11824,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P198",
@@ -10841,7 +11885,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P199",
@@ -10897,7 +11946,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P200",
@@ -10953,7 +12007,12 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P201",
@@ -11005,7 +12064,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P202",
@@ -11051,7 +12115,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P203",
@@ -11097,7 +12166,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P204",
@@ -11143,7 +12217,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P205",
@@ -11189,7 +12268,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P206",
@@ -11235,7 +12319,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P207",
@@ -11281,7 +12370,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P208",
@@ -11336,7 +12430,12 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P209",
@@ -11383,7 +12482,12 @@ window.CIER_DATA = {
         "3": "No sabe decir si es motivo/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P210",
@@ -11430,7 +12534,12 @@ window.CIER_DATA = {
         "3": "No sabe decir si es motivo/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P211",
@@ -11477,7 +12586,12 @@ window.CIER_DATA = {
         "3": "No sabe decir si es motivo/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P212",
@@ -11524,7 +12638,12 @@ window.CIER_DATA = {
         "3": "No sabe decir si es motivo/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P213",
@@ -11571,7 +12690,12 @@ window.CIER_DATA = {
         "3": "No sabe decir si es motivo/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P214",
@@ -11609,7 +12733,14 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Participación en programas culturales y comunitarios de EPEC.",
+      "grupo_metodologico": "5. Perfil Sociodemográfico",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P215",
@@ -11647,7 +12778,14 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Percepción de equidad e igualdad de género institucional.",
+      "grupo_metodologico": "5. Perfil Sociodemográfico",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P216",
@@ -11680,7 +12818,12 @@ window.CIER_DATA = {
         "-99": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P217",
@@ -11714,7 +12857,12 @@ window.CIER_DATA = {
         "-99": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P218",
@@ -11755,7 +12903,12 @@ window.CIER_DATA = {
         "3": "No se acuerda/ no sabe"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P219",
@@ -11781,7 +12934,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P220",
@@ -11807,7 +12965,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P221",
@@ -11833,7 +12996,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P222",
@@ -11859,7 +13027,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P223",
@@ -11885,7 +13058,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P224",
@@ -11911,7 +13089,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P225",
@@ -11934,7 +13117,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P226",
@@ -11960,7 +13148,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P227",
@@ -11986,7 +13179,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P228",
@@ -12043,7 +13241,14 @@ window.CIER_DATA = {
         "-888": "NS/ NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Evaluación global de notas ≥ 7 (IIS: 77.56%).",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL",
+      "idat_score": "77.56% (IIS)",
+      "sigla_cier": null
     },
     {
       "variable": "P229",
@@ -12078,7 +13283,12 @@ window.CIER_DATA = {
         "-88": "No sabe/ no recuerda"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P232",
@@ -12121,7 +13331,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Percepción de evolución histórica del servicio (Mejorando / Igual / Empeorando).",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P233",
@@ -12144,7 +13361,12 @@ window.CIER_DATA = {
         "2": "No mencionado"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P234",
@@ -12200,7 +13422,14 @@ window.CIER_DATA = {
         "12": "NR"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Escala 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relación Valor / Precio (PR) de la energía en función de la calidad recibida.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL",
+      "idat_score": "52.10% (PR)",
+      "sigla_cier": null
     },
     {
       "variable": "P235",
@@ -12231,7 +13460,12 @@ window.CIER_DATA = {
         "-88": "No sabe"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P236",
@@ -12252,7 +13486,12 @@ window.CIER_DATA = {
         "-99": "No respondió"
       },
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P237",
@@ -12298,7 +13537,14 @@ window.CIER_DATA = {
         "-99": "No respondió"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Escala 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relación Valor / Precio (PR) de la energía en función de la calidad recibida.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL",
+      "idat_score": "52.10% (PR)",
+      "sigla_cier": null
     },
     {
       "variable": "P238",
@@ -12364,7 +13610,14 @@ window.CIER_DATA = {
         "22": "No Respondió (rechazo de respuesta)"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal de cierre: 'En general, ¿cuál es su satisfacción con EPEC?' (ISG: 65.60%).",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL",
+      "idat_score": "65.60% (ISG)",
+      "sigla_cier": null
     },
     {
       "variable": "P239",
@@ -12412,7 +13665,14 @@ window.CIER_DATA = {
         "2": "Femenino"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Escala 0-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Probabilidad de recomendar EPEC a un familiar/amigo (NPS: +11.96 pts).",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL",
+      "idat_score": "11.96 pts (NPS)",
+      "sigla_cier": null
     },
     {
       "variable": "P240",
@@ -12453,7 +13713,14 @@ window.CIER_DATA = {
         "17": "No respondió"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Pregunta Filtro: El 42.1% (N=263) hizo contacto y activa el módulo de atención. El 57.9% salta a Imagen.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P241",
@@ -12476,7 +13743,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "0.8%",
+      "n_muestra_2026": "N = 5",
+      "skip_logic": "Salto infrecuente: Gestiones especiales no comerciales ni técnicas.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P242",
@@ -12499,7 +13773,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P243",
@@ -12522,7 +13801,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P244",
@@ -12545,7 +13829,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P245",
@@ -12568,7 +13857,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P246",
@@ -12591,7 +13885,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P247",
@@ -12614,7 +13913,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P248",
@@ -12637,7 +13941,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P249",
@@ -12660,7 +13969,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P250",
@@ -12683,7 +13997,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P251",
@@ -12706,7 +14025,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P252",
@@ -12729,7 +14053,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P253",
@@ -12752,7 +14081,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P254",
@@ -12778,7 +14112,12 @@ window.CIER_DATA = {
         "2": "No, corregir"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P255",
@@ -12804,7 +14143,12 @@ window.CIER_DATA = {
         "2": "No mencionó"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P256",
@@ -12830,7 +14174,12 @@ window.CIER_DATA = {
         "2": "No, corregir"
       },
       "en_2026": true,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P257",
@@ -12853,7 +14202,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P258",
@@ -12876,7 +14230,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P259",
@@ -12899,7 +14258,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P261",
@@ -12922,7 +14286,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P262",
@@ -12945,7 +14314,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P263",
@@ -12972,7 +14346,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "42.7%",
+      "n_muestra_2026": "N = 267",
+      "skip_logic": "Condicional con Salto: Solo aplica al 42.7% que gestionó trámites/reclamos. Evalúa FCR (resolución 1er contacto).",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P264",
@@ -13003,7 +14384,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "42.7%",
+      "n_muestra_2026": "N = 267",
+      "skip_logic": "Condicional: Mide la sencillez de interacción del usuario que realizó gestiones en el último año.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P267",
@@ -13046,7 +14434,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "8.2%",
+      "n_muestra_2026": "N = 51",
+      "skip_logic": "Condicional Específico: Solo el 8.2% que utilizó activamente la App para trámites complejos evalúa la interfaz.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P272",
@@ -13069,7 +14464,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Mapeo de conocimiento espontáneo de la App móvil y web de EPEC.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P274",
@@ -13112,7 +14514,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P275",
@@ -13155,7 +14562,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P276",
@@ -13198,7 +14610,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P277",
@@ -13241,7 +14658,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P278",
@@ -13272,7 +14694,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P279",
@@ -13303,7 +14730,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P280",
@@ -13334,7 +14766,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Relevamiento asistido por encuestador CAPI.",
+      "grupo_metodologico": "3. Comportamiento, Pagos y Reclamos"
     },
     {
       "variable": "P281",
@@ -13361,7 +14798,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Distinción de roles (Municipalidad vs. Distribuidora EPEC).",
+      "grupo_metodologico": "4. Cortes, Voltaje y Tiempos Técnicos",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P282",
@@ -13382,7 +14826,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Número de convivientes en el hogar.",
+      "grupo_metodologico": "5. Perfil Sociodemográfico",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P283",
@@ -13405,7 +14856,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Ingreso monetario total declarado del hogar.",
+      "grupo_metodologico": "5. Perfil Sociodemográfico",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P284",
@@ -13468,7 +14926,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "24.5%",
+      "n_muestra_2026": "N = 153",
+      "skip_logic": "Condicional: Repregunta auxiliar para ubicar con precisión el decil salarial.",
+      "grupo_metodologico": "5. Perfil Sociodemográfico",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P285",
@@ -13491,7 +14956,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "📱 Encuestador (Observación)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Género del informante (Distribución censal equilibrada F/M).",
+      "grupo_metodologico": "5. Perfil Sociodemográfico",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P286",
@@ -13544,7 +15016,14 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Declaración)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Ocupación y situación laboral del informante.",
+      "grupo_metodologico": "5. Perfil Sociodemográfico",
+      "idat_score": null,
+      "sigla_cier": null
     },
     {
       "variable": "P303",
@@ -13577,7 +15056,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P304",
@@ -13610,7 +15094,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P305",
@@ -13643,7 +15132,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P306",
@@ -13676,7 +15170,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P307",
@@ -13709,7 +15208,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P308",
@@ -13742,7 +15246,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P309",
@@ -13775,7 +15284,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P310",
@@ -13818,7 +15332,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P311",
@@ -13861,7 +15380,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P312",
@@ -13904,7 +15428,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P313",
@@ -13947,7 +15476,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P314",
@@ -13990,7 +15524,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P315",
@@ -14033,7 +15572,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "P316",
@@ -14076,7 +15620,12 @@ window.CIER_DATA = {
       },
       "opciones_2025": {},
       "en_2026": true,
-      "en_2025": false
+      "en_2025": false,
+      "fuente_captura": "👤 Cliente (Tarjeta Visual 1-10)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal: Sin saltos. Evaluado mediante tarjeta graduada del 1 al 10.",
+      "grupo_metodologico": "2. Preguntas Evaluativas ISCAL"
     },
     {
       "variable": "id",
@@ -14093,7 +15642,12 @@ window.CIER_DATA = {
       "opciones_2026": {},
       "opciones_2025": {},
       "en_2026": false,
-      "en_2025": true
+      "en_2025": true,
+      "fuente_captura": "📱 Encuestador (CAPI)",
+      "pct_muestra_2026": "100.0%",
+      "n_muestra_2026": "N = 625",
+      "skip_logic": "Universal de relevamiento muestral.",
+      "grupo_metodologico": "1. Filtros y Control Muestral"
     }
   ],
   "filesCatalog": [
@@ -15594,5 +17148,93 @@ window.CIER_DATA = {
       "causas": "Malestar por la inclusión de la tasa municipal OIM y FODEP, aunque el cliente comprende que no es costo propio de EPEC.",
       "accion": "Campaña pedagógica informativa separando el costo neto de la energía de los tributos de terceros."
     }
-  ]
+  ],
+  "metodologiaMuestra2026": {
+    "macroModulos": [
+      {
+        "tipo": "⭐ Núcleo Universal (Obligatorio)",
+        "preguntas": "30 Atributos del ISCAL + ISG + IAC + NPS + Sociodemográfico",
+        "pct": "100.0%",
+        "n": "N = 625",
+        "color": "#10b981",
+        "logica": "Sin saltos. Lo responde la totalidad de la muestra para calcular los índices oficiales de la CIER."
+      },
+      {
+        "tipo": "⚡ Módulo de Cortes en el Último Mes",
+        "preguntas": "P135 (Filtro de corte) ➔ P136 (Cantidad) y G137/P142 (Duración)",
+        "pct": "51.2%",
+        "n": "N = 320",
+        "color": "#38bdf8",
+        "logica": "Condicional: El 51.2% de los clientes experimentó al menos un corte en el último mes y detalló cantidad de horas/eventos. El 48.8% restante saltó esta sección auxiliar."
+      },
+      {
+        "tipo": "👤 Módulo de Reclamos y Contacto",
+        "preguntas": "P240 (Contacto previo) ➔ P263 (Resolución en 1º contacto FCR) y P264",
+        "pct": "42.1%",
+        "n": "N = 263",
+        "color": "#f59e0b",
+        "logica": "Condicional: Solo el 42.1% que realizó trámites o reclamos en el último año evaluó los tiempos de espera y si se resolvió en el primer contacto. El 57.9% restante saltó directo a Imagen Institucional."
+      },
+      {
+        "tipo": "📱 Módulo de App Móvil y Canales Web",
+        "preguntas": "P267 (Satisfacción puntual con la App EPEC)",
+        "pct": "8.2%",
+        "n": "N = 51",
+        "color": "#a855f7",
+        "logica": "Condicional: Solo los usuarios que utilizaron activamente la aplicación móvil para gestiones avanzadas respondieron este bloque de evaluación de interfaz."
+      },
+      {
+        "tipo": "📄 Verificación de Factura en Domicilio",
+        "preguntas": "P018 ➔ P021 (Monto $) y P023 (kWh consumidos)",
+        "pct": "100.0%",
+        "n": "N = 625",
+        "color": "#10b981",
+        "logica": "Universal auditada: El 100% de las entrevistas contó con comprobación directa de la factura física/digital en el domicilio del encuestado."
+      }
+    ],
+    "matrizResumen": [
+      {
+        "grupo": "1. Filtros y Control Muestral (GPS)",
+        "total_preg": "7 Preguntas",
+        "fuente": "📱 Encuestador (Registro/GPS)",
+        "tasa": "100.0% Universal (N=625)",
+        "color": "cyan"
+      },
+      {
+        "grupo": "2. Preguntas Evaluativas ISCAL (30 + 6 Directas)",
+        "total_preg": "36 Preguntas",
+        "fuente": "👤 Cliente (Tarjeta Visual 1-10)",
+        "tasa": "100.0% Universal (Rank: 20%)",
+        "color": "emerald"
+      },
+      {
+        "grupo": "3. Comportamiento, Canales, Pagos y Reclamos",
+        "total_preg": "11 Preguntas",
+        "fuente": "👤 Cliente / 📱 Encuestador",
+        "tasa": "100.0% Filtro (FCR: 42.7%)",
+        "color": "amber"
+      },
+      {
+        "grupo": "4. Frecuencia de Cortes, Voltaje y Tiempos Técnicos",
+        "total_preg": "17 Preguntas",
+        "fuente": "👤 Cliente / 📱 Factura",
+        "tasa": "100.0% Factura / 51.2% Cortes",
+        "color": "blue"
+      },
+      {
+        "grupo": "5. Perfil Sociodemográfico y Económico",
+        "total_preg": "14 Preguntas",
+        "fuente": "👤 Cliente (Declaración)",
+        "tasa": "100.0% Universal (N=625)",
+        "color": "purple"
+      },
+      {
+        "grupo": "6. Frecuencias de Orientación y Plazos",
+        "total_preg": "12 Preguntas",
+        "fuente": "👤 Cliente (Consolidadas)",
+        "tasa": "100.0% en Bloques Centrales",
+        "color": "slate"
+      }
+    ]
+  }
 };

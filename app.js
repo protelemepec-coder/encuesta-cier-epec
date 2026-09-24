@@ -606,6 +606,27 @@ function renderDetractorSection() {
 let activeDictVarCode = null;
 let currentDictFilteredList = [];
 
+function switchDictSubTab(tabName) {
+  const catalogPanel = document.getElementById('dict-subtab-catalog-content');
+  const auditPanel = document.getElementById('dict-subtab-audit-content');
+  const btnCatalog = document.getElementById('btn-dict-subtab-catalog');
+  const btnAudit = document.getElementById('btn-dict-subtab-audit');
+
+  if (tabName === 'audit') {
+    if (catalogPanel) catalogPanel.style.display = 'none';
+    if (auditPanel) auditPanel.style.display = 'block';
+    if (btnCatalog) btnCatalog.classList.remove('active');
+    if (btnAudit) btnAudit.classList.add('active');
+  } else {
+    if (catalogPanel) catalogPanel.style.display = 'block';
+    if (auditPanel) auditPanel.style.display = 'none';
+    if (btnCatalog) btnCatalog.classList.add('active');
+    if (btnAudit) btnAudit.classList.remove('active');
+  }
+}
+
+window.switchDictSubTab = switchDictSubTab;
+
 function renderDictTable() {
   const tbody = document.getElementById('dict-table-body');
   if (!tbody) return;
@@ -613,6 +634,8 @@ function renderDictTable() {
   const dict = cierData.dictionary || [];
   const searchVal = (document.getElementById('dict-search-input')?.value || '').toLowerCase().trim();
   const dimFilter = document.getElementById('dict-dim-filter')?.value || 'all';
+  const fuenteFilter = document.getElementById('dict-fuente-filter')?.value || 'all';
+  const utilFilter = document.getElementById('dict-utilizacion-filter')?.value || 'all';
   const scaleFilter = document.getElementById('dict-scale-filter')?.value || 'all';
   const yearFilter = document.getElementById('dict-year-filter')?.value || 'all';
 
@@ -626,25 +649,41 @@ function renderDictTable() {
       }
     }
 
-    // 2. Scale Type Filter
+    // 2. Fuente de Captura Filter
+    if (fuenteFilter !== 'all') {
+      const fuente = (d.fuente_captura || '').toLowerCase();
+      if (fuenteFilter === 'cliente' && !fuente.includes('cliente')) return false;
+      if (fuenteFilter === 'encuestador' && !fuente.includes('encuestador')) return false;
+    }
+
+    // 3. Tasa de Utilización Filter
+    if (utilFilter !== 'all') {
+      const pct = d.pct_muestra_2026 || '100.0%';
+      if (utilFilter === '100' && pct !== '100.0%') return false;
+      if (utilFilter === 'condicional' && pct === '100.0%') return false;
+    }
+
+    // 4. Scale Type Filter
     if (scaleFilter !== 'all') {
       const cat = d.categoria_escala || '';
       if (cat !== scaleFilter) return false;
     }
 
-    // 3. Year / Comparative Status filter
+    // 5. Year / Comparative Status filter
     if (yearFilter !== 'all') {
       if (yearFilter === 'ambos' && (!d.en_2025 || !d.en_2026)) return false;
       if (yearFilter === '2026' && !d.en_2026) return false;
       if (yearFilter === '2025' && !d.en_2025) return false;
     }
 
-    // 4. Text Search filter (Searches code, name/question, dimension, and response options text!)
+    // 6. Text Search filter (Searches code, name/question, dimension, skip logic, and response options text!)
     if (searchVal) {
       const v = (d.variable || d.Variable || d.codigo || '').toLowerCase();
       const dim = (d.dimension || d.Dimension_Tematica || '').toLowerCase();
       const n = (d.nombre || d.Atributo || d.definicion || '').toLowerCase();
       const e = (d.tipo_escala || d.escala || '').toLowerCase();
+      const skip = (d.skip_logic || '').toLowerCase();
+      const fuente = (d.fuente_captura || '').toLowerCase();
       
       // Search inside options
       let optsText = '';
@@ -652,7 +691,7 @@ function renderDictTable() {
         optsText = Object.entries(d.opciones).map(([k, val]) => `${k} ${val}`).join(' ').toLowerCase();
       }
 
-      if (!v.includes(searchVal) && !dim.includes(searchVal) && !n.includes(searchVal) && !e.includes(searchVal) && !optsText.includes(searchVal)) {
+      if (!v.includes(searchVal) && !dim.includes(searchVal) && !n.includes(searchVal) && !e.includes(searchVal) && !skip.includes(searchVal) && !fuente.includes(searchVal) && !optsText.includes(searchVal)) {
         return false;
       }
     }
@@ -671,7 +710,7 @@ function renderDictTable() {
   if (filtered.length === 0) {
     tbody.innerHTML = `
       <tr>
-        <td colspan="5" style="text-align: center; padding: 2.5rem; color: var(--text-muted);">
+        <td colspan="6" style="text-align: center; padding: 2.5rem; color: var(--text-muted);">
           <p style="font-size: 1rem; margin-bottom: 0.5rem;">🔍 No se encontraron variables con los filtros aplicados.</p>
           <button onclick="resetDictFilters()" class="btn-primary mt-2" style="font-size: 0.8rem; padding: 0.35rem 0.9rem;">Restablecer Filtros</button>
         </td>
@@ -689,6 +728,14 @@ function renderDictTable() {
     const scaleCat = d.categoria_escala || 'likert';
     const totalOpts = d.total_opciones || (d.opciones ? Object.keys(d.opciones).length : 0);
 
+    const fuente = d.fuente_captura || '👤 Cliente';
+    const isCliente = fuente.includes('Cliente');
+    const pct = d.pct_muestra_2026 || '100.0%';
+    const nEnc = d.n_muestra_2026 || 625;
+    const is100 = pct === '100.0%';
+    const skipLogic = d.skip_logic || 'Sin saltos. Aplicada al 100% de la muestra.';
+    const idatScore = d.idat_score;
+
     const safeVar = v.replace(/"/g, '&quot;');
     const isNew2026 = t.includes('2026 (Nueva)');
     const isOnly2025 = t.includes('Solo 2025');
@@ -700,6 +747,9 @@ function renderDictTable() {
       statusPill = `<span class="badge-tag-slate" style="font-size: 0.68rem; margin-left: 0.35rem;">⏳ Solo 2025</span>`;
     }
 
+    const fuenteBadgeClass = isCliente ? 'fuente-badge-cliente' : 'fuente-badge-encuestador';
+    const pctPillClass = is100 ? 'pct-100' : (parseFloat(pct) < 10 ? 'pct-rare' : 'pct-cond');
+
     return `
       <tr id="dict-row-${v}">
         <td>
@@ -709,6 +759,12 @@ function renderDictTable() {
         <td>
           <span class="font-semibold text-slate-100">${n}</span>
           ${statusPill}
+        </td>
+        <td>
+          <div style="display: flex; flex-direction: column; gap: 0.3rem; align-items: flex-start;">
+            <span class="${fuenteBadgeClass}">${fuente}</span>
+            <span class="sample-pct-pill ${pctPillClass}">📊 ${pct} (N=${nEnc})</span>
+          </div>
         </td>
         <td>
           <span class="dict-scale-badge scale-${scaleCat}">${scaleType}</span>
@@ -723,7 +779,7 @@ function renderDictTable() {
         </td>
       </tr>
       <tr class="dict-drawer-row" id="dict-drawer-${v}" style="display: none;">
-        <td colspan="5">
+        <td colspan="6">
           <div class="dict-inline-drawer">
             <div class="dict-drawer-header">
               <span style="font-size: 0.8rem; font-weight: 700; color: var(--accent-cyan);">
@@ -735,6 +791,13 @@ function renderDictTable() {
             </div>
             <div class="dict-drawer-chips-grid">
               ${renderInlineOptionChips(d)}
+            </div>
+            <!-- Skip logic & IDAT summary bar in drawer -->
+            <div style="margin-top: 0.75rem; padding: 0.45rem 0.75rem; background: rgba(15, 23, 42, 0.7); border-radius: 6px; font-size: 0.78rem; color: #cbd5e1; border-left: 3px solid #f59e0b; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.4rem;">
+              <div>
+                <strong style="color: #fbbf24;">⚡ Lógica de Salto (Skip Logic):</strong> ${skipLogic}
+              </div>
+              ${idatScore ? `<span class="badge-tag-blue" style="font-size: 0.72rem;">🎯 IDAT Resultante: <strong>${idatScore}</strong></span>` : ''}
             </div>
           </div>
         </td>
@@ -792,11 +855,15 @@ function toggleDictRowDrawer(varCode, btnEl) {
 function resetDictFilters() {
   const searchInput = document.getElementById('dict-search-input');
   const dimFilter = document.getElementById('dict-dim-filter');
+  const fuenteFilter = document.getElementById('dict-fuente-filter');
+  const utilFilter = document.getElementById('dict-utilizacion-filter');
   const scaleFilter = document.getElementById('dict-scale-filter');
   const yearFilter = document.getElementById('dict-year-filter');
 
   if (searchInput) searchInput.value = '';
   if (dimFilter) dimFilter.value = 'all';
+  if (fuenteFilter) fuenteFilter.value = 'all';
+  if (utilFilter) utilFilter.value = 'all';
   if (scaleFilter) scaleFilter.value = 'all';
   if (yearFilter) yearFilter.value = 'all';
 
@@ -821,6 +888,60 @@ function openDictOptionsModal(varCode) {
   document.getElementById('dict-modal-dim-tag').textContent = item.dimension || 'General';
   document.getElementById('dict-modal-type-tag').textContent = item.tipo_escala || 'Escala CIER';
   document.getElementById('dict-modal-question-title').textContent = item.nombre || 'Pregunta del Cuestionario';
+
+  // Audit Badges in Header
+  const fuenteTag = document.getElementById('dict-modal-fuente-tag');
+  if (fuenteTag) {
+    fuenteTag.textContent = item.fuente_captura || '👤 Cliente';
+    const isCliente = (item.fuente_captura || '').includes('Cliente');
+    fuenteTag.className = isCliente ? 'fuente-badge-cliente' : 'fuente-badge-encuestador';
+  }
+
+  const sampleTag = document.getElementById('dict-modal-sample-tag');
+  if (sampleTag) {
+    const pct = item.pct_muestra_2026 || '100.0%';
+    const n = item.n_muestra_2026 || 625;
+    sampleTag.textContent = `${pct} (N=${n})`;
+    if (pct === '100.0%') {
+      sampleTag.style.background = 'rgba(16, 185, 129, 0.15)';
+      sampleTag.style.color = '#34d399';
+      sampleTag.style.borderColor = 'rgba(16, 185, 129, 0.3)';
+    } else {
+      sampleTag.style.background = 'rgba(245, 158, 11, 0.15)';
+      sampleTag.style.color = '#fbbf24';
+      sampleTag.style.borderColor = 'rgba(245, 158, 11, 0.3)';
+    }
+  }
+
+  const idatTag = document.getElementById('dict-modal-idat-tag');
+  if (idatTag) {
+    if (item.idat_score) {
+      idatTag.style.display = 'inline-block';
+      idatTag.textContent = `🎯 IDAT: ${item.idat_score}`;
+    } else {
+      idatTag.style.display = 'none';
+    }
+  }
+
+  // Audit Box inside Modal Body
+  const auditGroup = document.getElementById('dict-modal-audit-group');
+  if (auditGroup) auditGroup.textContent = item.grupo_metodologico || 'Cuestionario General CIER';
+
+  const auditFuente = document.getElementById('dict-modal-audit-fuente');
+  if (auditFuente) auditFuente.textContent = item.fuente_captura || '👤 Cliente (Declaración Asistida con Tarjeta Visual)';
+
+  const auditPct = document.getElementById('dict-modal-audit-pct');
+  if (auditPct) {
+    const pct = item.pct_muestra_2026 || '100.0%';
+    const n = item.n_muestra_2026 || 625;
+    auditPct.textContent = `${pct} (${n} de 625 encuestados)`;
+    auditPct.style.color = pct === '100.0%' ? '#10b981' : '#f59e0b';
+  }
+
+  const auditSkip = document.getElementById('dict-modal-audit-skip');
+  if (auditSkip) {
+    auditSkip.textContent = item.skip_logic || 'Sin saltos. Lo responde la totalidad de la muestra para calcular los índices oficiales de la CIER.';
+  }
 
   // Scale Info Explanation
   const scaleHeading = document.getElementById('dict-scale-heading');
@@ -1453,6 +1574,16 @@ function initFiltersAndSearch() {
   const dictDimFilter = document.getElementById('dict-dim-filter');
   if (dictDimFilter) {
     dictDimFilter.addEventListener('change', () => renderDictTable());
+  }
+
+  const dictFuenteFilter = document.getElementById('dict-fuente-filter');
+  if (dictFuenteFilter) {
+    dictFuenteFilter.addEventListener('change', () => renderDictTable());
+  }
+
+  const dictUtilFilter = document.getElementById('dict-utilizacion-filter');
+  if (dictUtilFilter) {
+    dictUtilFilter.addEventListener('change', () => renderDictTable());
   }
 
   const dictScaleFilter = document.getElementById('dict-scale-filter');
