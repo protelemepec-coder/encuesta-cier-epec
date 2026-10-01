@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderIndicesTable();
   renderBenchmarkTable();
   renderPaisesTable();
+  renderArgentinaBenchmarkTable();
   renderDetractorSection();
   renderDictTable();
   renderSSOTChecklist();
@@ -126,6 +127,9 @@ function initSubTabs() {
         setTimeout(() => {
           initMatrizScatterChart();
         }, 50);
+      }
+      if (targetId === 'subtab-argentina') {
+        renderArgentinaBenchmarkTable();
       }
 
       setTimeout(() => {
@@ -624,6 +628,98 @@ function renderPaisesTable() {
         <td class="text-right">${p.at.toFixed(2)}</td>
         <td class="text-right">${p.fe.toFixed(2)}</td>
         <td class="text-right">${p.im.toFixed(2)}</td>
+      </tr>
+    `;
+  }).join('');
+}
+
+function renderArgentinaBenchmarkTable() {
+  const tbody = document.getElementById('argentina-benchmark-tbody');
+  if (!tbody) return;
+
+  const rawList = cierData.argentinaBenchmark || [];
+  const grupoFilter = (document.getElementById('arg-filter-grupo')?.value) || 'all';
+  const searchVal = (document.getElementById('arg-search-input')?.value || '').toLowerCase().trim();
+
+  const filtered = rawList.filter(item => {
+    // Grupo filter
+    if (grupoFilter === 'argentina' && item.grupo !== 'argentina') return false;
+    if (grupoFilter === 'top10_latam' && item.grupo !== 'top10_latam') return false;
+    if (grupoFilter === 'gran_porte' && item.porte !== '>500k') return false;
+
+    // Search filter
+    if (searchVal) {
+      const matchName = item.nombre && item.nombre.toLowerCase().includes(searchVal);
+      const matchPais = item.pais && item.pais.toLowerCase().includes(searchVal);
+      const matchRonda = item.ronda && item.ronda.toLowerCase().includes(searchVal);
+      if (!matchName && !matchPais && !matchRonda) return false;
+    }
+    return true;
+  });
+
+  if (filtered.length === 0) {
+    tbody.innerHTML = `
+      <tr>
+        <td colspan="11" class="text-center py-4 text-slate-400">
+          No se encontraron distribuidoras para el filtro seleccionado.
+        </td>
+      </tr>
+    `;
+    return;
+  }
+
+  tbody.innerHTML = filtered.map(d => {
+    const isEpec = d.destacado && d.nombre === 'EPEC';
+    const isArg = d.grupo === 'argentina';
+    const rowClass = isEpec ? 'highlight-row-cyan' : (isArg ? 'highlight-row-slate' : '');
+
+    // Badges
+    const porteBadge = d.porte === '>500k' 
+      ? `<span class="badge-tag-blue" style="font-size: 0.7rem; font-weight: 700;">🏢 Gran Porte (>500k)</span>` 
+      : `<span class="badge-tag-slate" style="font-size: 0.7rem;">🏘️ Menor Porte (≤500k)</span>`;
+
+    let rondaBadge = `<span class="badge-tag-slate" style="font-size: 0.7rem;">${d.ronda}</span>`;
+    if (d.ronda.includes('Líder Top 1')) {
+      rondaBadge = `<span class="badge-tag-green" style="font-size: 0.7rem; font-weight: 700;">🏆 ${d.ronda}</span>`;
+    } else if (d.ronda.includes('Top')) {
+      rondaBadge = `<span class="badge-tag-blue" style="font-size: 0.7rem;">⭐ ${d.ronda}</span>`;
+    } else if (d.ronda.includes('2026') || isEpec) {
+      rondaBadge = `<span class="badge-tag-cyan" style="font-size: 0.7rem; font-weight: 700;">🟢 ${d.ronda}</span>`;
+    } else if (d.ronda.includes('2025')) {
+      rondaBadge = `<span class="badge-tag-amber" style="font-size: 0.7rem;">🟡 ${d.ronda}</span>`;
+    } else if (d.ronda.includes('CACIER')) {
+      rondaBadge = `<span class="badge-tag-slate" style="font-size: 0.7rem;">⚪ ${d.ronda}</span>`;
+    }
+
+    const iscalVal = d.iscal ? d.iscal.toFixed(2) : '-';
+    const iacVal = d.iac ? d.iac.toFixed(2) : '-';
+    const seVal = d.se ? d.se.toFixed(2) : '-';
+    const feVal = d.fe ? d.fe.toFixed(2) : '-';
+    const atVal = d.at ? d.at.toFixed(2) : '-';
+    const imVal = d.im ? d.im.toFixed(2) : '-';
+
+    const epecStar = isEpec ? `<span style="color: #38bdf8; margin-right: 0.25rem;">⚡</span>` : '';
+    const nameColor = isEpec ? 'color: #38bdf8; font-weight: 800;' : (isArg ? 'color: #f8fafc; font-weight: 700;' : 'color: #f1f5f9; font-weight: 600;');
+
+    return `
+      <tr class="${rowClass}">
+        <td>
+          <div style="display: flex; align-items: center; gap: 0.4rem;">
+            ${epecStar}
+            <span style="${nameColor}">${d.nombre}</span>
+            ${isEpec ? '<span class="badge-tag-cyan" style="font-size: 0.65rem; padding: 0.1rem 0.4rem;">EPEC Actual</span>' : ''}
+          </div>
+        </td>
+        <td class="text-slate-300" style="font-size: 0.82rem;">${d.pais}</td>
+        <td>${porteBadge}</td>
+        <td class="text-right text-slate-300 font-mono" style="font-size: 0.82rem;">${d.clientes}</td>
+        <td class="text-right font-bold ${isEpec ? 'text-cyan-300 font-mono' : 'text-slate-100 font-mono'}">${iscalVal}%</td>
+        <td class="text-right font-semibold ${isEpec ? 'text-cyan-400 font-mono' : 'text-slate-200 font-mono'}">${iacVal}</td>
+        <td class="text-right ${isEpec ? 'text-green-400 font-bold font-mono' : 'text-slate-200 font-mono'}">${seVal}</td>
+        <td class="text-right text-slate-300 font-mono">${feVal}</td>
+        <td class="text-right text-slate-300 font-mono">${atVal}</td>
+        <td class="text-right text-slate-300 font-mono">${imVal}</td>
+        <td class="text-center">${rondaBadge}</td>
       </tr>
     `;
   }).join('');
@@ -1682,6 +1778,17 @@ function initFiltersAndSearch() {
   const prioSearch = document.getElementById('priorities-search-input');
   if (prioSearch) {
     prioSearch.addEventListener('input', () => renderPrioritiesTable());
+  }
+
+  // Argentina vs Top 10 LATAM Benchmark Filters
+  const argGrupoFilter = document.getElementById('arg-filter-grupo');
+  if (argGrupoFilter) {
+    argGrupoFilter.addEventListener('change', () => renderArgentinaBenchmarkTable());
+  }
+
+  const argSearchInput = document.getElementById('arg-search-input');
+  if (argSearchInput) {
+    argSearchInput.addEventListener('input', () => renderArgentinaBenchmarkTable());
   }
 }
 /* ==========================================================================

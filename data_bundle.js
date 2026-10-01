@@ -18349,6 +18349,24 @@ window.CIER_DATA = {
         "Cuadrante IV": 6
       }
     }
-  }
+  },
+  "argentinaBenchmark": [
+    { "nombre": "UTE", "pais": "Uruguay", "porte": ">500k", "clientes": "1.500.000", "iscal": 86.40, "iac": 91.20, "se": 88.50, "fe": 82.60, "at": 83.40, "im": 79.40, "ronda": "2026 (Líder Top 1)", "destacado": false, "grupo": "top10_latam" },
+    { "nombre": "ESPH", "pais": "Costa Rica", "porte": "≤500k", "clientes": "100.000", "iscal": 86.40, "iac": 90.80, "se": 88.20, "fe": 82.30, "at": 83.10, "im": 79.10, "ronda": "2026 (Líder Top 1)", "destacado": false, "grupo": "top10_latam" },
+    { "nombre": "COOPELESCA", "pais": "Costa Rica", "porte": "≤500k", "clientes": "110.000", "iscal": 86.10, "iac": 90.40, "se": 87.90, "fe": 82.10, "at": 82.80, "im": 78.70, "ronda": "2026 (Top 3)", "destacado": false, "grupo": "top10_latam" },
+    { "nombre": "COOPEGUANACASTE", "pais": "Costa Rica", "porte": "≤500k", "clientes": "90.000", "iscal": 86.10, "iac": 90.20, "se": 87.80, "fe": 81.90, "at": 82.60, "im": 78.50, "ronda": "2026 (Top 3)", "destacado": false, "grupo": "top10_latam" },
+    { "nombre": "CNFL", "pais": "Costa Rica", "porte": ">500k", "clientes": "600.000", "iscal": 85.30, "iac": 89.60, "se": 87.50, "fe": 81.40, "at": 82.20, "im": 77.80, "ronda": "2026 (Top 5)", "destacado": false, "grupo": "top10_latam" },
+    { "nombre": "DEL SUR", "pais": "El Salvador", "porte": "≤500k", "clientes": "440.000", "iscal": 83.10, "iac": 88.10, "se": 85.60, "fe": 79.80, "at": 80.50, "im": 75.40, "ronda": "2026 (Top 6)", "destacado": false, "grupo": "top10_latam" },
+    { "nombre": "CEPM", "pais": "Rep. Dominicana", "porte": "≤500k", "clientes": "60.000", "iscal": 82.50, "iac": 87.40, "se": 84.90, "fe": 79.10, "at": 79.80, "im": 74.60, "ronda": "2026 (Top 7)", "destacado": false, "grupo": "top10_latam" },
+    { "nombre": "ICE", "pais": "Costa Rica", "porte": ">500k", "clientes": "900.000", "iscal": 80.90, "iac": 86.20, "se": 83.80, "fe": 78.00, "at": 78.60, "im": 73.50, "ronda": "2026 (Top 8)", "destacado": false, "grupo": "top10_latam" },
+    { "nombre": "AES El Salvador", "pais": "El Salvador", "porte": ">500k", "clientes": "1.600.000", "iscal": 80.30, "iac": 85.50, "se": 83.20, "fe": 77.50, "at": 78.10, "im": 72.90, "ronda": "2026 (Top 9)", "destacado": false, "grupo": "top10_latam" },
+    { "nombre": "EEGSA", "pais": "Guatemala", "porte": ">500k", "clientes": "1.400.000", "iscal": 78.10, "iac": 83.90, "se": 81.40, "fe": 75.80, "at": 76.40, "im": 70.80, "ronda": "2026 (Top 10)", "destacado": false, "grupo": "top10_latam" },
+    { "nombre": "EDENOR", "pais": "Argentina (Buenos Aires Norte / CABA)", "porte": ">500k", "clientes": "3.300.000", "iscal": 70.50, "iac": 78.40, "se": 77.80, "fe": 72.10, "at": 69.20, "im": 62.50, "ronda": "Oficial 2025", "destacado": false, "grupo": "argentina" },
+    { "nombre": "EPEC", "pais": "Argentina (Córdoba)", "porte": ">500k", "clientes": "1.100.000", "iscal": 65.96, "iac": 77.60, "se": 78.48, "fe": 70.38, "at": 68.10, "im": 60.53, "ronda": "Oficial 2026", "destacado": true, "grupo": "argentina" },
+    { "nombre": "EDEA", "pais": "Argentina (Buenos Aires Costa)", "porte": ">500k", "clientes": "580.000", "iscal": 66.80, "iac": 76.90, "se": 77.20, "fe": 69.60, "at": 67.10, "im": 58.70, "ronda": "Histórico CACIER", "destacado": false, "grupo": "argentina" },
+    { "nombre": "EPE Santa Fe", "pais": "Argentina (Santa Fe)", "porte": ">500k", "clientes": "1.400.000", "iscal": 66.20, "iac": 76.50, "se": 76.90, "fe": 69.40, "at": 66.80, "im": 58.20, "ronda": "Histórico CACIER", "destacado": false, "grupo": "argentina" },
+    { "nombre": "EDET", "pais": "Argentina (Tucumán)", "porte": ">500k", "clientes": "550.000", "iscal": 64.50, "iac": 75.20, "se": 75.80, "fe": 68.10, "at": 65.40, "im": 56.80, "ronda": "Histórico CACIER", "destacado": false, "grupo": "argentina" },
+    { "nombre": "EDESUR", "pais": "Argentina (Buenos Aires Sur / CABA)", "porte": ">500k", "clientes": "2.600.000", "iscal": 63.10, "iac": 73.80, "se": 74.60, "fe": 67.50, "at": 64.20, "im": 55.40, "ronda": "Histórico CACIER", "destacado": false, "grupo": "argentina" }
+  ]
 };
 const DASHBOARD_DATA = window.CIER_DATA;

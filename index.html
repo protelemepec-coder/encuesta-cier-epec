@@ -331,6 +331,9 @@
         <button class="sub-tab-btn" data-subtab="subtab-paises" id="btn-subtab-paises">
           🌎 Benchmark Internacional por Países (CIER)
         </button>
+        <button class="sub-tab-btn" data-subtab="subtab-argentina" id="btn-subtab-argentina">
+          🇦🇷 Distribuidoras de Argentina vs. Top 10 Latinoamérica
+        </button>
       </div>
 
       <!-- Subtab 1: Distribuidores >500k -->
@@ -412,6 +415,83 @@
                 </tr>
               </thead>
               <tbody id="paises-table-body">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Subtab 3: Argentina vs Top 10 LATAM -->
+      <div class="subtab-content" id="subtab-argentina">
+        <div class="glass-card mb-4">
+          <div class="card-header flex-wrap">
+            <div>
+              <div class="badge-tag-blue mb-1">Benchmarking Multi-Nivel CIER · Ecosistema Argentino & Líderes Regionales</div>
+              <h3 class="card-title">Comparativa: Distribuidoras de Gran Porte de Argentina vs. Top 10 de Latinoamérica</h3>
+              <p class="card-desc">Análisis comparativo de los indicadores troncales (ISCAL, Aprobación IAC, Suministro SE, Factura FE, Atención AT, Imagen IM) entre las 6 distribuidoras de más de 500k de Argentina y las mejores 10 de la región.</p>
+            </div>
+            
+            <!-- Filters -->
+            <div class="filters-row flex-wrap gap-2">
+              <select id="arg-filter-grupo" class="custom-select" aria-label="Filtrar por grupo">
+                <option value="all">Todas las Empresas (Top 10 LATAM + Argentina)</option>
+                <option value="argentina">🇦🇷 Solo Distribuidoras de Argentina (6 Gran Porte)</option>
+                <option value="top10_latam">🏆 Solo Top 10 de Latinoamérica</option>
+                <option value="gran_porte">🏢 Solo Empresas de Gran Porte (>500k)</option>
+              </select>
+              <div class="search-box-wrapper">
+                <input type="text" id="arg-search-input" class="search-input" placeholder="Buscar por distribuidora o país...">
+              </div>
+            </div>
+          </div>
+
+          <!-- Highlight Banner for EPEC vs Argentina vs Líder -->
+          <div class="grid-4col mt-3 mb-3">
+            <div class="glass-card" style="padding: 1rem; border-left: 4px solid var(--accent-cyan);">
+              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">EPEC en Suministro (SE)</div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0.2rem 0;">78.48 pts</div>
+              <div style="font-size: 0.75rem; color: #34d399; font-weight: 600;">+1.38 pts vs Promedio Argentina</div>
+            </div>
+
+            <div class="glass-card" style="padding: 1rem; border-left: 4px solid #10b981;">
+              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">EPEC en Continuidad</div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0.2rem 0;">85.92 pts</div>
+              <div style="font-size: 0.75rem; color: #34d399; font-weight: 600;">Líder técnico en Argentina</div>
+            </div>
+
+            <div class="glass-card" style="padding: 1rem; border-left: 4px solid #f59e0b;">
+              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">EPEC en Aprobación (IAC)</div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0.2rem 0;">77.60 pts</div>
+              <div style="font-size: 0.75rem; color: #34d399; font-weight: 600;">+0.80 pts vs Promedio Argentina</div>
+            </div>
+
+            <div class="glass-card" style="padding: 1rem; border-left: 4px solid #a855f7;">
+              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Líder Absoluto LATAM (UTE)</div>
+              <div style="font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0.2rem 0;">86.40 pts</div>
+              <div style="font-size: 0.75rem; color: var(--accent-cyan); font-weight: 600;">Frontera de Excelencia (>500k)</div>
+            </div>
+          </div>
+
+          <!-- Table -->
+          <div class="table-responsive mt-3">
+            <table class="data-table" id="argentina-benchmark-table">
+              <thead>
+                <tr>
+                  <th>Distribuidora</th>
+                  <th>Jurisdicción / País</th>
+                  <th>Porte Mercado</th>
+                  <th style="text-align: right;">Clientes Aprox.</th>
+                  <th style="text-align: right;">ISCAL</th>
+                  <th style="text-align: right;">Aprobación (IAC)</th>
+                  <th style="text-align: right;">Suministro (SE)</th>
+                  <th style="text-align: right;">Factura (FE)</th>
+                  <th style="text-align: right;">Atención (AT)</th>
+                  <th style="text-align: right;">Imagen (IM)</th>
+                  <th style="text-align: center;">Ronda / Fuente</th>
+                </tr>
+              </thead>
+              <tbody id="argentina-benchmark-tbody">
                 <!-- Rendered dynamically -->
               </tbody>
             </table>
