@@ -25,7 +25,7 @@ Dentro de la estructura de evaluación de CIER, las distribuidoras se segmentan 
 
 ```
 Escala CIER: 0 (Pésimo) a 100 (Excelente)
-IAOP: Índice de Aprovechamiento de Oportunidades Positivas
+IAOP: Índice de Aprovechamiento de Oportunidades de Perfeccionamiento
 ```
 
 | Dimensión / Atributo | Sigla | Tipo | EPEC 2025 | EPEC 2026 | IAOP EPEC | Prom. >500k 2025 | Prom. >500k 2026 | CIER Total 2026 | Líder >500k 2026 | Diagnóstico y Posicionamiento |

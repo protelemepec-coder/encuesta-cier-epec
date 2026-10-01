@@ -12,33 +12,39 @@ La matriz cruza dos dimensiones analíticas fundamentales para clasificar los **
                   Desempeño (IDAT: 0 a 100)
                               ▲
                               │
-     CUADRANTE II             │       CUADRANTE I
+     CUADRANTE IV             │       CUADRANTE III
   VENTAJAS SECUNDARIAS        │    FORTALEZAS CLAVE
   (Baja Imp. / Alto Desemp.)  │ (Alta Imp. / Alto Desemp.)
-  • FE4 Locales de pago (12)  │ • SE1 Continuidad (1)
-  • AT6 Calidad atención (19) │ • SE2 Tensión (2)
-  • AT4 Conocimiento (17)     │ • SE3 Rapidez reanudación (3)
-  • FE2 Factura sin error (10)│ • FE5 Fechas vencimiento (13)
+  (3º Orden de Intervención)  │ (2º Orden · Prioridad MANTENER)
+  • FE4 Locales de pago (85.9)│ • SE1 Continuidad (85.92)
+  • AT6 Calidad atención (77.6│ • SE2 Tensión (77.40)
+  • AT4 Conocimiento (74.5)   │ • SE3 Rapidez reanudación (72.12)
+  • AT3 Claridad atención (73)│ • FE2 Factura sin error (69.56)
+  • FE5 Fechas vencimiento(71)│
  ─────────────────────────────┼──────────────────────────────► Importancia
   Umbral Desempeño (~64.8)    │ Umbral Importancia (~3.3%)     Relativa (%)
                               │
-     CUADRANTE III            │       CUADRANTE IV
-    BAJA PRIORIDAD            │    🚩 CUADRANTE FOCO
+     CUADRANTE II             │       CUADRANTE I
+    BAJA PRIORIDAD            │    🚩 CUADRANTE FOCO / ALTO IMPACTO
   (Baja Imp. / Bajo Desemp.)  │ (ALTA IMP. / BAJO DESEMP.)
-  • IM1 a IM8 Imagen (23-30)  │ 1º IC1 Notif. interrupción (4)
-  • IC2 Uso eficiente (5)     │ 2º AT1 Facilidad contacto (14)
-  • IC4 Derechos/deberes (7)  │ 3º FE1 Plazo recepción (9)
-                              │ 4º AT2 Tiempo espera (15)
-                              │ 5º IC3 Riesgos y peligros (6)
-                              │ 6º FE3 Comprensión factura (11)
-                              │ 7º IC5 Medición consumo (8)
+  (Último Orden Intervención) │ (1º Orden de Intervención Máxima)
+  • IM1 a IM8 Imagen (55-63)  │ 1º IC1 Notif. interrupción (58.86)
+  • IC2 Uso eficiente (57.81) │ 2º AT1 Facilidad contacto (58.32)
+  • IC4 Derechos/deberes(48.3)│ 3º FE1 Plazo recepción (63.12)
+                              │ 4º AT2 Tiempo espera (55.59)
+                              │ 5º IC3 Riesgos y peligros (50.08)
+                              │ 6º FE3 Comprensión factura (62.19)
+                              │ 7º IC5 Medición consumo (44.52)
 ```
 
 ### Reglas de Lectura de los 4 Cuadrantes:
 
-1. **Eje Horizontal X (Importancia Relativa %):** Calculado mediante regresión múltiple y análisis de covarianza. Representa el peso que tiene el atributo en la conformación de la percepción global del usuario (va de $0\%$ a $>8\%$). La línea de corte vertical se ubica en el promedio del sistema ($\approx 3.3\%$).
-2. **Eje Vertical Y (Desempeño del Atributo IDAT):** Nota media del atributo convertida a escala $0$ a $100$. La línea de corte horizontal se ubica en el desempeño medio ponderado ($\approx 64.8\text{ pts}$).
-3. **El Cuadrante Foco (Inferior Derecho - Rojo):** Es la zona de **máxima prioridad estratégica**. Los atributos situados aquí poseen **alta importancia para el cliente pero bajo desempeño por parte de EPEC**. Todo punto en este cuadrante resta directamente satisfacción general (ISG) y destruye la percepción institucional.
+1. **Eje Horizontal X (Importancia Relativa %):** Calculado mediante regresión múltiple y análisis de covarianza. Representa el peso que tiene el atributo en la conformación de la percepción global del usuario (va de $0\%$ a $>8\%$). La línea de corte vertical se ubica en el promedio del sistema ($\approx 3.33\%$).
+2. **Eje Vertical Y (Desempeño del Atributo IDAT):** Nota media del atributo convertida a escala $0$ a $100$. La línea de corte horizontal se ubica en el desempeño medio ponderado ($\approx 64.80\text{ pts}$).
+3. **Cuadrante I (Foco Prioritario · 1º Orden de Intervención):** Atributos de **alta importancia pero bajo rendimiento**. Concentran el $31,46\%$ del peso global.
+4. **Cuadrante III (Fortalezas Clave · 2º Orden de Intervención):** Atributos de **alta importancia y alto rendimiento**. Pilares rectores a mantener (Continuidad $85,92$, Tensión $77,40$, Reanudación $72,12$).
+5. **Cuadrante IV (Ventajas Secundarias · 3º Orden de Intervención):** Atributos de **baja importancia y alto rendimiento**. Rendimiento muy alto que permite optimizar recursos.
+6. **Cuadrante II (Baja Prioridad · Último Orden de Intervención):** Atributos de **baja importancia y bajo rendimiento**.
 
 ---
 
@@ -46,19 +52,20 @@ La matriz cruza dos dimensiones analíticas fundamentales para clasificar los **
 
 | N° Gráfico | Sigla | Atributo Evaluado | Dimensión | Importancia Relativa (%) | Desempeño EPEC (IDAT) | Ranking de Prioridad CIER | Cuadrante Estratégico |
 | :---: | :---: | :--- | :--- | :---: | :---: | :---: | :--- |
-| **4** | `IC1` | **Notificación de interrupción** | Información | **5.85%** | **58.86 pts** | **1º Lugar (Máxima)** | 🚩 **Cuadrante Foco** |
-| **14** | `AT1` | **Facilidad para contactarse** | Atención | **5.48%** | **58.32 pts** | **2º Lugar** | 🚩 **Cuadrante Foco** |
-| **9** | `FE1` | **Plazo entre recepción y vencimiento** | Factura | **5.10%** | **63.12 pts** | **3º Lugar** | 🚩 **Cuadrante Foco** |
-| **15** | `AT2` | **Tiempo de espera hasta ser atendido** | Atención | **4.30%** | **55.59 pts** | **4º Lugar** | 🚩 **Cuadrante Foco** |
-| **6** | `IC3` | **Riesgos y peligros** | Información | **3.67%** | **50.08 pts** | **5º Lugar** | 🚩 **Cuadrante Foco** |
-| **11** | `FE3` | **Facilidad de comprensión de factura** | Factura | **3.60%** | **62.19 pts** | **6º Lugar** | 🚩 **Cuadrante Foco** |
-| **8** | `IC5` | **Medición del consumo de energía** | Información | **3.40%** | **44.52 pts** | **7º Lugar** | 🚩 **Cuadrante Foco** |
-| 5 | `IC2` | Uso eficiente | Información | 3.03% | 57.81 pts | 8º Lugar | Cuadrante III (Límite) |
-| 7 | `IC4` | Derechos y deberes | Información | 2.98% | 48.37 pts | 9º Lugar | Cuadrante III (Límite) |
-| 23 | `IM1` | Respeta derechos de los clientes | Imagen | 2.49% | 59.87 pts | 10º Lugar | Cuadrante III |
-| 1 | `SE1` | Sin interrupción | Suministro | 8.26% | 85.92 pts | 17º Lugar | Cuadrante I (Fortaleza Clave) |
-| 2 | `SE2` | Sin variación de voltaje | Suministro | 5.40% | 77.40 pts | 19º Lugar | Cuadrante I (Fortaleza Clave) |
-| 3 | `SE3` | Rapidez reanudación energía | Suministro | 5.50% | 72.12 pts | 18º Lugar | Cuadrante I (Fortaleza Clave) |
+| **4** | `IC1` | **Notificación de interrupción** | Información | **5.85%** | **58.86 pts** | **1º Lugar (Máxima)** | 🚩 **Cuadrante I (Foco)** |
+| **14** | `AT1` | **Facilidad para contactarse** | Atención | **5.49%** | **58.32 pts** | **2º Lugar** | 🚩 **Cuadrante I (Foco)** |
+| **9** | `FE1` | **Plazo entre recepción y vencimiento** | Factura | **5.11%** | **63.12 pts** | **3º Lugar** | 🚩 **Cuadrante I (Foco)** |
+| **15** | `AT2` | **Tiempo de espera hasta ser atendido** | Atención | **4.29%** | **55.59 pts** | **4º Lugar** | 🚩 **Cuadrante I (Foco)** |
+| **6** | `IC3` | **Riesgos y peligros** | Información | **3.68%** | **50.08 pts** | **5º Lugar** | 🚩 **Cuadrante I (Foco)** |
+| **11** | `FE3` | **Facilidad de comprensión de factura** | Factura | **3.62%** | **62.19 pts** | **6º Lugar** | 🚩 **Cuadrante I (Foco)** |
+| **8** | `IC5` | **Medición del consumo de energía** | Información | **3.42%** | **44.52 pts** | **7º Lugar** | 🚩 **Cuadrante I (Foco)** |
+| 1 | `SE1` | Sin interrupción (Continuidad) | Suministro | 8.26% | 85.92 pts | 17º Lugar | 🛡️ **Cuadrante III (Fortaleza Clave)** |
+| 3 | `SE3` | Rapidez reanudación energía | Suministro | 5.50% | 72.12 pts | 18º Lugar | 🛡️ **Cuadrante III (Fortaleza Clave)** |
+| 2 | `SE2` | Sin variación de voltaje | Suministro | 5.40% | 77.40 pts | 19º Lugar | 🛡️ **Cuadrante III (Fortaleza Clave)** |
+| 10 | `FE2` | Factura sin error | Factura | 4.54% | 69.56 pts | 20º Lugar | 🛡️ **Cuadrante III (Fortaleza Clave)** |
+| 12 | `FE4` | Locales para el pago | Factura | 2.33% | 85.97 pts | 21º Lugar | ⭐ **Cuadrante IV (Ventaja Sec.)** |
+| 19 | `AT6` | Calidad de la atención | Atención | 2.71% | 77.63 pts | 22º Lugar | ⭐ **Cuadrante IV (Ventaja Sec.)** |
+| 17 | `AT4` | Conocimiento sobre el tema | Atención | 3.31% | 74.52 pts | 23º Lugar | ⭐ **Cuadrante IV (Ventaja Sec.)** |
 
 ---
 

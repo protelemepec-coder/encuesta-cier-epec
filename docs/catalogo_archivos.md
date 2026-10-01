@@ -44,6 +44,8 @@
 | :--- | :--- | :--- |
 
 | `resumen_ejecutivo_indices.md` | Indicadores Oficiales | Comparativa de 66 atributos e índices 2025 vs 2026, ponderaciones de importancia y correlaciones |
+| `compendio_estandares_sinergias_iaop_ssot.md` | SSOT Compendio Canónico | Glosario IAOP/ISCAL, 4 Estándares Gran Porte (>500k), Matriz de 30 Atributos, Sinergias III/IV -> I y Proyección ISCAL |
+| `ranking_iscal_empresas_cier_2025_2026.md` | Benchmarking Gran Porte (>500k) | Ranking Top 10 LATAM + 6 Argentina, 4 Estándares de Comparación y Radar de Posicionamiento |
 
 | `comparativo_distribuidores_500k.md` | Benchmark Gran Porte | Comparativa frente al Promedio y Mejor Distribuidora >500k clientes |
 
