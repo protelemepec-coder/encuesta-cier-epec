@@ -6453,32 +6453,36 @@ const DASHBOARD_DATA = {
   "importancia_relativa": {
     "definiciones_cuadrantes": {
       "Cuadrante I": {
-        "nombre": "Fortalezas Clave",
-        "orden": "2º Orden de Intervención - Prioridad para MANTENER",
-        "criterio": "Alta Importancia (>= 3.33%) y Alto Desempeño (>= 64.80 pts)",
-        "posicion": "Superior Derecho",
-        "descripcion": "Pilares de valor fundamentales donde la empresa lidera y el cliente valora fuertemente. Prioridad para mantener y blindar operativamente."
-      },
-      "Cuadrante II": {
-        "nombre": "Ventajas Secundarias",
-        "orden": "3º Orden de Intervención",
-        "criterio": "Baja Importancia (< 3.33%) y Alto Desempeño (>= 64.80 pts)",
-        "posicion": "Superior Izquierdo",
-        "descripcion": "Su reducción en el IDAR e IDAT tiene baja importancia y en una gestión de recursos limitados bajar la eficiencia en este cuadrante para hacer foco en otro cuadrante con más importancia sería una decisión correcta."
-      },
-      "Cuadrante III": {
-        "nombre": "Baja Prioridad",
-        "orden": "Último Orden de Intervención",
-        "criterio": "Baja Importancia (< 3.33%) y Bajo Desempeño (< 64.80 pts)",
-        "posicion": "Inferior Izquierdo",
-        "descripcion": "Puntos débiles secundarios que no mueven significativamente el índice general de satisfacción (ISCAL/ISG)."
-      },
-      "Cuadrante IV": {
-        "nombre": "Alto Impacto de Mejoras",
-        "orden": "1º Orden de Intervención",
+        "nombre": "Cuadrante Foco / Alto Impacto de Mejoras",
+        "numero_cier": 1,
+        "orden_intervencion": "1º Orden de Intervención",
         "criterio": "Alta Importancia (>= 3.33%) y Bajo Desempeño (< 64.80 pts)",
         "posicion": "Inferior Derecho",
-        "descripcion": "Como este cuadrante agrupa puntos importantes que poseen bajo rendimiento en un plan de mejoras escalonado se puede lograr resultados destacados como mejoras graduales y escalables."
+        "observacion": "Como este cuadrante agrupa puntos importantes que poseen bajo rendimiento en un plan de mejoras escalonado se puede lograr resultados destacados como mejoras graduales y escalables."
+      },
+      "Cuadrante II": {
+        "nombre": "Baja Prioridad",
+        "numero_cier": 2,
+        "orden_intervencion": "Último Orden de Intervención",
+        "criterio": "Baja Importancia (< 3.33%) y Bajo Desempeño (< 64.80 pts)",
+        "posicion": "Inferior Izquierdo",
+        "observacion": "Puntos débiles secundarios que no mueven significativamente el índice general de satisfacción (ISCAL/ISG)."
+      },
+      "Cuadrante III": {
+        "nombre": "Fortalezas Clave",
+        "numero_cier": 3,
+        "orden_intervencion": "2º Orden de Intervención - Prioridad para MANTENER",
+        "criterio": "Alta Importancia (>= 3.33%) y Alto Desempeño (>= 64.80 pts)",
+        "posicion": "Superior Derecho",
+        "observacion": "Pilares de valor fundamentales donde la empresa lidera y el cliente valora fuertemente. Prioridad absoluta para mantener y blindar operativamente."
+      },
+      "Cuadrante IV": {
+        "nombre": "Ventajas Secundarias",
+        "numero_cier": 4,
+        "orden_intervencion": "3º Orden de Intervención",
+        "criterio": "Baja Importancia (< 3.33%) y Alto Desempeño (>= 64.80 pts)",
+        "posicion": "Superior Izquierdo",
+        "observacion": "Su reducción en el IDAR e IDAT tiene baja importancia y en una gestión de recursos limitados bajar la eficiencia en este cuadrante para hacer foco en otro cuadrante con más importancia sería una decisión correcta."
       }
     },
     "macro_dimensiones": [
@@ -6640,12 +6644,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 1,
         "ranking_imp_2026": 1,
         "dif_ranking": 0,
-        "cuadrante_nombre_2025": "Cuadrante I: Fortalezas Clave (2º Orden - Prioridad para MANTENER)",
-        "cuadrante_codigo_2025": "Cuadrante I",
-        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER",
-        "cuadrante_nombre_2026": "Cuadrante I: Fortalezas Clave (2º Orden - Prioridad para MANTENER)",
-        "cuadrante_codigo_2026": "Cuadrante I",
-        "cuadrante_orden_2026": "2º Orden de Intervención - Prioridad para MANTENER"
+        "cuadrante_nombre_2025": "Cuadrante III: Fortalezas Clave (2º Orden de Intervención - Prioridad para MANTENER)",
+        "cuadrante_codigo_2025": "Cuadrante III",
+        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER (Pilares rectores)",
+        "cuadrante_nombre_2026": "Cuadrante III: Fortalezas Clave (2º Orden de Intervención - Prioridad para MANTENER)",
+        "cuadrante_codigo_2026": "Cuadrante III",
+        "cuadrante_orden_2026": "2º Orden de Intervención - Prioridad para MANTENER (Pilares rectores)"
       },
       {
         "nivel": "ATRIBUTO",
@@ -6668,12 +6672,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 2,
         "ranking_imp_2026": 2,
         "dif_ranking": 0,
-        "cuadrante_nombre_2025": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante IV",
-        "cuadrante_orden_2025": "1º Orden de Intervención - Mejoras graduales y escalables destacadas",
-        "cuadrante_nombre_2026": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante IV",
-        "cuadrante_orden_2026": "1º Orden de Intervención - Mejoras graduales y escalables destacadas"
+        "cuadrante_nombre_2025": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante I",
+        "cuadrante_orden_2025": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)",
+        "cuadrante_nombre_2026": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante I",
+        "cuadrante_orden_2026": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)"
       },
       {
         "nivel": "ATRIBUTO",
@@ -6696,12 +6700,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 4,
         "ranking_imp_2026": 3,
         "dif_ranking": 1,
-        "cuadrante_nombre_2025": "Cuadrante I: Fortalezas Clave (2º Orden - Prioridad para MANTENER)",
-        "cuadrante_codigo_2025": "Cuadrante I",
-        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER",
-        "cuadrante_nombre_2026": "Cuadrante I: Fortalezas Clave (2º Orden - Prioridad para MANTENER)",
-        "cuadrante_codigo_2026": "Cuadrante I",
-        "cuadrante_orden_2026": "2º Orden de Intervención - Prioridad para MANTENER"
+        "cuadrante_nombre_2025": "Cuadrante III: Fortalezas Clave (2º Orden de Intervención - Prioridad para MANTENER)",
+        "cuadrante_codigo_2025": "Cuadrante III",
+        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER (Pilares rectores)",
+        "cuadrante_nombre_2026": "Cuadrante III: Fortalezas Clave (2º Orden de Intervención - Prioridad para MANTENER)",
+        "cuadrante_codigo_2026": "Cuadrante III",
+        "cuadrante_orden_2026": "2º Orden de Intervención - Prioridad para MANTENER (Pilares rectores)"
       },
       {
         "nivel": "ATRIBUTO",
@@ -6724,12 +6728,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 5,
         "ranking_imp_2026": 4,
         "dif_ranking": 1,
-        "cuadrante_nombre_2025": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante IV",
-        "cuadrante_orden_2025": "1º Orden de Intervención - Mejoras graduales y escalables destacadas",
-        "cuadrante_nombre_2026": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante IV",
-        "cuadrante_orden_2026": "1º Orden de Intervención - Mejoras graduales y escalables destacadas"
+        "cuadrante_nombre_2025": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante I",
+        "cuadrante_orden_2025": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)",
+        "cuadrante_nombre_2026": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante I",
+        "cuadrante_orden_2026": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)"
       },
       {
         "nivel": "ATRIBUTO",
@@ -6752,12 +6756,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 3,
         "ranking_imp_2026": 5,
         "dif_ranking": -2,
-        "cuadrante_nombre_2025": "Cuadrante I: Fortalezas Clave (2º Orden - Prioridad para MANTENER)",
-        "cuadrante_codigo_2025": "Cuadrante I",
-        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER",
-        "cuadrante_nombre_2026": "Cuadrante I: Fortalezas Clave (2º Orden - Prioridad para MANTENER)",
-        "cuadrante_codigo_2026": "Cuadrante I",
-        "cuadrante_orden_2026": "2º Orden de Intervención - Prioridad para MANTENER"
+        "cuadrante_nombre_2025": "Cuadrante III: Fortalezas Clave (2º Orden de Intervención - Prioridad para MANTENER)",
+        "cuadrante_codigo_2025": "Cuadrante III",
+        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER (Pilares rectores)",
+        "cuadrante_nombre_2026": "Cuadrante III: Fortalezas Clave (2º Orden de Intervención - Prioridad para MANTENER)",
+        "cuadrante_codigo_2026": "Cuadrante III",
+        "cuadrante_orden_2026": "2º Orden de Intervención - Prioridad para MANTENER (Pilares rectores)"
       },
       {
         "nivel": "ATRIBUTO",
@@ -6780,12 +6784,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 7,
         "ranking_imp_2026": 6,
         "dif_ranking": 1,
-        "cuadrante_nombre_2025": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante IV",
-        "cuadrante_orden_2025": "1º Orden de Intervención - Mejoras graduales y escalables destacadas",
-        "cuadrante_nombre_2026": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante IV",
-        "cuadrante_orden_2026": "1º Orden de Intervención - Mejoras graduales y escalables destacadas"
+        "cuadrante_nombre_2025": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante I",
+        "cuadrante_orden_2025": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)",
+        "cuadrante_nombre_2026": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante I",
+        "cuadrante_orden_2026": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)"
       },
       {
         "nivel": "ATRIBUTO",
@@ -6808,12 +6812,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 9,
         "ranking_imp_2026": 7,
         "dif_ranking": 2,
-        "cuadrante_nombre_2025": "Cuadrante I: Fortalezas Clave (2º Orden - Prioridad para MANTENER)",
-        "cuadrante_codigo_2025": "Cuadrante I",
-        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER",
-        "cuadrante_nombre_2026": "Cuadrante I: Fortalezas Clave (2º Orden - Prioridad para MANTENER)",
-        "cuadrante_codigo_2026": "Cuadrante I",
-        "cuadrante_orden_2026": "2º Orden de Intervención - Prioridad para MANTENER"
+        "cuadrante_nombre_2025": "Cuadrante III: Fortalezas Clave (2º Orden de Intervención - Prioridad para MANTENER)",
+        "cuadrante_codigo_2025": "Cuadrante III",
+        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER (Pilares rectores)",
+        "cuadrante_nombre_2026": "Cuadrante III: Fortalezas Clave (2º Orden de Intervención - Prioridad para MANTENER)",
+        "cuadrante_codigo_2026": "Cuadrante III",
+        "cuadrante_orden_2026": "2º Orden de Intervención - Prioridad para MANTENER (Pilares rectores)"
       },
       {
         "nivel": "ATRIBUTO",
@@ -6836,12 +6840,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 6,
         "ranking_imp_2026": 8,
         "dif_ranking": -2,
-        "cuadrante_nombre_2025": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante IV",
-        "cuadrante_orden_2025": "1º Orden de Intervención - Mejoras graduales y escalables destacadas",
-        "cuadrante_nombre_2026": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante IV",
-        "cuadrante_orden_2026": "1º Orden de Intervención - Mejoras graduales y escalables destacadas"
+        "cuadrante_nombre_2025": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante I",
+        "cuadrante_orden_2025": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)",
+        "cuadrante_nombre_2026": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante I",
+        "cuadrante_orden_2026": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)"
       },
       {
         "nivel": "ATRIBUTO",
@@ -6864,12 +6868,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 8,
         "ranking_imp_2026": 9,
         "dif_ranking": -1,
-        "cuadrante_nombre_2025": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante IV",
-        "cuadrante_orden_2025": "1º Orden de Intervención - Mejoras graduales y escalables destacadas",
-        "cuadrante_nombre_2026": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante IV",
-        "cuadrante_orden_2026": "1º Orden de Intervención - Mejoras graduales y escalables destacadas"
+        "cuadrante_nombre_2025": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante I",
+        "cuadrante_orden_2025": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)",
+        "cuadrante_nombre_2026": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante I",
+        "cuadrante_orden_2026": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)"
       },
       {
         "nivel": "ATRIBUTO",
@@ -6892,12 +6896,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 15,
         "ranking_imp_2026": 10,
         "dif_ranking": 5,
-        "cuadrante_nombre_2025": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_nombre_2025": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante IV",
         "cuadrante_orden_2025": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes",
-        "cuadrante_nombre_2026": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante IV",
-        "cuadrante_orden_2026": "1º Orden de Intervención - Mejoras graduales y escalables destacadas"
+        "cuadrante_nombre_2026": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante I",
+        "cuadrante_orden_2026": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)"
       },
       {
         "nivel": "ATRIBUTO",
@@ -6920,12 +6924,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 11,
         "ranking_imp_2026": 11,
         "dif_ranking": 0,
-        "cuadrante_nombre_2025": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante IV",
-        "cuadrante_orden_2025": "1º Orden de Intervención - Mejoras graduales y escalables destacadas",
-        "cuadrante_nombre_2026": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante IV",
-        "cuadrante_orden_2026": "1º Orden de Intervención - Mejoras graduales y escalables destacadas"
+        "cuadrante_nombre_2025": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante I",
+        "cuadrante_orden_2025": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)",
+        "cuadrante_nombre_2026": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante I",
+        "cuadrante_orden_2026": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)"
       },
       {
         "nivel": "ATRIBUTO",
@@ -6948,11 +6952,11 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 14,
         "ranking_imp_2026": 12,
         "dif_ranking": 2,
-        "cuadrante_nombre_2025": "Cuadrante I: Fortalezas Clave (2º Orden - Prioridad para MANTENER)",
-        "cuadrante_codigo_2025": "Cuadrante I",
-        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER",
-        "cuadrante_nombre_2026": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_nombre_2025": "Cuadrante III: Fortalezas Clave (2º Orden de Intervención - Prioridad para MANTENER)",
+        "cuadrante_codigo_2025": "Cuadrante III",
+        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER (Pilares rectores)",
+        "cuadrante_nombre_2026": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante IV",
         "cuadrante_orden_2026": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes"
       },
       {
@@ -6976,11 +6980,11 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 13,
         "ranking_imp_2026": 13,
         "dif_ranking": 0,
-        "cuadrante_nombre_2025": "Cuadrante I: Fortalezas Clave (2º Orden - Prioridad para MANTENER)",
-        "cuadrante_codigo_2025": "Cuadrante I",
-        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER",
-        "cuadrante_nombre_2026": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_nombre_2025": "Cuadrante III: Fortalezas Clave (2º Orden de Intervención - Prioridad para MANTENER)",
+        "cuadrante_codigo_2025": "Cuadrante III",
+        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER (Pilares rectores)",
+        "cuadrante_nombre_2026": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante IV",
         "cuadrante_orden_2026": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes"
       },
       {
@@ -7004,11 +7008,11 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 16,
         "ranking_imp_2026": 14,
         "dif_ranking": 2,
-        "cuadrante_nombre_2025": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_nombre_2025": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante IV",
         "cuadrante_orden_2025": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes",
-        "cuadrante_nombre_2026": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_nombre_2026": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante IV",
         "cuadrante_orden_2026": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes"
       },
       {
@@ -7032,12 +7036,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 10,
         "ranking_imp_2026": 15,
         "dif_ranking": -5,
-        "cuadrante_nombre_2025": "Cuadrante IV: Alto Impacto de Mejoras (1º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante IV",
-        "cuadrante_orden_2025": "1º Orden de Intervención - Mejoras graduales y escalables destacadas",
-        "cuadrante_nombre_2026": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante III",
-        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo"
+        "cuadrante_nombre_2025": "Cuadrante I: Cuadrante Foco / Alto Impacto (1º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante I",
+        "cuadrante_orden_2025": "1º Orden de Intervención - Cuadrante Foco (Mejoras graduales y escalables destacadas)",
+        "cuadrante_nombre_2026": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo sin asignación intensiva"
       },
       {
         "nivel": "ATRIBUTO",
@@ -7060,12 +7064,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 18,
         "ranking_imp_2026": 16,
         "dif_ranking": 2,
-        "cuadrante_nombre_2025": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante III",
-        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo",
-        "cuadrante_nombre_2026": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante III",
-        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo"
+        "cuadrante_nombre_2025": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo sin asignación intensiva",
+        "cuadrante_nombre_2026": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo sin asignación intensiva"
       },
       {
         "nivel": "ATRIBUTO",
@@ -7088,11 +7092,11 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 20,
         "ranking_imp_2026": 17,
         "dif_ranking": 3,
-        "cuadrante_nombre_2025": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante III",
-        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo",
-        "cuadrante_nombre_2026": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_nombre_2025": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo sin asignación intensiva",
+        "cuadrante_nombre_2026": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante IV",
         "cuadrante_orden_2026": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes"
       },
       {
@@ -7116,11 +7120,11 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 12,
         "ranking_imp_2026": 18,
         "dif_ranking": -6,
-        "cuadrante_nombre_2025": "Cuadrante I: Fortalezas Clave (2º Orden - Prioridad para MANTENER)",
-        "cuadrante_codigo_2025": "Cuadrante I",
-        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER",
-        "cuadrante_nombre_2026": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_nombre_2025": "Cuadrante III: Fortalezas Clave (2º Orden de Intervención - Prioridad para MANTENER)",
+        "cuadrante_codigo_2025": "Cuadrante III",
+        "cuadrante_orden_2025": "2º Orden de Intervención - Prioridad para MANTENER (Pilares rectores)",
+        "cuadrante_nombre_2026": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante IV",
         "cuadrante_orden_2026": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes"
       },
       {
@@ -7144,11 +7148,11 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 17,
         "ranking_imp_2026": 19,
         "dif_ranking": -2,
-        "cuadrante_nombre_2025": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_nombre_2025": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante IV",
         "cuadrante_orden_2025": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes",
-        "cuadrante_nombre_2026": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_nombre_2026": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante IV",
         "cuadrante_orden_2026": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes"
       },
       {
@@ -7172,12 +7176,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 22,
         "ranking_imp_2026": 20,
         "dif_ranking": 2,
-        "cuadrante_nombre_2025": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante III",
-        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo",
-        "cuadrante_nombre_2026": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante III",
-        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo"
+        "cuadrante_nombre_2025": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo sin asignación intensiva",
+        "cuadrante_nombre_2026": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo sin asignación intensiva"
       },
       {
         "nivel": "ATRIBUTO",
@@ -7200,11 +7204,11 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 21,
         "ranking_imp_2026": 21,
         "dif_ranking": 0,
-        "cuadrante_nombre_2025": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_nombre_2025": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante IV",
         "cuadrante_orden_2025": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes",
-        "cuadrante_nombre_2026": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_nombre_2026": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante IV",
         "cuadrante_orden_2026": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes"
       },
       {
@@ -7228,11 +7232,11 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 19,
         "ranking_imp_2026": 22,
         "dif_ranking": -3,
-        "cuadrante_nombre_2025": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_nombre_2025": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante IV",
         "cuadrante_orden_2025": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes",
-        "cuadrante_nombre_2026": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_nombre_2026": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante IV",
         "cuadrante_orden_2026": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes"
       },
       {
@@ -7256,12 +7260,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 24,
         "ranking_imp_2026": 23,
         "dif_ranking": 1,
-        "cuadrante_nombre_2025": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante III",
-        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo",
-        "cuadrante_nombre_2026": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante III",
-        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo"
+        "cuadrante_nombre_2025": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo sin asignación intensiva",
+        "cuadrante_nombre_2026": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo sin asignación intensiva"
       },
       {
         "nivel": "ATRIBUTO",
@@ -7284,12 +7288,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 25,
         "ranking_imp_2026": 24,
         "dif_ranking": 1,
-        "cuadrante_nombre_2025": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante III",
-        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo",
-        "cuadrante_nombre_2026": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante III",
-        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo"
+        "cuadrante_nombre_2025": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo sin asignación intensiva",
+        "cuadrante_nombre_2026": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo sin asignación intensiva"
       },
       {
         "nivel": "ATRIBUTO",
@@ -7312,11 +7316,11 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 23,
         "ranking_imp_2026": 25,
         "dif_ranking": -2,
-        "cuadrante_nombre_2025": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_nombre_2025": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante IV",
         "cuadrante_orden_2025": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes",
-        "cuadrante_nombre_2026": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_nombre_2026": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante IV",
         "cuadrante_orden_2026": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes"
       },
       {
@@ -7340,12 +7344,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 26,
         "ranking_imp_2026": 26,
         "dif_ranking": 0,
-        "cuadrante_nombre_2025": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante III",
-        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo",
-        "cuadrante_nombre_2026": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante III",
-        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo"
+        "cuadrante_nombre_2025": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo sin asignación intensiva",
+        "cuadrante_nombre_2026": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo sin asignación intensiva"
       },
       {
         "nivel": "ATRIBUTO",
@@ -7368,11 +7372,11 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 27,
         "ranking_imp_2026": 27,
         "dif_ranking": 0,
-        "cuadrante_nombre_2025": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante III",
-        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo",
-        "cuadrante_nombre_2026": "Cuadrante II: Ventajas Secundarias (3º Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_nombre_2025": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo sin asignación intensiva",
+        "cuadrante_nombre_2026": "Cuadrante IV: Ventajas Secundarias (3º Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante IV",
         "cuadrante_orden_2026": "3º Orden de Intervención - Bajar eficiencia para hacer foco en cuadrantes más importantes"
       },
       {
@@ -7396,12 +7400,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 30,
         "ranking_imp_2026": 28,
         "dif_ranking": 2,
-        "cuadrante_nombre_2025": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante III",
-        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo",
-        "cuadrante_nombre_2026": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante III",
-        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo"
+        "cuadrante_nombre_2025": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo sin asignación intensiva",
+        "cuadrante_nombre_2026": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo sin asignación intensiva"
       },
       {
         "nivel": "ATRIBUTO",
@@ -7424,12 +7428,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 28,
         "ranking_imp_2026": 29,
         "dif_ranking": -1,
-        "cuadrante_nombre_2025": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante III",
-        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo",
-        "cuadrante_nombre_2026": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante III",
-        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo"
+        "cuadrante_nombre_2025": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo sin asignación intensiva",
+        "cuadrante_nombre_2026": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo sin asignación intensiva"
       },
       {
         "nivel": "ATRIBUTO",
@@ -7452,12 +7456,12 @@ const DASHBOARD_DATA = {
         "ranking_imp_2025": 29,
         "ranking_imp_2026": 30,
         "dif_ranking": -1,
-        "cuadrante_nombre_2025": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2025": "Cuadrante III",
-        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo",
-        "cuadrante_nombre_2026": "Cuadrante III: Baja Prioridad (Último Orden de Intervención)",
-        "cuadrante_codigo_2026": "Cuadrante III",
-        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo"
+        "cuadrante_nombre_2025": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2025": "Cuadrante II",
+        "cuadrante_orden_2025": "Último Orden de Intervención - Monitoreo sin asignación intensiva",
+        "cuadrante_nombre_2026": "Cuadrante II: Baja Prioridad (Último Orden de Intervención)",
+        "cuadrante_codigo_2026": "Cuadrante II",
+        "cuadrante_orden_2026": "Último Orden de Intervención - Monitoreo sin asignación intensiva"
       }
     ],
     "metadatos": {
@@ -7465,16 +7469,16 @@ const DASHBOARD_DATA = {
       "umbral_importancia_pct": 3.3333,
       "umbral_satisfaccion_pts": 64.8,
       "distribucion_cuadrantes_2026": {
-        "Cuadrante II": 10,
-        "Cuadrante III": 9,
-        "Cuadrante IV": 7,
-        "Cuadrante I": 4
+        "Cuadrante IV": 10,
+        "Cuadrante II": 9,
+        "Cuadrante I": 7,
+        "Cuadrante III": 4
       },
       "distribucion_cuadrantes_2025": {
-        "Cuadrante III": 10,
+        "Cuadrante II": 10,
+        "Cuadrante III": 7,
         "Cuadrante I": 7,
-        "Cuadrante IV": 7,
-        "Cuadrante II": 6
+        "Cuadrante IV": 6
       }
     }
   },
