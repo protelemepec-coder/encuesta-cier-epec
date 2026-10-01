@@ -254,12 +254,17 @@ df_bench = pd.DataFrame(benchmark_500k)
 df_bench.to_excel(os.path.join(PROCESSED_DIR, "comparativo_distribuidores_500k.xlsx"), index=False)
 df_bench.to_csv(os.path.join(PROCESSED_DIR, "comparativo_distribuidores_500k.csv"), index=False, encoding='utf-8-sig')
 
+# Load Importancia Relativa and IPA Data
+with open(os.path.join(PROCESSED_DIR, "evolucion_importancia_relativa_2025_2026.json"), 'r', encoding='utf-8') as f:
+    importancia_data = json.load(f)
+
 dashboard_data = {
     "indices_comparativo": indices_comp,
     "indices_satisfaccion": indices_sat,
     "catalogo_archivos": catalogo,
     "diccionario": diccionario,
     "benchmark_500k": benchmark_500k,
+    "importancia_relativa": importancia_data,
     "resumen_kpis": {
         "iscal_2025": 63.69,
         "iscal_2026": 65.96,
@@ -285,4 +290,4 @@ out_js_data = os.path.join(BASE_DIR, "data_bundle.js")
 with open(out_js_data, 'w', encoding='utf-8') as f:
     f.write("const DASHBOARD_DATA = " + json.dumps(dashboard_data, indent=2, ensure_ascii=False) + ";\n")
 
-print(f"Data bundle with 500k benchmark updated at {out_js_data}")
+print(f"Data bundle with 500k benchmark and Importancia Relativa updated at {out_js_data}")
