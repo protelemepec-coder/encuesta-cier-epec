@@ -432,14 +432,15 @@ function renderIndicesTable() {
       <th>Sigla</th>
       <th>Tipo</th>
       <th>Atributo Canónico</th>
-      <th>Índice 2025</th>
-      <th>Índice 2026</th>
-      <th>Nota Prom.</th>
-      <th>Dif. Puntos</th>
-      <th>Var. IAOP</th>
+      <th>Índice 2025 (Base)</th>
+      <th>Índice 2026 (Actual)</th>
+      <th>Nota Prom. 2026</th>
+      <th>Dif. Puntos (2026 vs 2025)</th>
+      <th>Var. IAOP (%)</th>
     `;
 
     const filtered = rawIndices.filter(item => {
+      if (item.sigla === 'Sigla' || item.atributo === 'Descripción resumida') return false;
       const matchDim = (currentDimFilter === 'all') || (item.area === currentDimFilter);
       const matchSearch = !searchVal || 
         item.atributo.toLowerCase().includes(searchVal) || 
@@ -475,13 +476,14 @@ function renderIndicesTable() {
       <th>Sigla</th>
       <th>Tipo</th>
       <th>Capital 2025</th>
-      <th>Capital 2026</th>
+      <th>Capital 2026 (Actual)</th>
       <th>Interior 2025</th>
-      <th>Interior 2026</th>
-      <th>Brecha Capital vs Interior (2026)</th>
+      <th>Interior 2026 (Actual)</th>
+      <th>Brecha Territorial (Capital vs Interior 2026)</th>
     `;
 
     const filteredReg = rawRegional.filter(item => {
+      if (item.sigla === 'Sigla' || item.atributo === 'Descripción resumida') return false;
       const matchSearch = !searchVal || 
         item.atributo.toLowerCase().includes(searchVal) || 
         item.sigla.toLowerCase().includes(searchVal);
@@ -1683,10 +1685,10 @@ function initMatrizScatterChart() {
   const data = cierData.matrizAccionesMejora || [];
   if (!data.length) return;
 
-  const focoData = data.filter(d => d.cuadrante === 'Cuadrante Foco').map(d => ({ x: d.imp, y: d.desemp, raw: d }));
-  const fortalezaData = data.filter(d => d.cuadrante === 'Fortaleza Clave').map(d => ({ x: d.imp, y: d.desemp, raw: d }));
-  const ventajaData = data.filter(d => d.cuadrante === 'Ventaja Secundaria').map(d => ({ x: d.imp, y: d.desemp, raw: d }));
-  const bajaData = data.filter(d => d.cuadrante === 'Baja Prioridad').map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+  const focoData = data.filter(d => d.cuadrante && (d.cuadrante.includes('1') || d.cuadrante.includes('I ') || d.cuadrante.includes('Foco'))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+  const bajaData = data.filter(d => d.cuadrante && (d.cuadrante.includes('2') || d.cuadrante.includes('II ') || d.cuadrante.includes('Baja'))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+  const fortalezaData = data.filter(d => d.cuadrante && (d.cuadrante.includes('3') || d.cuadrante.includes('III ') || d.cuadrante.includes('Fortaleza'))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+  const ventajaData = data.filter(d => d.cuadrante && (d.cuadrante.includes('4') || d.cuadrante.includes('IV ') || d.cuadrante.includes('Ventaja'))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
 
   if (chartsInstances.matriz) {
     chartsInstances.matriz.destroy();
@@ -1798,7 +1800,7 @@ function initMatrizScatterChart() {
     data: {
       datasets: [
         {
-          label: '🚩 Cuadrante Foco (Urgente - Prio 1ª-7ª)',
+          label: '🚩 Cuadrante I · Foco / Alto Impacto (1º Orden - Prio 1ª a 7ª)',
           data: focoData,
           backgroundColor: getPointBgColor('#ef4444'),
           borderColor: getPointBorderColor('#fca5a5'),
@@ -1807,7 +1809,16 @@ function initMatrizScatterChart() {
           pointHoverRadius: 14
         },
         {
-          label: '🌟 Fortalezas Claves (Mantener - Prio 17ª-20ª)',
+          label: '⚪ Cuadrante II · Baja Prioridad (Último Orden - Prio 8ª a 16ª, 30ª)',
+          data: bajaData,
+          backgroundColor: getPointBgColor('#64748b'),
+          borderColor: getPointBorderColor('#cbd5e1'),
+          borderWidth: getPointBorderWidth(1),
+          pointRadius: getPointRadius(9.5),
+          pointHoverRadius: 13
+        },
+        {
+          label: '🌟 Cuadrante III · Fortalezas Claves (2º Orden / Mantener - Prio 17ª a 20ª)',
           data: fortalezaData,
           backgroundColor: getPointBgColor('#3b82f6'),
           borderColor: getPointBorderColor('#93c5fd'),
@@ -1816,20 +1827,11 @@ function initMatrizScatterChart() {
           pointHoverRadius: 13.5
         },
         {
-          label: '⚡ Ventajas Secundarias (Eficiencia - Prio 21ª-29ª)',
+          label: '⚡ Cuadrante IV · Ventajas Secundarias (3º Orden / Eficiencia - Prio 21ª a 29ª)',
           data: ventajaData,
           backgroundColor: getPointBgColor('#f59e0b'),
           borderColor: getPointBorderColor('#fde68a'),
           borderWidth: getPointBorderWidth(1.5),
-          pointRadius: getPointRadius(9.5),
-          pointHoverRadius: 13
-        },
-        {
-          label: '⚪ Baja Prioridad (Monitoreo - Prio 8ª-16ª, 30ª)',
-          data: bajaData,
-          backgroundColor: getPointBgColor('#64748b'),
-          borderColor: getPointBorderColor('#cbd5e1'),
-          borderWidth: getPointBorderWidth(1),
           pointRadius: getPointRadius(9.5),
           pointHoverRadius: 13
         }
@@ -1853,7 +1855,7 @@ function initMatrizScatterChart() {
         x: {
           title: {
             display: true,
-            text: 'Importancia Relativa (%) ➔ [Corte Promedio: 3.3%]',
+            text: 'Importancia Relativa 2026 (%) ➔ [Corte Promedio: 3.33%]',
             color: '#94a3b8',
             font: { size: 11, weight: '600', family: 'Inter' }
           },
@@ -1871,7 +1873,7 @@ function initMatrizScatterChart() {
         y: {
           title: {
             display: true,
-            text: 'Desempeño EPEC IDAT (0-100) ➔ [Corte Promedio: 64.8 pts]',
+            text: 'Desempeño EPEC 2026 IDAT (0-100) ➔ [Corte Promedio: 64.8 pts]',
             color: '#94a3b8',
             font: { size: 11, weight: '600', family: 'Inter' }
           },
@@ -1915,9 +1917,9 @@ function initMatrizScatterChart() {
               const isSel = selectedAttributes.has(raw.sigla) ? ' ✅ SELECCIONADO' : ' (Clic para seleccionar)';
               const lines = [
                 `Área: ${raw.area}`,
-                `Importancia: ${raw.imp}% | Desempeño: ${raw.desemp} pts`,
+                `Importancia 2026: ${raw.imp}% | Desempeño 2026: ${raw.desemp} pts`,
                 `Ranking Prioridad: ${raw.prio}ª Lugar`,
-                `Cuadrante: ${raw.cuadrante}`,
+                `Cuadrante Oficial: ${raw.cuadrante}`,
                 `Resp. Negativas (1-4): ${raw.neg_pct || 0}% | Nota: ${raw.nota || 0}/10`,
                 `Estado:${isSel}`
               ];
@@ -1947,7 +1949,23 @@ function renderFocusAttributes() {
   } else {
     // Filter by Quadrant
     if (currentMicrodataQuadrant !== 'all') {
-      filtered = filtered.filter(d => d.cuadrante === currentMicrodataQuadrant);
+      const qf = currentMicrodataQuadrant.toUpperCase();
+      filtered = filtered.filter(d => {
+        const cq = (d.cuadrante || '').toUpperCase();
+        if (qf.includes('I') && !qf.includes('II') && !qf.includes('III') && !qf.includes('IV')) {
+          return cq.includes('CUADRANTE I') || cq.includes('CUADRANTE 1') || cq.includes('FOCO');
+        }
+        if (qf.includes('II') && !qf.includes('III')) {
+          return cq.includes('CUADRANTE II') || cq.includes('CUADRANTE 2') || cq.includes('BAJA');
+        }
+        if (qf.includes('III')) {
+          return cq.includes('CUADRANTE III') || cq.includes('CUADRANTE 3') || cq.includes('FORTALEZA');
+        }
+        if (qf.includes('IV')) {
+          return cq.includes('CUADRANTE IV') || cq.includes('CUADRANTE 4') || cq.includes('VENTAJA');
+        }
+        return cq.includes(qf);
+      });
     }
 
     // Filter by Search Query
@@ -2048,13 +2066,18 @@ function renderFocusAttributes() {
     const isSelected = selectedAttributes.has(item.sigla);
     let quadClass = 'q-baja';
     let prioColorClass = 'badge-slate';
-    if (item.cuadrante === 'Cuadrante Foco') {
+    const cUpper = (item.cuadrante || '').toUpperCase();
+
+    if ((cUpper.includes('I') && !cUpper.includes('II') && !cUpper.includes('III') && !cUpper.includes('IV')) || cUpper.includes('FOCO') || cUpper.includes('1')) {
       quadClass = 'q-foco';
       prioColorClass = 'badge-red';
-    } else if (item.cuadrante === 'Fortaleza Clave') {
+    } else if ((cUpper.includes('II') && !cUpper.includes('III')) || cUpper.includes('BAJA') || cUpper.includes('2')) {
+      quadClass = 'q-baja';
+      prioColorClass = 'badge-slate';
+    } else if (cUpper.includes('III') || cUpper.includes('FORTALEZA') || cUpper.includes('3')) {
       quadClass = 'q-fortaleza';
       prioColorClass = 'badge-blue';
-    } else if (item.cuadrante === 'Ventaja Secundaria') {
+    } else if (cUpper.includes('IV') || cUpper.includes('VENTAJA') || cUpper.includes('4')) {
       quadClass = 'q-secundaria';
       prioColorClass = 'badge-amber';
     }
@@ -2083,7 +2106,7 @@ function renderFocusAttributes() {
         
         <div class="focus-meta-row">
           <span><strong>Área:</strong> ${item.area}</span>
-          <span><strong>Imp:</strong> ${item.imp.toFixed(2)}% · <strong>Desemp:</strong> ${item.desemp.toFixed(2)} pts</span>
+          <span><strong>Imp 2026:</strong> ${item.imp.toFixed(2)}% · <strong>Desemp 2026:</strong> ${item.desemp.toFixed(2)} pts</span>
         </div>
 
         <!-- Survey Question Text -->
@@ -2104,7 +2127,7 @@ function renderFocusAttributes() {
             <div class="bar-segment seg-pos" style="width: ${posVal}%;"></div>
           </div>
           <div class="text-muted mt-1" style="font-size: 0.72rem; text-align: right;">
-            Nota media encuesta: <strong style="color: #fff;">${notaVal} / 10</strong> (N=1.250)
+            Nota media 2026: <strong style="color: #fff;">${notaVal} / 10</strong> (N=1.250)
           </div>
         </div>
 
@@ -2223,12 +2246,15 @@ function renderPrioritiesTable() {
   }
 
   tbody.innerHTML = list.map(item => {
-    const isFoco = item.cuadrante === 'Cuadrante Foco';
+    const cUpper = (item.cuadrante || '').toUpperCase();
+    const isFoco = (cUpper.includes('I') && !cUpper.includes('II') && !cUpper.includes('III') && !cUpper.includes('IV')) || cUpper.includes('FOCO') || cUpper.includes('1');
     const isSelected = selectedAttributes.has(item.sigla);
     let badgeClass = 'badge-slate';
-    if (item.cuadrante === 'Cuadrante Foco') badgeClass = 'badge-red';
-    else if (item.cuadrante === 'Fortaleza Clave') badgeClass = 'badge-blue';
-    else if (item.cuadrante === 'Ventaja Secundaria') badgeClass = 'badge-amber';
+
+    if (isFoco) badgeClass = 'badge-red';
+    else if ((cUpper.includes('II') && !cUpper.includes('III')) || cUpper.includes('BAJA') || cUpper.includes('2')) badgeClass = 'badge-slate';
+    else if (cUpper.includes('III') || cUpper.includes('FORTALEZA') || cUpper.includes('3')) badgeClass = 'badge-blue';
+    else if (cUpper.includes('IV') || cUpper.includes('VENTAJA') || cUpper.includes('4')) badgeClass = 'badge-amber';
 
     const prioBadge = isFoco 
       ? `<span class="badge-red font-bold">${item.prio}ª FOCO</span>`
