@@ -358,32 +358,92 @@ function initCharts() {
 }
 
 /* ==========================================================================
-   RENDER IMPORTANCE WEIGHTS & AREAS KPI GRID
+   RENDER IMPORTANCE WEIGHTS & AREAS KPI GRID (CIER 2026 OFFICIAL)
    ========================================================================== */
 function renderImportanceWeights() {
   const container = document.getElementById('importance-weights-container');
   if (!container) return;
 
   const weights = [
-    { area: 'Suministro de energía', sigla: 'SE', peso: 33.79, color: 'cyan', icon: '⚡' },
-    { area: 'Atención al cliente', sigla: 'AT', peso: 21.45, color: 'blue', icon: '👤' },
-    { area: 'Factura de energía', sigla: 'FE', peso: 18.20, color: 'amber', icon: '📄' },
-    { area: 'Imagen institucional', sigla: 'IM', peso: 14.12, color: 'purple', icon: '🏛️' },
-    { area: 'Resp. Socioambiental', sigla: 'RSA', peso: 7.85, color: 'green', icon: '🌱' },
-    { area: 'Información y comunicación', sigla: 'IC', peso: 4.59, color: 'slate', icon: '📢' }
+    { area: 'Suministro de Energía', sigla: 'SE', peso: 33.79, idar2025: 75.79, idar2026: 78.48, evol: -0.49, aporte: 26.52, color: 'cyan', icon: '⚡' },
+    { area: 'Información y Comunicación', sigla: 'IC', peso: 20.09, idar2025: 59.48, idar2026: 52.03, evol: -1.45, aporte: 2.39, color: 'slate', icon: '📢' },
+    { area: 'Factura de Energía', sigla: 'FE', peso: 19.54, idar2025: 70.21, idar2026: 70.38, evol: 2.13, aporte: 12.81, color: 'amber', icon: '📄' },
+    { area: 'Atención al Cliente', sigla: 'AT', peso: 17.06, idar2025: 66.63, idar2026: 68.10, evol: -0.68, aporte: 14.61, color: 'blue', icon: '👤' },
+    { area: 'Imagen Institucional', sigla: 'IM', peso: 9.52, idar2025: 56.54, idar2026: 60.53, evol: 0.49, aporte: 8.55, color: 'purple', icon: '🏛️' }
   ];
 
-  container.innerHTML = weights.map(w => `
-    <div class="importance-item accent-${w.color}">
-      <div class="importance-header">
-        <span class="importance-name">${w.icon} ${w.area} (${w.sigla})</span>
-        <span class="importance-val">${w.peso.toFixed(2)}%</span>
-      </div>
-      <div class="progress-bar-bg">
-        <div class="progress-bar-fill fill-${w.color}" style="width: ${w.peso * 2.5}%"></div>
-      </div>
+  const barsHtml = `
+    <div class="importance-bars-wrapper" style="display: flex; flex-direction: column; gap: 0.75rem;">
+      ${weights.map(w => {
+        const evolSign = w.evol > 0 ? '+' : '';
+        const evolColor = w.evol > 0 ? '#34d399' : (w.evol < 0 ? '#f87171' : '#94a3b8');
+        return `
+          <div class="importance-item accent-${w.color}">
+            <div class="importance-header">
+              <span class="importance-name">${w.icon} ${w.area} (${w.sigla})</span>
+              <div style="display: flex; align-items: center; gap: 0.6rem;">
+                <span style="font-size: 0.75rem; color: ${evolColor}; font-weight: 600;">(${evolSign}${w.evol.toFixed(2)} pp)</span>
+                <span class="importance-val font-mono">${w.peso.toFixed(2)}%</span>
+              </div>
+            </div>
+            <div class="progress-bar-bg">
+              <div class="progress-bar-fill fill-${w.color}" style="width: ${w.peso * 2.5}%"></div>
+            </div>
+          </div>
+        `;
+      }).join('')}
     </div>
-  `).join('');
+  `;
+
+  const tableRows = weights.map(w => {
+    const evolSign = w.evol > 0 ? '+' : '';
+    const evolColor = w.evol > 0 ? '#34d399' : (w.evol < 0 ? '#f87171' : '#cbd5e1');
+    return `
+      <tr>
+        <td class="font-semibold text-slate-100">${w.area}</td>
+        <td class="text-center font-bold font-mono text-cyan-300">${w.sigla}</td>
+        <td class="text-right text-slate-300 font-mono">${w.idar2025.toFixed(2)}%</td>
+        <td class="text-right font-bold text-cyan-400 font-mono">${w.idar2026.toFixed(2)}%</td>
+        <td class="text-right font-bold text-amber-400 font-mono">${w.peso.toFixed(2)}%</td>
+        <td class="text-right font-mono" style="color: ${evolColor}; font-weight: 600;">${evolSign}${w.evol.toFixed(2)} pp</td>
+        <td class="text-right font-bold text-green-400 font-mono">${w.aporte.toFixed(2)} pts</td>
+      </tr>
+    `;
+  }).join('');
+
+  const tableHtml = `
+    <div class="table-responsive mt-3" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.75rem;">
+      <table class="data-table" style="font-size: 0.8rem; width: 100%;">
+        <thead>
+          <tr>
+            <th>Área Evaluada</th>
+            <th style="text-align: center;">Sigla</th>
+            <th style="text-align: right;">IDAR 2025</th>
+            <th style="text-align: right;">IDAR 2026</th>
+            <th style="text-align: right;">Importancia (IR)</th>
+            <th style="text-align: right;">Evolución IR al 2026</th>
+            <th style="text-align: right;">Aporte Ponderado al ISCAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${tableRows}
+        </tbody>
+        <tfoot>
+          <tr style="background: rgba(6, 182, 212, 0.12); font-weight: 800; border-top: 2px solid var(--accent-cyan);">
+            <td class="text-cyan-300 font-bold">CALIDAD PERCIBIDA GLOBAL</td>
+            <td class="text-center text-cyan-300 font-mono font-bold">ISCAL</td>
+            <td class="text-right text-slate-300 font-mono">63.69%</td>
+            <td class="text-right text-cyan-300 font-mono font-bold">65.96%</td>
+            <td class="text-right text-amber-300 font-mono font-bold">100.00%</td>
+            <td class="text-right text-slate-400 font-mono">-</td>
+            <td class="text-right text-green-300 font-mono font-bold">65.96 pts</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  `;
+
+  container.innerHTML = barsHtml + tableHtml;
 }
 
 function renderAreasKPIGrid() {
@@ -393,6 +453,11 @@ function renderAreasKPIGrid() {
   const areas = (cierData.satisfaccionAreas) || [];
   container.innerHTML = areas.map(a => {
     const isPositive = a.difPuntos >= 0;
+    const isCompl = a.complementaria || a.sigla === 'RSA';
+    const pesoTag = isCompl 
+      ? `<span class="badge-tag-slate" style="font-size: 0.7rem;">Complementaria CIER</span>` 
+      : `<span>Peso CIER: <strong style="color: #fbbf24;">${a.pesoCIER ? a.pesoCIER.toFixed(2) : '0'}%</strong></span>`;
+
     return `
       <div class="area-kpi-card">
         <div class="area-kpi-header">
@@ -406,7 +471,7 @@ function renderAreasKPIGrid() {
         </div>
         <div class="area-footer">
           <span>Nota: <strong>${a.promedioNotas2026 ? a.promedioNotas2026.toFixed(2) : (a.indice2026/10).toFixed(2)}</strong> / 10</span>
-          <span>Peso CIER: <strong>${a.pesoCIER ? a.pesoCIER.toFixed(2) : '0'}%</strong></span>
+          ${pesoTag}
         </div>
       </div>
     `;

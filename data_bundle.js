@@ -736,7 +736,9 @@ window.CIER_DATA = {
       "promedioNotas2026": 7.55,
       "difPuntos": 2.69,
       "varIaop": 3.55,
-      "pesoCIER": 33.79
+      "pesoCIER": 33.79,
+      "evolucion_pp": -0.49,
+      "aporte_iscal": 26.52
     },
     {
       "area": "Información y comunicación",
@@ -746,7 +748,9 @@ window.CIER_DATA = {
       "promedioNotas2026": 6.18,
       "difPuntos": 5.57,
       "varIaop": 11.99,
-      "pesoCIER": 4.59
+      "pesoCIER": 20.09,
+      "evolucion_pp": -1.45,
+      "aporte_iscal": 10.45
     },
     {
       "area": "Factura de energía",
@@ -756,7 +760,9 @@ window.CIER_DATA = {
       "promedioNotas2026": 7.25,
       "difPuntos": 0.17,
       "varIaop": 0.24,
-      "pesoCIER": 18.2
+      "pesoCIER": 19.54,
+      "evolucion_pp": 2.13,
+      "aporte_iscal": 13.75
     },
     {
       "area": "Atención al cliente",
@@ -766,7 +772,9 @@ window.CIER_DATA = {
       "promedioNotas2026": 7.06,
       "difPuntos": 1.47,
       "varIaop": 2.21,
-      "pesoCIER": 21.45
+      "pesoCIER": 17.06,
+      "evolucion_pp": -0.68,
+      "aporte_iscal": 11.62
     },
     {
       "area": "Imagen institucional",
@@ -776,7 +784,9 @@ window.CIER_DATA = {
       "promedioNotas2026": 6.76,
       "difPuntos": 3.99,
       "varIaop": 7.06,
-      "pesoCIER": 14.12
+      "pesoCIER": 9.52,
+      "evolucion_pp": 0.49,
+      "aporte_iscal": 5.76
     },
     {
       "area": "Responsabilidad socioambiental",
@@ -786,7 +796,9 @@ window.CIER_DATA = {
       "promedioNotas2026": 6.71,
       "difPuntos": 4.23,
       "varIaop": 7.64,
-      "pesoCIER": 7.85
+      "pesoCIER": 0.0,
+      "complementaria": true,
+      "nota_metodologica": "Área complementaria CIER evaluada en forma independiente sin ponderación en el cálculo del ISCAL."
     }
   ],
   "regionalData": [
