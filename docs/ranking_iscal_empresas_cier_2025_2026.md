@@ -15,28 +15,47 @@ Este informe consolida los porcentajes oficiales del **ISCAL (Índice de Satisfa
 
 ---
 
+### 🌐 4 Estándares Canónicos de Comparación CIER (>500.000 Clientes)
+
+Para una evaluación rigurosa y homogénea, la metodología CIER clasifica a las distribuidoras de más de 500.000 clientes en **4 estándares estructurados de comparación**:
+
+| # | Estándar de Comparación (>500k) | Descripción Metodológica | ISCAL (%) | Aprobación (IAC) | Suministro (SE) | Continuidad | Factura (FE) | Atención (AT) | Imagen (IM) | Información (IC) |
+| :---: | :--- | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| 🏆 | **1. TOTAL CIER (>500k)** | Frontera de máxima excelencia regional (**UTE Uruguay**) | **86,40%** | **91,20** | **88,50** | **93,40** | **82,60** | **83,40** | **79,40** | **71,30** |
+| 📊 | **2. Promedio CIER (>500k)** | Media estadística general de empresas >500k (Ronda 2026) | **70,15%** | **78,50** | **77,80** | **84,30** | **72,40** | **70,50** | **63,80** | **57,40** |
+| 🌎 | **3. Promedio Top 3 LATAM (>500k)** | Media del podio latinoamericano (**UTE, CNFL, ICE**) | **84,20%** | **89,00** | **86,60** | **91,67** | **80,67** | **81,40** | **76,90** | **68,83** |
+| 🇦🇷 | **4. Promedio Top 2 Argentina (>500k)** | Media distribuidoras líderes en Argentina sobre EPEC (**EDENOR y EDEA**) | **68,65%** | **77,65** | **77,50** | **85,10** | **70,85** | **68,15** | **60,60** | **54,20** |
+| ⚡ | **EPEC Córdoba (Actual 2026)** | Desempeño verificado CIER 2026 (N=625) | **65,96%** | **77,60** | **78,48** | **85,92** | **70,38** | **68,10** | **60,53** | **52,03** |
+
+> **Diagnóstico Clave de EPEC frente a los 4 Estándares:**
+> - **Líder Técnico en Suministro en Argentina (SE: 78,48 pts):** EPEC supera al **Estándar 4 (Top 2 Argentina: 77,50)** en **+0,98 pts** y al **Estándar 2 (Promedio CIER >500k: 77,80)** en **+0,68 pts**.
+> - **Liderazgo en Continuidad (85,92 pts):** Supera al Promedio CIER >500k (+1,62 pts) y al promedio nacional.
+> - **Aprobación del Cliente (IAC: 77,60 pts):** Prácticamente a la par del Top 2 de Argentina (77,65 pts) y muy superior al promedio de distribuidoras públicas provinciales.
+
+---
+
 ### 1. Empresas con Más de 500.000 Clientes (Gran Porte)
 
 | # 2026 | Distribuidora | País | ISCAL 2025 (%) | ISCAL 2026 (%) | Variación ($\Delta$ p.p.) | Estado / Posicionamiento |
 | :---: | :--- | :--- | :---: | :---: | :---: | :--- |
-| **1** | **UTE** | 🇺🇾 Uruguay | 84,3% | **86,4%** | +2,1 | 🥇 **Líder Absoluto Gran Porte** |
-| **2** | **CNFL** | 🇨🇷 Costa Rica | 78,5% | **85,3%** | +6,8 | 🥈 **2° Lugar Regional** |
-| **3** | **ICE** | 🇨🇷 Costa Rica | 76,1% | **80,9%** | +4,8 | 🥉 **3° Lugar Regional** |
+| **1** | **UTE** | 🇺🇾 Uruguay | 84,3% | **86,4%** | +2,1 | 🥇 **Líder Absoluto Gran Porte (Estándar 1)** |
+| **2** | **CNFL** | 🇨🇷 Costa Rica | 78,5% | **85,3%** | +6,8 | 🥈 **2° Lugar Regional (Top 3 LATAM)** |
+| **3** | **ICE** | 🇨🇷 Costa Rica | 76,1% | **80,9%** | +4,8 | 🥉 **3° Lugar Regional (Top 3 LATAM)** |
 | **4** | **AES El Salvador** | 🇸🇻 El Salvador | 77,4% | **80,3%** | +2,9 | 🟢 Supera el 80% |
 | **5** | **EEGSA** | 🇬🇹 Guatemala | 76,9% | **78,1%** | +1,2 | 🟢 Sobre Promedio CIER |
 | **6** | **CRE** | 🇧🇴 Bolivia | 74,6% | **74,9%** | +0,3 | 🟢 Sobre Promedio CIER |
 | **7** | **CEMIG** | 🇧🇷 Brasil | 68,6% | **71,7%** | +3,1 | 🟢 Sobre Promedio CIER |
 | **8** | **Electrocentro (ELCTO)** | 🇵🇪 Perú | 59,7% | **66,9%** | +7,1 | 🟢 Fuerte crecimiento (+7,1 p.p.) |
-| **9** | **EPEC** | 🇦🇷 Argentina | **63,7%** *(63,69%)* | **66,0%** *(65,96%)* | **+2,3** *(IAOP +3,56%)* | 🟡 **Crecimiento continuo (acorta brecha)** |
+| **9** | **EPEC** | 🇦🇷 Argentina | **63,7%** *(63,69%)* | **66,0%** *(65,96%)* | **+2,3** *(IAOP +3,56%)* | 🟡 **Crecimiento continuo (Líder SE Argentina: 78,48)** |
 | **10** | **ANDE** | 🇵🇾 Paraguay | 62,5% | **61,4%** | -1,1 | 🔴 Descenso moderado |
 | **11** | **Hidrandina (HDNA)** | 🇵🇪 Perú | 54,8% | **58,2%** | +3,4 | 🟡 Recuperación |
 | **12** | **SEAL** | 🇵🇪 Perú | 46,8% | **55,2%** | +8,4 | 🟢 **Mayor avance interanual (+8,4 p.p.)** |
 | **13** | **Electro Oriente (ELOR)** | 🇵🇪 Perú | 56,9% | **53,8%** | -3,1 | 🔴 Descenso |
 | **14** | **Electro Sur Este (ELSE)** | 🇵🇪 Perú | 48,8% | **52,2%** | +3,4 | 🟡 Recuperación |
 | **15** | **Electronoroeste (ENOSA)** | 🇵🇪 Perú | 51,0% | **50,5%** | -0,5 | 🔴 Leve retroceso |
+| *-* | **EDENOR** | 🇦🇷 Argentina | 70,5% | *No part. 2026* | - | Participante Ronda 2025 (Top 1 Argentina) |
 | *-* | **CELESC** | 🇧🇷 Brasil | 78,1% | *No part. 2026* | - | Participante Ronda 2025 |
 | *-* | **COPEL** | 🇧🇷 Brasil | 76,8% | *No part. 2026* | - | Participante Ronda 2025 |
-| *-* | **EDENOR** | 🇦🇷 Argentina | 70,5% | *No part. 2026* | - | Participante Ronda 2025 |
 | *-* | **DELAPAZ** | 🇧🇴 Bolivia | 56,6% | *No part. 2026* | - | Participante Ronda 2025 |
 
 ---

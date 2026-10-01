@@ -422,54 +422,98 @@
         </div>
       </div>
 
-      <!-- Subtab 3: Argentina vs Top 10 LATAM -->
+      <!-- Subtab 3: Argentina vs Top 10 LATAM (Gran Porte >500k) -->
       <div class="subtab-content" id="subtab-argentina">
+        
+        <!-- 4 Estándares de Comparación CIER (>500k Clientes) -->
         <div class="glass-card mb-4">
           <div class="card-header flex-wrap">
             <div>
-              <div class="badge-tag-blue mb-1">Benchmarking Multi-Nivel CIER · Ecosistema Argentino & Líderes Regionales</div>
-              <h3 class="card-title">Comparativa: Distribuidoras de Gran Porte de Argentina vs. Top 10 de Latinoamérica</h3>
-              <p class="card-desc">Análisis comparativo de los indicadores troncales (ISCAL, Aprobación IAC, Suministro SE, Factura FE, Atención AT, Imagen IM) entre las 6 distribuidoras de más de 500k de Argentina y las mejores 10 de la región.</p>
+              <div class="badge-tag-blue mb-1">Metodología CIER · Gran Porte (>500.000 Clientes)</div>
+              <h3 class="card-title">4 Estándares de Comparación y Posicionamiento de EPEC</h3>
+              <p class="card-desc">Análisis multidimensional estructurado en los 4 niveles canónicos de referencia para empresas con más de 500.000 clientes, contrastando con el desempeño verificado de EPEC 2026.</p>
+            </div>
+            <div class="badge-tag-cyan font-mono font-bold" style="font-size: 0.8rem; padding: 0.35rem 0.75rem;">
+              ⚡ EPEC Suministro (SE): 78.48 pts (#1 Argentina)
+            </div>
+          </div>
+
+          <!-- 4 Standards KPI Cards Grid -->
+          <div class="grid-4col mt-3 mb-4">
+            <div class="glass-card" style="padding: 1.1rem; border-left: 4px solid #10b981; background: rgba(16, 185, 129, 0.05);">
+              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">1. TOTAL CIER (>500k)</div>
+              <div style="font-size: 1.45rem; font-weight: 800; color: #34d399; margin: 0.2rem 0;">86.40% <span style="font-size: 0.8rem; font-weight: 600; color: #cbd5e1;">ISCAL</span></div>
+              <div style="font-size: 0.75rem; color: #cbd5e1;">Frontera Máxima: <strong>UTE (Uruguay)</strong></div>
+              <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 0.25rem;">IAC: 91.20 · SE: 88.50 · FE: 82.60</div>
+            </div>
+
+            <div class="glass-card" style="padding: 1.1rem; border-left: 4px solid #f59e0b; background: rgba(245, 158, 11, 0.05);">
+              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">2. Promedio CIER (>500k)</div>
+              <div style="font-size: 1.45rem; font-weight: 800; color: #fbbf24; margin: 0.2rem 0;">70.15% <span style="font-size: 0.8rem; font-weight: 600; color: #cbd5e1;">ISCAL</span></div>
+              <div style="font-size: 0.75rem; color: #cbd5e1;">Media General Empresas >500k</div>
+              <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 0.25rem;">IAC: 78.50 · SE: 77.80 · FE: 72.40</div>
+            </div>
+
+            <div class="glass-card" style="padding: 1.1rem; border-left: 4px solid var(--accent-cyan); background: rgba(6, 182, 212, 0.05);">
+              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">3. Promedio Top 3 LATAM (>500k)</div>
+              <div style="font-size: 1.45rem; font-weight: 800; color: #38bdf8; margin: 0.2rem 0;">84.20% <span style="font-size: 0.8rem; font-weight: 600; color: #cbd5e1;">ISCAL</span></div>
+              <div style="font-size: 0.75rem; color: #cbd5e1;">Podio: <strong>UTE, CNFL, ICE</strong></div>
+              <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 0.25rem;">IAC: 89.00 · SE: 86.60 · FE: 80.67</div>
+            </div>
+
+            <div class="glass-card" style="padding: 1.1rem; border-left: 4px solid #a855f7; background: rgba(168, 85, 247, 0.05);">
+              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">4. Promedio Top 2 Argentina (>500k)</div>
+              <div style="font-size: 1.45rem; font-weight: 800; color: #c084fc; margin: 0.2rem 0;">68.65% <span style="font-size: 0.8rem; font-weight: 600; color: #cbd5e1;">ISCAL</span></div>
+              <div style="font-size: 0.75rem; color: #cbd5e1;">Líderes AR sobre EPEC: <strong>EDENOR, EDEA</strong></div>
+              <div style="font-size: 0.72rem; color: #94a3b8; margin-top: 0.25rem;">IAC: 77.65 · SE: 77.50 · FE: 70.85</div>
+            </div>
+          </div>
+
+          <!-- Standards Comparison Table -->
+          <div class="table-responsive">
+            <table class="data-table" id="estandares-comparison-table">
+              <thead>
+                <tr>
+                  <th>Estándar de Comparación (>500k Clientes)</th>
+                  <th style="text-align: right;">ISCAL (%)</th>
+                  <th style="text-align: right;">Aprobación (IAC)</th>
+                  <th style="text-align: right;">Suministro (SE)</th>
+                  <th style="text-align: right;">Continuidad</th>
+                  <th style="text-align: right;">Factura (FE)</th>
+                  <th style="text-align: right;">Atención (AT)</th>
+                  <th style="text-align: right;">Imagen (IM)</th>
+                  <th style="text-align: right;">Información (IC)</th>
+                  <th style="text-align: center;">Brecha ISCAL vs EPEC</th>
+                </tr>
+              </thead>
+              <tbody id="estandares-comparison-tbody">
+                <!-- Rendered dynamically -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Granular Benchmarking Table: Top 10 LATAM + 6 Argentina Gran Porte -->
+        <div class="glass-card mb-4">
+          <div class="card-header flex-wrap">
+            <div>
+              <div class="badge-tag-blue mb-1">Distribuidoras de Gran Porte (>500.000 Clientes)</div>
+              <h3 class="card-title">Ranking Completo: Top 10 Latinoamérica vs. 6 Distribuidoras de Argentina</h3>
+              <p class="card-desc">Comparativa punto a punto en todos los indicadores troncales documentados para distribuidoras con más de 500.000 clientes.</p>
             </div>
             
             <!-- Filters -->
             <div class="filters-row flex-wrap gap-2">
               <select id="arg-filter-grupo" class="custom-select" aria-label="Filtrar por grupo">
-                <option value="all">Todas las Empresas (Top 10 LATAM + Argentina)</option>
-                <option value="argentina">🇦🇷 Solo Distribuidoras de Argentina (6 Gran Porte)</option>
-                <option value="top10_latam">🏆 Solo Top 10 de Latinoamérica</option>
-                <option value="gran_porte">🏢 Solo Empresas de Gran Porte (>500k)</option>
+                <option value="all">Todas las Empresas Gran Porte (>500k) [16]</option>
+                <option value="argentina">🇦🇷 Solo Distribuidoras de Argentina (>500k) [6]</option>
+                <option value="top10_latam">🏆 Solo Top 10 Latinoamérica (>500k) [10]</option>
+                <option value="top3_latam">🌎 Solo Top 3 Latinoamérica (>500k) [3]</option>
+                <option value="top2_arg">⭐ Solo Top 2 Argentina Líderes (>500k) [2]</option>
               </select>
               <div class="search-box-wrapper">
-                <input type="text" id="arg-search-input" class="search-input" placeholder="Buscar por distribuidora o país...">
+                <input type="text" id="arg-search-input" class="search-input" placeholder="Buscar distribuidora o país...">
               </div>
-            </div>
-          </div>
-
-          <!-- Highlight Banner for EPEC vs Argentina vs Líder -->
-          <div class="grid-4col mt-3 mb-3">
-            <div class="glass-card" style="padding: 1rem; border-left: 4px solid var(--accent-cyan);">
-              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">EPEC en Suministro (SE)</div>
-              <div style="font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0.2rem 0;">78.48 pts</div>
-              <div style="font-size: 0.75rem; color: #34d399; font-weight: 600;">+1.38 pts vs Promedio Argentina</div>
-            </div>
-
-            <div class="glass-card" style="padding: 1rem; border-left: 4px solid #10b981;">
-              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">EPEC en Continuidad</div>
-              <div style="font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0.2rem 0;">85.92 pts</div>
-              <div style="font-size: 0.75rem; color: #34d399; font-weight: 600;">Líder técnico en Argentina</div>
-            </div>
-
-            <div class="glass-card" style="padding: 1rem; border-left: 4px solid #f59e0b;">
-              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">EPEC en Aprobación (IAC)</div>
-              <div style="font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0.2rem 0;">77.60 pts</div>
-              <div style="font-size: 0.75rem; color: #34d399; font-weight: 600;">+0.80 pts vs Promedio Argentina</div>
-            </div>
-
-            <div class="glass-card" style="padding: 1rem; border-left: 4px solid #a855f7;">
-              <div class="text-muted" style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase;">Líder Absoluto LATAM (UTE)</div>
-              <div style="font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0.2rem 0;">86.40 pts</div>
-              <div style="font-size: 0.75rem; color: var(--accent-cyan); font-weight: 600;">Frontera de Excelencia (>500k)</div>
             </div>
           </div>
 
@@ -488,7 +532,7 @@
                   <th style="text-align: right;">Factura (FE)</th>
                   <th style="text-align: right;">Atención (AT)</th>
                   <th style="text-align: right;">Imagen (IM)</th>
-                  <th style="text-align: center;">Ronda / Fuente</th>
+                  <th style="text-align: center;">Ronda / Fuente Oficial</th>
                 </tr>
               </thead>
               <tbody id="argentina-benchmark-tbody">
@@ -497,6 +541,7 @@
             </table>
           </div>
         </div>
+
       </div>
 
     </section>

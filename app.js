@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderIndicesTable();
   renderBenchmarkTable();
   renderPaisesTable();
+  renderEstandaresTable();
   renderArgentinaBenchmarkTable();
   renderDetractorSection();
   renderDictTable();
@@ -129,6 +130,7 @@ function initSubTabs() {
         }, 50);
       }
       if (targetId === 'subtab-argentina') {
+        renderEstandaresTable();
         renderArgentinaBenchmarkTable();
       }
 
@@ -633,6 +635,55 @@ function renderPaisesTable() {
   }).join('');
 }
 
+function renderEstandaresTable() {
+  const tbody = document.getElementById('estandares-comparison-tbody');
+  if (!tbody) return;
+
+  const estandares = cierData.benchmarkEstandares || [];
+  const epecItem = estandares.find(e => e.id === 'epec_actual') || { iscal: 65.96 };
+
+  tbody.innerHTML = estandares.map(e => {
+    const isEpec = e.id === 'epec_actual';
+    const rowClass = isEpec ? 'highlight-row-cyan' : '';
+    const nameColor = isEpec ? 'color: #38bdf8; font-weight: 800;' : 'color: #f8fafc; font-weight: 700;';
+
+    // Calculate gap vs EPEC
+    const gap = e.iscal - epecItem.iscal;
+    let gapBadge = '';
+    if (isEpec) {
+      gapBadge = `<span class="badge-tag-cyan" style="font-size: 0.72rem; font-weight: 700;">⭐ Base de Referencia</span>`;
+    } else if (gap > 0) {
+      gapBadge = `<span class="badge-pill-amber font-mono" style="font-size: 0.75rem;">+${gap.toFixed(2)} pp s/EPEC</span>`;
+    } else {
+      gapBadge = `<span class="badge-pill-green font-mono" style="font-size: 0.75rem;">${gap.toFixed(2)} pp</span>`;
+    }
+
+    return `
+      <tr class="${rowClass}">
+        <td>
+          <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <span>${e.icono}</span>
+              <span style="${nameColor}">${e.titulo}</span>
+              ${isEpec ? '<span class="badge-tag-cyan" style="font-size: 0.65rem; padding: 0.1rem 0.4rem;">EPEC Actual</span>' : ''}
+            </div>
+            <span class="text-slate-400" style="font-size: 0.73rem;">${e.subtitulo}</span>
+          </div>
+        </td>
+        <td class="text-right font-bold ${isEpec ? 'text-cyan-300' : 'text-slate-100'} font-mono">${e.iscal.toFixed(2)}%</td>
+        <td class="text-right font-semibold ${isEpec ? 'text-cyan-400' : 'text-slate-200'} font-mono">${e.iac.toFixed(2)}</td>
+        <td class="text-right ${isEpec ? 'text-green-400 font-bold' : 'text-slate-200'} font-mono">${e.se.toFixed(2)}</td>
+        <td class="text-right ${isEpec ? 'text-green-300 font-bold' : 'text-slate-300'} font-mono">${e.continuidad ? e.continuidad.toFixed(2) : '-'}</td>
+        <td class="text-right text-slate-300 font-mono">${e.fe.toFixed(2)}</td>
+        <td class="text-right text-slate-300 font-mono">${e.at.toFixed(2)}</td>
+        <td class="text-right text-slate-300 font-mono">${e.im.toFixed(2)}</td>
+        <td class="text-right text-slate-300 font-mono">${e.ic ? e.ic.toFixed(2) : '-'}</td>
+        <td class="text-center">${gapBadge}</td>
+      </tr>
+    `;
+  }).join('');
+}
+
 function renderArgentinaBenchmarkTable() {
   const tbody = document.getElementById('argentina-benchmark-tbody');
   if (!tbody) return;
@@ -645,7 +696,8 @@ function renderArgentinaBenchmarkTable() {
     // Grupo filter
     if (grupoFilter === 'argentina' && item.grupo !== 'argentina') return false;
     if (grupoFilter === 'top10_latam' && item.grupo !== 'top10_latam') return false;
-    if (grupoFilter === 'gran_porte' && item.porte !== '>500k') return false;
+    if (grupoFilter === 'top3_latam' && !['UTE', 'CNFL', 'ICE'].includes(item.nombre)) return false;
+    if (grupoFilter === 'top2_arg' && !['EDENOR', 'EDEA'].includes(item.nombre)) return false;
 
     // Search filter
     if (searchVal) {
@@ -679,9 +731,9 @@ function renderArgentinaBenchmarkTable() {
       : `<span class="badge-tag-slate" style="font-size: 0.7rem;">🏘️ Menor Porte (≤500k)</span>`;
 
     let rondaBadge = `<span class="badge-tag-slate" style="font-size: 0.7rem;">${d.ronda}</span>`;
-    if (d.ronda.includes('Líder Top 1')) {
+    if (d.ronda.includes('Top 1')) {
       rondaBadge = `<span class="badge-tag-green" style="font-size: 0.7rem; font-weight: 700;">🏆 ${d.ronda}</span>`;
-    } else if (d.ronda.includes('Top')) {
+    } else if (d.ronda.includes('Top 2') || d.ronda.includes('Top 3')) {
       rondaBadge = `<span class="badge-tag-blue" style="font-size: 0.7rem;">⭐ ${d.ronda}</span>`;
     } else if (d.ronda.includes('2026') || isEpec) {
       rondaBadge = `<span class="badge-tag-cyan" style="font-size: 0.7rem; font-weight: 700;">🟢 ${d.ronda}</span>`;
