@@ -61,7 +61,32 @@ Este informe consolida los porcentajes oficiales del **ISCAL (Índice de Satisfa
 
 ---
 
-### 3. Comparativo de Promedio ISCAL por País
+### 3. Distribuidoras de Argentina en el Estudio CIER / CACIER
+
+| Distribuidora | Jurisdicción / Concesión | Segmento CIER | Clientes Aprox. | ISCAL 2025 (%) | ISCAL 2026 (%) | Estado de Participación en CIER |
+| :--- | :--- | :---: | :---: | :---: | :---: | :--- |
+| **EPEC** | 🇦🇷 Córdoba | **Gran Porte (>500k)** | **~1.100.000** | **63,69%** | **65,96%** | 🟢 **Participante Activo 2025 y 2026 (+2,27 pts)** |
+| **EDENOR** | 🇦🇷 Buenos Aires Norte / CABA | **Gran Porte (>500k)** | **~3.300.000** | **70,50%** | *No part.* | 🟡 Participante Oficial Ronda 2025 |
+| **EDESUR** | 🇦🇷 Buenos Aires Sur / CABA | **Gran Porte (>500k)** | **~2.600.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EPE Santa Fe** | 🇦🇷 Santa Fe | **Gran Porte (>500k)** | **~1.400.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EDET** | 🇦🇷 Tucumán | **Gran Porte (>500k)** | **~550.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EDEA** | 🇦🇷 Buenos Aires Costa | **Gran Porte (>500k)** | **~580.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EDEMSA** | 🇦🇷 Mendoza | **Mediana ($\le$ 500k)** | **~480.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **ENERSA** | 🇦🇷 Entre Ríos | **Mediana ($\le$ 500k)** | **~410.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **SECHEEP** | 🇦🇷 Chaco | **Mediana ($\le$ 500k)** | **~400.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EDELAP** | 🇦🇷 Gran La Plata | **Mediana ($\le$ 500k)** | **~390.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EDESA** | 🇦🇷 Salta | **Mediana ($\le$ 500k)** | **~380.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **DPEC** | 🇦🇷 Corrientes | **Mediana ($\le$ 500k)** | **~310.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EdERSA** | 🇦🇷 Río Negro | **Mediana ($\le$ 500k)** | **~240.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EJESA** | 🇦🇷 Jujuy | **Pequeña ($\le$ 500k)** | **~210.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EDES** | 🇦🇷 Buenos Aires Sur | **Pequeña ($\le$ 500k)** | **~200.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EDELAR** | 🇦🇷 La Rioja | **Pequeña ($\le$ 500k)** | **~140.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EC SAPEM** | 🇦🇷 Catamarca | **Pequeña ($\le$ 500k)** | **~140.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+| **EPEN** | 🇦🇷 Neuquén | **Pequeña ($\le$ 500k)** | **~100.000** | - | - | ⚪ Miembro Histórico CACIER / ADEERA |
+
+---
+
+### 4. Comparativo de Promedio ISCAL por País
 
 | País | ISCAL 2025 (%) | ISCAL 2026 (%) | Variación ($\Delta$ p.p.) |
 | :--- | :---: | :---: | :---: |
