@@ -137,6 +137,8 @@ function initSubTabs() {
       setTimeout(() => {
         if (chartsInstances.radar500k) chartsInstances.radar500k.resize();
         if (chartsInstances.gap500k) chartsInstances.gap500k.resize();
+        if (chartsInstances.radarEstandares) chartsInstances.radarEstandares.resize();
+        if (chartsInstances.gapEstandares) chartsInstances.gapEstandares.resize();
       }, 60);
     });
   });
@@ -361,6 +363,370 @@ function initCharts() {
       }
     });
   }
+
+  // 4. Radar Spider Chart & Gap Analysis for 4 Standards vs EPEC 2026
+  initRadarEstandaresCharts();
+}
+
+/* ==========================================================================
+   RADAR SPIDER CHARTS & GAP BREAKDOWN (4 ESTÁNDARES CIER >500K)
+   ========================================================================== */
+const estandaresAxesLabels = [
+  'ISCAL Global',
+  'Aprobación (IAC)',
+  'Suministro (SE)',
+  'Continuidad',
+  'Tensión',
+  'Factura (FE)',
+  'Atención (AT)',
+  'Imagen (IM)',
+  'Información (IC)'
+];
+
+const estandaresDataMap = {
+  epec: {
+    label: 'EPEC 2026 (Actual)',
+    color: '#06b6d4',
+    bgColor: 'rgba(6, 182, 212, 0.25)',
+    borderWidth: 2.8,
+    data: [65.96, 77.60, 78.48, 85.92, 77.40, 70.38, 68.10, 60.53, 52.03]
+  },
+  estandar_1: {
+    id: 'estandar_1',
+    label: '1. TOTAL CIER (Líder UTE)',
+    color: '#10b981',
+    bgColor: 'rgba(16, 185, 129, 0.10)',
+    borderDash: [3, 3],
+    borderWidth: 2,
+    data: [86.40, 91.20, 88.50, 93.40, 87.20, 82.60, 83.40, 79.40, 71.30],
+    insight: '<strong>🏆 Frontera Máxima (UTE Uruguay · ISCAL 86.40%):</strong> Representa el techo regional de excelencia técnica y comercial en gran porte. La mayor oportunidad de convergencia para EPEC se localiza en Información y Comunicación (brecha de -19.27 pts) y Facturación (-12.22 pts), mientras que en Suministro la diferencia es significativamente más estrecha (-10.02 pts).'
+  },
+  estandar_2: {
+    id: 'estandar_2',
+    label: '2. Promedio CIER (>500k)',
+    color: '#f59e0b',
+    bgColor: 'rgba(245, 158, 11, 0.10)',
+    borderDash: [4, 4],
+    borderWidth: 2,
+    data: [70.15, 78.50, 77.80, 84.30, 76.20, 72.40, 70.50, 63.80, 57.40],
+    insight: '<strong>📊 Promedio CIER Gran Porte (>500k · ISCAL 70.15%):</strong> EPEC <strong>supera el promedio regional en Suministro de Energía (+0.68 pts)</strong>, en <strong>Continuidad (+1.62 pts)</strong> y en <strong>Tensión (+1.20 pts)</strong>. El diferencial global (-4.19 pp) se explica principalmente por el déficit en Información y Comunicación (-5.37 pts) e Imagen (-3.27 pts).'
+  },
+  estandar_3: {
+    id: 'estandar_3',
+    label: '3. Promedio Top 3 LATAM',
+    color: '#38bdf8',
+    bgColor: 'rgba(56, 189, 248, 0.10)',
+    borderDash: [2, 2],
+    borderWidth: 2,
+    data: [84.20, 89.00, 86.60, 91.67, 85.57, 80.67, 81.40, 76.90, 68.83],
+    insight: '<strong>🌎 Podio Latinoamericano (>500k · ISCAL 84.20%):</strong> Media de UTE (Uruguay), CNFL (Costa Rica) e ICE (Costa Rica). Destaca una brecha técnica muy contenida en calidad de red (-5.75 pts en Continuidad y -8.12 pts en SE), con principal desafío en la experiencia de cliente y canales digitales.'
+  },
+  estandar_4: {
+    id: 'estandar_4',
+    label: '4. Promedio Top 2 Argentina',
+    color: '#c084fc',
+    bgColor: 'rgba(192, 132, 252, 0.12)',
+    borderDash: [3, 3],
+    borderWidth: 2.2,
+    data: [68.65, 77.65, 77.50, 85.10, 76.80, 70.85, 68.15, 60.60, 54.20],
+    insight: '<strong>🇦🇷 Top 2 Argentina sobre EPEC (EDENOR y EDEA · ISCAL 68.65%):</strong> <strong>EPEC es Líder Técnico Nacional</strong>, superando al Top 2 argentino en <strong>Suministro (+0.98 pts)</strong>, en <strong>Continuidad (+0.82 pts)</strong> y en <strong>Tensión (+0.60 pts)</strong>. EPEC prácticamente empata en Aprobación IAC (77.60 vs 77.65), Atención (68.10 vs 68.15) e Imagen (60.53 vs 60.60).'
+  }
+};
+
+let currentRadarMode = 'all';
+
+function initRadarEstandaresCharts() {
+  const ctxRadar = document.getElementById('chart-radar-estandares');
+  const ctxGap = document.getElementById('chart-gap-estandares');
+  if (!ctxRadar || !ctxGap) return;
+
+  const radarOptions = {
+    responsive: true,
+    maintainAspectRatio: false,
+    elements: {
+      line: { tension: 0.15 },
+      point: { radius: 3.5, hoverRadius: 6 }
+    },
+    scales: {
+      r: {
+        min: 40,
+        max: 100,
+        ticks: {
+          stepSize: 10,
+          color: '#94a3b8',
+          backdropColor: 'transparent',
+          font: { size: 10, family: 'Inter' }
+        },
+        grid: { color: 'rgba(255, 255, 255, 0.08)', lineWidth: 1 },
+        angleLines: { color: 'rgba(255, 255, 255, 0.12)' },
+        pointLabels: { color: '#f8fafc', font: { size: 11, weight: '600', family: 'Inter' } }
+      }
+    },
+    plugins: {
+      legend: {
+        position: 'top',
+        labels: {
+          color: '#cbd5e1',
+          usePointStyle: true,
+          pointStyle: 'circle',
+          padding: 12,
+          font: { size: 11, weight: '600', family: 'Inter' }
+        }
+      },
+      tooltip: {
+        backgroundColor: 'rgba(15, 23, 42, 0.95)',
+        titleColor: '#f8fafc',
+        bodyColor: '#cbd5e1',
+        borderColor: 'rgba(255, 255, 255, 0.1)',
+        borderWidth: 1,
+        padding: 10,
+        callbacks: {
+          label: (context) => ` ${context.dataset.label}: ${context.raw} pts`
+        }
+      }
+    }
+  };
+
+  const allDatasets = [
+    {
+      label: estandaresDataMap.epec.label,
+      data: estandaresDataMap.epec.data,
+      borderColor: estandaresDataMap.epec.color,
+      backgroundColor: estandaresDataMap.epec.bgColor,
+      borderWidth: estandaresDataMap.epec.borderWidth,
+      pointBackgroundColor: estandaresDataMap.epec.color
+    },
+    {
+      label: estandaresDataMap.estandar_1.label,
+      data: estandaresDataMap.estandar_1.data,
+      borderColor: estandaresDataMap.estandar_1.color,
+      backgroundColor: 'transparent',
+      borderDash: estandaresDataMap.estandar_1.borderDash,
+      borderWidth: estandaresDataMap.estandar_1.borderWidth,
+      pointBackgroundColor: estandaresDataMap.estandar_1.color
+    },
+    {
+      label: estandaresDataMap.estandar_2.label,
+      data: estandaresDataMap.estandar_2.data,
+      borderColor: estandaresDataMap.estandar_2.color,
+      backgroundColor: 'transparent',
+      borderDash: estandaresDataMap.estandar_2.borderDash,
+      borderWidth: estandaresDataMap.estandar_2.borderWidth,
+      pointBackgroundColor: estandaresDataMap.estandar_2.color
+    },
+    {
+      label: estandaresDataMap.estandar_3.label,
+      data: estandaresDataMap.estandar_3.data,
+      borderColor: estandaresDataMap.estandar_3.color,
+      backgroundColor: 'transparent',
+      borderDash: estandaresDataMap.estandar_3.borderDash,
+      borderWidth: estandaresDataMap.estandar_3.borderWidth,
+      pointBackgroundColor: estandaresDataMap.estandar_3.color
+    },
+    {
+      label: estandaresDataMap.estandar_4.label,
+      data: estandaresDataMap.estandar_4.data,
+      borderColor: estandaresDataMap.estandar_4.color,
+      backgroundColor: 'transparent',
+      borderDash: estandaresDataMap.estandar_4.borderDash,
+      borderWidth: estandaresDataMap.estandar_4.borderWidth,
+      pointBackgroundColor: estandaresDataMap.estandar_4.color
+    }
+  ];
+
+  chartsInstances.radarEstandares = new Chart(ctxRadar, {
+    type: 'radar',
+    data: {
+      labels: estandaresAxesLabels,
+      datasets: allDatasets
+    },
+    options: radarOptions
+  });
+
+  chartsInstances.gapEstandares = new Chart(ctxGap, {
+    type: 'bar',
+    data: {
+      labels: ['1. TOTAL CIER (UTE)', '2. Promedio CIER (>500k)', '3. Top 3 LATAM', '4. Top 2 Argentina'],
+      datasets: [{
+        label: 'Diferencial ISCAL (EPEC vs Estándar)',
+        data: [-20.44, -4.19, -18.24, -2.69],
+        backgroundColor: ['rgba(239, 68, 68, 0.75)', 'rgba(245, 158, 11, 0.75)', 'rgba(239, 68, 68, 0.75)', 'rgba(168, 85, 247, 0.75)'],
+        borderColor: ['#ef4444', '#f59e0b', '#ef4444', '#a855f7'],
+        borderWidth: 1.5,
+        borderRadius: 4
+      }]
+    },
+    options: {
+      indexAxis: 'y',
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false },
+        tooltip: {
+          callbacks: {
+            label: (context) => ` Diferencia ISCAL: ${context.raw > 0 ? '+' : ''}${context.raw} pp vs Estándar`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { color: 'rgba(255,255,255,0.08)' },
+          ticks: { color: '#94a3b8', font: { family: 'Inter', size: 10 } }
+        },
+        y: {
+          grid: { display: false },
+          ticks: { color: '#f8fafc', font: { family: 'Inter', size: 11, weight: '500' } }
+        }
+      }
+    }
+  });
+
+  updateRadarEstandaresView('all');
+}
+
+function updateRadarEstandaresView(mode) {
+  currentRadarMode = mode;
+  if (!chartsInstances.radarEstandares || !chartsInstances.gapEstandares) return;
+
+  const titleEl = document.getElementById('radar-estandares-title');
+  const badgeEl = document.getElementById('radar-estandares-badge');
+  const gapTitleEl = document.getElementById('gap-estandares-title');
+  const insightBox = document.getElementById('radar-insight-box');
+
+  const epec = estandaresDataMap.epec;
+
+  if (mode === 'all') {
+    if (titleEl) titleEl.textContent = 'Gráfico de Araña: EPEC 2026 vs. Todos los Estándares CIER';
+    if (badgeEl) {
+      badgeEl.textContent = 'Multi-Estándar (>500k)';
+      badgeEl.className = 'badge-tag-cyan';
+    }
+    if (gapTitleEl) gapTitleEl.textContent = 'Diferencial ISCAL: EPEC frente a los 4 Estándares';
+
+    chartsInstances.radarEstandares.data.datasets = [
+      {
+        label: epec.label,
+        data: epec.data,
+        borderColor: epec.color,
+        backgroundColor: epec.bgColor,
+        borderWidth: epec.borderWidth,
+        pointBackgroundColor: epec.color
+      },
+      {
+        label: estandaresDataMap.estandar_1.label,
+        data: estandaresDataMap.estandar_1.data,
+        borderColor: estandaresDataMap.estandar_1.color,
+        backgroundColor: 'transparent',
+        borderDash: estandaresDataMap.estandar_1.borderDash,
+        borderWidth: estandaresDataMap.estandar_1.borderWidth,
+        pointBackgroundColor: estandaresDataMap.estandar_1.color
+      },
+      {
+        label: estandaresDataMap.estandar_2.label,
+        data: estandaresDataMap.estandar_2.data,
+        borderColor: estandaresDataMap.estandar_2.color,
+        backgroundColor: 'transparent',
+        borderDash: estandaresDataMap.estandar_2.borderDash,
+        borderWidth: estandaresDataMap.estandar_2.borderWidth,
+        pointBackgroundColor: estandaresDataMap.estandar_2.color
+      },
+      {
+        label: estandaresDataMap.estandar_3.label,
+        data: estandaresDataMap.estandar_3.data,
+        borderColor: estandaresDataMap.estandar_3.color,
+        backgroundColor: 'transparent',
+        borderDash: estandaresDataMap.estandar_3.borderDash,
+        borderWidth: estandaresDataMap.estandar_3.borderWidth,
+        pointBackgroundColor: estandaresDataMap.estandar_3.color
+      },
+      {
+        label: estandaresDataMap.estandar_4.label,
+        data: estandaresDataMap.estandar_4.data,
+        borderColor: estandaresDataMap.estandar_4.color,
+        backgroundColor: 'transparent',
+        borderDash: estandaresDataMap.estandar_4.borderDash,
+        borderWidth: estandaresDataMap.estandar_4.borderWidth,
+        pointBackgroundColor: estandaresDataMap.estandar_4.color
+      }
+    ];
+
+    chartsInstances.gapEstandares.data.labels = [
+      '1. TOTAL CIER (UTE)',
+      '2. Promedio CIER (>500k)',
+      '3. Top 3 LATAM',
+      '4. Top 2 Argentina'
+    ];
+    const diffs = [-20.44, -4.19, -18.24, -2.69];
+    chartsInstances.gapEstandares.data.datasets = [{
+      label: 'Diferencial ISCAL (EPEC vs Estándar)',
+      data: diffs,
+      backgroundColor: diffs.map(d => d >= 0 ? 'rgba(16, 185, 129, 0.75)' : 'rgba(239, 68, 68, 0.75)'),
+      borderColor: diffs.map(d => d >= 0 ? '#10b981' : '#ef4444'),
+      borderWidth: 1.5,
+      borderRadius: 4
+    }];
+
+    if (insightBox) {
+      insightBox.innerHTML = `
+        <strong>⚡ Diagnóstico Global Multidimensional:</strong> EPEC registra su mayor desempeño competitivo en el eje técnico de red (<strong>Suministro SE: 78.48 pts · Líder Nacional</strong> y <strong>Continuidad: 85.92 pts</strong>, superando al Promedio CIER >500k). La distancia con la frontera latinoamericana (86.40%) está concentrada en Comunicación (IC) y Facturación (FE).
+      `;
+    }
+
+  } else {
+    const std = estandaresDataMap[mode];
+    if (!std) return;
+
+    if (titleEl) titleEl.textContent = `Gráfico de Araña: EPEC 2026 vs. ${std.label}`;
+    if (badgeEl) {
+      badgeEl.textContent = `Comparativa Focalizada`;
+      badgeEl.className = 'badge-tag-cyan';
+    }
+    if (gapTitleEl) gapTitleEl.textContent = `Diferencial por Atributo (EPEC vs. ${std.label})`;
+
+    chartsInstances.radarEstandares.data.datasets = [
+      {
+        label: epec.label,
+        data: epec.data,
+        borderColor: epec.color,
+        backgroundColor: epec.bgColor,
+        borderWidth: epec.borderWidth,
+        pointBackgroundColor: epec.color
+      },
+      {
+        label: std.label,
+        data: std.data,
+        borderColor: std.color,
+        backgroundColor: std.bgColor,
+        borderDash: std.borderDash,
+        borderWidth: std.borderWidth,
+        pointBackgroundColor: std.color
+      }
+    ];
+
+    const gaps = estandaresAxesLabels.map((lbl, i) => {
+      const diff = Number((epec.data[i] - std.data[i]).toFixed(2));
+      return { label: `${lbl} (${diff > 0 ? '+' : ''}${diff})`, value: diff };
+    });
+
+    gaps.sort((a, b) => b.value - a.value);
+
+    chartsInstances.gapEstandares.data.labels = gaps.map(g => g.label);
+    chartsInstances.gapEstandares.data.datasets = [{
+      label: `Diferencial (EPEC - ${std.label})`,
+      data: gaps.map(g => g.value),
+      backgroundColor: gaps.map(g => g.value >= 0 ? 'rgba(16, 185, 129, 0.75)' : 'rgba(239, 68, 68, 0.75)'),
+      borderColor: gaps.map(g => g.value >= 0 ? '#10b981' : '#ef4444'),
+      borderWidth: 1.5,
+      borderRadius: 4
+    }];
+
+    if (insightBox) {
+      insightBox.innerHTML = std.insight;
+    }
+  }
+
+  chartsInstances.radarEstandares.update();
+  chartsInstances.gapEstandares.update();
 }
 
 /* ==========================================================================
@@ -1842,6 +2208,16 @@ function initFiltersAndSearch() {
   if (argSearchInput) {
     argSearchInput.addEventListener('input', () => renderArgentinaBenchmarkTable());
   }
+
+  // Radar Spider Chart Standards Filter Buttons
+  document.querySelectorAll('.btn-filter-radar').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.btn-filter-radar').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const mode = btn.getAttribute('data-radar-mode') || 'all';
+      updateRadarEstandaresView(mode);
+    });
+  });
 }
 /* ==========================================================================
    SECTION 16: MATRIZ CONJUNTA DE ACCIONES DE MEJORA Y PRIORIDADES

@@ -493,6 +493,69 @@
           </div>
         </div>
 
+        <!-- Interactive Spider Radar Charts: EPEC vs 4 Standards -->
+        <div class="glass-card mb-4">
+          <div class="card-header flex-wrap">
+            <div>
+              <div class="badge-tag-cyan mb-1">Visualización Multidimensional · Gráficos de Araña (Radar)</div>
+              <h3 class="card-title">Gráficos de Araña: Comparativa de EPEC vs. Estándares CIER por Atributo</h3>
+              <p class="card-desc">Evaluación visual de fortalezas técnicas y áreas de oportunidad frente a los 4 niveles de comparación (>500k clientes).</p>
+            </div>
+            
+            <!-- Standard Selector Buttons -->
+            <div class="filters-row flex-wrap gap-2">
+              <button class="btn-filter-radar active" data-radar-mode="all" id="btn-radar-all">
+                📊 Todos los Estándares
+              </button>
+              <button class="btn-filter-radar" data-radar-mode="estandar_1" id="btn-radar-e1">
+                🏆 vs. 1. TOTAL CIER (UTE)
+              </button>
+              <button class="btn-filter-radar" data-radar-mode="estandar_2" id="btn-radar-e2">
+                📊 vs. 2. Promedio CIER (>500k)
+              </button>
+              <button class="btn-filter-radar" data-radar-mode="estandar_3" id="btn-radar-e3">
+                🌎 vs. 3. Top 3 LATAM
+              </button>
+              <button class="btn-filter-radar" data-radar-mode="estandar_4" id="btn-radar-e4">
+                🇦🇷 vs. 4. Top 2 Argentina
+              </button>
+            </div>
+          </div>
+
+          <div class="grid-2col mt-3 align-items-stretch">
+            <!-- Spider Radar Canvas -->
+            <div class="glass-card" style="padding: 1.25rem; background: rgba(15, 23, 42, 0.65);">
+              <div class="card-header" style="padding-bottom: 0.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                <h4 style="font-size: 0.92rem; font-weight: 700; color: #fff;" id="radar-estandares-title">
+                  Gráfico de Araña: EPEC 2026 vs. Estándares CIER
+                </h4>
+                <span class="badge-tag-cyan" id="radar-estandares-badge" style="font-size: 0.68rem;">Todos los Estándares</span>
+              </div>
+              <div class="chart-wrapper" style="height: 380px; position: relative;">
+                <canvas id="chart-radar-estandares"></canvas>
+              </div>
+            </div>
+
+            <!-- Gap Bar Chart & Insights -->
+            <div class="glass-card" style="padding: 1.25rem; background: rgba(15, 23, 42, 0.65); display: flex; flex-direction: column;">
+              <div class="card-header" style="padding-bottom: 0.5rem; margin-bottom: 0.5rem; border-bottom: 1px solid rgba(255,255,255,0.08);">
+                <h4 style="font-size: 0.92rem; font-weight: 700; color: #fff;" id="gap-estandares-title">
+                  Brechas por Atributo: EPEC vs. Estándar Seleccionado
+                </h4>
+                <span class="badge-tag-blue" id="gap-estandares-badge" style="font-size: 0.68rem;">Diferencial de Puntos</span>
+              </div>
+              <div class="chart-wrapper" style="height: 250px; position: relative;">
+                <canvas id="chart-gap-estandares"></canvas>
+              </div>
+              
+              <!-- Dynamic Insight Note Box -->
+              <div class="mt-3 p-3" id="radar-insight-box" style="background: rgba(6, 182, 212, 0.08); border-left: 3px solid var(--accent-cyan); border-radius: 6px; font-size: 0.8rem; color: #cbd5e1; flex-grow: 1;">
+                <!-- Filled dynamically based on selected standard -->
+              </div>
+            </div>
+          </div>
+        </div>
+
         <!-- Granular Benchmarking Table: Top 10 LATAM + 6 Argentina Gran Porte -->
         <div class="glass-card mb-4">
           <div class="card-header flex-wrap">
