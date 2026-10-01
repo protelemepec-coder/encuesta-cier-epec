@@ -1750,10 +1750,10 @@ function initMatrizScatterChart() {
   const data = cierData.matrizAccionesMejora || [];
   if (!data.length) return;
 
-  const focoData = data.filter(d => d.cuadrante && (d.cuadrante.includes('1') || d.cuadrante.includes('I ') || d.cuadrante.includes('Foco'))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
-  const bajaData = data.filter(d => d.cuadrante && (d.cuadrante.includes('2') || d.cuadrante.includes('II ') || d.cuadrante.includes('Baja'))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
-  const fortalezaData = data.filter(d => d.cuadrante && (d.cuadrante.includes('3') || d.cuadrante.includes('III ') || d.cuadrante.includes('Fortaleza'))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
-  const ventajaData = data.filter(d => d.cuadrante && (d.cuadrante.includes('4') || d.cuadrante.includes('IV ') || d.cuadrante.includes('Ventaja'))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+  const focoData = data.filter(d => d.cuadrante_num_cier === 1 || (d.cuadrante && (d.cuadrante.includes('Cuadrante I ') || d.cuadrante.includes('Cuadrante I –') || d.cuadrante.includes('Cuadrante I -') || d.cuadrante.includes('Foco')) && !d.cuadrante.includes('II') && !d.cuadrante.includes('III') && !d.cuadrante.includes('IV'))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+  const bajaData = data.filter(d => d.cuadrante_num_cier === 2 || (d.cuadrante && (d.cuadrante.includes('Cuadrante II ') || d.cuadrante.includes('Cuadrante II –') || d.cuadrante.includes('Cuadrante II -') || d.cuadrante.includes('Baja')) && !d.cuadrante.includes('III'))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+  const fortalezaData = data.filter(d => d.cuadrante_num_cier === 3 || (d.cuadrante && (d.cuadrante.includes('Cuadrante III ') || d.cuadrante.includes('Cuadrante III –') || d.cuadrante.includes('Cuadrante III -') || d.cuadrante.includes('Fortaleza')))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+  const ventajaData = data.filter(d => d.cuadrante_num_cier === 4 || (d.cuadrante && (d.cuadrante.includes('Cuadrante IV ') || d.cuadrante.includes('Cuadrante IV –') || d.cuadrante.includes('Cuadrante IV -') || d.cuadrante.includes('Ventaja')))).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
 
   if (chartsInstances.matriz) {
     chartsInstances.matriz.destroy();
@@ -2017,17 +2017,18 @@ function renderFocusAttributes() {
       const qf = currentMicrodataQuadrant.toUpperCase();
       filtered = filtered.filter(d => {
         const cq = (d.cuadrante || '').toUpperCase();
+        const cNum = d.cuadrante_num_cier;
         if (qf.includes('I') && !qf.includes('II') && !qf.includes('III') && !qf.includes('IV')) {
-          return cq.includes('CUADRANTE I') || cq.includes('CUADRANTE 1') || cq.includes('FOCO');
+          return cNum === 1 || cq.includes('CUADRANTE I ') || cq.includes('CUADRANTE I –') || cq.includes('CUADRANTE I -') || cq.includes('FOCO');
         }
         if (qf.includes('II') && !qf.includes('III')) {
-          return cq.includes('CUADRANTE II') || cq.includes('CUADRANTE 2') || cq.includes('BAJA');
+          return cNum === 2 || cq.includes('CUADRANTE II ') || cq.includes('CUADRANTE II –') || cq.includes('CUADRANTE II -') || cq.includes('BAJA');
         }
         if (qf.includes('III')) {
-          return cq.includes('CUADRANTE III') || cq.includes('CUADRANTE 3') || cq.includes('FORTALEZA');
+          return cNum === 3 || cq.includes('CUADRANTE III') || cq.includes('FORTALEZA');
         }
         if (qf.includes('IV')) {
-          return cq.includes('CUADRANTE IV') || cq.includes('CUADRANTE 4') || cq.includes('VENTAJA');
+          return cNum === 4 || cq.includes('CUADRANTE IV') || cq.includes('VENTAJA');
         }
         return cq.includes(qf);
       });
