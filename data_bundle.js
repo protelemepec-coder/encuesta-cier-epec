@@ -18351,22 +18351,262 @@ window.CIER_DATA = {
     }
   },
   "argentinaBenchmark": [
-    { "nombre": "UTE", "pais": "Uruguay", "porte": ">500k", "clientes": "1.500.000", "iscal": 86.40, "iac": 91.20, "se": 88.50, "fe": 82.60, "at": 83.40, "im": 79.40, "ic": 71.30, "ronda": "2026 (Top 1 LATAM >500k)", "destacado": false, "grupo": "top10_latam" },
-    { "nombre": "CNFL", "pais": "Costa Rica", "porte": ">500k", "clientes": "600.000", "iscal": 85.30, "iac": 89.60, "se": 87.50, "fe": 81.40, "at": 82.20, "im": 77.80, "ic": 69.80, "ronda": "2026 (Top 2 LATAM >500k)", "destacado": false, "grupo": "top10_latam" },
-    { "nombre": "ICE", "pais": "Costa Rica", "porte": ">500k", "clientes": "900.000", "iscal": 80.90, "iac": 86.20, "se": 83.80, "fe": 78.00, "at": 78.60, "im": 73.50, "ic": 65.40, "ronda": "2026 (Top 3 LATAM >500k)", "destacado": false, "grupo": "top10_latam" },
-    { "nombre": "AES El Salvador", "pais": "El Salvador", "porte": ">500k", "clientes": "1.600.000", "iscal": 80.30, "iac": 85.50, "se": 83.20, "fe": 77.50, "at": 78.10, "im": 72.90, "ic": 64.80, "ronda": "2026 (Top 4 LATAM >500k)", "destacado": false, "grupo": "top10_latam" },
-    { "nombre": "EEGSA", "pais": "Guatemala", "porte": ">500k", "clientes": "1.400.000", "iscal": 78.10, "iac": 83.90, "se": 81.40, "fe": 75.80, "at": 76.40, "im": 70.80, "ic": 63.10, "ronda": "2026 (Top 5 LATAM >500k)", "destacado": false, "grupo": "top10_latam" },
-    { "nombre": "ENSA", "pais": "Panamá", "porte": ">500k", "clientes": "520.000", "iscal": 76.80, "iac": 82.70, "se": 80.20, "fe": 74.90, "at": 75.10, "im": 69.50, "ic": 61.80, "ronda": "2026 (Top 6 LATAM >500k)", "destacado": false, "grupo": "top10_latam" },
-    { "nombre": "Naturgy Panamá", "pais": "Panamá", "porte": ">500k", "clientes": "750.000", "iscal": 75.40, "iac": 81.50, "se": 79.10, "fe": 73.80, "at": 74.00, "im": 68.20, "ic": 60.50, "ronda": "2026 (Top 7 LATAM >500k)", "destacado": false, "grupo": "top10_latam" },
-    { "nombre": "ENEL Distribución Colombia", "pais": "Colombia", "porte": ">500k", "clientes": "3.800.000", "iscal": 74.20, "iac": 80.40, "se": 78.60, "fe": 73.10, "at": 72.80, "im": 66.90, "ic": 59.40, "ronda": "2026 (Top 8 LATAM >500k)", "destacado": false, "grupo": "top10_latam" },
-    { "nombre": "EPM", "pais": "Colombia", "porte": ">500k", "clientes": "2.700.000", "iscal": 73.80, "iac": 79.90, "se": 78.30, "fe": 72.60, "at": 72.20, "im": 66.40, "ic": 58.90, "ronda": "2026 (Top 9 LATAM >500k)", "destacado": false, "grupo": "top10_latam" },
-    { "nombre": "CGE", "pais": "Chile", "porte": ">500k", "clientes": "3.200.000", "iscal": 72.10, "iac": 78.80, "se": 77.50, "fe": 71.80, "at": 71.00, "im": 65.10, "ic": 57.60, "ronda": "2026 (Top 10 LATAM >500k)", "destacado": false, "grupo": "top10_latam" },
-    { "nombre": "EDENOR", "pais": "Argentina (Buenos Aires Norte / CABA)", "porte": ">500k", "clientes": "3.300.000", "iscal": 70.50, "iac": 78.40, "se": 77.80, "fe": 72.10, "at": 69.20, "im": 62.50, "ic": 55.40, "ronda": "Medida 2025 (Top 1 AR)", "destacado": false, "grupo": "argentina" },
-    { "nombre": "EDEA", "pais": "Argentina (Buenos Aires Costa)", "porte": ">500k", "clientes": "580.000", "iscal": 66.80, "iac": 76.90, "se": 77.20, "fe": 69.60, "at": 67.10, "im": 58.70, "ic": 53.00, "ronda": "CACIER / ADEERA (Top 2 AR)", "destacado": false, "grupo": "argentina" },
-    { "nombre": "EPE Santa Fe", "pais": "Argentina (Santa Fe)", "porte": ">500k", "clientes": "1.400.000", "iscal": 66.20, "iac": 76.50, "se": 76.90, "fe": 69.40, "at": 66.80, "im": 58.20, "ic": 52.80, "ronda": "CACIER / ADEERA (Top 3 AR)", "destacado": false, "grupo": "argentina" },
-    { "nombre": "EPEC", "pais": "Argentina (Córdoba)", "porte": ">500k", "clientes": "1.100.000", "iscal": 65.96, "iac": 77.60, "se": 78.48, "fe": 70.38, "at": 68.10, "im": 60.53, "ic": 52.03, "ronda": "Oficial 2026 (Top 4 AR / #1 SE)", "destacado": true, "grupo": "argentina" },
-    { "nombre": "EDET", "pais": "Argentina (Tucumán)", "porte": ">500k", "clientes": "550.000", "iscal": 64.50, "iac": 75.20, "se": 75.80, "fe": 68.10, "at": 65.40, "im": 56.80, "ic": 51.40, "ronda": "CACIER / ADEERA (Top 5 AR)", "destacado": false, "grupo": "argentina" },
-    { "nombre": "EDESUR", "pais": "Argentina (Buenos Aires Sur / CABA)", "porte": ">500k", "clientes": "2.600.000", "iscal": 63.10, "iac": 73.80, "se": 74.60, "fe": 67.50, "at": 64.20, "im": 55.40, "ic": 49.80, "ronda": "CACIER / ADEERA (Top 6 AR)", "destacado": false, "grupo": "argentina" }
+    {
+      "nombre": "UTE",
+      "pais": "Uruguay",
+      "porte": ">500k",
+      "clientes": "1.500.000",
+      "iscal": 86.4,
+      "iac": 91.2,
+      "se": 88.5,
+      "fe": 82.6,
+      "at": 83.4,
+      "im": 79.4,
+      "ic": 71.3,
+      "ronda": "2026 (Top 1 LATAM >500k)",
+      "destacado": false,
+      "grupo": "top10_latam"
+    },
+    {
+      "nombre": "CNFL",
+      "pais": "Costa Rica",
+      "porte": ">500k",
+      "clientes": "600.000",
+      "iscal": 85.3,
+      "iac": 89.6,
+      "se": 87.5,
+      "fe": 81.4,
+      "at": 82.2,
+      "im": 77.8,
+      "ic": 69.8,
+      "ronda": "2026 (Top 2 LATAM >500k)",
+      "destacado": false,
+      "grupo": "top10_latam"
+    },
+    {
+      "nombre": "ICE",
+      "pais": "Costa Rica",
+      "porte": ">500k",
+      "clientes": "900.000",
+      "iscal": 80.9,
+      "iac": 86.2,
+      "se": 83.8,
+      "fe": 78.0,
+      "at": 78.6,
+      "im": 73.5,
+      "ic": 65.4,
+      "ronda": "2026 (Top 3 LATAM >500k)",
+      "destacado": false,
+      "grupo": "top10_latam"
+    },
+    {
+      "nombre": "AES El Salvador",
+      "pais": "El Salvador",
+      "porte": ">500k",
+      "clientes": "1.600.000",
+      "iscal": 80.3,
+      "iac": 85.5,
+      "se": 83.2,
+      "fe": 77.5,
+      "at": 78.1,
+      "im": 72.9,
+      "ic": 64.8,
+      "ronda": "2026 (Top 4 LATAM >500k)",
+      "destacado": false,
+      "grupo": "top10_latam"
+    },
+    {
+      "nombre": "EEGSA",
+      "pais": "Guatemala",
+      "porte": ">500k",
+      "clientes": "1.400.000",
+      "iscal": 78.1,
+      "iac": 83.9,
+      "se": 81.4,
+      "fe": 75.8,
+      "at": 76.4,
+      "im": 70.8,
+      "ic": 63.1,
+      "ronda": "2026 (Top 5 LATAM >500k)",
+      "destacado": false,
+      "grupo": "top10_latam"
+    },
+    {
+      "nombre": "ENSA",
+      "pais": "Panamá",
+      "porte": ">500k",
+      "clientes": "520.000",
+      "iscal": 76.8,
+      "iac": 82.7,
+      "se": 80.2,
+      "fe": 74.9,
+      "at": 75.1,
+      "im": 69.5,
+      "ic": 61.8,
+      "ronda": "2026 (Top 6 LATAM >500k)",
+      "destacado": false,
+      "grupo": "top10_latam"
+    },
+    {
+      "nombre": "Naturgy Panamá",
+      "pais": "Panamá",
+      "porte": ">500k",
+      "clientes": "750.000",
+      "iscal": 75.4,
+      "iac": 81.5,
+      "se": 79.1,
+      "fe": 73.8,
+      "at": 74.0,
+      "im": 68.2,
+      "ic": 60.5,
+      "ronda": "2026 (Top 7 LATAM >500k)",
+      "destacado": false,
+      "grupo": "top10_latam"
+    },
+    {
+      "nombre": "ENEL Distribución Colombia",
+      "pais": "Colombia",
+      "porte": ">500k",
+      "clientes": "3.800.000",
+      "iscal": 74.2,
+      "iac": 80.4,
+      "se": 78.6,
+      "fe": 73.1,
+      "at": 72.8,
+      "im": 66.9,
+      "ic": 59.4,
+      "ronda": "2026 (Top 8 LATAM >500k)",
+      "destacado": false,
+      "grupo": "top10_latam"
+    },
+    {
+      "nombre": "EPM",
+      "pais": "Colombia",
+      "porte": ">500k",
+      "clientes": "2.700.000",
+      "iscal": 73.8,
+      "iac": 79.9,
+      "se": 78.3,
+      "fe": 72.6,
+      "at": 72.2,
+      "im": 66.4,
+      "ic": 58.9,
+      "ronda": "2026 (Top 9 LATAM >500k)",
+      "destacado": false,
+      "grupo": "top10_latam"
+    },
+    {
+      "nombre": "CGE",
+      "pais": "Chile",
+      "porte": ">500k",
+      "clientes": "3.200.000",
+      "iscal": 72.1,
+      "iac": 78.8,
+      "se": 77.5,
+      "fe": 71.8,
+      "at": 71.0,
+      "im": 65.1,
+      "ic": 57.6,
+      "ronda": "2026 (Top 10 LATAM >500k)",
+      "destacado": false,
+      "grupo": "top10_latam"
+    },
+    {
+      "nombre": "EDENOR",
+      "pais": "Argentina (Buenos Aires Norte / CABA)",
+      "porte": ">500k",
+      "clientes": "3.300.000",
+      "iscal": 70.5,
+      "iac": 78.4,
+      "se": 77.8,
+      "fe": 72.1,
+      "at": 69.2,
+      "im": 62.5,
+      "ic": 55.4,
+      "ronda": "Medida 2025 (Top 1 AR)",
+      "destacado": false,
+      "grupo": "argentina"
+    },
+    {
+      "nombre": "EDEA",
+      "pais": "Argentina (Buenos Aires Costa)",
+      "porte": ">500k",
+      "clientes": "580.000",
+      "iscal": 66.8,
+      "iac": 76.9,
+      "se": 77.2,
+      "fe": 69.6,
+      "at": 67.1,
+      "im": 58.7,
+      "ic": 53.0,
+      "ronda": "CACIER / ADEERA (Top 2 AR)",
+      "destacado": false,
+      "grupo": "argentina"
+    },
+    {
+      "nombre": "EPE Santa Fe",
+      "pais": "Argentina (Santa Fe)",
+      "porte": ">500k",
+      "clientes": "1.400.000",
+      "iscal": 66.2,
+      "iac": 76.5,
+      "se": 76.9,
+      "fe": 69.4,
+      "at": 66.8,
+      "im": 58.2,
+      "ic": 52.8,
+      "ronda": "CACIER / ADEERA (Top 3 AR)",
+      "destacado": false,
+      "grupo": "argentina"
+    },
+    {
+      "nombre": "EPEC",
+      "pais": "Argentina (Córdoba)",
+      "porte": ">500k",
+      "clientes": "1.100.000",
+      "iscal": 65.96,
+      "iac": 77.6,
+      "se": 78.48,
+      "fe": 70.38,
+      "at": 68.1,
+      "im": 60.53,
+      "ic": 52.03,
+      "ronda": "Oficial 2026 (Top 4 AR / #1 SE)",
+      "destacado": true,
+      "grupo": "argentina"
+    },
+    {
+      "nombre": "EDET",
+      "pais": "Argentina (Tucumán)",
+      "porte": ">500k",
+      "clientes": "550.000",
+      "iscal": 64.5,
+      "iac": 75.2,
+      "se": 75.8,
+      "fe": 68.1,
+      "at": 65.4,
+      "im": 56.8,
+      "ic": 51.4,
+      "ronda": "CACIER / ADEERA (Top 5 AR)",
+      "destacado": false,
+      "grupo": "argentina"
+    },
+    {
+      "nombre": "EDESUR",
+      "pais": "Argentina (Buenos Aires Sur / CABA)",
+      "porte": ">500k",
+      "clientes": "2.600.000",
+      "iscal": 63.1,
+      "iac": 73.8,
+      "se": 74.6,
+      "fe": 67.5,
+      "at": 64.2,
+      "im": 55.4,
+      "ic": 49.8,
+      "ronda": "CACIER / ADEERA (Top 6 AR)",
+      "destacado": false,
+      "grupo": "argentina"
+    }
   ],
   "benchmarkEstandares": [
     {
@@ -18375,15 +18615,15 @@ window.CIER_DATA = {
       "subtitulo": "Frontera Máxima Regional (Líder Absoluto UTE Uruguay)",
       "icono": "🏆",
       "color": "emerald",
-      "iscal": 86.40,
-      "iac": 91.20,
-      "se": 88.50,
-      "fe": 82.60,
-      "at": 83.40,
-      "im": 79.40,
-      "ic": 71.30,
-      "continuidad": 93.40,
-      "tension": 87.20,
+      "iscal": 86.4,
+      "iac": 91.2,
+      "se": 88.5,
+      "fe": 82.6,
+      "at": 83.4,
+      "im": 79.4,
+      "ic": 71.3,
+      "continuidad": 93.4,
+      "tension": 87.2,
       "descripcion": "Máxima cota de excelencia observada en el grupo de distribuidoras de más de 500.000 clientes."
     },
     {
@@ -18393,14 +18633,14 @@ window.CIER_DATA = {
       "icono": "📊",
       "color": "amber",
       "iscal": 70.15,
-      "iac": 78.50,
-      "se": 77.80,
-      "fe": 72.40,
-      "at": 70.50,
-      "im": 63.80,
-      "ic": 57.40,
-      "continuidad": 84.30,
-      "tension": 76.20,
+      "iac": 78.5,
+      "se": 77.8,
+      "fe": 72.4,
+      "at": 70.5,
+      "im": 63.8,
+      "ic": 57.4,
+      "continuidad": 84.3,
+      "tension": 76.2,
       "descripcion": "Promedio estadístico del conjunto de distribuidoras con más de 500.000 clientes en la encuesta CIER."
     },
     {
@@ -18409,12 +18649,12 @@ window.CIER_DATA = {
       "subtitulo": "Media del Podio Latinoamericano (UTE, CNFL, ICE)",
       "icono": "🌎",
       "color": "cyan",
-      "iscal": 84.20,
-      "iac": 89.00,
-      "se": 86.60,
+      "iscal": 84.2,
+      "iac": 89.0,
+      "se": 86.6,
       "fe": 80.67,
-      "at": 81.40,
-      "im": 76.90,
+      "at": 81.4,
+      "im": 76.9,
       "ic": 68.83,
       "continuidad": 91.67,
       "tension": 85.57,
@@ -18428,13 +18668,13 @@ window.CIER_DATA = {
       "color": "purple",
       "iscal": 68.65,
       "iac": 77.65,
-      "se": 77.50,
+      "se": 77.5,
       "fe": 70.85,
       "at": 68.15,
-      "im": 60.60,
-      "ic": 54.20,
-      "continuidad": 85.10,
-      "tension": 76.80,
+      "im": 60.6,
+      "ic": 54.2,
+      "continuidad": 85.1,
+      "tension": 76.8,
       "descripcion": "Promedio de las 2 distribuidoras argentinas de gran porte con mayor ISCAL (EDENOR y EDEA), situadas por encima de EPEC."
     },
     {
@@ -18444,16 +18684,400 @@ window.CIER_DATA = {
       "icono": "⚡",
       "color": "cyan_glow",
       "iscal": 65.96,
-      "iac": 77.60,
+      "iac": 77.6,
       "se": 78.48,
       "fe": 70.38,
-      "at": 68.10,
+      "at": 68.1,
       "im": 60.53,
       "ic": 52.03,
       "continuidad": 85.92,
-      "tension": 77.40,
+      "tension": 77.4,
       "descripcion": "Desempeño verificado de EPEC 2026. Destaca con Liderazgo Nacional en Suministro (78.48) y Continuidad (85.92)."
     }
-  ]
+  ],
+  "demografia_multidimensional": {
+    "ingreso_por_educacion_y_genero": {
+      "categorias": [
+        "Primaria / Básico",
+        "Secundaria Incompleta",
+        "Secundaria Completa",
+        "Superior / Universitario"
+      ],
+      "femenino_media": [
+        667628,
+        1002665,
+        1140253,
+        1549913
+      ],
+      "masculino_media": [
+        868139,
+        922171,
+        1391062,
+        1983385
+      ],
+      "total_media": [
+        740865,
+        975834,
+        1230825,
+        1710428
+      ],
+      "femenino_mediana": [
+        600000,
+        800000,
+        1200000,
+        1300000
+      ],
+      "masculino_mediana": [
+        600000,
+        850000,
+        1200000,
+        1500000
+      ],
+      "muestra_n": {
+        "femenino": [
+          66,
+          64,
+          99,
+          163
+        ],
+        "masculino": [
+          38,
+          32,
+          56,
+          96
+        ]
+      }
+    },
+    "ingreso_por_edad_y_genero": {
+      "categorias": [
+        "18-29 años (Jóvenes)",
+        "30-44 años (Adultos Jóvenes)",
+        "45-59 años (Adultos Maduros)",
+        "60+ años (Adultos Mayores)"
+      ],
+      "femenino_media": [
+        1165152,
+        1260619,
+        1385037,
+        974059
+      ],
+      "masculino_media": [
+        1668551,
+        1800752,
+        1475781,
+        1197967
+      ],
+      "total_media": [
+        1416852,
+        1439413,
+        1409871,
+        1065707
+      ],
+      "pct_estudios_superiores": [
+        58.14,
+        41.72,
+        43.41,
+        36.6
+      ],
+      "muestra_n": {
+        "femenino": [
+          41,
+          107,
+          130,
+          114
+        ],
+        "masculino": [
+          41,
+          53,
+          49,
+          79
+        ]
+      }
+    },
+    "educacion_por_edad": {
+      "cohortes": [
+        "18-29 años (Gen Z)",
+        "30-44 años (Millennials)",
+        "45-59 años (Gen X)",
+        "60+ años (Baby Boomers)"
+      ],
+      "primaria": [
+        0.0,
+        8.59,
+        14.84,
+        32.47
+      ],
+      "secundaria_incompleta": [
+        15.12,
+        21.47,
+        14.29,
+        11.34
+      ],
+      "secundaria_completa": [
+        26.74,
+        28.22,
+        27.47,
+        19.59
+      ],
+      "superior_universitario": [
+        58.14,
+        41.72,
+        43.41,
+        36.6
+      ]
+    },
+    "genero_por_tramo_ingreso": {
+      "tramos": [
+        "Bajo (< )",
+        "Medio ( - .2M)",
+        "Medio-Alto (.2M - )",
+        "Alto (> )"
+      ],
+      "femenino_pct": [
+        70.08,
+        64.09,
+        62.87,
+        57.0
+      ],
+      "masculino_pct": [
+        29.92,
+        35.91,
+        37.13,
+        43.0
+      ]
+    },
+    "correlaciones": {
+      "educacion_vs_ingreso": 0.397,
+      "edad_vs_ingreso": -0.149,
+      "edad_vs_educacion": -0.181
+    }
+  },
+  "tarjetas_detractores": [
+    {
+      "id": "gen-x",
+      "generacion": "GENERACIÓN X",
+      "franja_etaria": "46 a 61 años",
+      "arquetipo": "Pragmatismo y Control",
+      "color": "#f97316",
+      "padron_pct": "28,80%",
+      "alerta_principal": "Información sobre Medición del Consumo (IC05) y Plazos de Factura (FE01).",
+      "penaliza": [
+        "Variación de voltaje en electrodomésticos (SE02)",
+        "Idoneidad y conocimiento del personal de atención (AT04)",
+        "Falta de resolución definitiva en primer contacto (AT08)"
+      ],
+      "expectativa": "Transparencia absoluta en lecturas, estabilidad técnica y trámites sin burocracia."
+    },
+    {
+      "id": "millennials",
+      "generacion": "MILLENNIALS / GEN Y",
+      "franja_etaria": "30 a 45 años",
+      "arquetipo": "Calidad, Tiempo y Valor",
+      "color": "#ef4444",
+      "padron_pct": "31,20%",
+      "alerta_principal": "Calidad de Atención al Cliente (AT06) y Tiempos de Espera (AT02).",
+      "penaliza": [
+        "Respeto a los derechos del cliente (IM01)",
+        "Programas comunitarios y medioambientales (RSA)",
+        "Relación costo/beneficio de la tarifa (PR)"
+      ],
+      "expectativa": "Omnicanalidad 24/7, respeto estricto por su tiempo, ética corporativa y sustentabilidad ambiental."
+    },
+    {
+      "id": "gen-z",
+      "generacion": "GENERACIÓN Z",
+      "franja_etaria": "18 a 29 años",
+      "arquetipo": "Inmediatez y Predictibilidad",
+      "color": "#eab308",
+      "padron_pct": "14,40%",
+      "alerta_principal": "Aviso Anticipado de Interrupción (IC01) y Horario de Restitución (ETR).",
+      "penaliza": [
+        "Rapidez de reposición ante cortes imprevistos (SE03)",
+        "Duración de la atención y trámites presenciales (AT03)",
+        "Incumplimiento de plazos comprometidos (AT09)"
+      ],
+      "expectativa": "Notificaciones push móviles en tiempo real y servicios bajo demanda sin intermediarios."
+    },
+    {
+      "id": "baby-boomers",
+      "generacion": "BABY BOOMERS",
+      "franja_etaria": "desde 62 años",
+      "arquetipo": "Estabilidad y Acompañamiento",
+      "color": "#10b981",
+      "padron_pct": "25,60%",
+      "alerta_principal": "Disponibilidad y Complejidad de Canales Digitales de Pago (FE04).",
+      "penaliza": [
+        "Digitalización forzada sin asistencia humana",
+        "Falta de claridad en letra chica de la factura física"
+      ],
+      "expectativa": "Preservar ventanillas comerciales y soporte telefónico humano empático sin forzar la digitalización."
+    }
+  ],
+  "simulador_mejora_iscal": {
+    "linea_base_epec": {
+      "iscal": 65.96,
+      "iac": 77.6,
+      "iecp": 27.15,
+      "iicp": 15.19
+    },
+    "benchmarks_referencia": {
+      "total_cier_max": {
+        "nombre": "Frontera Máxima Regional (UTE Uruguay)",
+        "iscal": 86.4,
+        "iac": 91.2
+      },
+      "top3_latam": {
+        "nombre": "Promedio Top 3 LATAM (UTE, CNFL, ICE)",
+        "iscal": 84.2,
+        "iac": 89.0
+      },
+      "promedio_cier_500k": {
+        "nombre": "Promedio CIER Gran Porte Regional",
+        "iscal": 70.15,
+        "iac": 78.5
+      },
+      "top2_argentina": {
+        "nombre": "Promedio Top 2 Argentina (EDENOR y EDEA)",
+        "iscal": 68.65,
+        "iac": 77.65
+      }
+    },
+    "escenarios_predefinidos": [
+      {
+        "id": "escenario-1",
+        "titulo": "Escenario 1: Quick Wins Inmediatos",
+        "subtitulo": "Resolver Casos Frontera de Facturación (FE01 y FE03 a 66 pts)",
+        "descripcion": "Adelantar el envío de la factura digital 72 hs e incorporar infografía de consumo simplificada.",
+        "impacto_iscal_pp": 0.29,
+        "iscal_proyectado": 66.25,
+        "posicion_competitiva": "Consolidación de Factura sin erogación presupuestaria relevante.",
+        "valores_atributos": {
+          "FE01": 66.0,
+          "FE03": 66.0
+        }
+      },
+      {
+        "id": "escenario-2",
+        "titulo": "Escenario 2: Meta Estándar Cuadrante I",
+        "subtitulo": "Llevar los 7 atributos del Cuadrante I a 65 pts",
+        "descripcion": "Mejora operativa equilibrada alcanzando la línea de suficiencia en todos los focos urgentes.",
+        "impacto_iscal_pp": 3.08,
+        "iscal_proyectado": 69.04,
+        "posicion_competitiva": "¡SUPERA AL TOP 2 DE ARGENTINA (68.65%) Y SE CONSAGRA LÍDER NACIONAL!",
+        "valores_atributos": {
+          "FE01": 65.0,
+          "FE03": 65.0,
+          "IC01": 65.0,
+          "AT01": 65.0,
+          "AT02": 65.0,
+          "IC03": 65.0,
+          "IC05": 65.0
+        }
+      },
+      {
+        "id": "escenario-3",
+        "titulo": "Escenario 3: Meta de Liderazgo con Sinergias",
+        "subtitulo": "Elevar Cuadrante I a 68-70 pts y consolidar atributos frontera",
+        "descripcion": "Implementar notificaciones automáticas por WhatsApp, turnero web, omnicanalidad y didáctica de medición.",
+        "impacto_iscal_pp": 4.84,
+        "iscal_proyectado": 70.8,
+        "posicion_competitiva": "¡SUPERA LA MEDIA CIER REGIONAL (70.15%) E INGRESA AL TOP 5 DE AMÉRICA LATINA!",
+        "valores_atributos": {
+          "FE01": 70.0,
+          "FE03": 68.0,
+          "IC01": 70.0,
+          "AT01": 70.0,
+          "AT02": 68.0,
+          "IC03": 68.0,
+          "IC05": 68.0,
+          "AT04": 76.0,
+          "AT03": 72.0,
+          "FE05": 74.0
+        }
+      }
+    ],
+    "atributos_simulables": [
+      {
+        "codigo": "FE01",
+        "nombre": "Plazo entre recepción y vencimiento",
+        "area": "FE",
+        "imp_pct": 5.1057,
+        "sat_base": 63.12,
+        "cuadrante": "Q1 (Frontera)"
+      },
+      {
+        "codigo": "FE03",
+        "nombre": "Facilidad de comprensión de factura",
+        "area": "FE",
+        "imp_pct": 3.6202,
+        "sat_base": 62.19,
+        "cuadrante": "Q1 (Frontera)"
+      },
+      {
+        "codigo": "IC01",
+        "nombre": "Notificación previa de interrupción",
+        "area": "IC",
+        "imp_pct": 5.8543,
+        "sat_base": 58.86,
+        "cuadrante": "Q1 (Estructural)"
+      },
+      {
+        "codigo": "AT01",
+        "nombre": "Facilidad para contactarse",
+        "area": "AT",
+        "imp_pct": 5.494,
+        "sat_base": 58.32,
+        "cuadrante": "Q1 (Estructural)"
+      },
+      {
+        "codigo": "AT02",
+        "nombre": "Tiempo de espera hasta ser atendido",
+        "area": "AT",
+        "imp_pct": 4.2913,
+        "sat_base": 55.59,
+        "cuadrante": "Q1 (Estructural)"
+      },
+      {
+        "codigo": "IC03",
+        "nombre": "Riesgos y peligros eléctricos",
+        "area": "IC",
+        "imp_pct": 3.6781,
+        "sat_base": 50.08,
+        "cuadrante": "Q1 (Estructural)"
+      },
+      {
+        "codigo": "IC05",
+        "nombre": "Medición del consumo de energía",
+        "area": "IC",
+        "imp_pct": 3.4161,
+        "sat_base": 44.52,
+        "cuadrante": "Q1 (Estructural)"
+      },
+      {
+        "codigo": "AT04",
+        "nombre": "Conocimiento del personal",
+        "area": "AT",
+        "imp_pct": 3.3108,
+        "sat_base": 74.52,
+        "cuadrante": "Q4 (Límite Q3)"
+      },
+      {
+        "codigo": "AT03",
+        "nombre": "Duración de la atención (Agilidad)",
+        "area": "AT",
+        "imp_pct": 3.198,
+        "sat_base": 69.46,
+        "cuadrante": "Q4 (Límite Q3)"
+      },
+      {
+        "codigo": "FE05",
+        "nombre": "Fechas para el vencimiento",
+        "area": "FE",
+        "imp_pct": 2.8625,
+        "sat_base": 70.97,
+        "cuadrante": "Q4 (Límite Q3)"
+      }
+    ]
+  }
 };
-const DASHBOARD_DATA = window.CIER_DATA;
+window.DASHBOARD_DATA = window.CIER_DATA;

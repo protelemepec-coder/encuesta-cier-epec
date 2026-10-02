@@ -721,6 +721,346 @@
 
       </div>
 
+      <!-- =========================================================================
+           SIMULADOR INTERACTIVO DE METAS ISCAL & MATRIZ DE SINERGIAS
+           ========================================================================= -->
+      <div class="glass-card mb-4" id="simulador-iscal-card">
+        <div class="card-header flex-wrap">
+          <div>
+            <div class="badge-tag-cyan mb-2">Simulador Dinámico de Metas Alcanzables · CIER 2026</div>
+            <h3 class="card-title">Simulador Interactivo de Metas ISCAL y Posicionamiento Competitivo</h3>
+            <p class="card-desc">Proyecte el impacto matemático directo en el índice ISCAL al calibrar las metas de desempeño en los atributos críticos del Cuadrante I y límites estratégicos.</p>
+          </div>
+          
+          <!-- Preset Scenario Buttons -->
+          <div class="scenario-buttons-group">
+            <button class="btn-scenario active" data-scenario="base" id="btn-scen-base" onclick="applySimulatorScenario('base')">
+              🔄 Línea Base 2026 (65.96%)
+            </button>
+            <button class="btn-scenario" data-scenario="escenario-1" id="btn-scen-1" onclick="applySimulatorScenario('escenario-1')">
+              ⚡ 1. Quick Wins Factura (+0.29 pp)
+            </button>
+            <button class="btn-scenario" data-scenario="escenario-2" id="btn-scen-2" onclick="applySimulatorScenario('escenario-2')">
+              🏆 2. Meta Q1 a 65 pts (+3.08 pp · #1 AR)
+            </button>
+            <button class="btn-scenario" data-scenario="escenario-3" id="btn-scen-3" onclick="applySimulatorScenario('escenario-3')">
+              🌎 3. Liderazgo Sinergias (+4.84 pp · Top 5 LATAM)
+            </button>
+          </div>
+        </div>
+
+        <!-- Simulator Scoreboard & Comparative Gauges Row -->
+        <div class="grid-2col mt-3 align-items-stretch">
+          <!-- Live Projected Score Card -->
+          <div class="sim-score-card">
+            <div class="sim-score-header">
+              <span class="sim-score-label">ÍNDICE ISCAL PROYECTADO</span>
+              <span class="sim-delta-badge" id="sim-delta-badge">+0.00 pp vs Base</span>
+            </div>
+            <div class="sim-score-value-row">
+              <div class="sim-big-val font-mono" id="sim-iscal-val">65.96%</div>
+              <div class="sim-score-meta">
+                <div>Base 2026: <strong class="text-sub">65.96 pts</strong></div>
+                <div>Base 2025: <strong class="text-sub">63.69 pts</strong></div>
+                <div>Muestra: <strong class="text-sub">N = 1.250</strong></div>
+              </div>
+            </div>
+            <div class="sim-status-banner" id="sim-status-banner">
+              📌 <strong>Estado Actual:</strong> Posición #3 en Argentina (Gran Porte >500k clientes).
+            </div>
+          </div>
+
+          <!-- Benchmark Threshold Progress Bars -->
+          <div class="sim-benchmarks-card">
+            <div class="bench-card-title">Comparativa en Tiempo Real vs. Estándares CIER</div>
+            
+            <div class="bench-meter-group">
+              <div class="bench-meter-row">
+                <div class="meter-info">
+                  <span class="meter-lbl">EPEC Base 2026</span>
+                  <span class="meter-val font-mono">65.96%</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-blue" style="width: 76.34%;"></div>
+                </div>
+              </div>
+
+              <div class="bench-meter-row">
+                <div class="meter-info">
+                  <span class="meter-lbl">EPEC Proyectado</span>
+                  <span class="meter-val font-mono text-cyan" id="meter-sim-val">65.96%</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-cyan" id="meter-sim-fill" style="width: 76.34%;"></div>
+                </div>
+              </div>
+
+              <div class="bench-meter-row">
+                <div class="meter-info">
+                  <span class="meter-lbl">🇦🇷 Promedio Top 2 Argentina (EDENOR y EDEA)</span>
+                  <span class="meter-val font-mono" id="bench-top2-val">68.65%</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-purple" style="width: 79.46%;"></div>
+                  <div class="meter-target-indicator" id="ind-top2" style="left: 79.46%;"></div>
+                </div>
+              </div>
+
+              <div class="bench-meter-row">
+                <div class="meter-info">
+                  <span class="meter-lbl">📊 Promedio CIER (>500k Gran Porte)</span>
+                  <span class="meter-val font-mono" id="bench-cier-val">70.15%</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-amber" style="width: 81.19%;"></div>
+                  <div class="meter-target-indicator" id="ind-cier" style="left: 81.19%;"></div>
+                </div>
+              </div>
+
+              <div class="bench-meter-row">
+                <div class="meter-info">
+                  <span class="meter-lbl">🏆 Frontera Máxima Regional (UTE Uruguay)</span>
+                  <span class="meter-val font-mono">86.40%</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-green" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sliders Grid for Key Focus Attributes -->
+        <div class="mt-4">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <div>
+              <h4 class="section-heading-sm mb-0">Calibración de Desempeño por Atributo Clave (10 Atributos de Alto Impacto)</h4>
+              <p class="text-muted" style="font-size: 0.78rem;">Ajuste los controles deslizantes para simular metas operativas específicas. Los pesos matemáticos corresponden a la matriz oficial CIER 2026.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="resetSimulator()">🔄 Restablecer Valores Base</button>
+          </div>
+
+          <div class="sliders-grid" id="iscal-sliders-container">
+            <!-- Dynamic Sliders Rendered by app.js -->
+          </div>
+        </div>
+
+        <!-- Matriz de Sinergias y Oportunidades Observadas -->
+        <div class="mt-4 pt-3" style="border-top: 1px solid var(--border-color);">
+          <h4 class="section-heading-sm">Matriz de Sinergias Operativas y Oportunidades Observadas</h4>
+          <div class="grid-4col mt-3">
+            
+            <div class="synergy-card">
+              <div class="synergy-header" style="border-left: 3px solid #38bdf8;">
+                <span class="synergy-tag">GRUPO A · FACTURACIÓN FRONTERA</span>
+                <h5 class="synergy-title">Plazo y Comprensión (FE01 + FE03)</h5>
+              </div>
+              <div class="synergy-impact font-mono">Peso Conjunto: 8.73% ISCAL</div>
+              <p class="synergy-desc">Oportunidad de bajo costo: adelantar 72 hs el envío de la factura digital y simplificar el desglose gráfico. Al elevar de 62.5 a 66.0 pts, aporta <strong>+0.29 pp</strong> directos sin obras de red.</p>
+            </div>
+
+            <div class="synergy-card">
+              <div class="synergy-header" style="border-left: 3px solid #f87171;">
+                <span class="synergy-tag">GRUPO B · ATENCIÓN ESTRUCTURAL</span>
+                <h5 class="synergy-title">Contacto y Tiempos de Espera (AT01 + AT02)</h5>
+              </div>
+              <div class="synergy-impact font-mono">Peso Conjunto: 9.79% ISCAL</div>
+              <p class="synergy-desc">Sinergia con turnero web y omnicanalidad digital. Elevar de 56.9 a 65.0 pts aporta <strong>+0.77 pp</strong> al ISCAL y reduce drásticamente la tasa de detracción en Millennials.</p>
+            </div>
+
+            <div class="synergy-card">
+              <div class="synergy-header" style="border-left: 3px solid #fbbf24;">
+                <span class="synergy-tag">GRUPO C · COMUNICACIÓN PREVENTIVA</span>
+                <h5 class="synergy-title">Aviso de Cortes, Riesgos y Medición (IC01 + IC03 + IC05)</h5>
+              </div>
+              <div class="synergy-impact font-mono">Peso Conjunto: 12.95% ISCAL</div>
+              <p class="synergy-desc">Notificaciones push por WhatsApp para cortes programados y didáctica de lectura de medidor. Elevar a 65 pts aporta <strong>+2.02 pp</strong> al ISCAL.</p>
+            </div>
+
+            <div class="synergy-card">
+              <div class="synergy-header" style="border-left: 3px solid #34d399;">
+                <span class="synergy-tag">GRUPO D · VIRTUDES LÍMITE (Q4 → Q3)</span>
+                <h5 class="synergy-title">Personal, Agilidad y Vencimiento (AT04 + AT03 + FE05)</h5>
+              </div>
+              <div class="synergy-impact font-mono">Peso Conjunto: 9.37% ISCAL</div>
+              <p class="synergy-desc">Atributos en el límite del Cuadrante III (Importancia 2.86% a 3.31%). Consolidar su desempeño actual (>70 pts) garantiza estabilidad frente a variaciones de demanda.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- =========================================================================
+           SIMULADOR INTERACTIVO DE METAS ISCAL & MATRIZ DE SINERGIAS
+           ========================================================================= -->
+      <div class="glass-card mb-4" id="simulador-iscal-card">
+        <div class="card-header flex-wrap">
+          <div>
+            <div class="badge-tag-cyan mb-2">Simulador Dinámico de Metas Alcanzables · CIER 2026</div>
+            <h3 class="card-title">Simulador Interactivo de Metas ISCAL y Posicionamiento Competitivo</h3>
+            <p class="card-desc">Proyecte el impacto matemático directo en el índice ISCAL al calibrar las metas de desempeño en los atributos críticos del Cuadrante I y límites estratégicos.</p>
+          </div>
+          
+          <!-- Preset Scenario Buttons -->
+          <div class="scenario-buttons-group">
+            <button class="btn-scenario active" data-scenario="base" id="btn-scen-base" onclick="applySimulatorScenario('base')">
+              🔄 Línea Base 2026 (65.96%)
+            </button>
+            <button class="btn-scenario" data-scenario="escenario-1" id="btn-scen-1" onclick="applySimulatorScenario('escenario-1')">
+              ⚡ 1. Quick Wins Factura (+0.29 pp)
+            </button>
+            <button class="btn-scenario" data-scenario="escenario-2" id="btn-scen-2" onclick="applySimulatorScenario('escenario-2')">
+              🏆 2. Meta Q1 a 65 pts (+3.08 pp · #1 AR)
+            </button>
+            <button class="btn-scenario" data-scenario="escenario-3" id="btn-scen-3" onclick="applySimulatorScenario('escenario-3')">
+              🌎 3. Liderazgo Sinergias (+4.84 pp · Top 5 LATAM)
+            </button>
+          </div>
+        </div>
+
+        <!-- Simulator Scoreboard & Comparative Gauges Row -->
+        <div class="grid-2col mt-3 align-items-stretch">
+          <!-- Live Projected Score Card -->
+          <div class="sim-score-card">
+            <div class="sim-score-header">
+              <span class="sim-score-label">ÍNDICE ISCAL PROYECTADO</span>
+              <span class="sim-delta-badge" id="sim-delta-badge">+0.00 pp vs Base</span>
+            </div>
+            <div class="sim-score-value-row">
+              <div class="sim-big-val font-mono" id="sim-iscal-val">65.96%</div>
+              <div class="sim-score-meta">
+                <div>Base 2026: <strong class="text-sub">65.96 pts</strong></div>
+                <div>Base 2025: <strong class="text-sub">63.69 pts</strong></div>
+                <div>Muestra: <strong class="text-sub">N = 1.250</strong></div>
+              </div>
+            </div>
+            <div class="sim-status-banner" id="sim-status-banner">
+              📌 <strong>Estado Actual:</strong> Posición #3 en Argentina (Gran Porte >500k clientes).
+            </div>
+          </div>
+
+          <!-- Benchmark Threshold Progress Bars -->
+          <div class="sim-benchmarks-card">
+            <div class="bench-card-title">Comparativa en Tiempo Real vs. Estándares CIER</div>
+            
+            <div class="bench-meter-group">
+              <div class="bench-meter-row">
+                <div class="meter-info">
+                  <span class="meter-lbl">EPEC Base 2026</span>
+                  <span class="meter-val font-mono">65.96%</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-blue" style="width: 76.34%;"></div>
+                </div>
+              </div>
+
+              <div class="bench-meter-row">
+                <div class="meter-info">
+                  <span class="meter-lbl">EPEC Proyectado</span>
+                  <span class="meter-val font-mono text-cyan" id="meter-sim-val">65.96%</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-cyan" id="meter-sim-fill" style="width: 76.34%;"></div>
+                </div>
+              </div>
+
+              <div class="bench-meter-row">
+                <div class="meter-info">
+                  <span class="meter-lbl">🇦🇷 Promedio Top 2 Argentina (EDENOR y EDEA)</span>
+                  <span class="meter-val font-mono" id="bench-top2-val">68.65%</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-purple" style="width: 79.46%;"></div>
+                  <div class="meter-target-indicator" id="ind-top2" style="left: 79.46%;"></div>
+                </div>
+              </div>
+
+              <div class="bench-meter-row">
+                <div class="meter-info">
+                  <span class="meter-lbl">📊 Promedio CIER (>500k Gran Porte)</span>
+                  <span class="meter-val font-mono" id="bench-cier-val">70.15%</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-amber" style="width: 81.19%;"></div>
+                  <div class="meter-target-indicator" id="ind-cier" style="left: 81.19%;"></div>
+                </div>
+              </div>
+
+              <div class="bench-meter-row">
+                <div class="meter-info">
+                  <span class="meter-lbl">🏆 Frontera Máxima Regional (UTE Uruguay)</span>
+                  <span class="meter-val font-mono">86.40%</span>
+                </div>
+                <div class="meter-track">
+                  <div class="meter-fill fill-green" style="width: 100%;"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sliders Grid for Key Focus Attributes -->
+        <div class="mt-4">
+          <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+            <div>
+              <h4 class="section-heading-sm mb-0">Calibración de Desempeño por Atributo Clave (10 Atributos de Alto Impacto)</h4>
+              <p class="text-muted" style="font-size: 0.78rem;">Ajuste los controles deslizantes para simular metas operativas específicas. Los pesos matemáticos corresponden a la matriz oficial CIER 2026.</p>
+            </div>
+            <button class="btn btn-secondary btn-sm" onclick="resetSimulator()">🔄 Restablecer Valores Base</button>
+          </div>
+
+          <div class="sliders-grid" id="iscal-sliders-container">
+            <!-- Dynamic Sliders Rendered by app.js -->
+          </div>
+        </div>
+
+        <!-- Matriz de Sinergias y Oportunidades Observadas -->
+        <div class="mt-4 pt-3" style="border-top: 1px solid var(--border-color);">
+          <h4 class="section-heading-sm">Matriz de Sinergias Operativas y Oportunidades Observadas</h4>
+          <div class="grid-4col mt-3">
+            
+            <div class="synergy-card">
+              <div class="synergy-header" style="border-left: 3px solid #38bdf8;">
+                <span class="synergy-tag">GRUPO A · FACTURACIÓN FRONTERA</span>
+                <h5 class="synergy-title">Plazo y Comprensión (FE01 + FE03)</h5>
+              </div>
+              <div class="synergy-impact font-mono">Peso Conjunto: 8.73% ISCAL</div>
+              <p class="synergy-desc">Oportunidad de bajo costo: adelantar 72 hs el envío de la factura digital y simplificar el desglose gráfico. Al elevar de 62.5 a 66.0 pts, aporta <strong>+0.29 pp</strong> directos sin obras de red.</p>
+            </div>
+
+            <div class="synergy-card">
+              <div class="synergy-header" style="border-left: 3px solid #f87171;">
+                <span class="synergy-tag">GRUPO B · ATENCIÓN ESTRUCTURAL</span>
+                <h5 class="synergy-title">Contacto y Tiempos de Espera (AT01 + AT02)</h5>
+              </div>
+              <div class="synergy-impact font-mono">Peso Conjunto: 9.79% ISCAL</div>
+              <p class="synergy-desc">Sinergia con turnero web y omnicanalidad digital. Elevar de 56.9 a 65.0 pts aporta <strong>+0.77 pp</strong> al ISCAL y reduce drásticamente la tasa de detracción en Millennials.</p>
+            </div>
+
+            <div class="synergy-card">
+              <div class="synergy-header" style="border-left: 3px solid #fbbf24;">
+                <span class="synergy-tag">GRUPO C · COMUNICACIÓN PREVENTIVA</span>
+                <h5 class="synergy-title">Aviso de Cortes, Riesgos y Medición (IC01 + IC03 + IC05)</h5>
+              </div>
+              <div class="synergy-impact font-mono">Peso Conjunto: 12.95% ISCAL</div>
+              <p class="synergy-desc">Notificaciones push por WhatsApp para cortes programados y didáctica de lectura de medidor. Elevar a 65 pts aporta <strong>+2.02 pp</strong> al ISCAL.</p>
+            </div>
+
+            <div class="synergy-card">
+              <div class="synergy-header" style="border-left: 3px solid #34d399;">
+                <span class="synergy-tag">GRUPO D · VIRTUDES LÍMITE (Q4 → Q3)</span>
+                <h5 class="synergy-title">Personal, Agilidad y Vencimiento (AT04 + AT03 + FE05)</h5>
+              </div>
+              <div class="synergy-impact font-mono">Peso Conjunto: 9.37% ISCAL</div>
+              <p class="synergy-desc">Atributos en el límite del Cuadrante III (Importancia 2.86% a 3.31%). Consolidar su desempeño actual (>70 pts) garantiza estabilidad frente a variaciones de demanda.</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
       <!-- Deep Dive into All 30 Attributes (Microdata Cross-Tabulation & 10-per-page Pagination) -->
       <div class="glass-card mb-4">
         <div class="card-header flex-wrap">
@@ -909,6 +1249,100 @@
             <li><strong>Técnico Superior:</strong> 11.6%</li>
             <li><strong>Perfil:</strong> Teletrabajo y comercio</li>
           </ul>
+        </div>
+      </div>
+
+      <!-- =========================================================================
+           CRUCES SOCIODEMOGRÁFICOS MULTIDIMENSIONALES (N=1.250)
+           ========================================================================= -->
+      <div class="glass-card mt-4">
+        <div class="card-header flex-wrap">
+          <div>
+            <div class="badge-tag-cyan mb-2">Microdatos Auditados N = 1.250 Casos · Análisis Bivariado y Trivariado</div>
+            <h3 class="card-title">Cruces Sociodemográficos Multidimensionales (Ingreso × Educación × Edad × Género)</h3>
+            <p class="card-desc">Interrelaciones estadísticas simultáneas que explican el comportamiento de pago, la adopción digital y la tolerancia ante interrupciones de suministro.</p>
+          </div>
+          <div class="dict-quick-stats" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            <span class="badge-pill-cyan">📈 r = +0.397 (Educación vs Ingreso)</span>
+            <span class="badge-pill-purple">📉 r = -0.149 (Edad vs Ingreso)</span>
+            <span class="badge-pill-amber">👥 Femenino 63.8% · Masculino 36.2%</span>
+          </div>
+        </div>
+
+        <!-- Charts Grid Row 1 -->
+        <div class="grid-2col mt-3 align-items-stretch">
+          <div class="chart-card-inner">
+            <div class="chart-inner-header">
+              <h4 class="chart-inner-title">1. Ingreso Familiar Medio y Mediana según Nivel Educativo y Género</h4>
+              <span class="badge-tag-blue">ARS / Mes</span>
+            </div>
+            <p class="text-muted" style="font-size: 0.76rem; margin-bottom: 0.5rem;">
+              Fuerte gradiente salarial: desde $740k en Primaria hasta $1.71M en Nivel Superior/Universitario.
+            </p>
+            <div class="chart-wrapper" style="height: 320px;">
+              <canvas id="chart-ingreso-educacion-genero"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card-inner">
+            <div class="chart-inner-header">
+              <h4 class="chart-inner-title">2. Ingreso Familiar Medio según Franja de Edad y Género</h4>
+              <span class="badge-tag-cyan">ARS / Mes</span>
+            </div>
+            <p class="text-muted" style="font-size: 0.76rem; margin-bottom: 0.5rem;">
+              Pico de ingresos en etapa laboral madura (30 a 59 años) y reducción marcada en adultos mayores (>60 años: $1.06M).
+            </p>
+            <div class="chart-wrapper" style="height: 320px;">
+              <canvas id="chart-ingreso-edad-genero"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Charts Grid Row 2 -->
+        <div class="grid-2col mt-4 align-items-stretch">
+          <div class="chart-card-inner">
+            <div class="chart-inner-header">
+              <h4 class="chart-inner-title">3. Composición Educativa por Cohorte Generacional (% Superior Universitario)</h4>
+              <span class="badge-tag-purple">Distribución %</span>
+            </div>
+            <p class="text-muted" style="font-size: 0.76rem; margin-bottom: 0.5rem;">
+              El 58.14% de jóvenes (18-29 años) posee estudios superiores, frente al 36.60% en mayores de 60 años.
+            </p>
+            <div class="chart-wrapper" style="height: 300px;">
+              <canvas id="chart-educacion-edad"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-card-inner">
+            <div class="chart-inner-header">
+              <h4 class="chart-inner-title">4. Distribución de Género por Tramo Salarial</h4>
+              <span class="badge-tag-green">Participación %</span>
+            </div>
+            <p class="text-muted" style="font-size: 0.76rem; margin-bottom: 0.5rem;">
+              Mayor proporción femenina en tramos de ingreso bajo y medio (70.1% a 64.1%), convergiendo en tramos altos (> $2M: 57.0%).
+            </p>
+            <div class="chart-wrapper" style="height: 300px;">
+              <canvas id="chart-genero-tramo-ingreso"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- =========================================================================
+           TARJETAS GENERACIONALES DE DETRACTORES (INNOVARE / CIER)
+           ========================================================================= -->
+      <div class="mt-4">
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-2 mb-3">
+          <div>
+            <div class="badge-tag-amber mb-1">Segmentación Generacional · Metodología INNOVARE / CIER</div>
+            <h3 class="section-heading mb-0">Arquetipos Generacionales de Clientes y Focos de Detracción</h3>
+            <p class="text-muted" style="font-size: 0.8rem;">Composición demográfica del padrón, alertas críticas, aspectos penalizados y expectativas específicas por cohorte.</p>
+          </div>
+          <span class="badge-tag-blue font-mono font-bold">100% Padrón Residencial EPEC</span>
+        </div>
+
+        <div class="generational-cards-grid" id="generational-cards-container">
+          <!-- Rendered dynamically by app.js from DASHBOARD_DATA.tarjetas_detractores -->
         </div>
       </div>
 
