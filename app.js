@@ -534,23 +534,307 @@ const radarServiciosDataMap = {
   }
 };
 
-/* 3. Vista Países: Benchmark por Países LATAM CIER 2026 */
-const radarPaisesAxesLabels = [
-  'Uruguay',
-  'Costa Rica',
-  'Rep. Dominicana',
-  'El Salvador',
-  'Guatemala',
-  'Bolivia',
-  'Brasil',
-  'Ecuador',
-  'Argentina (EDENOR)',
-  'Argentina (EPEC)',
-  'Paraguay',
-  'Perú'
+/* ==========================================================================
+   3. VISTA PAÍSES Y DISTRIBUIDORAS: BENCHMARK LATAM CIER 2026 INTERACTIVO
+   ========================================================================== */
+const radarBenchmarkEntities = [
+  // 1. Países de América Latina (14 entidades)
+  { id: 'p_uruguay', label: 'Uruguay', tipo: 'pais', val: 86.40, pais: 'Uruguay', default: true },
+  { id: 'p_costarica', label: 'Costa Rica', tipo: 'pais', val: 83.20, pais: 'Costa Rica', default: true },
+  { id: 'p_repdom', label: 'Rep. Dominicana', tipo: 'pais', val: 82.50, pais: 'Rep. Dominicana', default: true },
+  { id: 'p_elsalvador', label: 'El Salvador', tipo: 'pais', val: 80.90, pais: 'El Salvador', default: true },
+  { id: 'p_guatemala', label: 'Guatemala', tipo: 'pais', val: 78.10, pais: 'Guatemala', default: true },
+  { id: 'p_panama', label: 'Panamá', tipo: 'pais', val: 75.85, pais: 'Panamá', default: true },
+  { id: 'p_bolivia', label: 'Bolivia', tipo: 'pais', val: 74.90, pais: 'Bolivia', default: true },
+  { id: 'p_colombia', label: 'Colombia', tipo: 'pais', val: 74.00, pais: 'Colombia', default: true },
+  { id: 'p_brasil', label: 'Brasil', tipo: 'pais', val: 71.70, pais: 'Brasil', default: true },
+  { id: 'p_chile', label: 'Chile', tipo: 'pais', val: 71.40, pais: 'Chile', default: true },
+  { id: 'p_argentina', label: 'Argentina (Promedio)', tipo: 'pais', val: 68.23, pais: 'Argentina', default: true },
+  { id: 'p_ecuador', label: 'Ecuador', tipo: 'pais', val: 70.00, pais: 'Ecuador', default: true },
+  { id: 'p_paraguay', label: 'Paraguay', tipo: 'pais', val: 61.40, pais: 'Paraguay', default: true },
+  { id: 'p_peru', label: 'Perú', tipo: 'pais', val: 54.60, pais: 'Perú', default: true },
+
+  // 2. Distribuidoras Gran Porte (>500k Clientes) (12 entidades)
+  { id: 'd_ute', label: 'UTE (Uruguay)', tipo: 'distribuidora', val: 86.40, pais: 'Uruguay', default: true },
+  { id: 'd_cnfl', label: 'CNFL (Costa Rica)', tipo: 'distribuidora', val: 85.30, pais: 'Costa Rica', default: true },
+  { id: 'd_ice', label: 'ICE (Costa Rica)', tipo: 'distribuidora', val: 80.90, pais: 'Costa Rica', default: true },
+  { id: 'd_aes', label: 'AES (El Salvador)', tipo: 'distribuidora', val: 80.30, pais: 'El Salvador', default: true },
+  { id: 'd_eegsa', label: 'EEGSA (Guatemala)', tipo: 'distribuidora', val: 78.10, pais: 'Guatemala', default: true },
+  { id: 'd_ensa', label: 'ENSA (Panamá)', tipo: 'distribuidora', val: 76.80, pais: 'Panamá', default: true },
+  { id: 'd_naturgy', label: 'Naturgy (Panamá)', tipo: 'distribuidora', val: 75.40, pais: 'Panamá', default: true },
+  { id: 'd_enel', label: 'ENEL (Colombia)', tipo: 'distribuidora', val: 74.20, pais: 'Colombia', default: true },
+  { id: 'd_epm', label: 'EPM (Colombia)', tipo: 'distribuidora', val: 73.80, pais: 'Colombia', default: true },
+  { id: 'd_cge', label: 'CGE (Chile)', tipo: 'distribuidora', val: 72.10, pais: 'Chile', default: true },
+  { id: 'd_edenor', label: 'EDENOR (Argentina)', tipo: 'distribuidora', val: 70.50, pais: 'Argentina', isArg: true, default: true },
+  { id: 'd_epec', label: 'EPEC (Argentina)', tipo: 'distribuidora', val: 65.96, pais: 'Argentina', isEpec: true, default: true }
 ];
 
-const radarPaisesValues = [86.4, 83.2, 82.5, 80.9, 78.1, 74.9, 71.7, 70.0, 70.5, 65.96, 61.4, 54.6];
+let selectedRadarPaisesSet = new Set(radarBenchmarkEntities.map(e => e.id));
+let isRadarPaisesControlsInitialized = false;
+
+function renderRadarPaisesControls() {
+  const paisesList = document.getElementById('radar-paises-chips-list');
+  const distribList = document.getElementById('radar-distrib-chips-list');
+  if (!paisesList || !distribList) return;
+
+  const paises = radarBenchmarkEntities.filter(e => e.tipo === 'pais');
+  const distribs = radarBenchmarkEntities.filter(e => e.tipo === 'distribuidora');
+
+  // Render Países chips
+  paisesList.innerHTML = paises.map(p => {
+    const active = selectedRadarPaisesSet.has(p.id);
+    return `
+      <div class="radar-entity-chip ${active ? 'active' : ''}" data-entity-id="${p.id}" onclick="toggleRadarEntity('${p.id}')">
+        <span class="chip-check">${active ? '✓' : '＋'}</span>
+        <span>${p.label}</span>
+        <span class="chip-score">${p.val}%</span>
+      </div>
+    `;
+  }).join('');
+
+  // Render Distribuidoras chips
+  distribList.innerHTML = distribs.map(d => {
+    const active = selectedRadarPaisesSet.has(d.id);
+    const extraClass = d.isEpec ? 'chip-epec' : d.isArg ? 'chip-edenor' : 'chip-distrib';
+    return `
+      <div class="radar-entity-chip ${extraClass} ${active ? 'active' : ''}" data-entity-id="${d.id}" onclick="toggleRadarEntity('${d.id}')">
+        <span class="chip-check">${active ? '✓' : '＋'}</span>
+        <span>${d.label}</span>
+        <span class="chip-score">${d.val}%</span>
+      </div>
+    `;
+  }).join('');
+
+  // Update badge counter
+  const badgeEl = document.getElementById('radar-paises-count-badge');
+  if (badgeEl) {
+    badgeEl.textContent = `${selectedRadarPaisesSet.size} de ${radarBenchmarkEntities.length} Entidades Activas`;
+  }
+
+  // Setup Presets Listeners once
+  if (!isRadarPaisesControlsInitialized) {
+    isRadarPaisesControlsInitialized = true;
+
+    const presetAll = document.getElementById('btn-preset-paises-all');
+    const presetPaises = document.getElementById('btn-preset-paises-only-paises');
+    const presetDistrib = document.getElementById('btn-preset-paises-only-distrib');
+    const presetTop5 = document.getElementById('btn-preset-paises-top5');
+    const presetArg = document.getElementById('btn-preset-paises-arg');
+    const presetClear = document.getElementById('btn-preset-paises-clear');
+
+    const toggleAllPaisesBtn = document.getElementById('btn-toggle-all-paises');
+    const toggleAllDistribBtn = document.getElementById('btn-toggle-all-distrib');
+
+    function setActivePresetBtn(activeBtn) {
+      document.querySelectorAll('.btn-preset-chip').forEach(b => b.classList.remove('active'));
+      if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    if (presetAll) {
+      presetAll.addEventListener('click', () => {
+        selectedRadarPaisesSet = new Set(radarBenchmarkEntities.map(e => e.id));
+        setActivePresetBtn(presetAll);
+        renderRadarPaisesControls();
+        updateRadarPaisesChartAndRanking();
+      });
+    }
+
+    if (presetPaises) {
+      presetPaises.addEventListener('click', () => {
+        selectedRadarPaisesSet = new Set(radarBenchmarkEntities.filter(e => e.tipo === 'pais').map(e => e.id));
+        setActivePresetBtn(presetPaises);
+        renderRadarPaisesControls();
+        updateRadarPaisesChartAndRanking();
+      });
+    }
+
+    if (presetDistrib) {
+      presetDistrib.addEventListener('click', () => {
+        selectedRadarPaisesSet = new Set(radarBenchmarkEntities.filter(e => e.tipo === 'distribuidora').map(e => e.id));
+        setActivePresetBtn(presetDistrib);
+        renderRadarPaisesControls();
+        updateRadarPaisesChartAndRanking();
+      });
+    }
+
+    if (presetTop5) {
+      presetTop5.addEventListener('click', () => {
+        selectedRadarPaisesSet = new Set(['d_ute', 'd_cnfl', 'p_uruguay', 'p_costarica', 'p_repdom', 'd_epec']);
+        setActivePresetBtn(presetTop5);
+        renderRadarPaisesControls();
+        updateRadarPaisesChartAndRanking();
+      });
+    }
+
+    if (presetArg) {
+      presetArg.addEventListener('click', () => {
+        selectedRadarPaisesSet = new Set(['d_epec', 'd_edenor', 'p_argentina']);
+        setActivePresetBtn(presetArg);
+        renderRadarPaisesControls();
+        updateRadarPaisesChartAndRanking();
+      });
+    }
+
+    if (presetClear) {
+      presetClear.addEventListener('click', () => {
+        selectedRadarPaisesSet.clear();
+        setActivePresetBtn(null);
+        renderRadarPaisesControls();
+        updateRadarPaisesChartAndRanking();
+      });
+    }
+
+    if (toggleAllPaisesBtn) {
+      toggleAllPaisesBtn.addEventListener('click', () => {
+        const paisIds = radarBenchmarkEntities.filter(e => e.tipo === 'pais').map(e => e.id);
+        const allSelected = paisIds.every(id => selectedRadarPaisesSet.has(id));
+        if (allSelected) {
+          paisIds.forEach(id => selectedRadarPaisesSet.delete(id));
+        } else {
+          paisIds.forEach(id => selectedRadarPaisesSet.add(id));
+        }
+        setActivePresetBtn(null);
+        renderRadarPaisesControls();
+        updateRadarPaisesChartAndRanking();
+      });
+    }
+
+    if (toggleAllDistribBtn) {
+      toggleAllDistribBtn.addEventListener('click', () => {
+        const distribIds = radarBenchmarkEntities.filter(e => e.tipo === 'distribuidora').map(e => e.id);
+        const allSelected = distribIds.every(id => selectedRadarPaisesSet.has(id));
+        if (allSelected) {
+          distribIds.forEach(id => selectedRadarPaisesSet.delete(id));
+        } else {
+          distribIds.forEach(id => selectedRadarPaisesSet.add(id));
+        }
+        setActivePresetBtn(null);
+        renderRadarPaisesControls();
+        updateRadarPaisesChartAndRanking();
+      });
+    }
+  }
+}
+
+function toggleRadarEntity(id) {
+  if (selectedRadarPaisesSet.has(id)) {
+    selectedRadarPaisesSet.delete(id);
+  } else {
+    selectedRadarPaisesSet.add(id);
+  }
+  document.querySelectorAll('.btn-preset-chip').forEach(b => b.classList.remove('active'));
+  renderRadarPaisesControls();
+  updateRadarPaisesChartAndRanking();
+}
+
+function updateRadarPaisesChartAndRanking() {
+  if (!chartsInstances.radarEstandares || !chartsInstances.gapEstandares) return;
+
+  const titleEl = document.getElementById('radar-estandares-title');
+  const badgeEl = document.getElementById('radar-estandares-badge');
+  const gapTitleEl = document.getElementById('gap-estandares-title');
+  const insightBox = document.getElementById('radar-insight-box');
+
+  const selected = radarBenchmarkEntities.filter(e => selectedRadarPaisesSet.has(e.id));
+
+  if (titleEl) {
+    titleEl.textContent = 'Gráfico de Araña: Benchmark por Países y Distribuidoras (CIER 2026)';
+  }
+  if (badgeEl) {
+    badgeEl.textContent = `${selected.length} Entidades Seleccionadas`;
+    badgeEl.className = 'badge-tag-blue';
+  }
+  if (gapTitleEl) {
+    gapTitleEl.textContent = 'Ranking ISCAL (%) de la Selección Activa';
+  }
+
+  if (selected.length === 0) {
+    chartsInstances.radarEstandares.data.labels = ['Sin selección'];
+    chartsInstances.radarEstandares.data.datasets = [{
+      label: 'Sin datos',
+      data: [0],
+      borderColor: '#64748b',
+      backgroundColor: 'transparent'
+    }];
+    chartsInstances.gapEstandares.data.labels = ['Sin entidades seleccionadas'];
+    chartsInstances.gapEstandares.data.datasets = [{
+      label: 'ISCAL (%)',
+      data: [0],
+      backgroundColor: 'rgba(100, 116, 139, 0.3)'
+    }];
+    if (insightBox) {
+      insightBox.innerHTML = `
+        <strong style="color: #f59e0b;">⚠️ Ninguna entidad seleccionada:</strong> Utiliza los botones de filtros rápidos o selecciona los países y distribuidoras que desees comparar en el gráfico de araña.
+      `;
+    }
+    chartsInstances.radarEstandares.update();
+    chartsInstances.gapEstandares.update();
+    return;
+  }
+
+  // Update Radar Chart
+  chartsInstances.radarEstandares.data.labels = selected.map(e => e.label);
+  chartsInstances.radarEstandares.data.datasets = [
+    {
+      label: 'ISCAL Benchmark CIER 2026',
+      data: selected.map(e => e.val),
+      borderColor: '#38bdf8',
+      backgroundColor: 'rgba(56, 189, 248, 0.20)',
+      borderWidth: 2.2,
+      pointBackgroundColor: selected.map(e => e.isEpec ? '#06b6d4' : e.isArg ? '#ec4899' : e.tipo === 'distribuidora' ? '#a855f7' : '#38bdf8'),
+      pointBorderColor: selected.map(e => e.isEpec ? '#ffffff' : 'rgba(255,255,255,0.8)'),
+      pointRadius: selected.map(e => e.isEpec ? 6 : e.isArg ? 5.5 : 4),
+      pointHoverRadius: selected.map(e => e.isEpec ? 8.5 : 6.5)
+    }
+  ];
+
+  // Update Sorted Gap / Bar Chart
+  const sorted = [...selected].sort((a, b) => b.val - a.val);
+  chartsInstances.gapEstandares.data.labels = sorted.map(e => `${e.label} (${e.val}%)`);
+  chartsInstances.gapEstandares.data.datasets = [{
+    label: 'ISCAL (%)',
+    data: sorted.map(e => e.val),
+    backgroundColor: sorted.map(e => {
+      if (e.isEpec) return 'rgba(6, 182, 212, 0.90)';
+      if (e.isArg) return 'rgba(236, 72, 153, 0.85)';
+      if (e.tipo === 'distribuidora') return 'rgba(168, 85, 247, 0.80)';
+      return 'rgba(56, 189, 248, 0.70)';
+    }),
+    borderColor: sorted.map(e => {
+      if (e.isEpec) return '#06b6d4';
+      if (e.isArg) return '#ec4899';
+      if (e.tipo === 'distribuidora') return '#c084fc';
+      return '#38bdf8';
+    }),
+    borderWidth: 1.5,
+    borderRadius: 4
+  }];
+
+  // Dynamic Insight Calculation
+  const maxItem = sorted[0];
+  const minItem = sorted[sorted.length - 1];
+  const avgVal = (selected.reduce((acc, curr) => acc + curr.val, 0) / selected.length).toFixed(2);
+  const epecIndex = sorted.findIndex(e => e.id === 'd_epec');
+  const epecIncluded = epecIndex !== -1;
+
+  let epecText = '';
+  if (epecIncluded) {
+    const epecRank = epecIndex + 1;
+    const gapLeader = (maxItem.val - 65.96).toFixed(2);
+    epecText = `<strong>EPEC (65.96%)</strong> se posiciona en el puesto <strong>#${epecRank} de ${selected.length}</strong> (${gapLeader > 0 ? '-' + gapLeader + ' pts vs líder' : 'Líder del grupo'}).`;
+  } else {
+    epecText = `<em>(EPEC no está incluida en la selección actual)</em>.`;
+  }
+
+  if (insightBox) {
+    insightBox.innerHTML = `
+      <strong>🌎 Benchmark Interactivo (${selected.length} entidades seleccionadas):</strong> Líder del grupo: <strong>${maxItem.label} (${maxItem.val}%)</strong> · Cota mínima: <strong>${minItem.label} (${minItem.val}%)</strong>. ${epecText} Promedio del grupo seleccionado: <strong>${avgVal}% ISCAL</strong>.
+    `;
+  }
+
+  chartsInstances.radarEstandares.update();
+  chartsInstances.gapEstandares.update();
+}
 
 function initRadarEstandaresCharts() {
   const ctxRadar = document.getElementById('chart-radar-estandares');
@@ -646,6 +930,7 @@ function initRadarEstandaresCharts() {
     }
   });
 
+  renderRadarPaisesControls();
   updateRadarEstandaresView(currentRadarMode, currentRadarView);
 }
 
@@ -659,53 +944,22 @@ function updateRadarEstandaresView(mode, view) {
   const gapTitleEl = document.getElementById('gap-estandares-title');
   const insightBox = document.getElementById('radar-insight-box');
   const entitiesRow = document.getElementById('radar-entities-row');
+  const paisesSelectors = document.getElementById('radar-paises-selectors');
 
-  // Handle View 3: Países LATAM
+  // Handle View 3: Países LATAM & Distribuidoras Interactivas
   if (currentRadarView === 'paises') {
     if (entitiesRow) entitiesRow.style.display = 'none';
-    if (titleEl) titleEl.textContent = 'Gráfico de Araña: Benchmark por Países de América Latina (CIER 2026)';
-    if (badgeEl) {
-      badgeEl.textContent = 'Ranking Regional 2026';
-      badgeEl.className = 'badge-tag-blue';
+    if (paisesSelectors) {
+      paisesSelectors.style.display = 'block';
+      renderRadarPaisesControls();
     }
-    if (gapTitleEl) gapTitleEl.textContent = 'ISCAL Promedio por País en América Latina';
-
-    chartsInstances.radarEstandares.data.labels = radarPaisesAxesLabels;
-    chartsInstances.radarEstandares.data.datasets = [
-      {
-        label: 'Promedio País CIER 2026',
-        data: radarPaisesValues,
-        borderColor: '#38bdf8',
-        backgroundColor: 'rgba(56, 189, 248, 0.20)',
-        borderWidth: 2.2,
-        pointBackgroundColor: radarPaisesAxesLabels.map(p => p.includes('EPEC') ? '#06b6d4' : p.includes('EDENOR') ? '#ec4899' : '#38bdf8'),
-        pointRadius: radarPaisesAxesLabels.map(p => p.includes('Argentina') ? 5.5 : 3.5)
-      }
-    ];
-
-    const sortedPaises = radarPaisesAxesLabels.map((p, i) => ({ pais: p, val: radarPaisesValues[i] }))
-      .sort((a, b) => b.val - a.val);
-
-    chartsInstances.gapEstandares.data.labels = sortedPaises.map(p => `${p.pais} (${p.val}%)`);
-    chartsInstances.gapEstandares.data.datasets = [{
-      label: 'ISCAL (%)',
-      data: sortedPaises.map(p => p.val),
-      backgroundColor: sortedPaises.map(p => p.pais.includes('EPEC') ? 'rgba(6, 182, 212, 0.85)' : p.pais.includes('EDENOR') ? 'rgba(236, 72, 153, 0.85)' : 'rgba(56, 189, 248, 0.65)'),
-      borderColor: sortedPaises.map(p => p.pais.includes('EPEC') ? '#06b6d4' : p.pais.includes('EDENOR') ? '#ec4899' : '#38bdf8'),
-      borderWidth: 1.5,
-      borderRadius: 4
-    }];
-
-    if (insightBox) {
-      insightBox.innerHTML = `
-        <strong>🌎 Comparativa Regional de Países CIER 2026:</strong> Uruguay lidera con UTE (86.4%), seguido por Costa Rica (83.2%) y Rep. Dominicana (82.5%). En Argentina, <strong>EPEC (65.96%)</strong> consolida su posición por encima de Paraguay (61.4%) y Perú (54.6%), con <strong>EDENOR (70.50% en 2025)</strong> como antecedente nacional previo.
-      `;
-    }
-
-    chartsInstances.radarEstandares.update();
-    chartsInstances.gapEstandares.update();
+    updateRadarPaisesChartAndRanking();
     return;
   }
+
+  // Show entities row for sintesis and servicios
+  if (entitiesRow) entitiesRow.style.display = 'flex';
+  if (paisesSelectors) paisesSelectors.style.display = 'none';
 
   // Show entities row for sintesis and servicios
   if (entitiesRow) entitiesRow.style.display = 'flex';

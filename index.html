@@ -538,6 +538,64 @@
                   🇦🇷 vs. 4. Top 2 Argentina
                 </button>
               </div>
+
+              <!-- Selector Interactivo Dinámico de Países y Distribuidoras (Visible en Vista Países) -->
+              <div id="radar-paises-selectors" class="radar-paises-panel mt-2" style="display: none;">
+                <!-- Preset Quick Buttons Bar -->
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-2">
+                  <div class="d-flex flex-wrap gap-1 align-items-center">
+                    <span style="font-size: 0.72rem; font-weight: 700; color: #94a3b8; text-transform: uppercase; margin-right: 0.25rem;">
+                      ⚡ Filtros Rápidos:
+                    </span>
+                    <button type="button" class="btn-preset-chip active" id="btn-preset-paises-all" data-preset="all">
+                      🌟 Todos (<span id="count-all-badge">26</span>)
+                    </button>
+                    <button type="button" class="btn-preset-chip" id="btn-preset-paises-only-paises" data-preset="paises">
+                      🌎 Solo Países (14)
+                    </button>
+                    <button type="button" class="btn-preset-chip" id="btn-preset-paises-only-distrib" data-preset="distrib">
+                      ⚡ Solo Distribuidoras (12)
+                    </button>
+                    <button type="button" class="btn-preset-chip" id="btn-preset-paises-top5" data-preset="top5">
+                      🏆 Top 5 Líderes
+                    </button>
+                    <button type="button" class="btn-preset-chip" id="btn-preset-paises-arg" data-preset="arg">
+                      🇦🇷 EPEC vs. EDENOR
+                    </button>
+                    <button type="button" class="btn-preset-chip btn-preset-clear" id="btn-preset-paises-clear" data-preset="clear">
+                      🔄 Desmarcar Todo
+                    </button>
+                  </div>
+                  <div class="badge-tag-cyan" id="radar-paises-count-badge" style="font-size: 0.72rem;">
+                    26 Entidades Activas
+                  </div>
+                </div>
+
+                <!-- Chips Groups Container -->
+                <div class="radar-chips-container">
+                  <!-- Group 1: Países -->
+                  <div class="radar-chip-group">
+                    <div class="radar-chip-group-header">
+                      <span>🌎 Países de América Latina (CIER 2026)</span>
+                      <button type="button" class="btn-mini-toggle" id="btn-toggle-all-paises">Invertir Países</button>
+                    </div>
+                    <div class="radar-chips-list" id="radar-paises-chips-list">
+                      <!-- Rendered dynamically -->
+                    </div>
+                  </div>
+
+                  <!-- Group 2: Distribuidoras -->
+                  <div class="radar-chip-group mt-2">
+                    <div class="radar-chip-group-header">
+                      <span>⚡ Distribuidoras Gran Porte (>500.000 Clientes)</span>
+                      <button type="button" class="btn-mini-toggle" id="btn-toggle-all-distrib">Invertir Distribuidoras</button>
+                    </div>
+                    <div class="radar-chips-list" id="radar-distrib-chips-list">
+                      <!-- Rendered dynamically -->
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
 
