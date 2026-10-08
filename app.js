@@ -1204,7 +1204,7 @@ function renderArgentinaBenchmarkTable() {
     if (grupoFilter === 'argentina' && item.grupo !== 'argentina') return false;
     if (grupoFilter === 'top10_latam' && item.grupo !== 'top10_latam') return false;
     if (grupoFilter === 'top3_latam' && !['UTE', 'CNFL', 'ICE'].includes(item.nombre)) return false;
-    if (grupoFilter === 'top2_arg' && !['EDENOR', 'EDEA'].includes(item.nombre)) return false;
+    if (grupoFilter === 'top2_arg' && !['EDENOR', 'EPEC'].includes(item.nombre)) return false;
 
     // Search filter
     if (searchVal) {
