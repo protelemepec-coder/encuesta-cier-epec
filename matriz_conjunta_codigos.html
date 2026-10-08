@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EPEC · Matriz Conjunta de Acciones de Mejora CIER (Códigos de Atributos)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg-dark: #0b1120;
+      --card-bg: #0f172a;
+      --card-border: #1e293b;
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --c-foco: #ef4444;
+      --c-baja: #64748b;
+      --c-fortaleza: #3b82f6;
+      --c-ventaja: #f59e0b;
+      --c-cyan: #06b6d4;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      padding: 24px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container {
+      max-width: 1280px;
+      width: 100%;
+    }
+    .header {
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.9), rgba(30, 41, 59, 0.7));
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px 28px;
+      margin-bottom: 24px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.5);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      background: rgba(6, 182, 212, 0.15);
+      border: 1px solid rgba(6, 182, 212, 0.35);
+      border-radius: 9999px;
+      color: var(--c-cyan);
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 12px;
+    }
+    h1 {
+      font-size: 26px;
+      font-weight: 800;
+      color: #ffffff;
+      margin-bottom: 8px;
+      letter-spacing: -0.02em;
+    }
+    p.subtitle {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .chart-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 10px 30px -10px rgba(0,0,0,0.6);
+      margin-bottom: 24px;
+    }
+    .chart-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #1e293b;
+    }
+    .toggle-group {
+      display: flex;
+      background: #1e293b;
+      padding: 4px;
+      border-radius: 10px;
+      gap: 4px;
+    }
+    .toggle-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .toggle-btn.active {
+      background: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 2px 8px rgba(2, 132, 199, 0.4);
+    }
+    .chart-wrapper {
+      position: relative;
+      height: 600px;
+      width: 100%;
+    }
+    .quadrant-legend {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .quad-item {
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .quad-dot {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .quad-title {
+      font-size: 13.5px;
+      font-weight: 700;
+      margin-bottom: 3px;
+    }
+    .quad-desc {
+      font-size: 12px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="badge">📊 CIER 2025 - 2026 · EPEC Benchmark</div>
+      <h1>Matriz Conjunta de Acciones de Mejora (Identificación por Código de Atributo)</h1>
+      <p class="subtitle">Dispersión de los 30 atributos evaluados en la encuesta residencial. Cada burbuja muestra directamente el <strong>código de la pregunta (ej: AT1, SE1, IC1, FE1)</strong> para análisis operativo directo.</p>
+    </div>
+
+    <div class="chart-card">
+      <div class="chart-controls">
+        <div style="font-weight: 600; font-size: 14px; color: #94a3b8;">
+          Puntos identificados por: <span style="color: #38bdf8; font-weight: 700;">Código de Pregunta CIER</span>
+        </div>
+        <div class="toggle-group">
+          <button class="toggle-btn active" id="btn-codes" onclick="setLabelMode('sigla')">🏷️ Código (AT1, SE1...)</button>
+          <button class="toggle-btn" id="btn-ranks" onclick="setLabelMode('prio')">🔢 Ranking Prioridad (1ª...)</button>
+        </div>
+      </div>
+
+      <div class="chart-wrapper">
+        <canvas id="chartMatriz"></canvas>
+      </div>
+
+      <div class="quadrant-legend">
+        <div class="quad-item" style="border-left: 4px solid var(--c-foco);">
+          <div class="quad-dot" style="background: var(--c-foco); box-shadow: 0 0 10px rgba(239,68,68,0.5);"></div>
+          <div>
+            <div class="quad-title" style="color: #f87171;">Cuadrante I: Foco Urgente (1° Prioridad)</div>
+            <div class="quad-desc">Alta Importancia (≥3.33%) y Bajo Desempeño (&lt;64.8 pts). <strong>Atributos: IC1, AT1, FE1, AT2, IC3, FE3, IC2</strong>.</div>
+          </div>
+        </div>
+        <div class="quad-item" style="border-left: 4px solid var(--c-fortaleza);">
+          <div class="quad-dot" style="background: var(--c-fortaleza); box-shadow: 0 0 10px rgba(59,130,246,0.5);"></div>
+          <div>
+            <div class="quad-title" style="color: #60a5fa;">Cuadrante III: Fortalezas Claves (Mantener)</div>
+            <div class="quad-desc">Alta Importancia (≥3.33%) y Alto Desempeño (≥64.8 pts). <strong>Atributos: SE1, SE2, SE3, FE2</strong>.</div>
+          </div>
+        </div>
+        <div class="quad-item" style="border-left: 4px solid var(--c-ventaja);">
+          <div class="quad-dot" style="background: var(--c-ventaja); box-shadow: 0 0 10px rgba(245,158,11,0.5);"></div>
+          <div>
+            <div class="quad-title" style="color: #fbbf24;">Cuadrante IV: Ventajas Secundarias</div>
+            <div class="quad-desc">Baja Importancia (&lt;3.33%) y Alto Desempeño (≥64.8 pts). <strong>Atributos: AT4, AT3, AT6, FE4, AT7, AT5, FE5, AT8, AT9, IM6</strong>.</div>
+          </div>
+        </div>
+        <div class="quad-item" style="border-left: 4px solid var(--c-baja);">
+          <div class="quad-dot" style="background: var(--c-baja);"></div>
+          <div>
+            <div class="quad-title" style="color: #94a3b8;">Cuadrante II: Baja Prioridad (Monitoreo)</div>
+            <div class="quad-desc">Baja Importancia (&lt;3.33%) y Bajo Desempeño (&lt;64.8 pts). <strong>Atributos: IC5, IC4, IM1, IM2, IM3, IM5, IM4, IM7, IM8</strong>.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const rawData = [{"num": 4, "sigla": "IC1", "area": "Informaci\u00f3n", "nombre": "Notificaci\u00f3n de interrupci\u00f3n", "pregunta": "Comunicaci\u00f3n previa en el caso de interrupciones debido a mantenimiento programado para mejora en la red", "imp": 5.85, "desemp": 58.86, "prio": 1, "cuadrante": "Cuadrante I \u2013 Alto Impacto / Foco", "color": "#ef4444", "neg_pct": 21.1, "neu_pct": 34.4, "pos_pct": 42.9, "nota": 6.55, "causas": "Cortes programados sin preaviso efectivo y falta de horario estimado de restituci\u00f3n (ETR) en tormentas por WhatsApp/SMS.", "accion": "Sistema de alertas push y SMS georreferenciadas con horario estimado de normalizaci\u00f3n en tiempo real.", "cuadrante_oficial_cier": "Cuadrante I (Inferior Derecho - 1\u00ba Orden)", "cuadrante_num_cier": 1, "orden_intervencion": "1\u00ba Orden de Intervenci\u00f3n (Cuadrante Foco)"}, {"num": 15, "sigla": "AT1", "area": "Atenci\u00f3n", "nombre": "Facilidad para contactarse", "pregunta": "Facilidad para contactar a la distribuidora cuando necesita pedir informaciones o reportar servicios", "imp": 5.48, "desemp": 58.32, "prio": 2, "cuadrante": "Cuadrante I \u2013 Alto Impacto / Foco", "color": "#ef4444", "neg_pct": 19.0, "neu_pct": 35.8, "pos_pct": 43.5, "nota": 6.47, "causas": "Saturaci\u00f3n del 0800 en d\u00edas de contingencia; 41.2% de los clientes debe contactar m\u00e1s de una vez para resolver un tr\u00e1mite.", "accion": "Despliegue de bot de autogesti\u00f3n de reclamos por WhatsApp y enrutamiento inteligente de llamadas.", "cuadrante_oficial_cier": "Cuadrante I (Inferior Derecho - 1\u00ba Orden)", "cuadrante_num_cier": 1, "orden_intervencion": "1\u00ba Orden de Intervenci\u00f3n (Cuadrante Foco)"}, {"num": 9, "sigla": "FE1", "area": "Factura", "nombre": "Plazo entre recepci\u00f3n y vencimiento", "pregunta": "Plazo entre la recepci\u00f3n de la factura de energ\u00eda y su fecha de vencimiento (n\u00famero de d\u00edas h\u00e1biles)", "imp": 5.1, "desemp": 63.12, "prio": 3, "cuadrante": "Cuadrante I \u2013 Alto Impacto / Foco", "color": "#ef4444", "neg_pct": 18.8, "neu_pct": 32.5, "pos_pct": 47.2, "nota": 6.78, "causas": "Facturas impresas que llegan con menos de 5 d\u00edas h\u00e1biles antes de vencer y descalce con el cobro salarial mensual.", "accion": "Garantizar m\u00ednimo 10 d\u00edas corridos de margen y migraci\u00f3n masiva a factura digital anticipada v\u00eda email/WhatsApp.", "cuadrante_oficial_cier": "Cuadrante I (Inferior Derecho - 1\u00ba Orden)", "cuadrante_num_cier": 1, "orden_intervencion": "1\u00ba Orden de Intervenci\u00f3n (Cuadrante Foco)"}, {"num": 16, "sigla": "AT2", "area": "Atenci\u00f3n", "nombre": "Tiempo de espera hasta ser atendido", "pregunta": "Tiempo de espera hasta ser atendido en filas presenciales o esperando en la l\u00ednea telef\u00f3nica", "imp": 4.3, "desemp": 55.59, "prio": 4, "cuadrante": "Cuadrante I \u2013 Alto Impacto / Foco", "color": "#ef4444", "neg_pct": 22.7, "neu_pct": 36.1, "pos_pct": 39.5, "nota": 6.22, "causas": "Demoras telef\u00f3nicas superiores a 10 minutos y colas en centros comerciales en fechas pico de pago.", "accion": "Fila virtual con turnero digital obligatorio y servicio de devoluci\u00f3n de llamada (call-back) sin perder turno.", "cuadrante_oficial_cier": "Cuadrante I (Inferior Derecho - 1\u00ba Orden)", "cuadrante_num_cier": 1, "orden_intervencion": "1\u00ba Orden de Intervenci\u00f3n (Cuadrante Foco)"}, {"num": 6, "sigla": "IC3", "area": "Informaci\u00f3n", "nombre": "Orientaci\u00f3n sobre riesgos y peligros", "pregunta": "Orientaciones brindadas por la distribuidora respecto a los riesgos el\u00e9ctricos y peligros en el uso de la energ\u00eda", "imp": 3.67, "desemp": 50.08, "prio": 5, "cuadrante": "Cuadrante I \u2013 Alto Impacto / Foco", "color": "#ef4444", "neg_pct": 25.8, "neu_pct": 34.7, "pos_pct": 34.4, "nota": 5.86, "causas": "Baja visibilidad de campa\u00f1as institucionales sobre seguridad el\u00e9ctrica en el hogar y prevenci\u00f3n de accidentes en poda.", "accion": "C\u00e1psulas audiovisuales en redes sociales, inserci\u00f3n de consejos de seguridad en factura y talleres comunitarios.", "cuadrante_oficial_cier": "Cuadrante I (Inferior Derecho - 1\u00ba Orden)", "cuadrante_num_cier": 1, "orden_intervencion": "1\u00ba Orden de Intervenci\u00f3n (Cuadrante Foco)"}, {"num": 11, "sigla": "FE3", "area": "Factura", "nombre": "Facilidad de comprensi\u00f3n de la factura", "pregunta": "Facilidad de comprensi\u00f3n de las informaciones (conceptos, cargos fijos y contenidos) que est\u00e1n en la factura", "imp": 3.6, "desemp": 62.19, "prio": 6, "cuadrante": "Cuadrante I \u2013 Alto Impacto / Foco", "color": "#ef4444", "neg_pct": 17.5, "neu_pct": 33.2, "pos_pct": 47.8, "nota": 6.64, "causas": "Confusi\u00f3n en el desglose de tasas municipales (OIM/alumbrado), cargos fijos, impuestos y escalones tarifarios.", "accion": "Redise\u00f1o visual de la factura: gr\u00e1fico claro de barras de consumo hist\u00f3rico y bloque diferenciado de impuestos ajenos a EPEC.", "cuadrante_oficial_cier": "Cuadrante I (Inferior Derecho - 1\u00ba Orden)", "cuadrante_num_cier": 1, "orden_intervencion": "1\u00ba Orden de Intervenci\u00f3n (Cuadrante Foco)"}, {"num": 8, "sigla": "IC5", "area": "Informaci\u00f3n", "nombre": "Medici\u00f3n del consumo de energ\u00eda", "pregunta": "Informaciones brindadas respecto a c\u00f3mo se mide el consumo de energ\u00eda y c\u00f3mo leer el medidor domiciliario", "imp": 3.4, "desemp": 44.52, "prio": 7, "cuadrante": "Cuadrante I \u2013 Alto Impacto / Foco", "color": "#ef4444", "neg_pct": 30.9, "neu_pct": 34.1, "pos_pct": 28.5, "nota": 5.41, "causas": "Desconocimiento generalizado de c\u00f3mo leer el medidor y sospecha de consumos estimados o sobrefacturados.", "accion": "Gu\u00eda interactiva paso a paso en app/web para lectura de medidores y validaci\u00f3n con foto en reclamos de consumo.", "cuadrante_oficial_cier": "Cuadrante I (Inferior Derecho - 1\u00ba Orden)", "cuadrante_num_cier": 1, "orden_intervencion": "1\u00ba Orden de Intervenci\u00f3n (Cuadrante Foco)"}, {"num": 5, "sigla": "IC2", "area": "Informaci\u00f3n", "nombre": "Uso eficiente de la energ\u00eda", "pregunta": "Orientaciones brindadas respecto al uso eficiente de la energ\u00eda para evitar el desperdicio", "imp": 3.03, "desemp": 57.8, "prio": 8, "cuadrante": "Cuadrante II \u2013 Baja Prioridad", "color": "#64748b", "neg_pct": 19.7, "neu_pct": 39.8, "pos_pct": 36.8, "nota": 6.45, "causas": "Poco alcance de gu\u00edas de eficiencia energ\u00e9tica y consejos de consumo estacional (verano/invierno).", "accion": "Simulador de consumo por electrodom\u00e9sticos en la app de EPEC con recomendaciones de ahorro.", "cuadrante_oficial_cier": "Cuadrante II (Inferior Izquierdo - \u00daltimo Orden)", "cuadrante_num_cier": 2, "orden_intervencion": "\u00daltimo Orden de Intervenci\u00f3n (Baja Prioridad)"}, {"num": 7, "sigla": "IC4", "area": "Informaci\u00f3n", "nombre": "Derechos y deberes del cliente", "pregunta": "Orientaciones brindadas respecto a sus derechos y deberes como cliente del servicio el\u00e9ctrico", "imp": 2.95, "desemp": 55.4, "prio": 9, "cuadrante": "Cuadrante II \u2013 Baja Prioridad", "color": "#64748b", "neg_pct": 27.0, "neu_pct": 33.3, "pos_pct": 33.0, "nota": 6.02, "causas": "Desconocimiento de los plazos de reclamo por da\u00f1os en artefactos y deberes de mantenimiento de la acometida.", "accion": "Publicaci\u00f3n clara del reglamento de suministro y carta de derechos del usuario en canales digitales.", "cuadrante_oficial_cier": "Cuadrante II (Inferior Izquierdo - \u00daltimo Orden)", "cuadrante_num_cier": 2, "orden_intervencion": "\u00daltimo Orden de Intervenci\u00f3n (Baja Prioridad)"}, {"num": 27, "sigla": "IM4", "area": "Imagen", "nombre": "Informa sobre su actuaci\u00f3n", "pregunta": "Empresa que busca informar y aclarar a sus clientes con respecto a su actuaci\u00f3n e inversiones", "imp": 2.8, "desemp": 52.3, "prio": 10, "cuadrante": "Cuadrante II \u2013 Baja Prioridad", "color": "#64748b", "neg_pct": 23.5, "neu_pct": 38.2, "pos_pct": 34.5, "nota": 5.95, "causas": "Sensaci\u00f3n de comunicaci\u00f3n tard\u00eda o reactiva cuando ocurren incidentes mayores en la red.", "accion": "Reporte trimestral de obras e inversiones en infraestructura el\u00e9ctrica difundido en medios y web.", "cuadrante_oficial_cier": "Cuadrante II (Inferior Izquierdo - \u00daltimo Orden)", "cuadrante_num_cier": 2, "orden_intervencion": "\u00daltimo Orden de Intervenci\u00f3n (Baja Prioridad)"}, {"num": 25, "sigla": "IM2", "area": "Imagen", "nombre": "Empresa justa y correcta", "pregunta": "Empresa correcta con sus clientes, que si comete errores los corregir\u00e1 - Empresa justa", "imp": 2.75, "desemp": 54.1, "prio": 11, "cuadrante": "Cuadrante II \u2013 Baja Prioridad", "color": "#64748b", "neg_pct": 22.1, "neu_pct": 37.5, "pos_pct": 36.6, "nota": 6.08, "causas": "Percepci\u00f3n de burocracia en el reconocimiento de reclamos por da\u00f1os en artefactos o refacturaciones.", "accion": "Canal \u00e1gil de mediaci\u00f3n y compensaci\u00f3n autom\u00e1tica en reclamos comerciales justificados.", "cuadrante_oficial_cier": "Cuadrante II (Inferior Izquierdo - \u00daltimo Orden)", "cuadrante_num_cier": 2, "orden_intervencion": "\u00daltimo Orden de Intervenci\u00f3n (Baja Prioridad)"}, {"num": 24, "sigla": "IM1", "area": "Imagen", "nombre": "Respeta los derechos del cliente", "pregunta": "Empresa que respeta los derechos de los clientes de acuerdo con la normativa vigente", "imp": 2.68, "desemp": 56.7, "prio": 12, "cuadrante": "Cuadrante II \u2013 Baja Prioridad", "color": "#64748b", "neg_pct": 20.4, "neu_pct": 36.9, "pos_pct": 38.8, "nota": 6.25, "causas": "Descontento con intimaciones de corte cuando hubo demoras en la entrega de la factura f\u00edsica.", "accion": "Protocolo de doble aviso previo a la suspensi\u00f3n del suministro por mora.", "cuadrante_oficial_cier": "Cuadrante II (Inferior Izquierdo - \u00daltimo Orden)", "cuadrante_num_cier": 2, "orden_intervencion": "\u00daltimo Orden de Intervenci\u00f3n (Baja Prioridad)"}, {"num": 26, "sigla": "IM3", "area": "Imagen", "nombre": "Invierte en energ\u00eda con calidad", "pregunta": "Empresa que invierte continuamente para proveer energ\u00eda a m\u00e1s clientes y con calidad t\u00e9cnica", "imp": 2.6, "desemp": 58.9, "prio": 13, "cuadrante": "Cuadrante II \u2013 Baja Prioridad", "color": "#64748b", "neg_pct": 18.2, "neu_pct": 38.5, "pos_pct": 39.8, "nota": 6.42, "causas": "Percepci\u00f3n en zonas perif\u00e9ricas de que las mejoras e inversiones se concentran solo en el centro de la ciudad.", "accion": "Mapa interactivo p\u00fablico de obras y modernizaci\u00f3n de subestaciones transformadoras.", "cuadrante_oficial_cier": "Cuadrante II (Inferior Izquierdo - \u00daltimo Orden)", "cuadrante_num_cier": 2, "orden_intervencion": "\u00daltimo Orden de Intervenci\u00f3n (Baja Prioridad)"}, {"num": 30, "sigla": "IM7", "area": "Imagen", "nombre": "Flexible y dispuesta a negociar", "pregunta": "Empresa flexible, dispuesta a escuchar y negociar con sus clientes planes de pago", "imp": 2.52, "desemp": 51.2, "prio": 14, "cuadrante": "Cuadrante II \u2013 Baja Prioridad", "color": "#64748b", "neg_pct": 24.8, "neu_pct": 38.1, "pos_pct": 33.4, "nota": 5.88, "causas": "Planes de regularizaci\u00f3n de deuda con intereses considerados altos o poca flexibilidad en cuotas.", "accion": "Planes de financiamiento digital en cuotas fijas accesibles autogestionables desde la web.", "cuadrante_oficial_cier": "Cuadrante II (Inferior Izquierdo - \u00daltimo Orden)", "cuadrante_num_cier": 2, "orden_intervencion": "\u00daltimo Orden de Intervenci\u00f3n (Baja Prioridad)"}, {"num": 28, "sigla": "IM5", "area": "Imagen", "nombre": "Se ocupa de evitar hurtos de energ\u00eda", "pregunta": "Empresa que se ocupa activamente de evitar fraudes y conexiones clandestinas", "imp": 2.45, "desemp": 59.4, "prio": 15, "cuadrante": "Cuadrante II \u2013 Baja Prioridad", "color": "#64748b", "neg_pct": 17.6, "neu_pct": 39.2, "pos_pct": 39.4, "nota": 6.46, "causas": "Molestia de clientes formales ante la percepci\u00f3n de impunidad en conexiones ilegales que afectan la tensi\u00f3n.", "accion": "Intensificaci\u00f3n de operativos antifraude con medidores inteligentes y canal an\u00f3nimo de denuncias.", "cuadrante_oficial_cier": "Cuadrante II (Inferior Izquierdo - \u00daltimo Orden)", "cuadrante_num_cier": 2, "orden_intervencion": "\u00daltimo Orden de Intervenci\u00f3n (Baja Prioridad)"}, {"num": 29, "sigla": "IM6", "area": "Imagen", "nombre": "Atenci\u00f3n sin discriminaci\u00f3n", "pregunta": "Empresa que ofrece la misma atenci\u00f3n a todos los clientes sin ning\u00fan tipo de discriminaci\u00f3n", "imp": 2.3, "desemp": 63.8, "prio": 16, "cuadrante": "Cuadrante II \u2013 Baja Prioridad", "color": "#64748b", "neg_pct": 14.5, "neu_pct": 36.2, "pos_pct": 46.8, "nota": 6.82, "causas": "Evaluaci\u00f3n favorable general; algunas quejas menores sobre trato prioritario en ventanilla.", "accion": "Capacitaci\u00f3n continua en atenci\u00f3n inclusiva y accesibilidad f\u00edsica en todas las delegaciones.", "cuadrante_oficial_cier": "Cuadrante II (Inferior Izquierdo - \u00daltimo Orden)", "cuadrante_num_cier": 2, "orden_intervencion": "\u00daltimo Orden de Intervenci\u00f3n (Baja Prioridad)"}, {"num": 1, "sigla": "SE1", "area": "Suministro", "nombre": "Sin interrupci\u00f3n del suministro", "pregunta": "Suministro de energ\u00eda continuo sin interrupci\u00f3n, es decir, que no falte energ\u00eda en su domicilio", "imp": 8.26, "desemp": 85.92, "prio": 17, "cuadrante": "Cuadrante III \u2013 Fortalezas Clave", "color": "#3b82f6", "neg_pct": 5.3, "neu_pct": 27.7, "pos_pct": 67.0, "nota": 7.94, "causas": "Gran fortaleza de EPEC: alta continuidad del servicio en la mayor parte del a\u00f1o (67% calificaciones 8-10).", "accion": "Mantener inversiones en telemando de redes y mantenimiento preventivo de l\u00edneas de media tensi\u00f3n.", "cuadrante_oficial_cier": "Cuadrante III (Superior Derecho - 2\u00ba Orden / Mantener)", "cuadrante_num_cier": 3, "orden_intervencion": "2\u00ba Orden de Intervenci\u00f3n (Prioridad para MANTENER)"}, {"num": 3, "sigla": "SE3", "area": "Suministro", "nombre": "Rapidez en reanudaci\u00f3n de energ\u00eda", "pregunta": "Agilidad en la reanudaci\u00f3n y restablecimiento del servicio el\u00e9ctrico cuando falta energ\u00eda", "imp": 5.5, "desemp": 72.12, "prio": 18, "cuadrante": "Cuadrante III \u2013 Fortalezas Clave", "color": "#3b82f6", "neg_pct": 7.8, "neu_pct": 44.6, "pos_pct": 47.4, "nota": 7.19, "causas": "Buen tiempo de respuesta en fallas urbanas est\u00e1ndar; demoras puntuales en tormentas severas con ramas ca\u00eddas.", "accion": "Cuadrillas r\u00e1pidas motorizadas y despacho automatizado geolocalizado en guardias.", "cuadrante_oficial_cier": "Cuadrante III (Superior Derecho - 2\u00ba Orden / Mantener)", "cuadrante_num_cier": 3, "orden_intervencion": "2\u00ba Orden de Intervenci\u00f3n (Prioridad para MANTENER)"}, {"num": 2, "sigla": "SE2", "area": "Suministro", "nombre": "Sin variaci\u00f3n de voltaje", "pregunta": "Suministro de energ\u00eda sin variaci\u00f3n de voltaje en su domicilio, es decir, sin bajones o parpadeos", "imp": 5.4, "desemp": 77.4, "prio": 19, "cuadrante": "Cuadrante III \u2013 Fortalezas Clave", "color": "#3b82f6", "neg_pct": 9.1, "neu_pct": 31.5, "pos_pct": 59.2, "nota": 7.51, "causas": "Estabilidad adecuada en troncales principales; variaciones registradas en puntas de alimentadores rurales.", "accion": "Instalaci\u00f3n de reguladores autom\u00e1ticos de tensi\u00f3n y balanceo de cargas en transformadores de distribuci\u00f3n.", "cuadrante_oficial_cier": "Cuadrante III (Superior Derecho - 2\u00ba Orden / Mantener)", "cuadrante_num_cier": 3, "orden_intervencion": "2\u00ba Orden de Intervenci\u00f3n (Prioridad para MANTENER)"}, {"num": 10, "sigla": "FE2", "area": "Factura", "nombre": "Factura sin errores", "pregunta": "Factura sin errores, con la lectura del medidor y los c\u00e1lculos tarifarios correctos", "imp": 4.1, "desemp": 78.5, "prio": 20, "cuadrante": "Cuadrante III \u2013 Fortalezas Clave", "color": "#3b82f6", "neg_pct": 8.4, "neu_pct": 29.8, "pos_pct": 61.8, "nota": 7.62, "causas": "Alta precisi\u00f3n en facturaci\u00f3n; reclamos focalizados en per\u00edodos de cambio de titularidad o tarifa social.", "accion": "Validaci\u00f3n algor\u00edtmica de consistencia previa a la emisi\u00f3n de facturaci\u00f3n.", "cuadrante_oficial_cier": "Cuadrante III (Superior Derecho - 2\u00ba Orden / Mantener)", "cuadrante_num_cier": 3, "orden_intervencion": "2\u00ba Orden de Intervenci\u00f3n (Prioridad para MANTENER)"}, {"num": 13, "sigla": "FE5", "area": "Factura", "nombre": "Conveniencia de fechas de vencimiento", "pregunta": "Conveniencia de la fecha de vencimiento de la factura respecto a las fechas de cobro de ingresos", "imp": 3.15, "desemp": 68.4, "prio": 21, "cuadrante": "Cuadrante IV \u2013 Ventajas Secundarias", "color": "#f59e0b", "neg_pct": 12.8, "neu_pct": 35.1, "pos_pct": 52.1, "nota": 7.05, "causas": "Aceptaci\u00f3n favorable; solicitud recurrente de poder elegir d\u00eda de vencimiento personalizado.", "accion": "Opci\u00f3n de 'Vencimiento a tu medida' para clientes con adhesi\u00f3n al d\u00e9bito autom\u00e1tico.", "cuadrante_oficial_cier": "Cuadrante IV (Superior Izquierdo - 3\u00ba Orden)", "cuadrante_num_cier": 4, "orden_intervencion": "3\u00ba Orden de Intervenci\u00f3n (Ventajas Secundarias)"}, {"num": 21, "sigla": "AT7", "area": "Atenci\u00f3n", "nombre": "Plazo informado para soluci\u00f3n", "pregunta": "Plazo informado para la resoluci\u00f3n del problema reportado o realizaci\u00f3n del tr\u00e1mite", "imp": 2.85, "desemp": 66.2, "prio": 22, "cuadrante": "Cuadrante IV \u2013 Ventajas Secundarias", "color": "#f59e0b", "neg_pct": 13.6, "neu_pct": 38.4, "pos_pct": 48.0, "nota": 6.9, "causas": "Los plazos informados son razonables, pero a veces no se actualizan si ocurre una reprogramaci\u00f3n t\u00e9cnica.", "accion": "Notificaci\u00f3n por mensaje de texto ante cualquier cambio en el estado del tr\u00e1mite.", "cuadrante_oficial_cier": "Cuadrante IV (Superior Izquierdo - 3\u00ba Orden)", "cuadrante_num_cier": 4, "orden_intervencion": "3\u00ba Orden de Intervenci\u00f3n (Ventajas Secundarias)"}, {"num": 23, "sigla": "AT9", "area": "Atenci\u00f3n", "nombre": "Cumplimiento del plazo informado", "pregunta": "Cumplimiento efectivo de los plazos informados para resolver las solicitudes de los clientes", "imp": 2.7, "desemp": 67.5, "prio": 23, "cuadrante": "Cuadrante IV \u2013 Ventajas Secundarias", "color": "#f59e0b", "neg_pct": 12.9, "neu_pct": 37.8, "pos_pct": 49.3, "nota": 6.96, "causas": "Buen cumplimiento en tr\u00e1mites comerciales est\u00e1ndar; retrasos espor\u00e1dicos en conexiones nuevas.", "accion": "Monitoreo en tiempo real de ANS (Acuerdos de Nivel de Servicio) por sucursal.", "cuadrante_oficial_cier": "Cuadrante IV (Superior Izquierdo - 3\u00ba Orden)", "cuadrante_num_cier": 4, "orden_intervencion": "3\u00ba Orden de Intervenci\u00f3n (Ventajas Secundarias)"}, {"num": 22, "sigla": "AT8", "area": "Atenci\u00f3n", "nombre": "Soluci\u00f3n definitiva del problema", "pregunta": "Soluci\u00f3n definitiva del problema reportado (no necesitar hacer el pedido otra vez)", "imp": 2.65, "desemp": 65.8, "prio": 24, "cuadrante": "Cuadrante IV \u2013 Ventajas Secundarias", "color": "#f59e0b", "neg_pct": 14.1, "neu_pct": 38.6, "pos_pct": 47.3, "nota": 6.86, "causas": "Resoluci\u00f3n en primer contacto en la mayor\u00eda de tr\u00e1mites simples; reiteraci\u00f3n en reclamos t\u00e9cnicos complejos.", "accion": "Protocolo FCR (First Contact Resolution) con seguimiento cerrado obligatorio.", "cuadrante_oficial_cier": "Cuadrante IV (Superior Izquierdo - 3\u00ba Orden)", "cuadrante_num_cier": 4, "orden_intervencion": "3\u00ba Orden de Intervenci\u00f3n (Ventajas Secundarias)"}, {"num": 17, "sigla": "AT3", "area": "Atenci\u00f3n", "nombre": "Duraci\u00f3n de la atenci\u00f3n (Agilidad)", "pregunta": "Tiempo que dura la atenci\u00f3n y agilidad del personal en el momento de la atenci\u00f3n al cliente", "imp": 2.4, "desemp": 74.2, "prio": 25, "cuadrante": "Cuadrante IV \u2013 Ventajas Secundarias", "color": "#f59e0b", "neg_pct": 8.9, "neu_pct": 34.2, "pos_pct": 56.9, "nota": 7.42, "causas": "Una vez atendido, el tiempo de gesti\u00f3n es \u00e1gil y eficaz (56.9% notas 8-10).", "accion": "Optimizaci\u00f3n del software de ventanilla para unificar pantallas de consulta comercial.", "cuadrante_oficial_cier": "Cuadrante IV (Superior Izquierdo - 3\u00ba Orden)", "cuadrante_num_cier": 4, "orden_intervencion": "3\u00ba Orden de Intervenci\u00f3n (Ventajas Secundarias)"}, {"num": 19, "sigla": "AT5", "area": "Atenci\u00f3n", "nombre": "Claridad de la informaci\u00f3n brindada", "pregunta": "Facilidad de comprensi\u00f3n y claridad de las informaciones dadas por el personal de atenci\u00f3n", "imp": 2.25, "desemp": 76.8, "prio": 26, "cuadrante": "Cuadrante IV \u2013 Ventajas Secundarias", "color": "#f59e0b", "neg_pct": 7.5, "neu_pct": 32.8, "pos_pct": 59.7, "nota": 7.58, "causas": "Excelente claridad verbal de los operadores en canales comerciales y presenciales.", "accion": "Estandarizaci\u00f3n de gu\u00edas de respuesta r\u00e1pida para preguntas frecuentes de facturaci\u00f3n.", "cuadrante_oficial_cier": "Cuadrante IV (Superior Izquierdo - 3\u00ba Orden)", "cuadrante_num_cier": 4, "orden_intervencion": "3\u00ba Orden de Intervenci\u00f3n (Ventajas Secundarias)"}, {"num": 12, "sigla": "FE4", "area": "Factura", "nombre": "Locales y puntos para el pago", "pregunta": "Disponibilidad de puntos de pago, tales como bancos, internet, supermercados, QR y apps", "imp": 2.15, "desemp": 88.5, "prio": 27, "cuadrante": "Cuadrante IV \u2013 Ventajas Secundarias", "color": "#f59e0b", "neg_pct": 3.8, "neu_pct": 21.5, "pos_pct": 74.7, "nota": 8.35, "causas": "Puntaje m\u00e1s alto de la encuesta: amplia red de bocas de cobranza presenciales y pagos digitales (74.7% notas 8-10).", "accion": "Mantener alianzas con billeteras virtuales, QR interoperable y d\u00e9bito autom\u00e1tico.", "cuadrante_oficial_cier": "Cuadrante IV (Superior Izquierdo - 3\u00ba Orden)", "cuadrante_num_cier": 4, "orden_intervencion": "3\u00ba Orden de Intervenci\u00f3n (Ventajas Secundarias)"}, {"num": 18, "sigla": "AT4", "area": "Atenci\u00f3n", "nombre": "Conocimiento del personal", "pregunta": "Conocimiento t\u00e9cnico y comercial que los empleados tienen sobre los tr\u00e1mites y temas consultados", "imp": 2.05, "desemp": 79.1, "prio": 28, "cuadrante": "Cuadrante IV \u2013 Ventajas Secundarias", "color": "#f59e0b", "neg_pct": 6.8, "neu_pct": 31.4, "pos_pct": 61.8, "nota": 7.68, "causas": "Alta idoneidad y capacitaci\u00f3n percibida en los equipos de atenci\u00f3n comercial.", "accion": "Actualizaci\u00f3n continua ante cambios normativos del ERSeP y nuevas tarifas segmentadas.", "cuadrante_oficial_cier": "Cuadrante IV (Superior Izquierdo - 3\u00ba Orden)", "cuadrante_num_cier": 4, "orden_intervencion": "3\u00ba Orden de Intervenci\u00f3n (Ventajas Secundarias)"}, {"num": 20, "sigla": "AT6", "area": "Atenci\u00f3n", "nombre": "Cortes\u00eda y respeto en la atenci\u00f3n", "pregunta": "Calidad del trato en cuanto a la cortes\u00eda, respeto y amabilidad del personal con el cliente", "imp": 1.95, "desemp": 81.3, "prio": 29, "cuadrante": "Cuadrante IV \u2013 Ventajas Secundarias", "color": "#f59e0b", "neg_pct": 5.9, "neu_pct": 28.6, "pos_pct": 65.5, "nota": 7.85, "causas": "Muy buena valoraci\u00f3n del trato humano y respeto brindado por los trabajadores de EPEC.", "accion": "Programa de reconocimiento al personal de primera l\u00ednea con mejores evaluaciones de clientes.", "cuadrante_oficial_cier": "Cuadrante IV (Superior Izquierdo - 3\u00ba Orden)", "cuadrante_num_cier": 4, "orden_intervencion": "3\u00ba Orden de Intervenci\u00f3n (Ventajas Secundarias)"}, {"num": 14, "sigla": "FE6", "area": "Factura", "nombre": "Comprensi\u00f3n de tasas e impuestos", "pregunta": "Facilidad para entender el cobro de tasas municipales e impuestos que vienen en la factura de luz", "imp": 1.8, "desemp": 59.8, "prio": 30, "cuadrante": "Cuadrante II \u2013 Baja Prioridad", "color": "#64748b", "neg_pct": 19.5, "neu_pct": 39.2, "pos_pct": 41.3, "nota": 6.4, "causas": "Malestar por la inclusi\u00f3n de la tasa municipal OIM y FODEP, aunque el cliente comprende que no es costo propio de EPEC.", "accion": "Campa\u00f1a pedag\u00f3gica informativa separando el costo neto de la energ\u00eda de los tributos de terceros.", "cuadrante_oficial_cier": "Cuadrante II (Inferior Izquierdo - \u00daltimo Orden)", "cuadrante_num_cier": 2, "orden_intervencion": "\u00daltimo Orden de Intervenci\u00f3n (Baja Prioridad)"}];
+    let labelMode = 'sigla';
+    let chartInstance = null;
+
+    function renderChart() {
+      const ctx = document.getElementById('chartMatriz');
+      if (chartInstance) chartInstance.destroy();
+
+      const q1Data = rawData.filter(d => d.cuadrante_num_cier === 1).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+      const q2Data = rawData.filter(d => d.cuadrante_num_cier === 2).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+      const q3Data = rawData.filter(d => d.cuadrante_num_cier === 3).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+      const q4Data = rawData.filter(d => d.cuadrante_num_cier === 4).map(d => ({ x: d.imp, y: d.desemp, raw: d }));
+
+      const codeLabelsPlugin = {
+        id: 'codeLabelsPlugin',
+        afterDatasetsDraw(chart) {
+          const { ctx } = chart;
+          chart.data.datasets.forEach((dataset, datasetIndex) => {
+            const meta = chart.getDatasetMeta(datasetIndex);
+            if (!meta || meta.hidden) return;
+
+            meta.data.forEach((element, index) => {
+              const pt = dataset.data[index];
+              const raw = pt?.raw;
+              if (!raw) return;
+
+              const { x, y } = element.getProps(['x', 'y'], true);
+              if (x == null || y == null || isNaN(x) || isNaN(y)) return;
+
+              const text = labelMode === 'sigla' ? String(raw.sigla) : String(raw.prio);
+
+              ctx.save();
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'middle';
+
+              const fontSize = labelMode === 'sigla' ? (text.length > 3 ? 8.5 : 9.5) : (text.length > 1 ? 9.5 : 10.5);
+              ctx.font = `700 ${fontSize}px "JetBrains Mono", sans-serif`;
+
+              ctx.fillStyle = '#ffffff';
+              ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+              ctx.shadowBlur = 3;
+              ctx.shadowOffsetX = 0;
+              ctx.shadowOffsetY = 1;
+
+              ctx.fillText(text, x, y + 0.5);
+              ctx.restore();
+            });
+          });
+        }
+      };
+
+      const backgroundLinesPlugin = {
+        id: 'backgroundLinesPlugin',
+        beforeDraw(chart) {
+          const { ctx, chartArea: { left, right, top, bottom }, scales: { x, y } } = chart;
+          const xPos = x.getPixelForValue(3.333);
+          const yPos = y.getPixelForValue(64.8);
+
+          ctx.save();
+          // Quadrant background fills
+          ctx.fillStyle = 'rgba(239, 68, 68, 0.04)';
+          ctx.fillRect(xPos, yPos, right - xPos, bottom - yPos);
+
+          ctx.fillStyle = 'rgba(59, 130, 246, 0.04)';
+          ctx.fillRect(xPos, top, right - xPos, yPos - top);
+
+          ctx.fillStyle = 'rgba(245, 158, 11, 0.03)';
+          ctx.fillRect(left, top, xPos - left, yPos - top);
+
+          ctx.fillStyle = 'rgba(100, 116, 139, 0.03)';
+          ctx.fillRect(left, yPos, xPos - left, bottom - yPos);
+
+          // Threshold dividing lines
+          ctx.lineWidth = 1.8;
+          ctx.setLineDash([6, 5]);
+          ctx.strokeStyle = '#0284c7';
+
+          // Vertical
+          ctx.beginPath();
+          ctx.moveTo(xPos, top);
+          ctx.lineTo(xPos, bottom);
+          ctx.stroke();
+
+          // Horizontal
+          ctx.beginPath();
+          ctx.moveTo(left, yPos);
+          ctx.lineTo(right, yPos);
+          ctx.stroke();
+
+          ctx.restore();
+        }
+      };
+
+      chartInstance = new Chart(ctx, {
+        type: 'scatter',
+        data: {
+          datasets: [
+            {
+              label: 'Cuadrante I: Foco Urgente',
+              data: q1Data,
+              backgroundColor: '#ef4444',
+              borderColor: '#fca5a5',
+              borderWidth: 2,
+              pointRadius: 13.5,
+              pointHoverRadius: 16
+            },
+            {
+              label: 'Cuadrante III: Fortalezas Clave',
+              data: q3Data,
+              backgroundColor: '#3b82f6',
+              borderColor: '#93c5fd',
+              borderWidth: 2,
+              pointRadius: 13.5,
+              pointHoverRadius: 16
+            },
+            {
+              label: 'Cuadrante IV: Ventajas Secundarias',
+              data: q4Data,
+              backgroundColor: '#f59e0b',
+              borderColor: '#fde68a',
+              borderWidth: 2,
+              pointRadius: 13.5,
+              pointHoverRadius: 16
+            },
+            {
+              label: 'Cuadrante II: Baja Prioridad',
+              data: q2Data,
+              backgroundColor: '#64748b',
+              borderColor: '#cbd5e1',
+              borderWidth: 1.5,
+              pointRadius: 12.5,
+              pointHoverRadius: 15
+            }
+          ]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: 'rgba(15, 23, 42, 0.95)',
+              titleColor: '#38bdf8',
+              bodyColor: '#f8fafc',
+              borderColor: '#0284c7',
+              borderWidth: 1.5,
+              padding: 14,
+              cornerRadius: 10,
+              callbacks: {
+                title: (items) => {
+                  const raw = items[0]?.raw?.raw;
+                  return `[${raw.sigla}] ${raw.nombre} (Prio #${raw.prio})`;
+                },
+                label: (item) => {
+                  const raw = item.raw?.raw;
+                  return [
+                    `Área: ${raw.area}`,
+                    `Importancia: ${raw.imp}% | Desempeño: ${raw.desemp} pts`,
+                    `Cuadrante: ${raw.cuadrante}`,
+                    `Pregunta: ${raw.pregunta}`
+                  ];
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              min: 0.5,
+              max: 9.5,
+              title: {
+                display: true,
+                text: 'Importancia Relativa 2026 (%) ➔ [Corte Promedio: 3.33%]',
+                color: '#cbd5e1',
+                font: { weight: 'bold', size: 12.5 }
+              },
+              grid: { color: 'rgba(51, 65, 85, 0.4)' },
+              ticks: { color: '#94a3b8', font: { size: 11 } }
+            },
+            y: {
+              min: 35,
+              max: 95,
+              title: {
+                display: true,
+                text: 'Desempeño EPEC 2026 IDAT (0-100) ➔ [Corte Promedio: 64.8 pts]',
+                color: '#cbd5e1',
+                font: { weight: 'bold', size: 12.5 }
+              },
+              grid: { color: 'rgba(51, 65, 85, 0.4)' },
+              ticks: { color: '#94a3b8', font: { size: 11 } }
+            }
+          }
+        },
+        plugins: [backgroundLinesPlugin, codeLabelsPlugin]
+      });
+    }
+
+    function setLabelMode(mode) {
+      labelMode = mode;
+      document.getElementById('btn-codes').classList.toggle('active', mode === 'sigla');
+      document.getElementById('btn-ranks').classList.toggle('active', mode === 'prio');
+      if (chartInstance) chartInstance.update();
+    }
+
+    window.addEventListener('DOMContentLoaded', renderChart);
+  </script>
+</body>
+</html>

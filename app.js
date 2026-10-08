@@ -3022,15 +3022,15 @@ function initMatrizScatterChart() {
 
           const isSel = selectedAttributes.has(raw.sigla);
           const hasSelection = selectedAttributes.size > 0;
-          const text = String(raw.prio);
+          const text = String(raw.sigla || raw.prio);
 
           ctx.save();
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
 
-          // Tipografía optimizada y legible
-          const isTwoDigit = text.length > 1;
-          const fontSize = isSel ? 11 : (isTwoDigit ? 9.5 : 10.5);
+          // Tipografía optimizada para códigos de preguntas (ej. AT1, SE1, IC1)
+          const isLongCode = text.length > 3;
+          const fontSize = isSel ? 11.5 : (isLongCode ? 8.5 : 9.5);
           ctx.font = `700 ${fontSize}px "JetBrains Mono", "Inter", -apple-system, sans-serif`;
 
           if (hasSelection && !isSel) {
@@ -3067,7 +3067,7 @@ function initMatrizScatterChart() {
           backgroundColor: getPointBgColor('#ef4444'),
           borderColor: getPointBorderColor('#fca5a5'),
           borderWidth: getPointBorderWidth(2),
-          pointRadius: getPointRadius(11),
+          pointRadius: getPointRadius(13.5),
           pointHoverRadius: 14
         },
         {
@@ -3076,7 +3076,7 @@ function initMatrizScatterChart() {
           backgroundColor: getPointBgColor('#64748b'),
           borderColor: getPointBorderColor('#cbd5e1'),
           borderWidth: getPointBorderWidth(1),
-          pointRadius: getPointRadius(9.5),
+          pointRadius: getPointRadius(12.5),
           pointHoverRadius: 13
         },
         {
@@ -3085,7 +3085,7 @@ function initMatrizScatterChart() {
           backgroundColor: getPointBgColor('#3b82f6'),
           borderColor: getPointBorderColor('#93c5fd'),
           borderWidth: getPointBorderWidth(1.5),
-          pointRadius: getPointRadius(10),
+          pointRadius: getPointRadius(13.0),
           pointHoverRadius: 13.5
         },
         {
@@ -3094,7 +3094,7 @@ function initMatrizScatterChart() {
           backgroundColor: getPointBgColor('#f59e0b'),
           borderColor: getPointBorderColor('#fde68a'),
           borderWidth: getPointBorderWidth(1.5),
-          pointRadius: getPointRadius(9.5),
+          pointRadius: getPointRadius(12.5),
           pointHoverRadius: 13
         }
       ]
