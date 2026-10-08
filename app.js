@@ -1133,10 +1133,10 @@ function renderImportanceWeights() {
 
   const weights = [
     { area: 'Suministro de Energía', sigla: 'SE', peso: 33.79, idar2025: 75.79, idar2026: 78.48, evol: -0.49, aporte: 26.52, color: 'cyan', icon: '⚡' },
-    { area: 'Información y Comunicación', sigla: 'IC', peso: 20.09, idar2025: 59.48, idar2026: 52.03, evol: -1.45, aporte: 2.39, color: 'slate', icon: '📢' },
-    { area: 'Factura de Energía', sigla: 'FE', peso: 19.54, idar2025: 70.21, idar2026: 70.38, evol: 2.13, aporte: 12.81, color: 'amber', icon: '📄' },
-    { area: 'Atención al Cliente', sigla: 'AT', peso: 17.06, idar2025: 66.63, idar2026: 68.10, evol: -0.68, aporte: 14.61, color: 'blue', icon: '👤' },
-    { area: 'Imagen Institucional', sigla: 'IM', peso: 9.52, idar2025: 56.54, idar2026: 60.53, evol: 0.49, aporte: 8.55, color: 'purple', icon: '🏛️' }
+    { area: 'Información y Comunicación', sigla: 'IC', peso: 20.09, idar2025: 59.48, idar2026: 52.03, evol: -1.45, aporte: 10.45, color: 'slate', icon: '📢' },
+    { area: 'Factura de Energía', sigla: 'FE', peso: 19.54, idar2025: 70.21, idar2026: 70.38, evol: 2.13, aporte: 13.75, color: 'amber', icon: '📄' },
+    { area: 'Atención al Cliente', sigla: 'AT', peso: 17.06, idar2025: 66.63, idar2026: 68.10, evol: -0.68, aporte: 8.76, color: 'blue', icon: '👤' },
+    { area: 'Imagen Institucional', sigla: 'IM', peso: 9.52, idar2025: 56.54, idar2026: 60.53, evol: 0.49, aporte: 6.48, color: 'purple', icon: '🏛️' }
   ];
 
   const barsHtml = `
@@ -1148,9 +1148,10 @@ function renderImportanceWeights() {
           <div class="importance-item accent-${w.color}">
             <div class="importance-header">
               <span class="importance-name">${w.icon} ${w.area} (${w.sigla})</span>
-              <div style="display: flex; align-items: center; gap: 0.6rem;">
-                <span style="font-size: 0.75rem; color: ${evolColor}; font-weight: 600;">(${evolSign}${w.evol.toFixed(2)} pp)</span>
-                <span class="importance-val font-mono">${w.peso.toFixed(2)}%</span>
+              <div style="display: flex; align-items: center; gap: 0.85rem;">
+                <span style="font-size: 0.75rem; color: ${evolColor}; font-weight: 600;">Evolución: (${evolSign}${w.evol.toFixed(2)} pp)</span>
+                <span style="font-size: 0.78rem; color: #cbd5e1; font-weight: 700;">Peso IR: <strong class="font-mono text-amber-400">${w.peso.toFixed(2)}%</strong></span>
+                <span class="importance-val font-mono text-green-400 font-bold" style="background: rgba(16, 185, 129, 0.15); padding: 0.15rem 0.5rem; border-radius: 4px;">${w.aporte.toFixed(2)} pts</span>
               </div>
             </div>
             <div class="progress-bar-bg">
@@ -1221,20 +1222,21 @@ function renderAreasKPIGrid() {
   container.innerHTML = areas.map(a => {
     const isPositive = a.difPuntos >= 0;
     const isCompl = a.complementaria || a.sigla === 'RSA';
+    const aporteVal = a.aporte_iscal ? a.aporte_iscal.toFixed(2) : (a.aporte ? a.aporte.toFixed(2) : '0.00');
     const pesoTag = isCompl 
       ? `<span class="badge-tag-slate" style="font-size: 0.7rem;">Complementaria CIER</span>` 
-      : `<span>Peso CIER: <strong style="color: #fbbf24;">${a.pesoCIER ? a.pesoCIER.toFixed(2) : '0'}%</strong></span>`;
+      : `<span>Aporte: <strong style="color: #34d399;">${aporteVal} pts</strong> <span class="text-muted">(IR: ${a.pesoCIER ? a.pesoCIER.toFixed(2) : '0'}%)</span></span>`;
 
     return `
       <div class="area-kpi-card">
         <div class="area-kpi-header">
           <span class="area-sigla">${a.sigla}</span>
-          <span class="area-badge ${isPositive ? 'badge-up' : 'badge-down'}">${isPositive ? '+' : ''}${a.varIaop.toFixed(2)}% IAOP</span>
+          <span class="area-badge ${isPositive ? 'badge-up' : 'badge-down'}">${isPositive ? '+' : ''}${a.difPuntos.toFixed(2)} pp</span>
         </div>
         <h4 class="area-name">${a.area}</h4>
         <div class="area-score-row">
-          <span class="area-score-curr">${a.indice2026.toFixed(2)}</span>
-          <span class="area-score-prev">vs. ${a.indice2025.toFixed(2)} (2025)</span>
+          <span class="area-score-curr">${a.indice2026.toFixed(2)}%</span>
+          <span class="area-score-prev">vs. ${a.indice2025.toFixed(2)}% (2025)</span>
         </div>
         <div class="area-footer">
           <span>Nota: <strong>${a.promedioNotas2026 ? a.promedioNotas2026.toFixed(2) : (a.indice2026/10).toFixed(2)}</strong> / 10</span>
@@ -1245,44 +1247,62 @@ function renderAreasKPIGrid() {
   }).join('');
 }
 
-/* ==========================================================================
-   RENDER DETAILED INDICES TABLE WITH SCOPE TOGGLE
-   ========================================================================== */
 function renderIndicesTable() {
   const tbody = document.getElementById('indices-table-body');
   const thead = document.getElementById('indices-table-header');
   if (!tbody || !thead) return;
 
   const rawIndices = cierData.indices || [];
-  const rawRegional = cierData.regionalData || [];
+  
+  // Align regional data with area from rawIndices
+  const rawRegional = (cierData.regionalData || []).map((regItem, idx) => {
+    const matchingIndex = rawIndices.find(ind => ind.sigla && regItem.sigla && ind.sigla.trim().toLowerCase() === regItem.sigla.trim().toLowerCase()) 
+      || rawIndices.find(ind => ind.atributo && regItem.atributo && ind.atributo.trim().toLowerCase() === regItem.atributo.trim().toLowerCase())
+      || rawIndices[idx];
+    return {
+      ...regItem,
+      area: regItem.area || (matchingIndex ? matchingIndex.area : 'Otros')
+    };
+  });
+
   const searchVal = (document.getElementById('indices-search-input')?.value || '').toLowerCase().trim();
+
+  // Helper filter function for dimension and search
+  const passesFilters = (item) => {
+    if (item.sigla === 'Sigla' || item.atributo === 'Descripción resumida') return false;
+    const matchDim = (currentDimFilter === 'all') || (item.area === currentDimFilter);
+    const matchSearch = !searchVal || 
+      (item.atributo && item.atributo.toLowerCase().includes(searchVal)) || 
+      (item.sigla && item.sigla.toLowerCase().includes(searchVal)) ||
+      (item.area && item.area.toLowerCase().includes(searchVal));
+    return matchDim && matchSearch;
+  };
 
   // Determine which dataset and columns to show based on currentScope
   if (currentScope === 'total') {
     thead.innerHTML = `
-      <th>Dimensión</th>
-      <th>Sigla</th>
-      <th>Tipo</th>
-      <th>Atributo Canónico</th>
-      <th>Índice 2025 (Base)</th>
-      <th>Índice 2026 (Actual)</th>
-      <th>Nota Prom. 2026</th>
-      <th>Dif. Puntos (2026 vs 2025)</th>
-      <th>Var. IAOP (%)</th>
+      <tr>
+        <th>Dimensión</th>
+        <th>Sigla</th>
+        <th>Tipo</th>
+        <th>Atributo Canónico</th>
+        <th style="text-align: right;">Índice 2025 (Base)</th>
+        <th style="text-align: right;">Índice 2026 (Actual)</th>
+        <th style="text-align: right;">Nota Prom. 2026</th>
+        <th style="text-align: right;">Dif. Puntos (2026 vs 2025)</th>
+        <th style="text-align: right;">Var. IAOP (%)</th>
+      </tr>
     `;
 
-    const filtered = rawIndices.filter(item => {
-      if (item.sigla === 'Sigla' || item.atributo === 'Descripción resumida') return false;
-      const matchDim = (currentDimFilter === 'all') || (item.area === currentDimFilter);
-      const matchSearch = !searchVal || 
-        item.atributo.toLowerCase().includes(searchVal) || 
-        item.sigla.toLowerCase().includes(searchVal) ||
-        item.area.toLowerCase().includes(searchVal);
-      return matchDim && matchSearch;
-    });
+    const filtered = rawIndices.filter(passesFilters);
+
+    if (filtered.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="9" class="text-center text-muted" style="padding: 2rem;">No se encontraron indicadores para el filtro seleccionado.</td></tr>`;
+      return;
+    }
 
     tbody.innerHTML = filtered.map(item => {
-      const dif = item.difPuntos || (item.indice2026 - item.indice2025);
+      const dif = item.difPuntos !== undefined ? item.difPuntos : (item.indice2026 - item.indice2025);
       const difClass = dif > 0 ? 'text-green font-semibold' : (dif < 0 ? 'text-red font-semibold' : 'text-slate');
       const iaopClass = item.varIaop > 0 ? 'badge-pill-green' : (item.varIaop < 0 ? 'badge-pill-red' : 'badge-pill-slate');
 
@@ -1292,60 +1312,139 @@ function renderIndicesTable() {
           <td><code class="code-badge">${item.sigla || '-'}</code></td>
           <td><span class="type-tag">${item.tipo || '-'}</span></td>
           <td class="font-medium text-slate-100">${item.atributo}</td>
-          <td class="text-right text-slate-400">${item.indice2025 ? item.indice2025.toFixed(2) : '-'}</td>
-          <td class="text-right font-bold text-cyan-400">${item.indice2026 ? item.indice2026.toFixed(2) : '-'}</td>
-          <td class="text-right font-semibold text-slate-200">${item.notaPromedio2026 ? item.notaPromedio2026.toFixed(2) : '-'}</td>
-          <td class="text-right ${difClass}">${dif > 0 ? '+' : ''}${dif.toFixed(2)}</td>
-          <td class="text-right"><span class="${iaopClass}">${item.varIaop > 0 ? '+' : ''}${item.varIaop.toFixed(2)}%</span></td>
+          <td class="text-right text-slate-400 font-mono">${item.indice2025 ? item.indice2025.toFixed(2) + '%' : '-'}</td>
+          <td class="text-right font-bold text-cyan-400 font-mono">${item.indice2026 ? item.indice2026.toFixed(2) + '%' : '-'}</td>
+          <td class="text-right font-semibold text-slate-200 font-mono">${item.notaPromedio2026 ? item.notaPromedio2026.toFixed(2) : '-'}</td>
+          <td class="text-right ${difClass} font-mono">${dif > 0 ? '+' : ''}${dif.toFixed(2)} pp</td>
+          <td class="text-right"><span class="${iaopClass}">${item.varIaop > 0 ? '+' : ''}${item.varIaop ? item.varIaop.toFixed(2) : '0.00'}%</span></td>
+        </tr>
+      `;
+    }).join('');
+
+  } else if (currentScope === 'capital') {
+    thead.innerHTML = `
+      <tr>
+        <th>Dimensión</th>
+        <th>Sigla</th>
+        <th>Tipo</th>
+        <th>Atributo Canónico</th>
+        <th style="text-align: right;">Capital 2025</th>
+        <th style="text-align: right;">Capital 2026 (Actual)</th>
+        <th style="text-align: right;">Dif. Capital (pp)</th>
+        <th style="text-align: right;">Var. IAOP Capital</th>
+      </tr>
+    `;
+
+    const filtered = rawRegional.filter(passesFilters);
+    if (filtered.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="8" class="text-center text-muted" style="padding: 2rem;">No se encontraron indicadores para el filtro seleccionado.</td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = filtered.map(item => {
+      const difCap = (item.capital2026 !== undefined && item.capital2025 !== undefined) ? (item.capital2026 - item.capital2025) : 0;
+      const difClass = difCap > 0 ? 'text-green font-semibold' : (difCap < 0 ? 'text-red font-semibold' : 'text-slate');
+      const varIaopCap = item.capital2025 ? ((item.capital2026 - item.capital2025) / item.capital2025 * 100) : 0;
+      const iaopClass = varIaopCap > 0 ? 'badge-pill-green' : (varIaopCap < 0 ? 'badge-pill-red' : 'badge-pill-slate');
+
+      return `
+        <tr>
+          <td><span class="dim-tag">${item.area}</span></td>
+          <td><code class="code-badge">${item.sigla || '-'}</code></td>
+          <td><span class="type-tag">${item.tipo || '-'}</span></td>
+          <td class="font-medium text-slate-100">${item.atributo}</td>
+          <td class="text-right text-slate-400 font-mono">${item.capital2025 ? item.capital2025.toFixed(2) + '%' : '-'}</td>
+          <td class="text-right font-bold text-cyan-400 font-mono">${item.capital2026 ? item.capital2026.toFixed(2) + '%' : '-'}</td>
+          <td class="text-right ${difClass} font-mono">${difCap > 0 ? '+' : ''}${difCap.toFixed(2)} pp</td>
+          <td class="text-right"><span class="${iaopClass}">${varIaopCap > 0 ? '+' : ''}${varIaopCap.toFixed(2)}%</span></td>
+        </tr>
+      `;
+    }).join('');
+
+  } else if (currentScope === 'interior') {
+    thead.innerHTML = `
+      <tr>
+        <th>Dimensión</th>
+        <th>Sigla</th>
+        <th>Tipo</th>
+        <th>Atributo Canónico</th>
+        <th style="text-align: right;">Interior 2025</th>
+        <th style="text-align: right;">Interior 2026 (Actual)</th>
+        <th style="text-align: right;">Dif. Interior (pp)</th>
+        <th style="text-align: right;">Var. IAOP Interior</th>
+      </tr>
+    `;
+
+    const filtered = rawRegional.filter(passesFilters);
+    if (filtered.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="8" class="text-center text-muted" style="padding: 2rem;">No se encontraron indicadores para el filtro seleccionado.</td></tr>`;
+      return;
+    }
+
+    tbody.innerHTML = filtered.map(item => {
+      const difInt = (item.interior2026 !== undefined && item.interior2025 !== undefined) ? (item.interior2026 - item.interior2025) : 0;
+      const difClass = difInt > 0 ? 'text-green font-semibold' : (difInt < 0 ? 'text-red font-semibold' : 'text-slate');
+      const varIaopInt = item.interior2025 ? ((item.interior2026 - item.interior2025) / item.interior2025 * 100) : 0;
+      const iaopClass = varIaopInt > 0 ? 'badge-pill-green' : (varIaopInt < 0 ? 'badge-pill-red' : 'badge-pill-slate');
+
+      return `
+        <tr>
+          <td><span class="dim-tag">${item.area}</span></td>
+          <td><code class="code-badge">${item.sigla || '-'}</code></td>
+          <td><span class="type-tag">${item.tipo || '-'}</span></td>
+          <td class="font-medium text-slate-100">${item.atributo}</td>
+          <td class="text-right text-slate-400 font-mono">${item.interior2025 ? item.interior2025.toFixed(2) + '%' : '-'}</td>
+          <td class="text-right font-bold text-blue-400 font-mono">${item.interior2026 ? item.interior2026.toFixed(2) + '%' : '-'}</td>
+          <td class="text-right ${difClass} font-mono">${difInt > 0 ? '+' : ''}${difInt.toFixed(2)} pp</td>
+          <td class="text-right"><span class="${iaopClass}">${varIaopInt > 0 ? '+' : ''}${varIaopInt.toFixed(2)}%</span></td>
         </tr>
       `;
     }).join('');
 
   } else {
-    // Regional Scope Table
+    // Gap Scope Table
     thead.innerHTML = `
-      <th>Atributo Canónico</th>
-      <th>Sigla</th>
-      <th>Tipo</th>
-      <th>Capital 2025</th>
-      <th>Capital 2026 (Actual)</th>
-      <th>Interior 2025</th>
-      <th>Interior 2026 (Actual)</th>
-      <th>Brecha Territorial (Capital vs Interior 2026)</th>
+      <tr>
+        <th>Dimensión</th>
+        <th>Sigla</th>
+        <th>Tipo</th>
+        <th>Atributo Canónico</th>
+        <th style="text-align: right;">Capital 2026</th>
+        <th style="text-align: right;">Interior 2026</th>
+        <th style="text-align: right;">Brecha Territorial (pp)</th>
+        <th style="text-align: center;">Diagnóstico Territorial</th>
+      </tr>
     `;
 
-    const filteredReg = rawRegional.filter(item => {
-      if (item.sigla === 'Sigla' || item.atributo === 'Descripción resumida') return false;
-      const matchSearch = !searchVal || 
-        item.atributo.toLowerCase().includes(searchVal) || 
-        item.sigla.toLowerCase().includes(searchVal);
-      return matchSearch;
-    });
+    const filtered = rawRegional.filter(passesFilters);
+    if (filtered.length === 0) {
+      tbody.innerHTML = `<tr><td colspan="8" class="text-center text-muted" style="padding: 2rem;">No se encontraron indicadores para el filtro seleccionado.</td></tr>`;
+      return;
+    }
 
-    tbody.innerHTML = filteredReg.map(item => {
-      const gap = item.brecha2026 || (item.capital2026 - item.interior2026);
+    tbody.innerHTML = filtered.map(item => {
+      const gap = item.brecha2026 !== undefined ? item.brecha2026 : (item.capital2026 - item.interior2026);
       const gapClass = gap > 0 ? 'text-cyan-400 font-semibold' : (gap < 0 ? 'text-amber-400 font-semibold' : 'text-slate');
-      const gapLabel = gap > 0 ? `+${gap.toFixed(2)} (Mayor en Capital)` : (gap < 0 ? `${gap.toFixed(2)} (Mayor en Interior)` : '0.00 (Igual)');
+      const gapBadge = gap > 0 
+        ? `<span class="badge-tag-cyan" style="font-size: 0.72rem;">+${gap.toFixed(2)} pp (Mayor en Capital)</span>` 
+        : (gap < 0 ? `<span class="badge-tag-amber" style="font-size: 0.72rem;">${gap.toFixed(2)} pp (Mayor en Interior)</span>` : `<span class="badge-tag" style="font-size: 0.72rem;">0.00 pp (Equilibrio)</span>`);
 
       return `
         <tr>
-          <td class="font-medium text-slate-100">${item.atributo}</td>
+          <td><span class="dim-tag">${item.area}</span></td>
           <td><code class="code-badge">${item.sigla || '-'}</code></td>
           <td><span class="type-tag">${item.tipo || '-'}</span></td>
-          <td class="text-right text-slate-400">${item.capital2025 ? item.capital2025.toFixed(2) : '-'}</td>
-          <td class="text-right font-bold text-cyan-400">${item.capital2026 ? item.capital2026.toFixed(2) : '-'}</td>
-          <td class="text-right text-slate-400">${item.interior2025 ? item.interior2025.toFixed(2) : '-'}</td>
-          <td class="text-right font-bold text-blue-400">${item.interior2026 ? item.interior2026.toFixed(2) : '-'}</td>
-          <td class="text-right ${gapClass}">${gapLabel}</td>
+          <td class="font-medium text-slate-100">${item.atributo}</td>
+          <td class="text-right font-bold text-cyan-400 font-mono">${item.capital2026 ? item.capital2026.toFixed(2) + '%' : '-'}</td>
+          <td class="text-right font-bold text-blue-400 font-mono">${item.interior2026 ? item.interior2026.toFixed(2) + '%' : '-'}</td>
+          <td class="text-right ${gapClass} font-mono">${gap > 0 ? '+' : ''}${gap.toFixed(2)} pp</td>
+          <td class="text-center">${gapBadge}</td>
         </tr>
       `;
     }).join('');
   }
 }
 
-/* ==========================================================================
-   RENDER BENCHMARK AND INTERNATIONAL PAISES TABLES
-   ========================================================================== */
 function renderBenchmarkTable() {
   const tbody = document.getElementById('benchmark-table-body');
   if (!tbody) return;

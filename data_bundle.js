@@ -743,11 +743,11 @@ window.CIER_DATA = {
     {
       "area": "Información y comunicación",
       "sigla": "IC",
-      "indice2025": 46.46,
+      "indice2025": 59.48,
       "indice2026": 52.03,
       "promedioNotas2026": 6.18,
-      "difPuntos": 5.57,
-      "varIaop": 11.99,
+      "difPuntos": -7.45,
+      "varIaop": -12.53,
       "pesoCIER": 20.09,
       "evolucion_pp": -1.45,
       "aporte_iscal": 10.45
@@ -768,13 +768,13 @@ window.CIER_DATA = {
       "area": "Atención al cliente",
       "sigla": "AT",
       "indice2025": 66.63,
-      "indice2026": 68.1,
+      "indice2026": 68.10,
       "promedioNotas2026": 7.06,
       "difPuntos": 1.47,
       "varIaop": 2.21,
       "pesoCIER": 17.06,
       "evolucion_pp": -0.68,
-      "aporte_iscal": 11.62
+      "aporte_iscal": 8.76
     },
     {
       "area": "Imagen institucional",
@@ -786,7 +786,7 @@ window.CIER_DATA = {
       "varIaop": 7.06,
       "pesoCIER": 9.52,
       "evolucion_pp": 0.49,
-      "aporte_iscal": 5.76
+      "aporte_iscal": 6.48
     },
     {
       "area": "Responsabilidad socioambiental",
@@ -18790,18 +18790,61 @@ window.CIER_DATA = {
   },
   "tarjetas_detractores": [
     {
-      "id": "gen-x",
-      "generacion": "GENERACIÓN X",
-      "franja_etaria": "46 a 61 años",
-      "arquetipo": "Pragmatismo y Control",
-      "color": "#f97316",
-      "padron_pct": "28,80%",
-      "alerta_principal": "Información sobre Medición del Consumo (IC05) y Plazos de Factura (FE01).",
+      "generacion": "Millennials / Gen Y",
+      "franja_etaria": "30 a 45 años",
+      "padron_pct": "31.20%",
+      "color": "#f59e0b",
+      "arquetipo": "Calidad, Tiempo y Valor",
+      "alerta_principal": "Calidad de Atención (AT06) y Tiempos de Espera (AT02)",
       "penaliza": [
-        "Variación de voltaje en electrodomésticos (SE02)",
-        "Idoneidad y conocimiento del personal de atención (AT04)",
-        "Falta de resolución definitiva en primer contacto (AT08)"
+        "Derechos del cliente (IM01)",
+        "Programas ambientales (RSA)",
+        "Relación costo/beneficio tarifa (PR)"
       ],
+      "expectativa": "Omnicanalidad 24/7, respeto estricto de su tiempo y sustentabilidad."
+    },
+    {
+      "generacion": "Generación X",
+      "franja_etaria": "46 a 61 años",
+      "padron_pct": "28.80%",
+      "color": "#ef4444",
+      "arquetipo": "Pragmatismo y Control",
+      "alerta_principal": "Medición del Consumo (IC05) y Plazo de Factura (FE01)",
+      "penaliza": [
+        "Variación de voltaje (SE02)",
+        "Conocimiento del personal (AT04)",
+        "Falta de resolución al 1° contacto (AT08)"
+      ],
+      "expectativa": "Transparencia absoluta en lecturas, estabilidad técnica y trámites sin burocracia."
+    },
+    {
+      "generacion": "Generación Z",
+      "franja_etaria": "18 a 29 años",
+      "padron_pct": "14.40%",
+      "color": "#06b6d4",
+      "arquetipo": "Inmediatez y Predictibilidad",
+      "alerta_principal": "Notificación de Interrupción (IC01) y Horario ETR",
+      "penaliza": [
+        "Reposición ante imprevistos (SE03)",
+        "Trámites presenciales lentos (AT03)",
+        "Incumplimiento de plazos (AT09)"
+      ],
+      "expectativa": "Notificaciones push en tiempo real y autogestión sin intermediarios."
+    },
+    {
+      "generacion": "Baby Boomers",
+      "franja_etaria": "desde 62 años",
+      "padron_pct": "25.60%",
+      "color": "#38bdf8",
+      "arquetipo": "Estabilidad y Acompañamiento",
+      "alerta_principal": "Complejidad de Canales Digitales de Pago (FE04)",
+      "penaliza": [
+        "Digitalización forzada sin asistencia",
+        "Falta de claridad en letra chica física"
+      ],
+      "expectativa": "Preservar ventanillas comerciales y soporte telefónico empático."
+    }
+  ],
       "expectativa": "Transparencia absoluta en lecturas, estabilidad técnica y trámites sin burocracia."
     },
     {
