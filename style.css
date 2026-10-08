@@ -824,10 +824,11 @@ body {
    ========================================================================== */
 /* Detractor Hero Card - Fondo Rojo Mate sin brillo */
 .detractor-hero-card {
-  background-color: #240e11 !important; /* Rojo oscuro mate sólido */
-  background-image: none !important; /* Sin brillos degradados que laven el texto */
-  border: 1px solid #ef4444 !important;
-  border-left: 6px solid #ef4444 !important;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.15), rgba(15, 23, 42, 0.95)) !important;
+  background-color: #1a120c !important; /* Naranja/Ámbar oscuro mate ejecutivo */
+  background-image: none !important;
+  border: 1px solid rgba(249, 115, 22, 0.5) !important;
+  border-left: 6px solid #f97316 !important;
   border-radius: var(--radius-xl);
   padding: 2rem;
   display: flex;
@@ -839,18 +840,58 @@ body {
   margin-bottom: 2rem;
 }
 
+.hero-badge-orange {
+  background: rgba(249, 115, 22, 0.25) !important;
+  color: #fed7aa !important;
+  border: 1px solid #f97316 !important;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  display: inline-block;
+}
+
+.chip-header-comp {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 2px;
+}
+
+.chip-badge-comp {
+  font-size: 0.70rem;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+.chip-compare-detail {
+  font-size: 0.72rem;
+  color: #94a3b8;
+  margin-top: 4px;
+  border-top: 1px dashed rgba(249, 115, 22, 0.25);
+  padding-top: 3px;
+}
+
+.chip-compare-detail strong {
+  color: #fed7aa;
+}
+
 .detractor-hero-content {
   max-width: 650px;
 }
 
 .hero-badge {
-  background: #ef4444 !important;
-  color: #ffffff !important;
-  border: 1px solid #f87171 !important;
+  background: rgba(249, 115, 22, 0.25) !important;
+  color: #fed7aa !important;
+  border: 1px solid #f97316 !important;
   font-size: 0.75rem;
   font-weight: 800;
-  padding: 0.3rem 0.75rem;
-  border-radius: 4px;
+  padding: 0.35rem 0.85rem;
+  border-radius: 6px;
   text-transform: uppercase;
   letter-spacing: 0.5px;
   display: inline-block;
@@ -884,12 +925,18 @@ body {
 }
 
 .chip-item {
-  background: #14080a !important; /* Fondo interior oscuro mate */
-  border: 1px solid rgba(239, 68, 68, 0.4) !important;
+  background: #140d08 !important; /* Fondo interior oscuro mate con tinte ámbar */
+  border: 1px solid rgba(249, 115, 22, 0.35) !important;
   padding: 0.85rem 1.15rem;
   border-radius: var(--radius-md);
   display: flex;
   flex-direction: column;
+  min-width: 155px;
+  transition: transform 0.2s, border-color 0.2s;
+}
+.chip-item:hover {
+  border-color: #f97316 !important;
+  transform: translateY(-2px);
 }
 
 .chip-val {
