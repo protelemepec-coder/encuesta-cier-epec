@@ -73,7 +73,9 @@ function initTabs() {
       }
       if (targetId === 'tab-detractores') {
         setTimeout(() => {
-          initDemografiaMultidimensionalCharts();
+          initPillarCharts();
+  initGenerationalCharts();
+  initDemografiaMultidimensionalCharts();
         }, 50);
       }
 
@@ -1679,6 +1681,8 @@ function renderDetractorSection() {
   renderGenerationalCards();
 
   // 4. Multidimensional Demographics Charts
+  initPillarCharts();
+  initGenerationalCharts();
   initDemografiaMultidimensionalCharts();
 }
 
@@ -3892,4 +3896,363 @@ function renderPrioritiesTable() {
       </tr>
     `;
   }).join('');
+}
+
+
+/* ==========================================================================
+   INTERACTIVE PILLAR CHARTS (EDAD, INGRESO, LOCALIZACIÓN, EDUCACIÓN 2026)
+   ========================================================================== */
+function initPillarCharts() {
+  // 1. Chart Pillar Edad
+  const ctxEdad = document.getElementById('chart-pillar-edad');
+  if (ctxEdad) {
+    if (chartsInstances.pillarEdad) chartsInstances.pillarEdad.destroy();
+    chartsInstances.pillarEdad = new Chart(ctxEdad, {
+      type: 'doughnut',
+      data: {
+        labels: ['Gen Z (18-29a)', 'Millennials (30-45a)', 'Gen X (46-61a)', 'Boomers (>62a)'],
+        datasets: [{
+          data: [14.4, 31.2, 28.8, 25.6],
+          backgroundColor: ['#06b6d4', '#f59e0b', '#ef4444', '#38bdf8'],
+          borderColor: '#0f172a',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '65%',
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (context) => ` ${context.label}: ${context.raw}% del padrón`
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // 2. Chart Pillar Ingreso
+  const ctxIngreso = document.getElementById('chart-pillar-ingreso');
+  if (ctxIngreso) {
+    if (chartsInstances.pillarIngreso) chartsInstances.pillarIngreso.destroy();
+    chartsInstances.pillarIngreso = new Chart(ctxIngreso, {
+      type: 'bar',
+      data: {
+        labels: ['< $500k', '$500k-1M', '$1M-1.5M', '$1.5M-2M', '> $2M'],
+        datasets: [{
+          label: '% Hogares',
+          data: [11.2, 29.6, 27.4, 17.8, 14.0],
+          backgroundColor: 'rgba(52, 211, 153, 0.75)',
+          borderColor: '#34d399',
+          borderWidth: 1.5,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (context) => ` Tramo: ${context.raw}% de los encuestados`
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { display: false },
+            ticks: { color: '#94a3b8', font: { size: 9 } }
+          },
+          y: {
+            grid: { color: 'rgba(255,255,255,0.06)' },
+            ticks: { color: '#64748b', font: { size: 8 } }
+          }
+        }
+      }
+    });
+  }
+
+  // 3. Chart Pillar Localización
+  const ctxLoc = document.getElementById('chart-pillar-loc');
+  if (ctxLoc) {
+    if (chartsInstances.pillarLoc) chartsInstances.pillarLoc.destroy();
+    chartsInstances.pillarLoc = new Chart(ctxLoc, {
+      type: 'doughnut',
+      data: {
+        labels: ['Córdoba Capital', 'Gran Córdoba / Sierras', 'Interior Cabeceras'],
+        datasets: [{
+          data: [43.6, 16.2, 40.2],
+          backgroundColor: ['#38bdf8', '#f59e0b', '#a855f7'],
+          borderColor: '#0f172a',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        cutout: '65%',
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (context) => ` ${context.label}: ${context.raw}%`
+            }
+          }
+        }
+      }
+    });
+  }
+
+  // 4. Chart Pillar Educación
+  const ctxEdu = document.getElementById('chart-pillar-edu');
+  if (ctxEdu) {
+    if (chartsInstances.pillarEdu) chartsInstances.pillarEdu.destroy();
+    chartsInstances.pillarEdu = new Chart(ctxEdu, {
+      type: 'bar',
+      data: {
+        labels: ['Univ. Completa', 'Univ. Curso', 'Terciario', 'Secundario', 'Primario'],
+        datasets: [{
+          label: '% Nivel',
+          data: [18.2, 17.6, 13.1, 28.3, 22.8],
+          backgroundColor: 'rgba(168, 85, 247, 0.75)',
+          borderColor: '#c084fc',
+          borderWidth: 1.5,
+          borderRadius: 4
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: {
+            callbacks: {
+              label: (context) => ` ${context.label}: ${context.raw}% de la muestra`
+            }
+          }
+        },
+        scales: {
+          x: {
+            grid: { color: 'rgba(255,255,255,0.06)' },
+            ticks: { color: '#64748b', font: { size: 8 } }
+          },
+          y: {
+            grid: { display: false },
+            ticks: { color: '#cbd5e1', font: { size: 9 } }
+          }
+        }
+      }
+    });
+  }
+}
+
+/* ==========================================================================
+   INTERACTIVE GENERATIONAL MULTIDIMENSIONAL CHARTS
+   ========================================================================== */
+let currentGenFilter = 'all';
+
+const genCohortData = {
+  all: {
+    radarLabels: ['Aprobación (IAC)', 'Suministro (SE)', 'Factura (FE)', 'Atención (AT)', 'Adopción Digital', 'Exigencia Operativa'],
+    datasets: [
+      {
+        label: 'Millennials (30-45a · 31.2%)',
+        data: [74.6, 78.5, 71.4, 55.6, 91.2, 89.6],
+        borderColor: '#f59e0b',
+        backgroundColor: 'rgba(245, 158, 11, 0.12)',
+        borderWidth: 2,
+        pointBackgroundColor: '#f59e0b'
+      },
+      {
+        label: 'Gen X (46-61a · 28.8%)',
+        data: [73.8, 76.8, 63.1, 68.4, 81.4, 92.4],
+        borderColor: '#ef4444',
+        backgroundColor: 'rgba(239, 68, 68, 0.12)',
+        borderWidth: 2,
+        pointBackgroundColor: '#ef4444'
+      },
+      {
+        label: 'Gen Z (18-29a · 14.4%)',
+        data: [81.5, 81.2, 89.2, 74.8, 96.5, 78.2],
+        borderColor: '#06b6d4',
+        backgroundColor: 'rgba(6, 182, 212, 0.12)',
+        borderWidth: 2,
+        pointBackgroundColor: '#06b6d4'
+      },
+      {
+        label: 'Baby Boomers (>62a · 25.6%)',
+        data: [83.8, 85.9, 76.5, 77.6, 52.8, 61.5],
+        borderColor: '#38bdf8',
+        backgroundColor: 'rgba(56, 189, 248, 0.12)',
+        borderWidth: 2,
+        pointBackgroundColor: '#38bdf8'
+      }
+    ]
+  },
+  'gen-y': {
+    radarLabels: ['Aprobación (IAC)', 'Suministro (SE)', 'Factura (FE)', 'Atención (AT)', 'Adopción Digital', 'Exigencia Operativa'],
+    datasets: [{
+      label: 'Millennials / Gen Y (30-45a · 31.20%)',
+      data: [74.6, 78.5, 71.4, 55.6, 91.2, 89.6],
+      borderColor: '#f59e0b',
+      backgroundColor: 'rgba(245, 158, 11, 0.25)',
+      borderWidth: 2.5,
+      pointBackgroundColor: '#f59e0b',
+      pointRadius: 5
+    }]
+  },
+  'gen-x': {
+    radarLabels: ['Aprobación (IAC)', 'Suministro (SE)', 'Factura (FE)', 'Atención (AT)', 'Adopción Digital', 'Exigencia Operativa'],
+    datasets: [{
+      label: 'Generación X (46-61a · 28.80%)',
+      data: [73.8, 76.8, 63.1, 68.4, 81.4, 92.4],
+      borderColor: '#ef4444',
+      backgroundColor: 'rgba(239, 68, 68, 0.25)',
+      borderWidth: 2.5,
+      pointBackgroundColor: '#ef4444',
+      pointRadius: 5
+    }]
+  },
+  'gen-z': {
+    radarLabels: ['Aprobación (IAC)', 'Suministro (SE)', 'Factura (FE)', 'Atención (AT)', 'Adopción Digital', 'Exigencia Operativa'],
+    datasets: [{
+      label: 'Generación Z (18-29a · 14.40%)',
+      data: [81.5, 81.2, 89.2, 74.8, 96.5, 78.2],
+      borderColor: '#06b6d4',
+      backgroundColor: 'rgba(6, 182, 212, 0.25)',
+      borderWidth: 2.5,
+      pointBackgroundColor: '#06b6d4',
+      pointRadius: 5
+    }]
+  },
+  'boomers': {
+    radarLabels: ['Aprobación (IAC)', 'Suministro (SE)', 'Factura (FE)', 'Atención (AT)', 'Adopción Digital', 'Exigencia Operativa'],
+    datasets: [{
+      label: 'Baby Boomers (desde 62a · 25.60%)',
+      data: [83.8, 85.9, 76.5, 77.6, 52.8, 61.5],
+      borderColor: '#38bdf8',
+      backgroundColor: 'rgba(56, 189, 248, 0.25)',
+      borderWidth: 2.5,
+      pointBackgroundColor: '#38bdf8',
+      pointRadius: 5
+    }]
+  }
+};
+
+function initGenerationalCharts() {
+  const ctxRadar = document.getElementById('chart-generaciones-radar');
+  const ctxBar = document.getElementById('chart-generaciones-bar');
+  if (!ctxRadar || !ctxBar) return;
+
+  const currentData = genCohortData[currentGenFilter] || genCohortData.all;
+
+  // Radar
+  if (chartsInstances.genRadar) chartsInstances.genRadar.destroy();
+  chartsInstances.genRadar = new Chart(ctxRadar, {
+    type: 'radar',
+    data: {
+      labels: currentData.radarLabels,
+      datasets: currentData.datasets
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        r: {
+          angleLines: { color: 'rgba(255,255,255,0.08)' },
+          grid: { color: 'rgba(255,255,255,0.08)' },
+          pointLabels: { color: '#cbd5e1', font: { family: 'Inter', size: 10, weight: '500' } },
+          ticks: { backdropColor: 'transparent', color: '#64748b', font: { size: 9 }, min: 40, max: 100 }
+        }
+      },
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: { color: '#e2e8f0', font: { family: 'Inter', size: 10 }, boxWidth: 10, padding: 6 }
+        }
+      }
+    }
+  });
+
+  // Bar Comparison
+  if (chartsInstances.genBar) chartsInstances.genBar.destroy();
+  chartsInstances.genBar = new Chart(ctxBar, {
+    type: 'bar',
+    data: {
+      labels: ['Baby Boomers (>62a)', 'Gen Z (18-29a)', 'Millennials (30-45a)', 'Gen X (46-61a)'],
+      datasets: [
+        {
+          label: 'Aprobación IAC (%)',
+          data: [83.8, 81.5, 74.6, 73.8],
+          backgroundColor: ['rgba(56, 189, 248, 0.75)', 'rgba(6, 182, 212, 0.75)', 'rgba(245, 158, 11, 0.75)', 'rgba(239, 68, 68, 0.75)'],
+          borderColor: ['#38bdf8', '#06b6d4', '#f59e0b', '#ef4444'],
+          borderWidth: 1.5,
+          borderRadius: 4
+        },
+        {
+          label: 'Padrón Muestral (%)',
+          data: [25.6, 14.4, 31.2, 28.8],
+          backgroundColor: 'rgba(148, 163, 184, 0.35)',
+          borderColor: '#94a3b8',
+          borderWidth: 1,
+          borderRadius: 4
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'top',
+          labels: { color: '#cbd5e1', font: { family: 'Inter', size: 10 }, boxWidth: 12 }
+        },
+        tooltip: {
+          callbacks: {
+            label: (context) => ` ${context.dataset.label}: ${context.raw}%`
+          }
+        }
+      },
+      scales: {
+        x: {
+          grid: { display: false },
+          ticks: { color: '#cbd5e1', font: { size: 10 } }
+        },
+        y: {
+          grid: { color: 'rgba(255,255,255,0.06)' },
+          ticks: { color: '#64748b', font: { size: 9 }, min: 0, max: 100 }
+        }
+      }
+    }
+  });
+}
+
+function filterGenerations(genKey) {
+  currentGenFilter = genKey;
+  document.querySelectorAll('#gen-filter-buttons .btn-preset-chip').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('data-gen') === genKey);
+  });
+  initGenerationalCharts();
+
+  // Highlight generational card if selected
+  const cards = document.querySelectorAll('#generational-cards-container .gen-card');
+  cards.forEach(card => {
+    if (genKey === 'all') {
+      card.style.opacity = '1';
+      card.style.transform = 'none';
+    } else {
+      const match = (genKey === 'gen-y' && card.innerText.includes('Millennials')) ||
+                    (genKey === 'gen-x' && card.innerText.includes('Generación X')) ||
+                    (genKey === 'gen-z' && card.innerText.includes('Generación Z')) ||
+                    (genKey === 'boomers' && card.innerText.includes('Boomers'));
+      card.style.opacity = match ? '1' : '0.4';
+      card.style.transform = match ? 'scale(1.02)' : 'none';
+      card.style.transition = 'all 0.3s ease';
+    }
+  });
 }

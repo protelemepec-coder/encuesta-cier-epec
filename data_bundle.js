@@ -18845,53 +18845,6 @@ window.CIER_DATA = {
       "expectativa": "Preservar ventanillas comerciales y soporte telefónico empático."
     }
   ],
-      "expectativa": "Transparencia absoluta en lecturas, estabilidad técnica y trámites sin burocracia."
-    },
-    {
-      "id": "millennials",
-      "generacion": "MILLENNIALS / GEN Y",
-      "franja_etaria": "30 a 45 años",
-      "arquetipo": "Calidad, Tiempo y Valor",
-      "color": "#ef4444",
-      "padron_pct": "31,20%",
-      "alerta_principal": "Calidad de Atención al Cliente (AT06) y Tiempos de Espera (AT02).",
-      "penaliza": [
-        "Respeto a los derechos del cliente (IM01)",
-        "Programas comunitarios y medioambientales (RSA)",
-        "Relación costo/beneficio de la tarifa (PR)"
-      ],
-      "expectativa": "Omnicanalidad 24/7, respeto estricto por su tiempo, ética corporativa y sustentabilidad ambiental."
-    },
-    {
-      "id": "gen-z",
-      "generacion": "GENERACIÓN Z",
-      "franja_etaria": "18 a 29 años",
-      "arquetipo": "Inmediatez y Predictibilidad",
-      "color": "#eab308",
-      "padron_pct": "14,40%",
-      "alerta_principal": "Aviso Anticipado de Interrupción (IC01) y Horario de Restitución (ETR).",
-      "penaliza": [
-        "Rapidez de reposición ante cortes imprevistos (SE03)",
-        "Duración de la atención y trámites presenciales (AT03)",
-        "Incumplimiento de plazos comprometidos (AT09)"
-      ],
-      "expectativa": "Notificaciones push móviles en tiempo real y servicios bajo demanda sin intermediarios."
-    },
-    {
-      "id": "baby-boomers",
-      "generacion": "BABY BOOMERS",
-      "franja_etaria": "desde 62 años",
-      "arquetipo": "Estabilidad y Acompañamiento",
-      "color": "#10b981",
-      "padron_pct": "25,60%",
-      "alerta_principal": "Disponibilidad y Complejidad de Canales Digitales de Pago (FE04).",
-      "penaliza": [
-        "Digitalización forzada sin asistencia humana",
-        "Falta de claridad en letra chica de la factura física"
-      ],
-      "expectativa": "Preservar ventanillas comerciales y soporte telefónico humano empático sin forzar la digitalización."
-    }
-  ],
   "simulador_mejora_iscal": {
     "linea_base_epec": {
       "iscal": 65.96,

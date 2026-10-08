@@ -1299,62 +1299,71 @@
 
       <!-- 4 Pillars Breakdown (Estadísticas 2026 N = 626) -->
       <div class="grid-4col mt-4">
-        <!-- Age Breakdown Card 2026 -->
-        <div class="glass-card">
+        <!-- 1. Age Breakdown Card 2026 with Mini Chart -->
+        <div class="glass-card" style="display: flex; flex-direction: column;">
           <div class="card-header-compact">
             <span class="card-icon">🎂</span>
             <h3 class="card-title-sm">1. Rango de Edad (2026)</h3>
           </div>
-          <p class="metric-highlight">73.9% en edad laboral activa (2026)</p>
-          <div class="demographic-bars" id="age-bars-container">
-            <!-- Rendered dynamically for 2026 -->
+          <p class="metric-highlight">73.9% en edad laboral activa (30 a 59 años)</p>
+          <div class="chart-wrapper" style="height: 140px; position: relative; margin-bottom: 0.5rem;">
+            <canvas id="chart-pillar-edad"></canvas>
           </div>
+          <ul class="clean-list" style="font-size: 0.73rem; margin-top: auto;">
+            <li><strong>Media:</strong> 47.8 años · <strong>Mediana:</strong> 46.0a</li>
+            <li><strong>Millennials (30-45a):</strong> 31.2% · <strong>Gen X (46-61a):</strong> 28.8%</li>
+            <li><strong>Boomers (&gt;62a):</strong> 25.6% · <strong>Gen Z (18-29a):</strong> 14.4%</li>
+          </ul>
         </div>
 
-        <!-- Income Card 2026 -->
-        <div class="glass-card">
+        <!-- 2. Income Card 2026 with Mini Chart -->
+        <div class="glass-card" style="display: flex; flex-direction: column;">
           <div class="card-header-compact">
             <span class="card-icon">💼</span>
             <h3 class="card-title-sm">2. Alcance Adquisitivo (2026)</h3>
           </div>
-          <p class="metric-highlight">+14.6% vs. clientes conformes (2026)</p>
-          <ul class="clean-list">
-            <li><strong>Ingreso Medio 2026:</strong> $1.338.726 / mes</li>
-            <li><strong>Mediana Salarial 2026:</strong> $1.100.000 / mes</li>
-            <li><strong>Decil CIER 2026:</strong> 10.72 (Medio-Alto)</li>
-            <li><strong>Pagos Digitales 2026:</strong> >85% adhesión (Débito/QR/Web)</li>
-            <li><strong>Solvencia 2026:</strong> Sin mora ni cortes por deuda</li>
+          <p class="metric-highlight">Media $1.338.726 (+14.6% vs Promotores)</p>
+          <div class="chart-wrapper" style="height: 140px; position: relative; margin-bottom: 0.5rem;">
+            <canvas id="chart-pillar-ingreso"></canvas>
+          </div>
+          <ul class="clean-list" style="font-size: 0.73rem; margin-top: auto;">
+            <li><strong>Mediana:</strong> $1.100.000 · <strong>P75:</strong> $1.900.000</li>
+            <li><strong>Decil CIER:</strong> 10.72 (Nivel Socioeconómico Medio-Alto)</li>
+            <li><strong>Adopción Digital:</strong> 85.4% pagan vía Débito / QR / Web</li>
           </ul>
         </div>
 
-        <!-- Location Card 2026 -->
-        <div class="glass-card">
+        <!-- 3. Location Card 2026 with Mini Chart -->
+        <div class="glass-card" style="display: flex; flex-direction: column;">
           <div class="card-header-compact">
             <span class="card-icon">📍</span>
             <h3 class="card-title-sm">3. Localización (2026)</h3>
           </div>
-          <p class="metric-highlight">59.8% Cba Capital o Gran Córdoba (2026)</p>
-          <ul class="clean-list">
-            <li><strong>Córdoba Capital 2026:</strong> Corredores Norte, Sur y Barrios Residenciales</li>
-            <li><strong>Sierras Chicas 2026:</strong> Villa Allende, La Calera, Unquillo, Mendiolaza</li>
-            <li><strong>Valle de Punilla 2026:</strong> Villa Carlos Paz, La Falda, Cosquín</li>
-            <li><strong>Causa de Red 2026:</strong> Líneas aéreas extensas expuestas a vegetación</li>
+          <p class="metric-highlight">59.8% Córdoba Capital y Gran Córdoba</p>
+          <div class="chart-wrapper" style="height: 140px; position: relative; margin-bottom: 0.5rem;">
+            <canvas id="chart-pillar-loc"></canvas>
+          </div>
+          <ul class="clean-list" style="font-size: 0.73rem; margin-top: auto;">
+            <li><strong>Capital:</strong> 43.6% · <strong>Gran Córdoba:</strong> 16.2%</li>
+            <li><strong>Interior Cabeceras:</strong> 40.2% provincial</li>
+            <li><strong>Zonas Críticas:</strong> Periurbano Norte/Sur, Sierras Chicas, Punilla</li>
           </ul>
         </div>
 
-        <!-- Education Card 2026 -->
-        <div class="glass-card">
+        <!-- 4. Education Card 2026 with Mini Chart -->
+        <div class="glass-card" style="display: flex; flex-direction: column;">
           <div class="card-header-compact">
             <span class="card-icon">🎓</span>
             <h3 class="card-title-sm">4. Nivel de Educación (2026)</h3>
           </div>
-          <p class="metric-highlight">48.9% Nivel Terciario/Univ. (2026)</p>
-          <ul class="clean-list">
-            <li><strong>Universidad Completa 2026:</strong> 18.2%</li>
-            <li><strong>Universidad Incompleta / En curso:</strong> 17.6%</li>
-            <li><strong>Secundaria Completa 2026:</strong> 23.0%</li>
-            <li><strong>Técnico Superior 2026:</strong> 11.6%</li>
-            <li><strong>Perfil Ocupacional 2026:</strong> Teletrabajo, profesionales y comercio</li>
+          <p class="metric-highlight">77.2% Nivel Secundario o Superior</p>
+          <div class="chart-wrapper" style="height: 140px; position: relative; margin-bottom: 0.5rem;">
+            <canvas id="chart-pillar-edu"></canvas>
+          </div>
+          <ul class="clean-list" style="font-size: 0.73rem; margin-top: auto;">
+            <li><strong>Superior / Univ. Completo:</strong> 18.2% · <strong>En Curso:</strong> 17.6%</li>
+            <li><strong>Terciario / Técnico:</strong> 13.1% · <strong>Secundario:</strong> 28.3%</li>
+            <li><strong>Perfil:</strong> Alta exigencia de transparencia y autogestión</li>
           </ul>
         </div>
       </div>
@@ -1566,6 +1575,33 @@
         </div>
 
         <!-- Visual Generational Cards Grid -->
+        <!-- Interactive Generational Multidimensional Benchmark Chart -->
+        <div class="glass-card mb-4" style="padding: 1.25rem;">
+          <div class="card-header flex-wrap">
+            <div>
+              <div class="badge-tag-cyan mb-1">Análisis Comparativo Intergeneracional</div>
+              <h4 class="card-title" style="font-size: 0.95rem;">Radar de Dimensiones de Servicio por Cohorte Generacional</h4>
+              <p class="card-desc">Comparativa del nivel de aprobación (IAC), calidad técnica de suministro (SE), facturación (FE), atención comercial (AT) y exigencia operativa.</p>
+            </div>
+            <!-- Generation Filter Toggles -->
+            <div class="filters-row flex-wrap gap-1" id="gen-filter-buttons">
+              <button type="button" class="btn-preset-chip active" data-gen="all" onclick="filterGenerations('all')">🌟 Todas las Generaciones</button>
+              <button type="button" class="btn-preset-chip" data-gen="gen-y" onclick="filterGenerations('gen-y')">🔥 Millennials (30-45a)</button>
+              <button type="button" class="btn-preset-chip" data-gen="gen-x" onclick="filterGenerations('gen-x')">⚡ Gen X (46-61a)</button>
+              <button type="button" class="btn-preset-chip" data-gen="gen-z" onclick="filterGenerations('gen-z')">📱 Gen Z (18-29a)</button>
+              <button type="button" class="btn-preset-chip" data-gen="boomers" onclick="filterGenerations('boomers')">🏛️ Boomers (&gt;62a)</button>
+            </div>
+          </div>
+          <div class="grid-2col mt-3 align-items-stretch">
+            <div class="chart-wrapper" style="height: 320px; position: relative;">
+              <canvas id="chart-generaciones-radar"></canvas>
+            </div>
+            <div class="chart-wrapper" style="height: 320px; position: relative;">
+              <canvas id="chart-generaciones-bar"></canvas>
+            </div>
+          </div>
+        </div>
+
         <div class="generational-cards-grid" id="generational-cards-container">
           <!-- Rendered dynamically by app.js from DASHBOARD_DATA.tarjetas_detractores -->
         </div>
